@@ -2,8 +2,11 @@ package cyfer.service;
 
 import java.sql.Timestamp;
 
+import org.springframework.stereotype.Service;
+
 import cyfer.domain.Walk;
 
+@Service
 public class WalkService implements IWalkService {
 
 	@Override

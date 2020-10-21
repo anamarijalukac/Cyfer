@@ -9,6 +9,7 @@ import javax.persistence.Table;
 public class Dog {
 	
 	public Dog() {}	
+	
 	@Id
 	@Column(name="dogId")
 	private String dogId;
@@ -30,5 +31,17 @@ public class Dog {
 	
 	@Column(name="shelterOIB")
 	private String shelterOIB;
+	
+	public String getName() {
+		return dogName;
+	}
+
+	public String getId() {
+		return dogId;
+	}
+
+	public String shelterOIB() {
+		return shelterOIB;
+	}
 
 }

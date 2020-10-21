@@ -9,6 +9,7 @@ import javax.persistence.Table;
 public class Shelter {
 	
 	public Shelter() {}	
+	
 	@Id
 	@Column(name="shelterOIB")
 	private String shelterOIB;
@@ -25,6 +26,20 @@ public class Shelter {
 	public Shelter(String shelterName, String shelterOIB) {
 		this.shelterOIB = shelterOIB;
 		this.shelterName = shelterName;
+	}
+	
+	public String getName() {
+		// TODO Auto-generated method stub
+		return shelterName;
+	}
+
+	public String getOIB() {
+		// TODO Auto-generated method stub
+		return shelterOIB;
+	}
+
+	public String shelterUsername() {
+		return shelterUsername;
 	}
 
 }

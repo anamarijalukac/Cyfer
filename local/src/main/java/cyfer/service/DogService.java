@@ -1,7 +1,10 @@
 package cyfer.service;
 
+import org.springframework.stereotype.Service;
+
 import cyfer.domain.Dog;
 
+@Service
 public class DogService implements IDogService {
 
 	@Override

@@ -33,12 +33,10 @@ public class Person {
 	}
 
 	public String getName() {
-		// TODO Auto-generated method stub
 		return personName;
 	}
 
 	public String getSurname() {
-		// TODO Auto-generated method stub
 		return personSurname;
 	}
 

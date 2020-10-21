@@ -36,5 +36,21 @@ public class Walk implements Serializable {
 		this.personUsername = personUsername;
 		this.dogId = dogId;
 	}
+	
+	public Timestamp getTimestamp() {
+		return walkDate_n_time;
+	}
+
+	public int getOIB() {
+		return walkDuration;
+	}
+
+	public String dogId() {
+		return dogId;
+	}
+	
+	public String getUsername() {
+		return personUsername;
+	}
 
 }
