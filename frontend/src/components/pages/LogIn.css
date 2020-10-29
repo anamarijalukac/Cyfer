@@ -1,0 +1,60 @@
+/* Bordered form */
+
+body {
+   background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('/images/doggies.png') top center/cover no-repeat; 
+}
+form {
+   background-color: rgba(0, 0, 0, 0.7);
+   margin: 0 auto;
+   width: 500px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   object-fit: contain;
+}
+
+.container {
+   color: white;
+   margin-top: 30px;
+   padding: 16px;
+}
+
+h1 {
+   margin-top: 50px;
+}
+
+/* Full-width inputs */
+input[type=text],
+input[type=password] {
+   width: 100%;
+   padding: 12px 20px;
+   margin: 8px 0;
+   display: inline-block;
+   border: 1px solid #ccc;
+   box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+.loginbtn {
+   background: linear-gradient(90deg, rgb(51, 255, 119) 0%, rgb(0, 128, 43) 100%);
+   color: white;
+   padding: 14px 20px;
+   margin: 8px 0;
+   border: none;
+   cursor: pointer;
+   width: 100%;
+}
+
+/* Add a hover effect for buttons */
+button:hover {
+   opacity: 0.8;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+   span.psw {
+      display: block;
+      float: none;
+   }
+}
