@@ -13,40 +13,105 @@
 			
 			\begin{packed_enum}
 				
-				\item Dionik 1
-				\item Dionik 2				
-				\item ...
+				\item Voditelji udruga
+				\item Šetači pasa (registrirani korisnici)			
+				\item Zaposlenici i volonteri u udrugama
+				\item Administrator
+				\item Razvojni tim
 				
 			\end{packed_enum}
+			\vspace{5mm}
 			
 			\noindent \textbf{Aktori i njihovi funkcionalni zahtjevi:}
 			
 			
 			\begin{packed_enum}
-				\item  \underbar{Aktor 1 (inicijator) može:}
+				\item  \underbar{Javni posjetitelj (inicijator) može:}
 				
 				\begin{packed_enum}
 					
-					\item funkcionalnost 1
-					\item funkcionalnost 2
+					\item pregledati listu udruga na naslovnoj stranici
+					\item odabrati udrugu te pregledati: 
 					\begin{packed_enum}
 						
-						\item  podfunkcionalnost 1 
-						\item  podfunkcionalnost 2
-				
+						\item  detalje profila udruge:
+						\begin{packed_enum}
+							\item ime udruge
+							\item voditelj udruge
+							\item kontakt: email adresa i broj mobitela
+							\item lokacija
+							\item OIB udruge
+							\item IBAN udruge - u slučaju da netko želi napraviti donaciju
+						\end{packed_enum}
+						\item  listu pasa iz te udruge koji su raspoloživi za šetnju
 					\end{packed_enum}
-					\item  funkcionalnost 3
+				
+					\item odabrati profil psa iz liste pasa te pregledati detalje profila psa: 
+					\begin{packed_enum}
+						\item ime psa
+						\item vrsta psa (ako je poznata)
+						\item slika psa
+						\item opis psa (osobnost, izgled)
+						\item dob psa
+						\item raspored odnosno raspoloživost psa za određeni vremenski period (datum i vrijeme) 
+						\item vrsta šetnje za koju je pas predodređen (skupna ili individualna)
+					\end{packed_enum} 
+					\item otvoriti statistiku svih pasa raspoloživih za šetnju i vidjeti koji pas se najmanje šteao, odnosno kojem psu je šetnja najpotrebnija
+					\item registrirati se u sustav kao građanin - za stvaranje korisničkog računa potrebni su mu:
+					\begin{packed_enum}
+						\item ime i prezime
+						\item e-mail adresa
+						\item lozinka 
+					\end{packed_enum}
+					\item registrirati u sustav svoju udrugu - za stvaranje korisničkog računa potrebni su mu:
+					\begin{packed_enum}
+						\item ime i prezime
+						\item e-mail adresa
+						\item lozinka 
+						\item naziv udruge
+						\item OIB udruge
+					\end{packed_enum}
+					\item  otvoriti rang-listu svih registriranih šetača poredanu s obzirom na broj šetnji, broj pasa te duljinu šetnje koju su odradili u proteklih mjesec dana
 					
+				\end{packed_enum}
+				\vspace{5mm}
+			
+				\item  \underbar{Prijavljeni građanin (inicijator)} preuzima sve funkcionalnosti javnog posjetitelja te može dodatno:
+				\begin{packed_enum}
+					\item prijaviti se u sutav (s e-mailom i lozinkom)
+					\item uređivati vlastiti profil
+					\item obrisati vlastiti profil
+					\item odabrati psa te na njegovom profilu prijaviti se za šetnju
+					\item pregledati vlastiti raspored šetnji te skinuti (eng. download) raspored za odabrani dan, tjedan ili mjesec, u PDF obliku
+					\item pregledati vlastitu statistiku šetanja
+					\item označiti vlastite statistike šetanja kao \underbar{javne} kako bi podaci građana dospjeli na rang listu na javnoj stranici
+				\end{packed_enum}
+				\vspace{5mm}
+			
+				\item  \underbar{Prijavljena udruga (inicijator)} preuzima sve funkcionalnosti javnog posjetitelja te može dodatno:
+				\begin{packed_enum}
+					\item prijaviti se u sutav (s e-mailom i lozinkom)
+					\item uređivati vlastiti profil
+					\item dodavati i brisati pse iz liste raspoloživih pasa te udruge
+					\item uređivati profile pasa koji su iz te udruge 
+					\item obrisati vlasitti profil
+				\end{packed_enum}
+				\vspace{5mm}
+			
+				\item  \underbar{Administrator(inicijator)} može:
+				\begin{packed_enum}
+					\item vidjeti popis svih registriranih korisnika i udruga njihovih osobnih podataka
+					\item dodati ili obrisati udruge
+					\item ???
+				\end{packed_enum}
+				\vspace{5mm}
+			
+				\item  \underbar{Baza podataka (sudionik)}:
+				\begin{packed_enum}
+					\item pohranjuje sve podatke o korisnicima i udrugama 
+					\item ???
 				\end{packed_enum}
 			
-				\item  \underbar{Aktor 2 (sudionik) može:}
-				
-				\begin{packed_enum}
-					
-					\item funkcionalnost 1
-					\item funkcionalnost 2
-					
-				\end{packed_enum}
 			\end{packed_enum}
 			
 			\eject 
@@ -95,6 +160,101 @@
 							
 						\end{packed_item}
 					\end{packed_item}
+				
+				\noindent \underbar{\textbf{UC1 - Pregled profila udruga i pasa}}
+				\begin{packed_item}
+					
+					\item \textbf{Glavni sudionik:} javni posjetitelj
+					\item  \textbf{Cilj:} Otvoriti profil pojedine udruge ili psa
+					\item  \textbf{Sudionici:} Baza podataka
+					\item  \textbf{Preduvjet:} -
+					\item  \textbf{Opis osnovnog tijeka:}
+					
+					\item[] \begin{packed_enum}
+						
+						\item Korisnik sa naslovne strane odabire udrugu koju želi proučiti
+						\item Iz liste pasa te udruge korisnik odabire psa koji ga zanima
+						\item Korisnik može proučavati podatke i raspored željenog psa
+					\end{packed_enum}
+					
+					\item  \textbf{Opis mogućih odstupanja:}
+					
+					\item[] \begin{packed_item}
+						
+						\item [2.a] Odabir već zauzete email adrese, unos podataka u neispravnom formatu
+						\item[] \begin{packed_enum}
+							
+							\item Sustav obavjestava korisnika o neuspjelom upisu i vraća ga na stranicu za registraciju
+							\item Korisnik mijenja potrebne podatke te zavrsava unos ili odustaje od registracije
+							
+						\end{packed_enum}
+					\end{packed_item}
+				\end{packed_item}
+			
+			
+	
+		
+				\noindent \underbar{\textbf{UC3 - Registracija građanina ili udruge u sustav}}
+				\begin{packed_item}
+					
+					\item \textbf{Glavni sudionik:} javni posjetitelj
+					\item  \textbf{Cilj:} Stvoriti korisnički račun za pristup sustavu
+					\item  \textbf{Sudionici:} Baza podataka
+					\item  \textbf{Preduvjet:} -
+					\item  \textbf{Opis osnovnog tijeka:}
+					
+					\item[] \begin{packed_enum}
+						
+						\item Korisnik odabire opciju (gumb) za registraciju
+						\item Korisnik unosi potrebne korisničke podatke (ime, prezime, email adresa i lozinka za građanina te dodatno ime udruge i OIB udruge za udrugu)
+						\item Korisnik prima obavijest o uspješnoj registraciji
+					\end{packed_enum}
+					
+					\item  \textbf{Opis mogućih odstupanja:}
+					
+					\item[] \begin{packed_item}
+						
+						\item [2.a] Odabir već zauzete email adrese, unos podataka u neispravnom formatu
+						\item[] \begin{packed_enum}
+							
+							\item Sustav obavjestava korisnika o neuspjelom upisu i vraća ga na stranicu za registraciju
+							\item Korisnik mijenja potrebne podatke te zavrsava unos ili odustaje od registracije
+
+						\end{packed_enum}
+					\end{packed_item}
+				\end{packed_item}
+			
+				\noindent \underbar{\textbf{UC4 - Prijava građanina ili udruge u sustav}}
+				\begin{packed_item}
+					
+					\item \textbf{Glavni sudionik:} registrirani građanin/registrirana udruga
+					\item  \textbf{Cilj:} Dobiti pristup odgovarajućem korisničkom sučelju
+					\item  \textbf{Sudionici:} Baza podataka
+					\item  \textbf{Preduvjet:} Registracija građanina ili udruge u sustav
+					\item  \textbf{Opis osnovnog tijeka:}
+					
+					\item[] \begin{packed_enum}
+						
+						\item Unos email adrese i lozinke
+						\item Potvrda o ispravnosti unesenih podataka
+						\item Pristup odgovarajućim korisničkim funkcijama (ovisi prijavljuje li se građanin ili udruga)
+					\end{packed_enum}
+					
+					\item  \textbf{Opis mogućih odstupanja:}
+					
+					\item[] \begin{packed_item}
+						
+						\item [2.a] Neispravno ime/lozinka
+						\item[] \begin{packed_enum}
+							
+							\item Sustav obavještava korisnika o neuspjelom upisu i vraća ga na stranicu za prijavu
+							
+						\end{packed_enum}
+					\end{packed_item}
+				\end{packed_item}
+				
+		
+				                                                                 
 				
 					
 				\subsubsection{Dijagrami obrazaca uporabe}

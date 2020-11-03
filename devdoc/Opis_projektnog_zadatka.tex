@@ -14,14 +14,15 @@
 		\end{description}
 		
 		Također, postoji web-stranica obrta \textbf{PETS STEP} koji nudi uslugu čuvanja i šetnje pasa. Na stranici imaju kontakt i cjenik.\par
-		Kao što možemo vidjeti, u Hrvatskoj ne postoji usluga slična našoj, no u svijetu ih možemo pronaći. Najsličniji primjer bi bila web platforma \textbf{Walkzee} -- \textit{``1st free online platform connecting shelter dogs in need of a walk to dog lovers looking for a walking buddy!} Walkzee su stvorili Cristina i Charlie Saunders 2015. te je ideja identična kao ideja iza našeg projekta. Nažalost, njihova stranica nije zaživjela te nema mnogo udruga niti pasa na stranici. Naime, ima samo 10 stranica te 14 pasa. Osim toga, stranica izgleda nedovršeno pa ne znamo je li ikada uopće funkcionirala. Nadamo se da njihov neuspjeh leži u lošoj egzekuciji, a ne u lošoj ideji odnosno indiferentnosti javnosti prema napuštenim životinjama. 
+		Kao što možemo vidjeti, u Hrvatskoj ne postoji usluga slična našoj, no u svijetu ih možemo pronaći. Najsličniji primjer bi bila web platforma \textbf{Walkzee} -- \textit{``1st free online platform connecting shelter dogs in need of a walk to dog lovers looking for a walking buddy!´´} Walkzee su stvorili Cristina i Charlie Saunders 2015. te je ideja identična kao ideja iza našeg projekta. Nažalost, njihova stranica nije zaživjela te nema mnogo udruga niti pasa na stranici. Naime, ima samo 10 stranica te 14 pasa. Osim toga, stranica izgleda nedovršeno pa ne znamo je li ikada uopće funkcionirala. Nadamo se da njihov neuspjeh leži u lošoj egzekuciji, a ne u lošoj ideji odnosno indiferentnosti javnosti prema napuštenim životinjama. 
 		
 		\begin{figure}[htb]
 			\centering
 			\includegraphics[scale=0.3]{slike/walkzee.png}
 			\caption{Walkzee -- naslovna stranica}
 			\label{fig:walkzee}
-		\end{figure}
+		\end{figure}
+
 		
 		\begin{figure}[htb]
 			\centering
@@ -31,6 +32,10 @@
 		\end{figure}
 	
 	\section{Opseg projektnog zadatka}
+	  \vspace{15pt}
+		Glavni zadatak aplikacije je povezati udruge za životinje s građanima koji imaju
+	želju i vrijeme za šetanje pasa, te time povećati izglede udomljavanja pasa i psihološkog
+	efekta dobrobiti socijalizacije za psa i za čovjeka. \par \vspace{10pt}
 	Aplikaciju će koristiti registrirane udruge za životinje, registrirani
 	građani i javni posjetitelji koji nisu registrirani i imaju mogućnost
 	pristupa naslovnoj stranici aplikacije i detaljima profila udruge.
@@ -45,55 +50,62 @@
 		\item naziv udruge
 		\item OIB udruge
 	\end{itemize}
-	Glavni zadatak aplikacije je povezati udruge za životinje s građanima koji imaju
-	želju i vrijeme za šetanje pasa, te time povećati izglede udomljavanja pasa i psihološkog
-	efekta dobrobiti socijalizacije za psa i za čovjeka. Javni posjetitelj može doći u aplikaciju i
+	 \vspace{10pt}
+	\underline{Javni posjetitelj} može doći u aplikaciju i
 	pregledati sve udruge na naslovnoj stranici, zatim otići na detalje profila pojedine udruge,
-	a osim toga ima i uvid u rang listu registriranih šetača.
-	 Rang lista prikazuje poredak šetača
+	a osim toga ima i uvid u rang listu registriranih šetača.  Rang lista prikazuje poredak šetača
 	s obzirom na broj šetnji, broj pasa, te duljinu šetnje koju su odradili u prethodnih mjesec
-	dana.  \vspace{10pt} \par 
-	Svaka registrirana udruga može kreirati vlastiti profil koji će se prikazivati na javnoj
-	stranici. U sklopu profila udruge neke od bitnih informacija su: 
-	\begin{itemize}
-		\item slike i opisi pasa
-		\item raspoloživost pasa za određeni vremenski period (datum i vrijeme) 
-		\item lokacija gdje se nalaze
-		\item za kakve šetnje su psi predodređeni (skupne ili individualne šetnje). 
-	\end{itemize}
-	Svi
-	kreirani detalji profila udruge vidljivi su na javnoj aplikaciji. Posjetitelj dolaskom na
-	naslovnu stranicu može odabrati detalje profila udruge i dobiti uvid u profile pasa,
-	statistike o šetanjima svih pasa, lokaciju, te mogućnost prijave za šetanje pasa. Statistika
+	dana.
+	Na profilu pojedine udruge, posjetitelj može dobiti uvid u profile pasa,
+	statistike o šetanjima svih pasa, lokaciju, te mogućnost prijave za šetanje pasa (ako se registrira). Statistika
 	o šetnjama pruža informacije koji psi su češće bili u šetnji od ostalih, te time koji psi imaju
-	veću potrebu za šetnjom. \vspace{10pt} \par 
-	 Ukoliko posjetitelj odluči pripomoći udruzi i priključiti se šetnji
-	pasa, ima opciju registracije. Nakon toga građanin može odabrati psa/e, odabrati željeni
-	termin šetnje i prijaviti se za šetača. Termin šetnje se odabire u obliku datuma i vremena.
-	Nakon uspješnog „rezerviranja“ psa za šetnju, termin za odabranog psa vidljiv je na
-	kalendaru registriranim građanima. Građani imaju opciju skinuti 
-	raspored za odabrani dan, tjedan ili mjesec u PDF obliku.\par
+	veću potrebu za šetnjom.
+	Ukoliko posjetitelj odluči pripomoći udruzi i priključiti se šetnji
+	pasa, ima opciju registracije. Registracijom posjetitelj postaje registrirani građanin. 
 	
-	Građanin ima opciju prijave u vlastiti profil i pregleda vlastitih rasporeda šetanja,
-	vlastitih statistika šetnji, zajedno s mogućnošću označavanja statistike šetanja kao javnih;
-	kako bi podaci građana dospjeli na rang listu na javnoj stranici.
-	Svi registrirani korisnici imaju mogućnost mijenjanja podataka u svom profilu.\par
 	
+	  \vspace{15pt} \par 
+	  
+	  	\underline{Registrirani građanin} ima opciju prijave u vlastiti profil i pregleda vlastitih rasporeda šetanja,
+	  vlastitih statistika šetnji, zajedno s mogućnošću označavanja statistike šetanja kao javnih;
+	  kako bi podaci građana dospjeli na rang listu na javnoj stranici.
+	  Svi registrirani korisnici imaju mogućnost mijenjanja podataka u svom profilu.
+	   Građanin može odabrati psa/e, odabrati željeni
+	  termin šetnje i prijaviti se za šetača. Termin šetnje se odabire u obliku datuma i vremena.
+	  Nakon uspješnog „rezerviranja“ psa za šetnju, termin za odabranog psa vidljiv je na
+	  kalendaru registriranim građanima. Građani imaju opciju skinuti 
+	  raspored za odabrani dan, tjedan ili mjesec u PDF obliku.\par
+	  \vspace{15pt}
+	
+	Svaka \underline{registrirana udruga} može kreirati vlastiti profil koji će se prikazivati na javnoj
+	stranici. Stranica udruge će sadržavati neke bitne detalje vezanu uz samu udrugu poput: 
+	\begin{itemize}
+		\item ime udruge
+		\item voditelj udruge
+		\item lokacija udruge
+		\item kontakt: e-mail adresa
+		\item OIB udruge
+		\item IBAN udruge (za moguće donacije)
+	\end{itemize}
+Također, svaka udruga održava listu vlastitih pasa koji su raspoloživi za šetnju. Neke od bitnih informacija o pojedinom psu uključuju: 
+	\begin{itemize}
+		\item ime psa
+		\item vrsta psa (ako je poznata)
+		\item slika psa 
+		\item opis psa (osobnost, izgled)
+		\item dob psa
+		\item raspored odnosno raspoloživost psa za određeni vremenski period (datum i vrijeme) 
+		\item za kakve šetnje je pas predodređen (skupne ili individualne šetnje). 
+	\end{itemize}
+Svaka udruga ima opciju mijenjati svoj profil. To može uključivati mijenjanje vlastitih podataka (vezanih uz samu udrugu) te uređivanje liste i profila pasa. 
 
-		
-		
-		
-		\begin{packed_item}
-			\item \textit{potencijalna korist ovog projekta}
-			\item \textit{postojeća slična rješenja (istražiti i ukratko opisati razlike u odnosu na zadani zadatak). Dodajte slike koja predočavaju slična rješenja.}
-			\item \textit{skup korisnika koji bi mogao biti zainteresiran za ostvareno rješenje.}
-			\item \textit{mogućnost prilagodbe rješenja }
-			\item \textit{opseg projektnog zadatka}
-			\item \textit{moguće nadogradnje projektnog zadatka}
-		\end{packed_item}
-		
-		\textit{Za pomoć pogledati reference navedene u poglavlju „Popis literature“, a po potrebi konzultirati sadržaj na internetu koji nudi dobre smjernice u tom pogledu.}
-		\eject
+
+
+
+
+\vspace{15pt}
+	  \vspace{20pt}
+
 		
 		\section{Primjeri u \LaTeX u}
 		

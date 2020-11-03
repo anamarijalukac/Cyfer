@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.27)  29 OCT 2020 19:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.27)  3 NOV 2020 15:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -864,6 +864,10 @@ s
 \f@nch@O@olf=\skip70
 \f@nch@O@orf=\skip71
 )
+(c:/texlive/2020/texmf-dist/tex/latex/comment/comment.sty
+\CommentStream=\write3
+
+Excluding comment 'comment')
 (c:/texlive/2020/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count296
@@ -876,9 +880,9 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 Package: setspace 2011/12/19 v6.7a set line spacing
 )
 \@float@every@table=\toks32
-Package hyperref Info: Option `colorlinks' set `true' on input line 40.
+Package hyperref Info: Option `colorlinks' set `true' on input line 41.
 LaTeX Font Info:    Trying to load font information for OT1+jkp on input line 7
-6.
+7.
 
 (c:/texlive/2020/texmf-dist/tex/latex/kpfonts/ot1jkp.fd
 File: ot1jkp.fd 2007/08/30 Fontinst v1.928 font definitions for OT1/jkp.
@@ -897,49 +901,49 @@ LaTeX Warning: Label `fig:walkzee' multiply defined.
 (./Implementacija.aux) (./Zakljucak.aux) (./Literatura.aux) (./Dodatak.aux))
 \openout1 = `PROGI_ProjektnaDokumentacija_v6.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/jkp/m/it on input line 76.
+LaTeX Font Info:    Checking defaults for OML/jkp/m/it on input line 77.
 LaTeX Font Info:    Trying to load font information for OML+jkp on input line 7
-6.
+7.
 
 (c:/texlive/2020/texmf-dist/tex/latex/kpfonts/omljkp.fd
 File: omljkp.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for OMS/jkp/m/n on input line 76.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for OMS/jkp/m/n on input line 77.
 LaTeX Font Info:    Trying to load font information for OMS+jkp on input line 7
-6.
+7.
 
 (c:/texlive/2020/texmf-dist/tex/latex/kpfonts/omsjkp.fd
 File: omsjkp.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for OMX/jkp/m/n on input line 76.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for OMX/jkp/m/n on input line 77.
 LaTeX Font Info:    Trying to load font information for OMX+jkp on input line 7
-6.
+7.
 
 (c:/texlive/2020/texmf-dist/tex/latex/kpfonts/omxjkp.fd
 File: omxjkp.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for U/jkpexa/m/n on input line 76.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for U/jkpexa/m/n on input line 77.
 LaTeX Font Info:    Trying to load font information for U+jkpexa on input line 
-76.
+77.
 
 (c:/texlive/2020/texmf-dist/tex/latex/kpfonts/ujkpexa.fd
 File: ujkpexa.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 76.
+(lastpage)             ! on input line 77.
 
 (c:/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -997,7 +1001,7 @@ e
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring ON on input line 76.
+Package hyperref Info: Link coloring ON on input line 77.
 (c:/texlive/2020/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
 
@@ -1009,39 +1013,39 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count304
 )
-LaTeX Info: Redefining \ref on input line 76.
-LaTeX Info: Redefining \pageref on input line 76.
-LaTeX Info: Redefining \nameref on input line 76.
+LaTeX Info: Redefining \ref on input line 77.
+LaTeX Info: Redefining \pageref on input line 77.
+LaTeX Info: Redefining \nameref on input line 77.
 
 (./PROGI_ProjektnaDokumentacija_v6.out) (./PROGI_ProjektnaDokumentacija_v6.out)
-\@outlinefile=\write3
-\openout3 = `PROGI_ProjektnaDokumentacija_v6.out'.
+\@outlinefile=\write4
+\openout4 = `PROGI_ProjektnaDokumentacija_v6.out'.
 
 LaTeX Font Info:    Trying to load font information for U+jkpsya on input line 
-98.
+99.
 (c:/texlive/2020/texmf-dist/tex/latex/kpfonts/ujkpsya.fd
 File: ujkpsya.fd 2006/08/15 v1.0
 )
 LaTeX Font Info:    Trying to load font information for U+jkpsyb on input line 
-98.
+99.
 
 (c:/texlive/2020/texmf-dist/tex/latex/kpfonts/ujkpsyb.fd
 File: ujkpsyb.fd 2006/08/15 v1.0
 )
 LaTeX Font Info:    Trying to load font information for OT1+txr on input line 9
-8.
+9.
 
 (c:/texlive/2020/texmf-dist/tex/latex/txfonts/ot1txr.fd
 File: ot1txr.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Trying to load font information for U+jkpmia on input line 
-98.
+99.
 
 (c:/texlive/2020/texmf-dist/tex/latex/kpfonts/ujkpmia.fd
 File: ujkpmia.fd 2006/08/15 v1.0
 )
 LaTeX Font Info:    Trying to load font information for U+jkpsyc on input line 
-98.
+99.
 
 (c:/texlive/2020/texmf-dist/tex/latex/kpfonts/ujkpsyc.fd
 File: ujkpsyc.fd 2006/08/15 v1.0
@@ -1059,12 +1063,12 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.30 ...6}Zaključak i budući rad}{26}{chapter.6}
+l.30 ...6}Zaključak i budući rad}{29}{chapter.6}
                                                   % [1
 
 ])
-\tf@toc=\write4
-\openout4 = `PROGI_ProjektnaDokumentacija_v6.toc'.
+\tf@toc=\write5
+\openout5 = `PROGI_ProjektnaDokumentacija_v6.toc'.
 
  [2]
 \openout2 = `Dnevnik_promjena_dokumentacije.aux'.
@@ -1078,87 +1082,82 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--4
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 36--36
-[]\OT1/jkp/m/n/12 18.10.2020.|  
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 37--37
+[]\OT1/jkp/m/n/12 22.10.2020.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 36--36
-[]\OT1/jkp/m/n/12 23.10.2020.|  
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 37--37
+[]\OT1/jkp/m/n/12 27.10.2020.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 36--36
-[]\OT1/jkp/m/n/12 25.08.2013.|  
- []
-
-
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 36--36
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 37--37
 []\OT1/jkp/m/n/12 26.08.2013.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 36--36
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 37--37
 []\OT1/jkp/m/n/12 28.08.2013.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 36--36
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 37--37
 []\OT1/jkp/m/n/12 07.09.2013.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 36--36
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 37--37
 []\OT1/jkp/m/n/12 08.09.2013.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 36--36
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 37--37
 []\OT1/jkp/m/n/12 09.09.2013.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 36--36
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 37--37
 []\OT1/jkp/m/n/12 10.09.2013.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 36--36
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 37--37
 []\OT1/jkp/m/n/12 11.09.2013.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 36--36
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 37--37
 []\OT1/jkp/m/n/12 11.09.2013.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 36--36
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 37--37
 []\OT1/jkp/m/n/12 14.09.2013.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 36--36
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 37--37
 []\OT1/jkp/m/n/12 15.09.2013.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 36--36
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 37--37
 []\OT1/jkp/m/n/12 15.09.2013.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 36--36
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 37--37
 []\OT1/jkp/m/n/12 19.09.2013.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 36--36
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 37--37
 []\OT1/jkp/m/n/12 20.09.2013.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 36--36
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 37--37
 []\OT1/jkp/m/n/12 28.09.2013.|  
  []
 
@@ -1186,18 +1185,22 @@ Overfull \hbox (1.79863pt too wide) in paragraph at lines 16--16
 TEP \OT1/jkp/m/n/12 koji nudi us-lugu []cuvanja i []setnje
  []
 
-[5
+LaTeX Font Info:    Trying to load font information for TS1+jkp on input line 1
+7.
+(c:/texlive/2020/texmf-dist/tex/latex/kpfonts/ts1jkp.fd
+File: ts1jkp.fd 2007/08/30 Fontinst v1.928 font definitions for TS1/jkp.
+) [5
 
 
 
 
 ]
-<slike/walkzee.png, id=192, 1424.32124pt x 724.95844pt>
+<slike/walkzee.png, id=193, 1424.32124pt x 724.95844pt>
 File: slike/walkzee.png Graphic file (type png)
 <use slike/walkzee.png>
 Package pdftex.def Info: slike/walkzee.png  used on input line 21.
 (pdftex.def)             Requested size: 427.29967pt x 217.4892pt.
-<slike/walkzeeDogs.png, id=194, 1418.29875pt x 688.82344pt>
+<slike/walkzeeDogs.png, id=195, 1418.29875pt x 688.82344pt>
 File: slike/walkzeeDogs.png Graphic file (type png)
 <use slike/walkzeeDogs.png>
 Package pdftex.def Info: slike/walkzeeDogs.png  used on input line 29.
@@ -1206,58 +1209,49 @@ Package pdftex.def Info: slike/walkzeeDogs.png  used on input line 29.
 }) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.39 	\begin{itemize}
-                     pdfTeX warning (ext4): destination with the same identifie
-r (name{figure.2.2}) has been already used, duplicate ignored
+l.38 ... socijalizacije za psa i za čovjeka. \par
+                                                   \vspace{10pt}pdfTeX warning 
+(ext4): destination with the same identifier (name{figure.2.2}) has been alread
+y used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.39 	\begin{itemize}
-                      <./slike/walkzee.png> <./slike/walkzeeDogs.png>]
-LaTeX Font Info:    Trying to load font information for TS1+jkp on input line 4
-0.
+l.38 ... socijalizacije za psa i za čovjeka. \par
+                                                   \vspace{10pt} <./slike/walkz
+ee.png> <./slike/walkzeeDogs.png>] [7]
+Underfull \hbox (badness 10000) in paragraph at lines 112--113
 
-(c:/texlive/2020/texmf-dist/tex/latex/kpfonts/ts1jkp.fd
-File: ts1jkp.fd 2007/08/30 Fontinst v1.928 font definitions for TS1/jkp.
-) [7]
-Overfull \hbox (8.56564pt too wide) in paragraph at lines 78--81
-[]\OT1/jkp/m/n/12 Gra[]danin ima op-ciju pri-jave u vlas-titi pro-fil i pre-gle
-da vlas-ti-tih ras-po-reda []setanja,
  []
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 101--102
-
- []
-
 LaTeX Font Info:    Trying to load font information for OT1+jkptt on input line
- 105.
-(c:/texlive/2020/texmf-dist/tex/latex/kpfonts/ot1jkptt.fd
+ 116.
+ (c:/texlive/2020/texmf-dist/tex/latex/kpfonts/ot1jkptt.fd
 File: ot1jkptt.fd 2007/01/26 Fontinst v1.928 font definitions for OT1/jkptt.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 107--108
+Underfull \hbox (badness 10000) in paragraph at lines 118--119
 
  []
 
 [9]
-<slike/aktivnost.PNG, id=230, 670.75594pt x 689.57625pt>
+<slike/aktivnost.PNG, id=231, 670.75594pt x 689.57625pt>
 File: slike/aktivnost.PNG Graphic file (type png)
 <use slike/aktivnost.PNG>
-Package pdftex.def Info: slike/aktivnost.PNG  used on input line 190.
+Package pdftex.def Info: slike/aktivnost.PNG  used on input line 201.
 (pdftex.def)             Requested size: 268.2976pt x 275.8256pt.
 File: slike/aktivnost.PNG Graphic file (type png)
 <use slike/aktivnost.PNG>
-Package pdftex.def Info: slike/aktivnost.PNG  used on input line 197.
+Package pdftex.def Info: slike/aktivnost.PNG  used on input line 208.
 (pdftex.def)             Requested size: 392.04704pt x 403.04799pt.
  [10pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
 3}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.201 		
+l.212 		
          <./slike/aktivnost.PNG>] [11pdfTeX warning (ext4): destination with th
 e same identifier (name{figure.2.4}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.204 		\eject
+l.215 		\eject
               ])
 \openout2 = `Specifikacija_programske_potpore.aux'.
 
@@ -1283,22 +1277,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 9--10
 
 
 
-]
-Underfull \hbox (badness 10000) in paragraph at lines 61--62
+] [13] [14]
+Underfull \hbox (badness 10000) in paragraph at lines 126--127
 
  []
 
-[13]
-Underfull \hbox (badness 10000) in paragraph at lines 107--108
+[15] [16]
+Underfull \hbox (badness 10000) in paragraph at lines 238--239
 
  []
 
-[14]
-Underfull \hbox (badness 10000) in paragraph at lines 114--115
+[17]
+Underfull \hbox (badness 10000) in paragraph at lines 245--246
 
  []
 
-) [15]
+) [18]
 \openout2 = `Arhitektura.aux'.
 
  (./Arhitektura.tex
@@ -1330,12 +1324,12 @@ Overfull \hbox (1.82492pt too wide) in paragraph at lines 47--47
 []\OT1/jkp/m/n/12 korisnickoIme|  
  []
 
-[16
+[19
 
 
 
 
-] [17]
+] [20]
 Underfull \hbox (badness 10000) in paragraph at lines 58--59
 
  []
@@ -1355,22 +1349,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 64--65
 
  []
 
-[18]
+[21]
 Underfull \hbox (badness 10000) in paragraph at lines 75--76
 
  []
 
-[19]
+[22]
 Underfull \hbox (badness 10000) in paragraph at lines 84--85
 
  []
 
-[20]
+[23]
 Underfull \hbox (badness 10000) in paragraph at lines 91--92
 
  []
 
-) [21]
+) [24]
 \openout2 = `Implementacija.aux'.
 
  (./Implementacija.tex
@@ -1390,7 +1384,7 @@ Overfull \hbox (10.38434pt too wide) in paragraph at lines 1--1
 |[]\OT1/jkp/b/n/24.88 Implementacija i ko-risni[]cko su[]celje| 
  []
 
-[22
+[25
 
 
 
@@ -1405,12 +1399,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 28--29
 
  []
 
-[23] [24]
+[26] [27]
 Underfull \hbox (badness 10000) in paragraph at lines 50--51
 
  []
 
-[25])
+[28])
 \openout2 = `Zakljucak.aux'.
 
  (./Zakljucak.tex
@@ -1425,7 +1419,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--4
 
  []
 
-[26
+[29
 
 
 
@@ -1445,16 +1439,16 @@ Overfull \hbox (7.06pt too wide) in paragraph at lines 18--19
 12 http : / / www . ece . rutgers . edu / []marsic /
  []
 
-) [27
+) [30
 
 
 
 
 ] (./PROGI_ProjektnaDokumentacija_v6.lof)
-\tf@lof=\write5
-\openout5 = `PROGI_ProjektnaDokumentacija_v6.lof'.
+\tf@lof=\write6
+\openout6 = `PROGI_ProjektnaDokumentacija_v6.lof'.
 
- [28
+ [31
 
 
 
@@ -1466,7 +1460,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 6--7
 
  []
 
-[29
+[32
 
 
 ]
@@ -1474,12 +1468,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 41--42
 
  []
 
-[30] [31]
+[33] [34]
 Underfull \hbox (badness 10000) in paragraph at lines 103--104
 
  []
 
-) [32] 
+) [35] 
 AED: lastpage setting LastPage
 (./PROGI_ProjektnaDokumentacija_v6.aux (./Dnevnik_promjena_dokumentacije.aux)
 (./Opis_projektnog_zadatka.aux) (./Specifikacija_programske_potpore.aux)
@@ -1494,13 +1488,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 11980 strings out of 479918
- 171465 string characters out of 5886688
- 553342 words of memory out of 5000000
- 28105 multiletter control sequences out of 15000+600000
- 588005 words of font info for 146 fonts, out of 8000000 for 9000
+ 12079 strings out of 479918
+ 172548 string characters out of 5886688
+ 554331 words of memory out of 5000000
+ 28143 multiletter control sequences out of 15000+600000
+ 586971 words of font info for 145 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 93i,14n,98p,909b,607s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 93i,15n,98p,909b,680s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exi
 st, replaced by a fixed one
 
@@ -1508,14 +1502,15 @@ st, replaced by a fixed one
 dist/fonts/type1/public/kpfonts/jkpbit8a.pfb><c:/texlive/2020/texmf-dist/fonts/
 type1/public/kpfonts/jkpbn8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public
 /kpfonts/jkpmi.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/kpfonts/jkpmi
-t8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/kpfonts/jkpmn8a.pfb><c:/
-texlive/2020/texmf-dist/fonts/type1/public/kpfonts/jkpsy.pfb><c:/texlive/2020/t
-exmf-dist/fonts/type1/public/kpfonts/jkpttmn8a.pfb>
-Output written on PROGI_ProjektnaDokumentacija_v6.pdf (33 pages, 3584330 bytes)
+t8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/kpfonts/jkpmitc.pfb><c:/
+texlive/2020/texmf-dist/fonts/type1/public/kpfonts/jkpmn8a.pfb><c:/texlive/2020
+/texmf-dist/fonts/type1/public/kpfonts/jkpsy.pfb><c:/texlive/2020/texmf-dist/fo
+nts/type1/public/kpfonts/jkpttmn8a.pfb>
+Output written on PROGI_ProjektnaDokumentacija_v6.pdf (36 pages, 3598114 bytes)
 .
 PDF statistics:
- 454 PDF objects out of 1000 (max. 8388607)
- 401 compressed objects within 5 object streams
- 106 named destinations out of 1000 (max. 500000)
+ 539 PDF objects out of 1000 (max. 8388607)
+ 482 compressed objects within 5 object streams
+ 163 named destinations out of 1000 (max. 500000)
  256 words of extra memory for PDF output out of 10000 (max. 10000000)
 
