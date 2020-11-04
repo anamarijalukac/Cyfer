@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.27)  3 NOV 2020 15:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.27)  4 NOV 2020 15:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1063,7 +1063,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.30 ...6}Zaključak i budući rad}{29}{chapter.6}
+l.29 ...6}Zaključak i budući rad}{35}{chapter.6}
                                                   % [1
 
 ])
@@ -1277,22 +1277,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 9--10
 
 
 
-] [13] [14]
-Underfull \hbox (badness 10000) in paragraph at lines 126--127
+] [13] [14] [15] [16] [17] [18] [19] [20] [21] [22]
+Underfull \hbox (badness 10000) in paragraph at lines 596--597
 
  []
 
-[15] [16]
-Underfull \hbox (badness 10000) in paragraph at lines 238--239
+[23]
+Underfull \hbox (badness 10000) in paragraph at lines 603--604
 
  []
 
-[17]
-Underfull \hbox (badness 10000) in paragraph at lines 245--246
-
- []
-
-) [18]
+) [24]
 \openout2 = `Arhitektura.aux'.
 
  (./Arhitektura.tex
@@ -1324,12 +1319,12 @@ Overfull \hbox (1.82492pt too wide) in paragraph at lines 47--47
 []\OT1/jkp/m/n/12 korisnickoIme|  
  []
 
-[19
+[25
 
 
 
 
-] [20]
+] [26]
 Underfull \hbox (badness 10000) in paragraph at lines 58--59
 
  []
@@ -1349,22 +1344,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 64--65
 
  []
 
-[21]
+[27]
 Underfull \hbox (badness 10000) in paragraph at lines 75--76
 
  []
 
-[22]
+[28]
 Underfull \hbox (badness 10000) in paragraph at lines 84--85
 
  []
 
-[23]
+[29]
 Underfull \hbox (badness 10000) in paragraph at lines 91--92
 
  []
 
-) [24]
+) [30]
 \openout2 = `Implementacija.aux'.
 
  (./Implementacija.tex
@@ -1384,7 +1379,7 @@ Overfull \hbox (10.38434pt too wide) in paragraph at lines 1--1
 |[]\OT1/jkp/b/n/24.88 Implementacija i ko-risni[]cko su[]celje| 
  []
 
-[25
+[31
 
 
 
@@ -1399,12 +1394,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 28--29
 
  []
 
-[26] [27]
+[32] [33]
 Underfull \hbox (badness 10000) in paragraph at lines 50--51
 
  []
 
-[28])
+[34])
 \openout2 = `Zakljucak.aux'.
 
  (./Zakljucak.tex
@@ -1419,7 +1414,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--4
 
  []
 
-[29
+[35
 
 
 
@@ -1439,7 +1434,7 @@ Overfull \hbox (7.06pt too wide) in paragraph at lines 18--19
 12 http : / / www . ece . rutgers . edu / []marsic /
  []
 
-) [30
+) [36
 
 
 
@@ -1448,7 +1443,7 @@ Overfull \hbox (7.06pt too wide) in paragraph at lines 18--19
 \tf@lof=\write6
 \openout6 = `PROGI_ProjektnaDokumentacija_v6.lof'.
 
- [31
+ [37
 
 
 
@@ -1460,7 +1455,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 6--7
 
  []
 
-[32
+[38
 
 
 ]
@@ -1468,12 +1463,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 41--42
 
  []
 
-[33] [34]
+[39] [40]
 Underfull \hbox (badness 10000) in paragraph at lines 103--104
 
  []
 
-) [35] 
+) [41] 
 AED: lastpage setting LastPage
 (./PROGI_ProjektnaDokumentacija_v6.aux (./Dnevnik_promjena_dokumentacije.aux)
 (./Opis_projektnog_zadatka.aux) (./Specifikacija_programske_potpore.aux)
@@ -1481,16 +1476,16 @@ AED: lastpage setting LastPage
 (./Dodatak.aux))
 Package rerunfilecheck Info: File `PROGI_ProjektnaDokumentacija_v6.out' has not
  changed.
-(rerunfilecheck)             Checksum: 58D85BADBCB64B4FAE87861678F077CE;2023.
+(rerunfilecheck)             Checksum: 8F506E49F7C3DD3638F67F070E650DFD;2023.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 12079 strings out of 479918
- 172548 string characters out of 5886688
- 554331 words of memory out of 5000000
+ 12170 strings out of 479918
+ 173236 string characters out of 5886688
+ 554337 words of memory out of 5000000
  28143 multiletter control sequences out of 15000+600000
  586971 words of font info for 145 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1506,11 +1501,11 @@ t8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/kpfonts/jkpmitc.pfb><c:/
 texlive/2020/texmf-dist/fonts/type1/public/kpfonts/jkpmn8a.pfb><c:/texlive/2020
 /texmf-dist/fonts/type1/public/kpfonts/jkpsy.pfb><c:/texlive/2020/texmf-dist/fo
 nts/type1/public/kpfonts/jkpttmn8a.pfb>
-Output written on PROGI_ProjektnaDokumentacija_v6.pdf (36 pages, 3598114 bytes)
+Output written on PROGI_ProjektnaDokumentacija_v6.pdf (42 pages, 3612429 bytes)
 .
 PDF statistics:
- 539 PDF objects out of 1000 (max. 8388607)
- 482 compressed objects within 5 object streams
- 163 named destinations out of 1000 (max. 500000)
+ 681 PDF objects out of 1000 (max. 8388607)
+ 616 compressed objects within 7 object streams
+ 254 named destinations out of 1000 (max. 500000)
  256 words of extra memory for PDF output out of 10000 (max. 10000000)
 

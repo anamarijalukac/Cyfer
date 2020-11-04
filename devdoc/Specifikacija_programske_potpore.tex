@@ -1,280 +1,608 @@
 \chapter{Specifikacija programske potpore}
+	
+\section{Funkcionalni zahtjevi}
 		
-	\section{Funkcionalni zahtjevi}
+		\textbf{\textit{dio 1. revizije}}\\
+		
+		\textit{Navesti \textbf{dionike} koji imaju \textbf{interes u ovom sustavu} ili  \textbf{su nositelji odgovornosti}. To su prije svega korisnici, ali i administratori sustava, naručitelji, razvojni tim.}\\
 			
-			\textbf{\textit{dio 1. revizije}}\\
+		\textit{Navesti \textbf{aktore} koji izravno \textbf{koriste} ili \textbf{komuniciraju sa sustavom}. Oni mogu imati inicijatorsku ulogu, tj. započinju određene procese u sustavu ili samo sudioničku ulogu, tj. obavljaju određeni posao. Za svakog aktora navesti funkcionalne zahtjeve koji se na njega odnose.}\\
+		
+		
+		\noindent \textbf{Dionici:}
+		
+		\begin{packed_enum}
 			
-			\textit{Navesti \textbf{dionike} koji imaju \textbf{interes u ovom sustavu} ili  \textbf{su nositelji odgovornosti}. To su prije svega korisnici, ali i administratori sustava, naručitelji, razvojni tim.}\\
-				
-			\textit{Navesti \textbf{aktore} koji izravno \textbf{koriste} ili \textbf{komuniciraju sa sustavom}. Oni mogu imati inicijatorsku ulogu, tj. započinju određene procese u sustavu ili samo sudioničku ulogu, tj. obavljaju određeni posao. Za svakog aktora navesti funkcionalne zahtjeve koji se na njega odnose.}\\
+			\item Voditelji udruga
+			\item Šetači pasa (registrirani korisnici)			
+			\item Zaposlenici i volonteri u udrugama
+			\item Administrator
+			\item Razvojni tim
 			
-			
-			\noindent \textbf{Dionici:}
+		\end{packed_enum}
+		\vspace{5mm}
+		
+		\noindent \textbf{Aktori i njihovi funkcionalni zahtjevi:}
+		
+		
+		\begin{packed_enum}
+			\item  \underbar{Javni posjetitelj (inicijator) može:}
 			
 			\begin{packed_enum}
 				
-				\item Voditelji udruga
-				\item Šetači pasa (registrirani korisnici)			
-				\item Zaposlenici i volonteri u udrugama
-				\item Administrator
-				\item Razvojni tim
+				\item pregledati listu udruga na naslovnoj stranici
+				\item odabrati udrugu te pregledati: 
+				\begin{packed_enum}
+					
+					\item  detalje profila udruge:
+					\begin{packed_enum}
+						\item ime udruge
+						\item voditelj udruge
+						\item kontakt: email adresa i broj mobitela
+						\item lokacija
+						\item OIB udruge
+						\item IBAN udruge - u slučaju da netko želi napraviti donaciju
+					\end{packed_enum}
+					\item  listu pasa iz te udruge koji su raspoloživi za šetnju
+				\end{packed_enum}
+			
+				\item odabrati profil psa iz liste pasa te pregledati detalje profila psa: 
+				\begin{packed_enum}
+					\item ime psa
+					\item vrsta psa (ako je poznata)
+					\item slika psa
+					\item opis psa (osobnost, izgled)
+					\item dob psa
+					\item raspored odnosno raspoloživost psa za određeni vremenski period (datum i vrijeme) 
+					\item vrsta šetnje za koju je pas predodređen (skupna ili individualna)
+				\end{packed_enum} 
+				\item otvoriti statistiku svih pasa raspoloživih za šetnju i vidjeti koji pas se najmanje šteao, odnosno kojem psu je šetnja najpotrebnija
+				\item registrirati se u sustav kao građanin - za stvaranje korisničkog računa potrebni su mu:
+				\begin{packed_enum}
+					\item ime i prezime
+					\item e-mail adresa
+					\item lozinka 
+				\end{packed_enum}
+				\item registrirati u sustav svoju udrugu - za stvaranje korisničkog računa potrebni su mu:
+				\begin{packed_enum}
+					\item ime i prezime
+					\item e-mail adresa
+					\item lozinka 
+					\item naziv udruge
+					\item OIB udruge
+				\end{packed_enum}
+				\item  otvoriti rang-listu svih registriranih šetača poredanu s obzirom na broj šetnji, broj pasa te duljinu šetnje koju su odradili u proteklih mjesec dana
 				
 			\end{packed_enum}
 			\vspace{5mm}
-			
-			\noindent \textbf{Aktori i njihovi funkcionalni zahtjevi:}
-			
-			
+		
+			\item  \underbar{Prijavljeni građanin (inicijator)} preuzima sve funkcionalnosti javnog posjetitelja te može dodatno:
 			\begin{packed_enum}
-				\item  \underbar{Javni posjetitelj (inicijator) može:}
-				
-				\begin{packed_enum}
-					
-					\item pregledati listu udruga na naslovnoj stranici
-					\item odabrati udrugu te pregledati: 
-					\begin{packed_enum}
-						
-						\item  detalje profila udruge:
-						\begin{packed_enum}
-							\item ime udruge
-							\item voditelj udruge
-							\item kontakt: email adresa i broj mobitela
-							\item lokacija
-							\item OIB udruge
-							\item IBAN udruge - u slučaju da netko želi napraviti donaciju
-						\end{packed_enum}
-						\item  listu pasa iz te udruge koji su raspoloživi za šetnju
-					\end{packed_enum}
-				
-					\item odabrati profil psa iz liste pasa te pregledati detalje profila psa: 
-					\begin{packed_enum}
-						\item ime psa
-						\item vrsta psa (ako je poznata)
-						\item slika psa
-						\item opis psa (osobnost, izgled)
-						\item dob psa
-						\item raspored odnosno raspoloživost psa za određeni vremenski period (datum i vrijeme) 
-						\item vrsta šetnje za koju je pas predodređen (skupna ili individualna)
-					\end{packed_enum} 
-					\item otvoriti statistiku svih pasa raspoloživih za šetnju i vidjeti koji pas se najmanje šteao, odnosno kojem psu je šetnja najpotrebnija
-					\item registrirati se u sustav kao građanin - za stvaranje korisničkog računa potrebni su mu:
-					\begin{packed_enum}
-						\item ime i prezime
-						\item e-mail adresa
-						\item lozinka 
-					\end{packed_enum}
-					\item registrirati u sustav svoju udrugu - za stvaranje korisničkog računa potrebni su mu:
-					\begin{packed_enum}
-						\item ime i prezime
-						\item e-mail adresa
-						\item lozinka 
-						\item naziv udruge
-						\item OIB udruge
-					\end{packed_enum}
-					\item  otvoriti rang-listu svih registriranih šetača poredanu s obzirom na broj šetnji, broj pasa te duljinu šetnje koju su odradili u proteklih mjesec dana
-					
-				\end{packed_enum}
-				\vspace{5mm}
-			
-				\item  \underbar{Prijavljeni građanin (inicijator)} preuzima sve funkcionalnosti javnog posjetitelja te može dodatno:
-				\begin{packed_enum}
-					\item prijaviti se u sutav (s e-mailom i lozinkom)
-					\item uređivati vlastiti profil
-					\item obrisati vlastiti profil
-					\item odabrati psa te na njegovom profilu prijaviti se za šetnju
-					\item pregledati vlastiti raspored šetnji te skinuti (eng. download) raspored za odabrani dan, tjedan ili mjesec, u PDF obliku
-					\item pregledati vlastitu statistiku šetanja
-					\item označiti vlastite statistike šetanja kao \underbar{javne} kako bi podaci građana dospjeli na rang listu na javnoj stranici
-				\end{packed_enum}
-				\vspace{5mm}
-			
-				\item  \underbar{Prijavljena udruga (inicijator)} preuzima sve funkcionalnosti javnog posjetitelja te može dodatno:
-				\begin{packed_enum}
-					\item prijaviti se u sutav (s e-mailom i lozinkom)
-					\item uređivati vlastiti profil
-					\item dodavati i brisati pse iz liste raspoloživih pasa te udruge
-					\item uređivati profile pasa koji su iz te udruge 
-					\item obrisati vlasitti profil
-				\end{packed_enum}
-				\vspace{5mm}
-			
-				\item  \underbar{Administrator(inicijator)} može:
-				\begin{packed_enum}
-					\item vidjeti popis svih registriranih korisnika i udruga njihovih osobnih podataka
-					\item dodati ili obrisati udruge
-					\item ???
-				\end{packed_enum}
-				\vspace{5mm}
-			
-				\item  \underbar{Baza podataka (sudionik)}:
-				\begin{packed_enum}
-					\item pohranjuje sve podatke o korisnicima i udrugama 
-					\item ???
-				\end{packed_enum}
-			
+				\item prijaviti se u sutav (s e-mailom i lozinkom)
+				\item uređivati vlastiti profil
+				\item obrisati vlastiti profil
+				\item odabrati psa te na njegovom profilu prijaviti se za šetnju
+				\item pregledati vlastiti raspored šetnji te skinuti (eng. download) raspored za odabrani dan, tjedan ili mjesec, u PDF obliku
+				\item pregledati vlastitu statistiku šetanja
+				\item označiti vlastite statistike šetanja kao \underbar{javne} kako bi podaci građana dospjeli na rang listu na javnoj stranici
 			\end{packed_enum}
+			\vspace{5mm}
+		
+			\item  \underbar{Prijavljena udruga (inicijator)} preuzima sve funkcionalnosti javnog posjetitelja te može dodatno:
+			\begin{packed_enum}
+				\item prijaviti se u sutav (s e-mailom i lozinkom)
+				\item uređivati vlastiti profil
+				\item dodavati i brisati pse iz liste raspoloživih pasa te udruge
+				\item uređivati profile pasa koji su iz te udruge 
+				\item obrisati vlasitti profil
+			\end{packed_enum}
+			\vspace{5mm}
+		
+			\item  \underbar{Administrator(inicijator)} može:
+			\begin{packed_enum}
+				\item vidjeti popis svih registriranih korisnika i udruga njihovih osobnih podataka
+				\item dodati ili obrisati udruge
+				\item ???
+			\end{packed_enum}
+			\vspace{5mm}
+		
+			\item  \underbar{Baza podataka (sudionik)}:
+			\begin{packed_enum}
+				\item pohranjuje sve podatke o korisnicima i udrugama 
+				\item ???
+			\end{packed_enum}
+		
+		\end{packed_enum}
+		
+		\eject 
+		
+		
 			
-			\eject 
+		\subsection{Obrasci uporabe}
+		\vspace{5mm}
 			
+		
 			
+			\noindent \underbar{\textbf{\hypertarget{UC1}{UC1} - Pregled profila udruga i pasa iz te udruge}}
+			\begin{packed_item}
 				
-			\subsection{Obrasci uporabe}
+				\item \textbf{Glavni sudionik:} Javni posjetitelj
+				\item  \textbf{Cilj:} Otvoriti profil pojedine udruge ili psa iz te udruge
+				\item  \textbf{Sudionici:} Baza podataka
+				\item  \textbf{Preduvjet:} -
+				\item  \textbf{Opis osnovnog tijeka:}
 				
-				\textbf{\textit{dio 1. revizije}}
-				
-				\subsubsection{Opis obrazaca uporabe}
-					\textit{Funkcionalne zahtjeve razraditi u obliku obrazaca uporabe. Svaki obrazac je potrebno razraditi prema donjem predlošku. Ukoliko u nekom koraku može doći do odstupanja, potrebno je to odstupanje opisati i po mogućnosti ponuditi rješenje kojim bi se tijek obrasca vratio na osnovni tijek.}\\
+				\item[] \begin{packed_enum}
 					
+					\item Korisnik sa naslovne strane odabire udrugu koju želi proučiti
+					\item Iz liste pasa te udruge korisnik odabire psa koji ga zanima
+					\item Korisnik može proučavati podatke, raspored i statistiku šetanja željenog psa
+				\end{packed_enum}
+			\end{packed_item}
+		
+		
+			\noindent \underbar{\textbf{\hypertarget{UC2}{UC2} - Pregled liste profila svih pasa}}
+			\begin{packed_item}
+				
+				\item \textbf{Glavni sudionik:} Javni posjetitelj
+				\item  \textbf{Cilj:} Otvoriti profil psa iz bilo koje udruge
+				\item  \textbf{Sudionici:} Baza podataka
+				\item  \textbf{Preduvjet:} -
+				\item  \textbf{Opis osnovnog tijeka:}
+				
+				\item[] \begin{packed_enum}
+					
+					\item Korisnik iz izborne trake odabire "Lista svih pasa"
+					\item Iz liste pasa korisnik odabire psa koji ga zanima
+					\item Korisnik može proučavati podatke, raspored i statistiku šetanja željenog psa
+				\end{packed_enum}
+			\end{packed_item}
+		
+		
+		
+			\noindent \underbar{\textbf{UC3 - Pregled statistike svih pasa}}
+			\begin{packed_item}
+				
+				\item \textbf{Glavni sudionik:} Javni posjetitelj
+				\item  \textbf{Cilj:} Otvoriti statistiku šetanja svih pasa
+				\item  \textbf{Sudionici:} Baza podataka
+				\item  \textbf{Preduvjet:} -
+				\item  \textbf{Opis osnovnog tijeka:}
+				
+				\item[] \begin{packed_enum}
+					
+					\item Korisnik iz izborne trake odabire "Lista svih pasa"
+					\item Korisnik odabire opciju "Statistika svih pasa"
+					\item Korisnik može proučiti statistiku šetanja svih pasa 
+				\end{packed_enum}
+			\end{packed_item}
+		
+		\newpage
+			
+				
+			\noindent \underbar{\textbf{UC4 - Pregled rang-liste svih šetača}}
+			\begin{packed_item}
+				
+				\item \textbf{Glavni sudionik:} Javni posjetitelj
+				\item  \textbf{Cilj:} Dobiti uvid u rang-listu svih šetača
+				\item  \textbf{Sudionici:} Baza podataka
+				\item  \textbf{Preduvjet:} -
+				\item  \textbf{Opis osnovnog tijeka:}
+				
+				\item[] \begin{packed_enum}
+					
+					\item Korisnik iz izborne trake odabire "Rang-lista šetača"
+					\item Aplikacija prikazuje poredak šetača s obzirom na broj šetnji, broj pasa te duljinu šetnji koje su odradili u prethodnih mjesec dana
+					\item Korisnik može proučiti rang-listu svih šetača
+				\end{packed_enum}
+				\item  \textbf{Opis mogućih odstupanja:}
+				\item[] \begin{packed_item}
+					\item [2.a] U slučaju da nijedan šetač nije označio statistiku svoje šetnje kao javnu, rang lista će biti prazna
+				\end{packed_item}
+			\end{packed_item}
+	
+	
+	
 
-					\noindent \underbar{\textbf{UC$<$broj obrasca$>$ -$<$ime obrasca$>$}}
-					\begin{packed_item}
 	
-						\item \textbf{Glavni sudionik: }$<$sudionik$>$
-						\item  \textbf{Cilj:} $<$cilj$>$
-						\item  \textbf{Sudionici:} $<$sudionici$>$
-						\item  \textbf{Preduvjet:} $<$preduvjet$>$
-						\item  \textbf{Opis osnovnog tijeka:}
-						
-						\item[] \begin{packed_enum}
-	
-							\item $<$opis korak jedan$>$
-							\item $<$opis korak dva$>$
-							\item $<$opis korak tri$>$
-							\item $<$opis korak četiri$>$
-							\item $<$opis korak pet$>$
-						\end{packed_enum}
-						
-						\item  \textbf{Opis mogućih odstupanja:}
-						
-						\item[] \begin{packed_item}
-	
-							\item[2.a] $<$opis mogućeg scenarija odstupanja u koraku 2$>$
-							\item[] \begin{packed_enum}
-								
-								\item $<$opis rješenja mogućeg scenarija korak 1$>$
-								\item $<$opis rješenja mogućeg scenarija korak 2$>$
-								
-							\end{packed_enum}
-							\item[2.b] $<$opis mogućeg scenarija odstupanja u koraku 2$>$
-							\item[3.a] $<$opis mogućeg scenarija odstupanja  u koraku 3$>$
-							
-						\end{packed_item}
-					\end{packed_item}
+			\noindent \underbar{\textbf{UC5 - Registracija građanina ili udruge u sustav}}
+			\begin{packed_item}
 				
-				\noindent \underbar{\textbf{UC1 - Pregled profila udruga i pasa}}
-				\begin{packed_item}
+				\item \textbf{Glavni sudionik:} Javni posjetitelj
+				\item  \textbf{Cilj:} Stvoriti korisnički račun za pristup sustavu
+				\item  \textbf{Sudionici:} Baza podataka
+				\item  \textbf{Preduvjet:} -
+				\item  \textbf{Opis osnovnog tijeka:}
+				
+				\item[] \begin{packed_enum}
 					
-					\item \textbf{Glavni sudionik:} javni posjetitelj
-					\item  \textbf{Cilj:} Otvoriti profil pojedine udruge ili psa
-					\item  \textbf{Sudionici:} Baza podataka
-					\item  \textbf{Preduvjet:} -
-					\item  \textbf{Opis osnovnog tijeka:}
+					\item Korisnik odabire opciju (gumb) za registraciju 
+					\item Korisnik bira "Registriraj se kao građanin" ili "Registriraj se kao udruga"
+					\item Korisnik unosi potrebne korisničke podatke (ime, prezime, email adresa i lozinka za građanina te dodatno ime udruge i OIB udruge za udrugu)
+					\item Korisnik odabire opciju "Stvori korisnički račun"
+					\item Korisnik prima obavijest o uspješnoj registraciji
+				\end{packed_enum}
+				
+				\item  \textbf{Opis mogućih odstupanja:}
+				
+				\item[] \begin{packed_item}
 					
+					\item [2.a] Unos podataka u neispravnom formatu 
 					\item[] \begin{packed_enum}
 						
-						\item Korisnik sa naslovne strane odabire udrugu koju želi proučiti
-						\item Iz liste pasa te udruge korisnik odabire psa koji ga zanima
-						\item Korisnik može proučavati podatke i raspored željenog psa
-					\end{packed_enum}
-					
-					\item  \textbf{Opis mogućih odstupanja:}
-					
-					\item[] \begin{packed_item}
-						
-						\item [2.a] Odabir već zauzete email adrese, unos podataka u neispravnom formatu
-						\item[] \begin{packed_enum}
-							
-							\item Sustav obavjestava korisnika o neuspjelom upisu i vraća ga na stranicu za registraciju
-							\item Korisnik mijenja potrebne podatke te zavrsava unos ili odustaje od registracije
-							
-						\end{packed_enum}
-					\end{packed_item}
-				\end{packed_item}
-			
-			
-	
-		
-				\noindent \underbar{\textbf{UC3 - Registracija građanina ili udruge u sustav}}
-				\begin{packed_item}
-					
-					\item \textbf{Glavni sudionik:} javni posjetitelj
-					\item  \textbf{Cilj:} Stvoriti korisnički račun za pristup sustavu
-					\item  \textbf{Sudionici:} Baza podataka
-					\item  \textbf{Preduvjet:} -
-					\item  \textbf{Opis osnovnog tijeka:}
-					
-					\item[] \begin{packed_enum}
-						
-						\item Korisnik odabire opciju (gumb) za registraciju
-						\item Korisnik unosi potrebne korisničke podatke (ime, prezime, email adresa i lozinka za građanina te dodatno ime udruge i OIB udruge za udrugu)
-						\item Korisnik prima obavijest o uspješnoj registraciji
-					\end{packed_enum}
-					
-					\item  \textbf{Opis mogućih odstupanja:}
-					
-					\item[] \begin{packed_item}
-						
-						\item [2.a] Odabir već zauzete email adrese, unos podataka u neispravnom formatu
-						\item[] \begin{packed_enum}
-							
-							\item Sustav obavjestava korisnika o neuspjelom upisu i vraća ga na stranicu za registraciju
-							\item Korisnik mijenja potrebne podatke te zavrsava unos ili odustaje od registracije
+						\item Sustav obavještava korisnika o neispravnim podatcima i vraća ga na stranicu za registraciju
+						\item Korisnik mijenja potrebne podatke te završava unos ili odustaje od registracije
 
-						\end{packed_enum}
-					\end{packed_item}
+					\end{packed_enum}
+					\item [2.b] Odabrana email adresa je već zauzeta
+					\item[] \begin{packed_enum}
+					
+						\item Sustav obavještava korisnika o zauzetoj email adresi i vraća ga na stranicu za registraciju
+						\item Korisnik mijenja potrebne podatke te završava unos ili odustaje od registracije
+					
+				\end{packed_enum}
 				\end{packed_item}
-			
-				\noindent \underbar{\textbf{UC4 - Prijava građanina ili udruge u sustav}}
-				\begin{packed_item}
+			\end{packed_item}
+		
+		
+		
+			\noindent \underbar{\textbf{UC6 - Prijava građanina ili udruge u sustav}}
+			\begin{packed_item}
+				
+				\item \textbf{Glavni sudionik:} Registrirani građanin/registrirana udruga
+				\item  \textbf{Cilj:} Dobiti pristup odgovarajućem korisničkom sučelju
+				\item  \textbf{Sudionici:} Baza podataka
+				\item  \textbf{Preduvjet:} Registracija građanina ili udruge u sustav
+				\item  \textbf{Opis osnovnog tijeka:}
+				
+				\item[] \begin{packed_enum}
 					
-					\item \textbf{Glavni sudionik:} registrirani građanin/registrirana udruga
-					\item  \textbf{Cilj:} Dobiti pristup odgovarajućem korisničkom sučelju
-					\item  \textbf{Sudionici:} Baza podataka
-					\item  \textbf{Preduvjet:} Registracija građanina ili udruge u sustav
-					\item  \textbf{Opis osnovnog tijeka:}
+					\item Unos email adrese i lozinke
+					\item Potvrda o ispravnosti unesenih podataka
+					\item Pristup odgovarajućim korisničkim funkcijama (ovisi prijavljuje li se građanin ili udruga)
+				\end{packed_enum}
+				
+				\item  \textbf{Opis mogućih odstupanja:}
+				
+				\item[] \begin{packed_item}
 					
+					\item [2.a] Neispravno ime/lozinka
 					\item[] \begin{packed_enum}
 						
-						\item Unos email adrese i lozinke
-						\item Potvrda o ispravnosti unesenih podataka
-						\item Pristup odgovarajućim korisničkim funkcijama (ovisi prijavljuje li se građanin ili udruga)
+						\item Sustav obavještava korisnika o neuspjelom upisu i vraća ga na stranicu za prijavu
+						
+					\end{packed_enum}
+				\end{packed_item}
+			\end{packed_item}
+		
+		
+				\noindent \underbar{\textbf{UC7 - Pregled osobnih podataka korisnika (udruge ili građanina)}}
+			\begin{packed_item}
+				
+				\item \textbf{Glavni sudionik:} Registrirani građanin/registrirana udruga
+				\item  \textbf{Cilj:} Pregledati osobne podatke/podatke udruge
+				\item  \textbf{Sudionici:} Baza podataka
+				\item  \textbf{Preduvjet:} Registrirani korisnik (udruga ili građanin) je prijavljen u sustav
+				\item  \textbf{Opis osnovnog tijeka:}
+				
+				\item[] \begin{packed_enum}	
+					\item Korisnik iz izborne trake odabire "Osobni podatci"
+					\item Otvara se stranica sa korisnikovim osobnim podatcima
+				\end{packed_enum}
+			\end{packed_item}
+		
+		
+		
+				\noindent \underbar{\textbf{UC8 - Promjena osobnih podataka korisnika}}
+			\begin{packed_item}
+				
+				\item \textbf{Glavni sudionik:} Registrirani građanin/registrirana udruga
+				\item  \textbf{Cilj:} Promijeniti osobne podatke/podatke udruge
+				\item  \textbf{Sudionici:} Baza podataka
+				\item  \textbf{Preduvjet:} Registrirani korisnik (udruga ili građanin) je prijavljen u sustav
+				\item  \textbf{Opis osnovnog tijeka:}
+				
+				\item[] \begin{packed_enum}
+					\item Korisnik iz izborne trake odabire "Osobni podatci"
+					\item Otvara se stranica sa korisnikovim osobnim podatcima
+					\item Korisnik bira "Uredi profil"
+					\item Korisnik mijenja podatke
+					\item Korisnik bira opciju "Pohrani promjene"
+					\item Baza se ažurira
+				\end{packed_enum}
+				
+				\item  \textbf{Opis mogućih odstupanja:}
+				
+				\item[] \begin{packed_item}
+					
+					\item [4.a]  Korisnik promijeni svoje osobne podatke, ali ne odabere opciju ”Pohrani
+					promjene”
+					\item[] \begin{packed_enum}
+						
+						\item Sustav upozorava korisnika da nije spremio podatke prije izlaska iz prozora
+						\item Korisnik se vraća i pohranjuje promjene ili izlazi iz prozora ostavljajući podatke bez promjene
+					\end{packed_enum}
+				
+					\item [4.b]  Korisnik promijeni svoje osobne podatke, ali u neispravan format
+					\item[] \begin{packed_enum}
+						
+						\item Sustav upozorava korisnika da je podatak u neispravnom formatu i ne dopušta pohranu takvih podataka
+						\item Korisnik mijenja podatak i pohranjuje promjene ili izlazi iz prozora ostavljajući podatke bez promjene
 					\end{packed_enum}
 					
-					\item  \textbf{Opis mogućih odstupanja:}
-					
-					\item[] \begin{packed_item}
+						\item [6.b]  Korisnik promijeni svoje osobne podatke, ali je nova email adresa već zauzeta
+					\item[] \begin{packed_enum}
 						
-						\item [2.a] Neispravno ime/lozinka
-						\item[] \begin{packed_enum}
-							
-							\item Sustav obavještava korisnika o neuspjelom upisu i vraća ga na stranicu za prijavu
-							
-						\end{packed_enum}
-					\end{packed_item}
+						\item Sustav upozorava korisnika da je email adresa već zauzeta i da promjene ne mogu biti pohranjene
+						\item Korisnik mijenja email adresu i pohranjuje promjene ili izlazi iz prozora ostavljajući podatke bez promjene
+					\end{packed_enum}
 				\end{packed_item}
-				
+			\end{packed_item}
 		
-				                                                                 
+		
+				\noindent \underbar{\textbf{UC9 - Brisanje korisničkog računa (udruge ili građanina)}}
+			\begin{packed_item}
 				
+				\item \textbf{Glavni sudionik:} Registrirani građanin/registrirana udruga
+				\item  \textbf{Cilj:} Izbrisati vlastiti korisnički račun
+				\item  \textbf{Sudionici:} Baza podataka
+				\item  \textbf{Preduvjet:} Registrirani korisnik (udruga ili građanin) je prijavljen u sustav
+				\item  \textbf{Opis osnovnog tijeka:}
+				
+				\item[] \begin{packed_enum}	
+					\item Korisnik iz izborne trake odabire "Osobni podatci"
+					\item Otvara se stranica sa korisnikovim osobnim podatcima
+					\item Korisnik bira "Uredi profil"
+					\item Korisnik bira "Izbriši korisniči račun"
+					\item Sustav upozorava korisnika da je brisanje korisničkog računa trajno te provjerava je li siguran
+					\item Korisnik potvrđuje brisanje
+					\item Korisnički račun se briše iz baze podataka
+					\item Otvara se naslovna stranica
+				\end{packed_enum}
+				\item  \textbf{Opis mogućih odstupanja:}
+				
+				\item[] \begin{packed_item}
 					
-				\subsubsection{Dijagrami obrazaca uporabe}
+					\item [5.a]  Korisnik poništi brisanje računa
+					\item[] \begin{packed_enum}
+						\item Račun se ne briše te se baza ne ažurira
+						\item Korisnik je ostavljen na stranici "Uredi profil"
+					\end{packed_enum}
+				\end{packed_item}
+			\end{packed_item}
+		
+			
+				\noindent \underbar{\textbf{UC10 - Dodavanje novog profila psa u listu prijavljene udruge}}
+			\begin{packed_item}
+				
+				\item \textbf{Glavni sudionik:} Registrirana udruga
+				\item  \textbf{Cilj:} Dodati profil nekog psa iz te (prijavljene) udruge
+				\item  \textbf{Sudionici:} Baza podataka
+				\item  \textbf{Preduvjet:} Registrirana udruga je prijavljena u sustav
+				\item  \textbf{Opis osnovnog tijeka:}
+				
+				\item[] \begin{packed_enum}
+					\item Korisnik iz izborne trake odabire "Moji psi"
+					\item Otvara se lista svih pasa iz te udruge
+					\item Korisnik bira opciju "Dodaj novog psa"
+					\item Otvara se stranica za upis podataka o novom psu 
+					\item Korisnik upiše podatke, opcionalno dodaje i sliku
+					\item Korisnik bira opciju "Dodaj psa"
+					\item Baza se ažurira
+				\end{packed_enum}
+				
+				\item  \textbf{Opis mogućih odstupanja:}
+				
+				\item[] \begin{packed_item}
 					
-					\textit{Prikazati odnos aktora i obrazaca uporabe odgovarajućim UML dijagramom. Nije nužno nacrtati sve na jednom dijagramu. Modelirati po razinama apstrakcije i skupovima srodnih funkcionalnosti.}
-				\eject		
+					\item [4.a]  Korisnik upiše podatke o psu, ali ne odabere opciju "Dodaj psa"
+					\item[] \begin{packed_enum}
+						
+						\item Sustav upozorava korisnika da nije spremio nove podatke prije izlaska iz prozora
+						\item Korisnik se vraća i pohranjuje podatke ili izlazi iz prozora bez dodavanja novog psa
+					\end{packed_enum}
+					
+					\item [4.b]  Korisnik upiše podatke o psu, ali novi podatci su u neispravanom formatu
+					\item[] \begin{packed_enum}
+						
+						\item Sustav upozorava korisnika da je podatak (ili više njih) u neispravnom formatu i ne dopušta pohranu takvih podataka
+						\item Korisnik mijenja podatak/e i pohranjuje ih ili izlazi iz prozora bez dodavanja novog psa
+					\end{packed_enum}
+				\end{packed_item}
+			\end{packed_item}
+		
+		
+				\noindent \underbar{\textbf{UC11 - Uređivanje profila psa neke udruge}}
+			\begin{packed_item}
 				
-			\subsection{Sekvencijski dijagrami}
+				\item \textbf{Glavni sudionik:} Registrirana udruga
+				\item  \textbf{Cilj:} Urediti profil nekog psa iz te (prijavljene) udruge
+				\item  \textbf{Sudionici:} Baza podataka
+				\item  \textbf{Preduvjet:} Registrirana udruga je prijavljena u sustav
+				\item  \textbf{Opis osnovnog tijeka:}
 				
-				\textbf{\textit{dio 1. revizije}}\\
+				\item[] \begin{packed_enum}
+					\item Korisnik iz izborne trake odabire "Moji psi"
+					\item Otvara se lista svih pasa iz te udruge
+					\item Korisnik bira psa čiji profil želi urediti
+					\item Korisnik mijenja podatke 
+					\item Korisnik bira opciju "Pohrani promjene"
+					\item Baza se ažurira
+				\end{packed_enum}
 				
-				\textit{Nacrtati sekvencijske dijagrame koji modeliraju najvažnije dijelove sustava (max. 4 dijagrama). Ukoliko postoji nedoumica oko odabira, razjasniti s asistentom. Uz svaki dijagram napisati detaljni opis dijagrama.}
-				\eject
+				\item  \textbf{Opis mogućih odstupanja:}
+				
+				\item[] \begin{packed_item}
+					
+					\item [4.a]  Korisnik promijeni podatke o psu, ali ne odabere opciju ”Pohrani
+					promjene”
+					\item[] \begin{packed_enum}
+						
+						\item Sustav upozorava korisnika da nije spremio podatke prije izlaska iz prozora
+						\item Korisnik se vraća i pohranjuje promjene ili izlazi iz prozora ostavljajući podatke bez promjene
+					\end{packed_enum}
+					
+					\item [4.b]  Korisnik promijeni podatke o psu, ali novi podatci su u neispravanom formatu
+					\item[] \begin{packed_enum}
+						
+						\item Sustav upozorava korisnika da je podatak (ili više njih) u neispravnom formatu i ne dopušta pohranu takvih podataka
+						\item Korisnik mijenja podatak/e i pohranjuje promjene ili izlazi iz prozora ostavljajući podatke bez promjene
+					\end{packed_enum}
+				\end{packed_item}
+			\end{packed_item}
+		
+		
+			\noindent \underbar{\textbf{UC12 - Brisanje profila psa iz liste neke udruge}}
+		\begin{packed_item}
+			
+			\item \textbf{Glavni sudionik:} Registrirana udruga
+			\item  \textbf{Cilj:} Obrisati profil nekog psa iz liste pasa te (prijavljene) udruge
+			\item  \textbf{Sudionici:} Baza podataka
+			\item  \textbf{Preduvjet:} Registrirana udruga je prijavljena u sustav
+			\item  \textbf{Opis osnovnog tijeka:}
+			
+			\item[] \begin{packed_enum}
+				\item Korisnik iz izborne trake odabire "Moji psi"
+				\item Otvara se lista svih pasa iz te udruge
+				\item Korisnik bira psa čiji profil želi obrisati
+				\item Korisnik bira opciju "Obriši profil psa" 
+				\item Sustav šalje upit korisniku je li siguran
+				\item Korisnik potvrđuje brisanje
+				\item Profil tog psa se briše iz baze podataka
+				\item Otvara se stranica "Moji psi"
+			\end{packed_enum}
+			\item  \textbf{Opis mogućih odstupanja:}
+			
+			\item[] \begin{packed_item}
+				
+				\item [5.a]  Korisnik poništi brisanje profila psa
+				\item[] \begin{packed_enum}
+					\item Profil psa se ne briše te se baza ne ažurira
+					\item Korisnik je ostavljen na stranici "Uredi profil psa"
+				\end{packed_enum}
+			\end{packed_item}
+		\end{packed_item}
 	
-		\section{Ostali zahtjevi}
+	
+	
+		\noindent \underbar{\textbf{UC13 - Rezervacija termina šetnje}}
+	\begin{packed_item}
 		
+		\item \textbf{Glavni sudionik:} Registrirani građanin (šetač)
+		\item  \textbf{Cilj:} Šetač rezervira psa i termin u kojem će obaviti šetnju tog psa
+		\item  \textbf{Sudionici:} Baza podataka
+		\item  \textbf{Preduvjet:} Registrirani građanin (šetač) je prijavljen u sustav
+		\item  \textbf{Opis osnovnog tijeka:}
+		
+		\item[] \begin{packed_enum}
+			\item Šetač dolazi na stranicu za odabir profila psa preko:
+				\item[] \begin{packed_enum}
+					\item profila neke udruge (\hyperlink{UC1}{UC1})
+					\item liste svih pasa (\hyperlink{UC2}{UC2})
+				\end{packed_enum}
+			\item Šetač odabire psa kojeg želi šetati
+			\item Šetač dobiva uvid u slobodne termine odabranog psa te bira neki
+			\item Sustav šalje potvrdu rezervacije termina šetaču
+			\item Nakon uspješne rezervacije, termin za odabranog psa vidljiv je na kalendaru šetaču
+		\end{packed_enum}
+		\item  \textbf{Opis mogućih odstupanja:}
+		
+		\item[] \begin{packed_item}
+			
+			\item [4.a]  Odabrani pas nema slobodnih termina za šetnje
+			\item[] \begin{packed_enum}
+				\item Šetač izlazi iz profila psa i može tražiti novog psa za šetnju
+			\end{packed_enum}
+		\end{packed_item}
+	\end{packed_item}
+
+
+	\noindent \underbar{\textbf{UC14 - Pregled vlastitih statistika šetnji}}
+	\begin{packed_item}
+		
+		\item \textbf{Glavni sudionik:} Registrirani građanin (šetač)
+		\item  \textbf{Cilj:} Pregledati svoju statistiku šetnji u određenom razdoblju
+		\item  \textbf{Sudionici:} Baza podataka
+		\item  \textbf{Preduvjet:} Registrirani građanin (šetač) je prijavljen u sustav
+		\item  \textbf{Opis osnovnog tijeka:}
+		
+		\item[] \begin{packed_enum}
+			\item Šetač bira opciju "Moj profil" na izbornoj traci odnosno odlazi na stranicu svog profila
+			\item Šetač odabire opciju "Moja statistika" na stranici profila
+			\item Šetač bira razdoblje u kojem želi pregledati statistiku
+			\item Statistika je prikazana te ju šetač može proučiti 
+		\end{packed_enum}
+	\end{packed_item}
+
+\newpage
+	
+	\noindent \underbar{\textbf{UC15 - Označavanje statistike šetnji kao javne}}
+	\begin{packed_item}
+		
+		\item \textbf{Glavni sudionik:} Registrirani građanin (šetač)
+		\item  \textbf{Cilj:} Učiniti svoju statistiku šetnji javno dostupnom kako bi se mogla prikazati na rang-listi šetača
+		\item  \textbf{Sudionici:} Baza podataka
+		\item  \textbf{Preduvjet:} Registrirani građanin (šetač) je prijavljen u sustav
+		\item  \textbf{Opis osnovnog tijeka:}
+		
+		\item[] \begin{packed_enum}
+			\item Šetač bira opciju "Moj profil" na izbornoj traci odnosno odlazi na stranicu svog profila
+			\item Šetač odabire opciju "Moja statistika" na stranici profila te se prikazuje stranica njegove statistike
+			\item Šetač odabire opciju "Označi svoju statistiku javnom" 
+			\item Njegova statistika je prikazana na javnoj rang-listi šetača
+		\end{packed_enum}
+	\end{packed_item}
+
+
+
+
+	\noindent \underbar{\textbf{UC16 - Pregled i skidanje (eng.download) kalendara registriranog građanina}}
+	\begin{packed_item}
+		
+		\item \textbf{Glavni sudionik:} Registrirani građanin (šetač)
+		\item  \textbf{Cilj:} Pregledati svoj kalendar odnosno raspored rezerviranih šetnji i skinuti raspored za dan, mjesec ili godinu u PDF-u
+		\item  \textbf{Sudionici:} Baza podataka
+		\item  \textbf{Preduvjet:} Registrirani građanin (šetač) je prijavljen u sustav
+		\item  \textbf{Opis osnovnog tijeka:}
+		
+		\item[] \begin{packed_enum}
+			\item Šetač bira opciju "Moj profil" na izbornoj traci odnosno odlazi na stranicu svog profila
+			\item Šetač odabire opciju "Moj kalendar" na stranici profila
+			\item Šetač može birati želi li vidjeti raspored za dan, mjesec ili godinu
+			\item Šetač može skinuti odabrani raspored u PDF-u
+		\end{packed_enum}
+	\end{packed_item}
+		
+		
+		
+		
+		
+		
+		
+		
+			
+			
+	
+                                                                 
+			
+				
+			\subsubsection{Dijagrami obrazaca uporabe}
+				
+				\textit{Prikazati odnos aktora i obrazaca uporabe odgovarajućim UML dijagramom. Nije nužno nacrtati sve na jednom dijagramu. Modelirati po razinama apstrakcije i skupovima srodnih funkcionalnosti.}
+			\eject		
+			
+		\subsection{Sekvencijski dijagrami}
+			
 			\textbf{\textit{dio 1. revizije}}\\
-		 
-			 \textit{Nefunkcionalni zahtjevi i zahtjevi domene primjene dopunjuju funkcionalne zahtjeve. Oni opisuju \textbf{kako se sustav treba ponašati} i koja \textbf{ograničenja} treba poštivati (performanse, korisničko iskustvo, pouzdanost, standardi kvalitete, sigurnost...). Primjeri takvih zahtjeva u Vašem projektu mogu biti: podržani jezici korisničkog sučelja, vrijeme odziva, najveći mogući podržani broj korisnika, podržane web/mobilne platforme, razina zaštite (protokoli komunikacije, kriptiranje...)... Svaki takav zahtjev potrebno je navesti u jednoj ili dvije rečenice.}
-			 
-			 
-			 
+			
+			\textit{Nacrtati sekvencijske dijagrame koji modeliraju najvažnije dijelove sustava (max. 4 dijagrama). Ukoliko postoji nedoumica oko odabira, razjasniti s asistentom. Uz svaki dijagram napisati detaljni opis dijagrama.}
+			\eject
+
+	\section{Ostali zahtjevi}
 	
+		\textbf{\textit{dio 1. revizije}}\\
+ 
+	 \textit{Nefunkcionalni zahtjevi i zahtjevi domene primjene dopunjuju funkcionalne zahtjeve. Oni opisuju \textbf{kako se sustav treba ponašati} i koja \textbf{ograničenja} treba poštivati (performanse, korisničko iskustvo, pouzdanost, standardi kvalitete, sigurnost...). Primjeri takvih zahtjeva u Vašem projektu mogu biti: podržani jezici korisničkog sučelja, vrijeme odziva, najveći mogući podržani broj korisnika, podržane web/mobilne platforme, razina zaštite (protokoli komunikacije, kriptiranje...)... Svaki takav zahtjev potrebno je navesti u jednoj ili dvije rečenice.}
+	 
+	 
+	 
