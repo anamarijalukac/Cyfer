@@ -2,21 +2,21 @@
 	
 \section{Funkcionalni zahtjevi}
 		
+		\iffalse
 		\textbf{\textit{dio 1. revizije}}\\
 		
 		\textit{Navesti \textbf{dionike} koji imaju \textbf{interes u ovom sustavu} ili  \textbf{su nositelji odgovornosti}. To su prije svega korisnici, ali i administratori sustava, naručitelji, razvojni tim.}\\
 			
 		\textit{Navesti \textbf{aktore} koji izravno \textbf{koriste} ili \textbf{komuniciraju sa sustavom}. Oni mogu imati inicijatorsku ulogu, tj. započinju određene procese u sustavu ili samo sudioničku ulogu, tj. obavljaju određeni posao. Za svakog aktora navesti funkcionalne zahtjeve koji se na njega odnose.}\\
-		
+		\fi
 		
 		\noindent \textbf{Dionici:}
 		
 		\begin{packed_enum}
 			
 			\item Voditelji udruga
-			\item Šetači pasa (registrirani korisnici)			
+			\item Šetači pasa			
 			\item Zaposlenici i volonteri u udrugama
-			\item Administrator
 			\item Razvojni tim
 			
 		\end{packed_enum}
@@ -57,6 +57,7 @@
 					\item vrsta šetnje za koju je pas predodređen (skupna ili individualna)
 				\end{packed_enum} 
 				\item otvoriti statistiku svih pasa raspoloživih za šetnju i vidjeti koji pas se najmanje šteao, odnosno kojem psu je šetnja najpotrebnija
+				\item  otvoriti rang-listu svih registriranih šetača poredanu s obzirom na broj šetnji, broj pasa te duljinu šetnje koju su odradili u proteklih mjesec dana
 				\item registrirati se u sustav kao građanin - za stvaranje korisničkog računa potrebni su mu:
 				\begin{packed_enum}
 					\item ime i prezime
@@ -71,16 +72,26 @@
 					\item naziv udruge
 					\item OIB udruge
 				\end{packed_enum}
-				\item  otvoriti rang-listu svih registriranih šetača poredanu s obzirom na broj šetnji, broj pasa te duljinu šetnje koju su odradili u proteklih mjesec dana
+			
 				
 			\end{packed_enum}
 			\vspace{5mm}
-		
-			\item  \underbar{Prijavljeni građanin (inicijator)} preuzima sve funkcionalnosti javnog posjetitelja te može dodatno:
+			
+			\item  \underbar{Registrirani korisnik (inicijator)} preuzima sve funkcionalnosti javnog posjetitelja (osim registracije) te može dodatno:
 			\begin{packed_enum}
-				\item prijaviti se u sutav (s e-mailom i lozinkom)
-				\item uređivati vlastiti profil
-				\item obrisati vlastiti profil
+				\item prijaviti se u sustav (s e-mailom i lozinkom)
+				\item uz uvjet da je prijavljen u sustav:
+				\item[]
+				\begin{packed_enum}
+					\item pregledati vlastiti profil
+					\item uređivati vlastiti profil
+					\item obrisati vlastiti profil
+				\end{packed_enum}	
+			\end{packed_enum}
+			\vspace{5mm}
+		
+			\item  \underbar{Registrirani građanin (inicijator)} preuzima sve funkcionalnosti registriranog korisnika te (uz uvjet da je prijavljen) može još dodatno:
+			\begin{packed_enum}
 				\item odabrati psa te na njegovom profilu prijaviti se za šetnju
 				\item pregledati vlastiti raspored šetnji te skinuti (eng. download) raspored za odabrani dan, tjedan ili mjesec, u PDF obliku
 				\item pregledati vlastitu statistiku šetanja
@@ -88,28 +99,19 @@
 			\end{packed_enum}
 			\vspace{5mm}
 		
-			\item  \underbar{Prijavljena udruga (inicijator)} preuzima sve funkcionalnosti javnog posjetitelja te može dodatno:
+			\item  \underbar{Registrirana udruga (inicijator)} preuzima sve funkcionalnosti registriranog korisnika te (uz uvjet da je prijavljena) može dodatno:
 			\begin{packed_enum}
-				\item prijaviti se u sutav (s e-mailom i lozinkom)
-				\item uređivati vlastiti profil
 				\item dodavati i brisati pse iz liste raspoloživih pasa te udruge
 				\item uređivati profile pasa koji su iz te udruge 
-				\item obrisati vlasitti profil
 			\end{packed_enum}
 			\vspace{5mm}
 		
-			\item  \underbar{Administrator(inicijator)} može:
-			\begin{packed_enum}
-				\item vidjeti popis svih registriranih korisnika i udruga njihovih osobnih podataka
-				\item dodati ili obrisati udruge
-				\item ???
-			\end{packed_enum}
-			\vspace{5mm}
+			
 		
 			\item  \underbar{Baza podataka (sudionik)}:
 			\begin{packed_enum}
 				\item pohranjuje sve podatke o korisnicima i udrugama 
-				\item ???
+				\item pohranjuje sve podatke o šetnjama (obavljenim i rezerviranim) te o psima iz udruga 
 			\end{packed_enum}
 		
 		\end{packed_enum}
@@ -205,7 +207,7 @@
 	
 
 	
-			\noindent \underbar{\textbf{UC5 - Registracija građanina ili udruge u sustav}}
+			\noindent \underbar{\textbf{UC5 - Registracija korisnika (građanina ili udruge) u sustav}}
 			\begin{packed_item}
 				
 				\item \textbf{Glavni sudionik:} Javni posjetitelj
@@ -216,10 +218,10 @@
 				
 				\item[] \begin{packed_enum}
 					
-					\item Korisnik odabire opciju (gumb) za registraciju 
-					\item Korisnik bira "Registriraj se kao građanin" ili "Registriraj se kao udruga"
-					\item Korisnik unosi potrebne korisničke podatke (ime, prezime, email adresa i lozinka za građanina te dodatno ime udruge i OIB udruge za udrugu)
-					\item Korisnik odabire opciju "Stvori korisnički račun"
+					\item Javni posjetitelj odabire opciju (gumb) za registraciju 
+					\item Javni posjetitelj bira "Registriraj se kao građanin" ili "Registriraj se kao udruga"
+					\item Javni posjetitelj unosi potrebne korisničke podatke (ime, prezime, email adresa i lozinka za građanina te dodatno ime udruge i OIB udruge za udrugu)
+					\item Javni posjetitelj odabire opciju "Stvori korisnički račun"
 					\item Korisnik prima obavijest o uspješnoj registraciji
 				\end{packed_enum}
 				
@@ -246,10 +248,10 @@
 		
 		
 		
-			\noindent \underbar{\textbf{UC6 - Prijava građanina ili udruge u sustav}}
+			\noindent \underbar{\textbf{UC6 - Prijava korisnika (građanina ili udruge) u sustav}}
 			\begin{packed_item}
 				
-				\item \textbf{Glavni sudionik:} Registrirani građanin/registrirana udruga
+				\item \textbf{Glavni sudionik:} Registrirani korisnik (građanin/udruga)
 				\item  \textbf{Cilj:} Dobiti pristup odgovarajućem korisničkom sučelju
 				\item  \textbf{Sudionici:} Baza podataka
 				\item  \textbf{Preduvjet:} Registracija građanina ili udruge u sustav
@@ -279,7 +281,7 @@
 				\noindent \underbar{\textbf{UC7 - Pregled osobnih podataka korisnika (udruge ili građanina)}}
 			\begin{packed_item}
 				
-				\item \textbf{Glavni sudionik:} Registrirani građanin/registrirana udruga
+				\item \textbf{Glavni sudionik:} Registrirani korisnik (udruga/građanin)
 				\item  \textbf{Cilj:} Pregledati osobne podatke/podatke udruge
 				\item  \textbf{Sudionici:} Baza podataka
 				\item  \textbf{Preduvjet:} Registrirani korisnik (udruga ili građanin) je prijavljen u sustav
@@ -296,7 +298,7 @@
 				\noindent \underbar{\textbf{UC8 - Promjena osobnih podataka korisnika}}
 			\begin{packed_item}
 				
-				\item \textbf{Glavni sudionik:} Registrirani građanin/registrirana udruga
+				\item \textbf{Glavni sudionik:} Registrirani korisnik (udruga/građanin)
 				\item  \textbf{Cilj:} Promijeniti osobne podatke/podatke udruge
 				\item  \textbf{Sudionici:} Baza podataka
 				\item  \textbf{Preduvjet:} Registrirani korisnik (udruga ili građanin) je prijavljen u sustav
@@ -343,7 +345,7 @@
 				\noindent \underbar{\textbf{UC9 - Brisanje korisničkog računa (udruge ili građanina)}}
 			\begin{packed_item}
 				
-				\item \textbf{Glavni sudionik:} Registrirani građanin/registrirana udruga
+				\item \textbf{Glavni sudionik:} Registrirani korisnik (udruga/građanin)
 				\item  \textbf{Cilj:} Izbrisati vlastiti korisnički račun
 				\item  \textbf{Sudionici:} Baza podataka
 				\item  \textbf{Preduvjet:} Registrirani korisnik (udruga ili građanin) je prijavljen u sustav
@@ -573,23 +575,21 @@
 		\end{packed_enum}
 	\end{packed_item}
 		
-		
-		
-		
-		
-		
-		
-		
-			
-			
-	
-                                                                 
-			
+
+		\subsubsection{Dijagrami obrazaca uporabe}
 				
-			\subsubsection{Dijagrami obrazaca uporabe}
-				
-				\textit{Prikazati odnos aktora i obrazaca uporabe odgovarajućim UML dijagramom. Nije nužno nacrtati sve na jednom dijagramu. Modelirati po razinama apstrakcije i skupovima srodnih funkcionalnosti.}
-			\eject		
+				\begin{figure}[H]
+					\includegraphics[scale=0.55]{dijagrami/usecase1.PNG} %veličina u odnosu na širinu linije
+					\caption{Dijagram obrasca uporabe: Prikaz funkcionalnosti javnog posjetitelja te  registriranog korisnika}
+					\label{fig:usecase1} %label mora biti drugaciji za svaku sliku
+				\end{figure}
+			
+				\begin{figure}[H]
+					\includegraphics[scale=0.55]{dijagrami/usecase2.PNG} %veličina u odnosu na širinu linije
+					\caption{Dijagram obrasca uporabe: Prikaz funkcionalnosti registriranog građanina i udruge}
+					\label{fig:usecase2} %label mora biti drugaciji za svaku sliku
+				\end{figure}
+		\eject	
 			
 		\subsection{Sekvencijski dijagrami}
 			
@@ -600,9 +600,23 @@
 
 	\section{Ostali zahtjevi}
 	
+	\iffalse
+	
 		\textbf{\textit{dio 1. revizije}}\\
  
 	 \textit{Nefunkcionalni zahtjevi i zahtjevi domene primjene dopunjuju funkcionalne zahtjeve. Oni opisuju \textbf{kako se sustav treba ponašati} i koja \textbf{ograničenja} treba poštivati (performanse, korisničko iskustvo, pouzdanost, standardi kvalitete, sigurnost...). Primjeri takvih zahtjeva u Vašem projektu mogu biti: podržani jezici korisničkog sučelja, vrijeme odziva, najveći mogući podržani broj korisnika, podržane web/mobilne platforme, razina zaštite (protokoli komunikacije, kriptiranje...)... Svaki takav zahtjev potrebno je navesti u jednoj ili dvije rečenice.}
 	 
+	 \fi
 	 
+	 \begin{packed_item}
+	 	\item Sustav treba omogućiti rad više korisnika u stvarnom vremenu 
+	 	\item  Korisničko sučelje i sustav moraju podržavati hrvatsku abecedu (dijakritičke znakove) pri unosu i prikazu tekstualnog sadržaja
+	 	\item  Izvršavanje dijela programa u kojem se pristupa bazi podataka ne smije trajati duže od nekoliko sekundi
+	 	\item  Sustav treba biti implementiran kao web aplikacija koristeći objektno-orijentirane jezike
+	 	\item  Neispravno korištenje korisničkog sučelja ne smije narušiti funkcionalnost i rad sustava
+	 	\item  Sustav treba biti jednostavan za korištenje, korisnici se moraju znati koristiti sučeljem bez opširnih uputa
+	 	\item  Nadogradnja sustava ne smije narušavati postojeće funkcionalnosti sustava
+	 	\item  Veza s bazom podataka mora biti kvalitetno zastićena, brza i otporna na vanjske greške
+	 	\item  Pristup sustavu mora biti omogućen iz javne mreže pomoću HTTPS. 
+	 \end{packed_item}
 	 
