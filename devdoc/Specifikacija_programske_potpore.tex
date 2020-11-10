@@ -592,12 +592,20 @@
 		\eject	
 			
 		\subsection{Sekvencijski dijagrami}
-			
+			\iffalse
 			\textbf{\textit{dio 1. revizije}}\\
 			
 			\textit{Nacrtati sekvencijske dijagrame koji modeliraju najvažnije dijelove sustava (max. 4 dijagrama). Ukoliko postoji nedoumica oko odabira, razjasniti s asistentom. Uz svaki dijagram napisati detaljni opis dijagrama.}
 			\eject
-
+			\fi
+			\subsubsection{Obrazac uporabe UC8: Promjena osobnih podataka korisnika}
+			Korisnik šalje zahtjev za prikaz osobnih podataka. Poslužitelj dohvaća osobne podatke te ih prikazuje. Korisnik zatraži uređivanje osobnih podataka te mu aplikacija ponudi obrazac za promjenu podataka. Korisnik ispunjava podatke te bira "Spremi podatke". Ako su podaci u nesipravnom formatu, aplikacija ga upozorava na to. Ako korisnik uredi podatke u ispravan format, podaci se šalju bazi. U slučaju da je nova email adresa već zauzeta, baza šalje upozorenje aplikaciji, a aplikacija korisniku. Ako su podaci ispravni, aplikacija šalje korisniku poruku da su podaci uspješno izmijenjeni. U slučaju da korisnik izađe iz obrasca za uređivanje osobnih podataka, aplikacija korisniku šalje upozorenje da podaci nisu spremljeni.
+			\begin{figure}[H]
+				\includegraphics[scale=0.5]{dijagrami/SD1.png} %veličina u odnosu na širinu linije
+				\caption{Sekvencijski dijagram: Promjena osobnih podataka korisnika}
+				\label{fig:SD1} %label mora biti drugaciji za svaku sliku
+			\end{figure}
+		
 	\section{Ostali zahtjevi}
 	
 	\iffalse

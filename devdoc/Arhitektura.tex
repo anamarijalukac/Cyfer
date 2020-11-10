@@ -1,5 +1,6 @@
 \chapter{Arhitektura i dizajn sustava}
 		
+		\iffalse
 		\textbf{\textit{dio 1. revizije}}\\
 
 		\textit{ Potrebno je opisati stil arhitekture te identificirati: podsustave, preslikavanje na radnu platformu, spremišta podataka, mrežne protokole, globalni upravljački tok i sklopovsko-programske zahtjeve. Po točkama razraditi i popratiti odgovarajućim skicama:}
@@ -8,6 +9,91 @@
 		\item 	\textit{organizaciju sustava s najviše razine apstrakcije (npr. klijent-poslužitelj, baza podataka, datotečni sustav, grafičko sučelje)}
 		\item 	\textit{organizaciju aplikacije (npr. slojevi frontend i backend, MVC arhitektura) }		
 	\end{itemize}
+\fi
+	S najviše razine apstrakcije, arhitekturu možemo podijeliti na tri podsustava:
+	\begin{itemize}
+		\item Web poslužitelj
+		\item Web aplikacija
+		\item Baza podataka
+	\end{itemize}
+
+\vspace{15pt} 
+\begin{figure}[H]
+	\includegraphics[scale=0.75]{slike/apstraktna-arh.PNG} %veličina slike u odnosu na originalnu datoteku i pozicija slike
+	\centering
+	\caption{Apstraktna arhitektura sustava}
+	\label{fig:arh}
+\end{figure}
+\vspace{15pt}
+
+\underline{Web preglednik} (eng. web browser) je program koji korisniku omogućuje pregled web-stranica i multimedijalnih sadržaja vezanih uz njih. Preglednik omogućuje komunikaciju između klijenta i poslužitelja. Dakle, korisnik će putem preglednika slati zahtjeve poslužitelju te će preglednik znati prikazati sadržaj koji poslužitelj vraća. \par
+\vspace{10pt}
+\underline{Web poslužitelj}  ima zadatak da pohranjuje, obrađuje i dostavlja klijentima web
+stranice. Komunikacija između web poslužitelja i web klijenta (najčešće, web
+pretraživača) odvija se korištenjem HTTP i drugih sličnih protokola (HTTPS,
+HTTP/2 i različitih nadogradnji tih protokola). U komunikaciji putem HTTP-a, web
+poslužitelj tipično sluša nadolazeće zahtjeve klijenata na portu 80. Web stranice koje
+web poslužitelj isporučuje klijentu su HTML dokumenti, koji uključuju tekst, slike,
+stilove, skripte i drugi sadržaj. \par
+\vspace{10pt}
+\underline{Web aplikacija} obrađuje korisnikove zahtjeve te ako je potrebno, pristupa bazi podataka i dohvaća/mijenja podatke. Nakon toga preko poslužitelja vraća korisniku odgovor u obliku HTML dokumenta koji se prikazuje u web pregledniku.\par
+\vspace{10pt}
+\underline{Baza podataka} pohranjuje podatke na sustavan način.  Računalni program korišten za upravljanje i ispitivanje baze podataka nazvan je sustav upravljanja bazom podataka (SUBP).\par
+
+\vspace{15pt}
+	
+	Arhitektura i stil našeg sustava se može identificirati kao \textbf {višeslojni stil arhitekture}. Naime, naša arhitektura je uglavnom definirana činjenicom da koristimo \textbf{Spring Boot}. Obrazac koji se koristi u okviru radnog okvira Spring Boot je jedan od suvremenih primjera organizacije višeslojne arhitekture, a karakteriziraju ga dva principa:
+	\begin{itemize}
+		\item inverzija upravljanja (engl. inversion of control)
+		\item ubacivanje ovisnosti (engl. dependency injection)
+	\end{itemize}
+
+	\underline{Inverzija upravljanja} funkcionira tako da korisnički napisani dijelovi (web) aplikacije
+	dobiju upravljački tok i izvode se kada ih prozove neki generički radni okvir.  To je
+	inverzno u odnosu na tradicionalno programiranje u kojem korisnički kôd poziva
+	određene knjižnice kako bi se mogao izvršavati. U slučaju inverzije upravljanja, radni
+	okvir za web aplikacije (u ovom slučaju, Spring Boot) poziva korisnički kod.
+	
+	\underline{Ubacivanje ovisnosti} je najčešći način kako u praksi funkcionira inverzija upravljanja. Korisnički kod prima kao argumente metoda određene objekte, koji se u ovoj terminologiji zovu uslugama (engl. service), a koji su specificirani od strane radnog
+	okvira kako bi sustav uspješno radio. Tako radni okvir, koji se u ovoj terminologiji
+	naziva ubacivač ili injektor (engl. injector) ubacuje ovisnost o svojem određenom
+	ugrađenom objektu u korisnički kod i definira sučelje (engl. interface) putem kojeg
+	korisnički kôd pristupa usluzi. 
+	
+	\vspace{15pt} 
+	
+	Naša arhitektura se tako sastoji od slojeva:
+	
+	\begin{itemize}
+		\item \underline{sloj korisničke strane} – implementiran u JavaScriptu, koristeći knjižnicu \textbf{React} koja omogućuje prikaz korisničkog sučelja
+		\item \underline{sloj nadglednika} (engl. controller) – povezuje korisničku stranu s poslužiteljskom stranom
+		\item \underline{sloj usluge} (engl. service) – obavlja svu poslovnu logiku i potrebne izračune
+		\item \underline{sloj domene} (engl. domain) – ima razrađeni model podataka domene
+		\item \underline{sloj za pristup podatcima} (engl. data access object, kraće: DAO) – koji
+		omogućuje spremanje i dohvat podataka iz određene baze podataka te
+		razmjenu tih podataka sa slojem domene
+		\item \underline{sloj baze podataka} – koji omogućuje stvarnu pohranu podataka u neku bazu,(u našem slučaju relacijsku bazu Postgre). 
+	\end{itemize} 
+
+\vspace{15pt} 
+\begin{figure}[H]
+	\includegraphics[scale=0.75]{slike/arhitektura.PNG} %veličina slike u odnosu na originalnu datoteku i pozicija slike
+	\centering
+	\caption{Spring Boot arhitektura}
+	\label{fig:spring}
+\end{figure}
+
+Želimo li, radi lakšeg razumijevanja, našu arhitekturu usporediti sa stilom MVC (Model-View-Controller), možemo uočiti da se neki slojevi djelomično poklapaju. Primjerice sloj modela kod MVC-a
+odgovarao bi sloju domene kod Spring Boota, sloj nadglednika kod MVC-a sloju
+nadglednika kod Spring Boota, a sloj pogleda bio bi sloj korisničke strane. 
+
+
+\vspace{15pt}
+Kao što je navedeno, sloj korisničke strane (frontend) je implementiran u Java Scriptu koristeći knjižnicu React. \textbf{React} je besplatna biblioteka otvorenog koda za programski jezik JavaScript koja omogucava razvoj korisničkih sučelja SPA (eng. single-page application). SPA aplikacija je
+tip web-aplikacije koja u interakciji s korisnikom dinamički mijenja dijelove stranice, za razliku od tradicionalnih web-aplikacija koje učitavaju cijele nove stranice s poslužitelja. One se pokreću u browseru i ne zahtijevaju ponovno učitavanje nakon korištenja.
+React omogućava sastavljanje korisničkog sučelja pomoću elemenata koji se nazivaju komponente. Njih je mogucće iznova koristiti u aplikaciji proizvoljno veliki broj puta. Taj pristup pokazao se lakši za održavanje, proširivanje i višestruko korištenje.
+
+
 
 	
 		
