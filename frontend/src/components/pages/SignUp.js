@@ -1,27 +1,69 @@
-import React, { Component } from "react";
+import React from "react";
 import '../../components/pages/LogIn.css';
 
 function SignUp() {
+
+  const [form, setForm] = React.useState({username: '', firstName: '', lastName: '', email:'', password:'', repeatPassword:''});
+
+  function onChange(event){
+    const{name, value} = event.target;
+    setForm(oldForm => ({...oldForm, [name] : value}))
+  }
+
+  function onSubmit(e){
+
+    e.preventDefault();
+
+    const data = {
+      username: form.username,
+      firstName: form.firstName,
+      lastName: form.lastName,
+      email : form.email,
+      password: form.password
+    };
+  
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type' : 'application/json'
+      },
+      body: JSON.stringify(data)
+    };
+
+    if(form.password !== form.repeatPassword){
+      return window.location.reload(false);
+    }
+
+
+
+    return fetch('/walkers/signup', options);
+  }
+
+
+
   return (
     <div class="container">
-      <form>
-        <h1>Registracija</h1>
+      <form onSubmit = {onSubmit}>
+        <h1>Registracija korisnika</h1>
 
         <div className="container">
+          <label>Korisničko ime: </label>
+          <input type="text" name='username' placeholder = "Upiši korisničko ime" onChange = {onChange} value = {form.username} required/>
+
           <label>Ime: </label>
-          <input type="text" className="form-control" placeholder required/>
+          <input type="text" name='firstName' placeholder = "Upiši ime" onChange = {onChange} value = {form.firstName} required/>
 
           <label>Prezime: </label>
-          <input type="text" className="form-control" placeholder required/>
+          <input type="text" name='lastName' placeholder = "Upiši prezime" onChange = {onChange} value = {form.lastName} required/>
 
-          <label>Email: </label>
-          <input type="text" className="form-control" placeholder required/>
+          <label>E-mail: </label>
+          <input type="text" name='email' placeholder="Upiši e-mail" onChange = {onChange} value = {form.email}  required/>
 
           <label>Lozinka: </label>
-          <input type="password" className="form-control" placeholder required/>
+          <input type="password" name='password' placeholder="Upiši lozinku" onChange = {onChange} value = {form.password}  required/>
 
           <label>Ponovi lozinku: </label>
-          <input type="password" className="form-control" placeholder required/>
+          <input type="password" name='repeatPassword' placeholder="Ponovi lozinku" onChange = {onChange} value = {form.repeatPassword}  required/>
 
           <button class='loginbtn' type="submit">Registriraj se</button>
 

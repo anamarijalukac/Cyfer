@@ -1,6 +1,71 @@
 import React from 'react';
-import '../../App.css';
+import '../../components/pages/LogIn.css';
 
-export default function RegUdr() {
-  return <h1 className='RegUdr'>Registriraj udrugu</h1>;
+function RegUdr() {
+
+  const [form, setForm] = React.useState({username: '', OIB: '', name:'', password:'', repeatPassword:''});
+
+  function onChange(event){
+    const{name, value} = event.target;
+    setForm(oldForm => ({...oldForm, [name] : value}))
+  }
+
+  function onSubmit(e){
+
+    e.preventDefault();
+
+    const data = {
+      username: form.username,
+      OIB: form.OIB,
+      name : form.name,
+      password: form.password
+    };
+  
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type' : 'application/json'
+      },
+      body: JSON.stringify(data)
+    };
+
+    if(form.password !== form.repeatPassword){
+      return window.location.reload(false);
+    }
+
+
+
+    return fetch('/shelter/signup', options);
+  }
+
+
+  return (
+    <div class="container">
+      <form onSubmit = {onSubmit}>
+        <h1>Registracija udruge</h1>
+
+        <div className="container">
+          <label>Korisničko ime: </label>
+          <input type="text" name='username' placeholder = "Upiši korisničko ime" onChange = {onChange} value = {form.username} required/>
+
+          <label>OIB: </label>
+          <input type="text" name='OIB' placeholder = "Upiši OIB udruge" onChange = {onChange} value = {form.OIB} required/>
+
+          <label>Ime udruge: </label>
+          <input type="text" name='name' placeholder="Upiši ime udruge" onChange = {onChange} value = {form.name}  required/>
+
+          <label>Lozinka: </label>
+          <input type="password" name='password' placeholder="Upiši lozinku" onChange = {onChange} value = {form.password}  required/>
+
+          <label>Ponovi lozinku: </label>
+          <input type="password" name='repeatPassword' placeholder="Ponovi lozinku" onChange = {onChange} value = {form.repeatPassword}  required/>
+
+          <button class='loginbtn' type="submit">Registriraj se</button>
+
+        </div>
+      </form>
+    </div>
+  );
 }
+
+export default RegUdr;

@@ -1,10 +1,10 @@
-import React, { Component, useState } from "react";
+import React from "react";
 import '../../components/pages/LogIn.css';
 
 
 function LogIn(){
 
-        const [form, setForm] = React.useState({email: '', password: '', checkbox: false});
+        const [form, setForm] = React.useState({username: '', password: '', checkbox: false});
 
         function onChange(event){
           const{name, value} = event.target;
@@ -16,9 +16,8 @@ function LogIn(){
           e.preventDefault();
 
           const data = {
-            email : form.email,
-            password: form.password,
-            checkbox: form.checkbox
+            username : form.username,
+            password: form.password
           };
         
           const options = {
@@ -29,18 +28,18 @@ function LogIn(){
             body: JSON.stringify(data)
           };
 
-          return fetch('/log-in', options);
+          return fetch('/walkers/login', options);
         }
 
 
         return (
           <div class="container">
             <form onSubmit = {onSubmit}>
-                <h1>Log in</h1>
+                <h1>Prijavi se kao korisnik</h1>
 
                 <div className="container">
-                    <label>Email: </label>
-                    <input type="text" name='email' placeholder="Upiši email" onChange = {onChange} value = {form.email} required/>
+                    <label>Korisničko ime: </label>
+                    <input type="text" name='username' placeholder="Upiši korisničko ime" onChange = {onChange} value = {form.username} required/>
 
                     <label>Lozinka: </label>
                     <input type="password" name='password' placeholder="Upiši lozinku" onChange = {onChange} value = {form.password} required/>
@@ -51,9 +50,6 @@ function LogIn(){
                     </div>
 
                 <button class = 'loginbtn' type="submit" >Log in</button>
-                <p name="forgot-password text-right">
-                    Forgot password?
-                </p>
                 </div>
             </form>
           </div>

@@ -59,26 +59,36 @@ function Navbar() {
                 Registriraj udrugu
               </Link>
             </li>
+            <li className='nav-item'>
+              <Link
+                to='/LogInUdr'
+                className='nav-links'
+                onClick={closeMobileMenu}
+              >
+                Prijava udruge
+              </Link>
+            </li>
           </ul>
          <div class='navbar-buttons'>
-          <Link to='/log-in' className='btn-mobile'>
+          <Link to='/sign-up' className='btn-mobile'>
         <Button
           className='btns'
           buttonStyle='btn--outline'
           buttonSize='btn--small'
         >
-          Log in
+          Registracija korisnika
         </Button>
         </Link>
 
-        <Link to='/sign-up' className='btn-mobile'>
+        <Link to='/log-in' className='btn-mobile'>
         <Button
           className='btns'
           buttonStyle='btn--outline'
           buttonSize='btn--small'
         >
-          Sign up
+          Prijava Korisnika
         </Button>
+
         </Link>
         </div>
         </div>

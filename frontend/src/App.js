@@ -8,6 +8,7 @@ import RangList from './components/pages/RangList';
 import RegUdr from './components/pages/RegUdr';
 import SignUp from './components/pages/SignUp';
 import LogIn from './components/pages/LogIn';
+import LogInUdr from './components/pages/LogInUdr';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path='/' exact component={Home} />
           <Route path='/RangList' component={RangList} />
           <Route path='/RegUdr' component={RegUdr} />
+          <Route path='/LogInUdr' component={LogInUdr} />
           <Route path='/info' component={info} />
           <Route path='/sign-up' component={SignUp} />
           <Route path='/log-in' component={LogIn} />
