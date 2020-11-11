@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.27)  10 NOV 2020 23:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.27)  11 NOV 2020 13:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1063,7 +1063,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.30 ...chapter}{Popis literature}{37}{chapter*.4}
+l.33 ...chapter}{Popis literature}{42}{chapter*.7}
                                                   % [1
 
 ])
@@ -1103,7 +1103,7 @@ Overfull \hbox (6.59265pt too wide) in paragraph at lines 36--36
 
 
 Overfull \hbox (6.59265pt too wide) in paragraph at lines 36--36
-[]\OT1/jkp/m/n/12 09.09.2013.|  
+[]\OT1/jkp/m/n/12 11.11.2020.|  
  []
 
 
@@ -1264,10 +1264,10 @@ on with the same identifier (name{figure.3.2}) has been already used, duplicate
                                                   
 l.592 		\eject
               	 <./dijagrami/usecase2.png>]
-<dijagrami/SD1.png, id=437, 954.56625pt x 1043.39813pt>
-File: dijagrami/SD1.png Graphic file (type png)
-<use dijagrami/SD1.png>
-Package pdftex.def Info: dijagrami/SD1.png  used on input line 604.
+<dijagrami/UC8.png, id=437, 954.56625pt x 1043.39813pt>
+File: dijagrami/UC8.png Graphic file (type png)
+<use dijagrami/UC8.png>
+Package pdftex.def Info: dijagrami/UC8.png  used on input line 604.
 (pdftex.def)             Requested size: 477.28197pt x 521.69778pt.
 
 Overfull \hbox (41.67117pt too wide) in paragraph at lines 604--605
@@ -1278,20 +1278,67 @@ Overfull \hbox (41.67117pt too wide) in paragraph at lines 604--605
 e.3.3}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.622 	 	\item  I
-                 zvršavanje dijela programa u kojem se pristupa bazi podata...
- <./dijagrami/SD1.png>]
-Overfull \hbox (23.0035pt too wide) in paragraph at lines 623--624
+l.609 			\newpage
+                  <./dijagrami/UC8.png>]
+<dijagrami/UC10.png, id=451, 805.50937pt x 897.3525pt>
+File: dijagrami/UC10.png Graphic file (type png)
+<use dijagrami/UC10.png>
+Package pdftex.def Info: dijagrami/UC10.png  used on input line 617.
+(pdftex.def)             Requested size: 483.30936pt x 538.41565pt.
+
+Overfull \hbox (47.69856pt too wide) in paragraph at lines 617--618
+[][]
+ []
+
+[23] [24pdfTeX warning (ext4): destination with the same identifier (name{figur
+e.3.4}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.622 			\newpage
+                  <./dijagrami/UC10.png>]
+<dijagrami/UC13.png, id=466, 659.46375pt x 876.27374pt>
+File: dijagrami/UC13.png Graphic file (type png)
+<use dijagrami/UC13.png>
+Package pdftex.def Info: dijagrami/UC13.png  used on input line 647.
+(pdftex.def)             Requested size: 448.42941pt x 595.85826pt.
+
+Overfull \hbox (12.81862pt too wide) in paragraph at lines 647--648
+[][]
+ []
+
+[25] [26pdfTeX warning (ext4): destination with the same identifier (name{figur
+e.3.5}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.655 	
+        <./dijagrami/UC13.png>]
+<dijagrami/UC15.png, id=480, 684.30656pt x 516.42938pt>
+File: dijagrami/UC15.png Graphic file (type png)
+<use dijagrami/UC15.png>
+Package pdftex.def Info: dijagrami/UC15.png  used on input line 657.
+(pdftex.def)             Requested size: 458.48302pt x 346.00589pt.
+
+Overfull \hbox (22.87222pt too wide) in paragraph at lines 657--658
+[][]
+ []
+
+[27pdfTeX warning (ext4): destination with the same identifier (name{figure.3.6
+}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.662 		\newpage
+                 <./dijagrami/UC15.png>]
+Overfull \hbox (23.0035pt too wide) in paragraph at lines 678--679
 []\OT1/jkp/m/n/12 Sustav treba biti im-ple-men-ti-ran kao web apli-ka-cija ko-r
 iste[]ci objektno-orijentirane
  []
 
-) [23]
+) [28]
 \openout2 = `Arhitektura.aux'.
 
  (./Arhitektura.tex
 Poglavlje 4.
-<slike/apstraktna-arh.PNG, id=456, 318.18875pt x 252.945pt>
+<slike/apstraktna-arh.PNG, id=494, 318.18875pt x 252.945pt>
 File: slike/apstraktna-arh.PNG Graphic file (type png)
 <use slike/apstraktna-arh.PNG>
 Package pdftex.def Info: slike/apstraktna-arh.PNG  used on input line 22.
@@ -1308,7 +1355,7 @@ Overfull \hbox (13.6305pt too wide) in paragraph at lines 31--37
 iji pu-tem HTTP-a, web poslu[]zitelj
  []
 
-[24
+[29
 
 
 
@@ -1342,7 +1389,7 @@ Overfull \hbox (21.00742pt too wide) in paragraph at lines 69--70
  poslu[]ziteljskom
  []
 
-[25]
+[30]
 Overfull \hbox (18.14716pt too wide) in paragraph at lines 72--75
 []$[]$ \OT1/jkp/m/n/12 (engl. data ac-cess object, kra[]ce: DAO) { koji omogu[]
 cuje
@@ -1354,7 +1401,7 @@ Overfull \hbox (5.37553pt too wide) in paragraph at lines 75--76
 zu,(u
  []
 
-<slike/arhitektura.PNG, id=470, 623.32875pt x 261.97874pt>
+<slike/arhitektura.PNG, id=508, 623.32875pt x 261.97874pt>
 File: slike/arhitektura.PNG Graphic file (type png)
 <use slike/arhitektura.PNG>
 Package pdftex.def Info: slike/arhitektura.PNG  used on input line 80.
@@ -1376,7 +1423,7 @@ Overfull \hbox (13.00471pt too wide) in paragraph at lines 92--95
 elja. One se po-kre[]cu u browseru
  []
 
-[26pdfTeX warning (ext4): destination with the same identifier (name{figure.4.2
+[31pdfTeX warning (ext4): destination with the same identifier (name{figure.4.2
 }) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
@@ -1391,7 +1438,7 @@ Overfull \hbox (1.82492pt too wide) in paragraph at lines 133--133
 []\OT1/jkp/m/n/12 korisnickoIme|  
  []
 
-[27]
+[32]
 Underfull \hbox (badness 10000) in paragraph at lines 144--145
 
  []
@@ -1411,22 +1458,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 150--151
 
  []
 
-[28]
+[33]
 Underfull \hbox (badness 10000) in paragraph at lines 161--162
 
  []
 
-[29]
+[34]
 Underfull \hbox (badness 10000) in paragraph at lines 170--171
 
  []
 
-[30]
+[35]
 Underfull \hbox (badness 10000) in paragraph at lines 177--178
 
  []
 
-) [31]
+) [36]
 \openout2 = `Implementacija.aux'.
 
  (./Implementacija.tex
@@ -1446,7 +1493,7 @@ Overfull \hbox (10.38434pt too wide) in paragraph at lines 1--1
 |[]\OT1/jkp/b/n/24.88 Implementacija i ko-risni[]cko su[]celje| 
  []
 
-[32
+[37
 
 
 
@@ -1465,12 +1512,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 28--29
 
  []
 
-[33] [34]
+[38] [39]
 Underfull \hbox (badness 10000) in paragraph at lines 50--51
 
  []
 
-[35])
+[40])
 \openout2 = `Zakljucak.aux'.
 
  (./Zakljucak.tex
@@ -1485,7 +1532,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--4
 
  []
 
-[36
+[41
 
 
 
@@ -1505,7 +1552,7 @@ Overfull \hbox (7.06pt too wide) in paragraph at lines 18--19
 12 http : / / www . ece . rutgers . edu / []marsic /
  []
 
-) [37
+) [42
 
 
 
@@ -1520,7 +1567,7 @@ ti re-gis-tri-ra-nog gra[]danina
 \tf@lof=\write6
 \openout6 = `PROGI_ProjektnaDokumentacija_v6.lof'.
 
- [38
+ [43
 
 
 
@@ -1532,7 +1579,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 6--7
 
  []
 
-[39
+[44
 
 
 ]
@@ -1540,12 +1587,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 41--42
 
  []
 
-[40] [41]
+[45] [46]
 Underfull \hbox (badness 10000) in paragraph at lines 103--104
 
  []
 
-) [42] 
+) [47] 
 AED: lastpage setting LastPage
 (./PROGI_ProjektnaDokumentacija_v6.aux (./Dnevnik_promjena_dokumentacije.aux)
 (./Opis_projektnog_zadatka.aux) (./Specifikacija_programske_potpore.aux)
@@ -1553,17 +1600,17 @@ AED: lastpage setting LastPage
 (./Dodatak.aux))
 Package rerunfilecheck Info: File `PROGI_ProjektnaDokumentacija_v6.out' has not
  changed.
-(rerunfilecheck)             Checksum: DAF8A6A550DB9C8111F0FEC18237A729;1959.
+(rerunfilecheck)             Checksum: 6620800530D2A41026C178FCF84AE325;1959.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 12170 strings out of 479918
- 173470 string characters out of 5886688
- 554500 words of memory out of 5000000
- 28144 multiletter control sequences out of 15000+600000
+ 12202 strings out of 479918
+ 173964 string characters out of 5886688
+ 554799 words of memory out of 5000000
+ 28162 multiletter control sequences out of 15000+600000
  583771 words of font info for 136 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  93i,12n,98p,909b,607s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1577,11 +1624,11 @@ type1/public/kpfonts/jkpbn8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public
 t8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/kpfonts/jkpmitc.pfb><c:/
 texlive/2020/texmf-dist/fonts/type1/public/kpfonts/jkpmn8a.pfb><c:/texlive/2020
 /texmf-dist/fonts/type1/public/kpfonts/jkpttmn8a.pfb>
-Output written on PROGI_ProjektnaDokumentacija_v6.pdf (43 pages, 3909837 bytes)
+Output written on PROGI_ProjektnaDokumentacija_v6.pdf (48 pages, 4062644 bytes)
 .
 PDF statistics:
- 677 PDF objects out of 1000 (max. 8388607)
- 604 compressed objects within 7 object streams
- 248 named destinations out of 1000 (max. 500000)
- 268 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 721 PDF objects out of 1000 (max. 8388607)
+ 637 compressed objects within 7 object streams
+ 259 named destinations out of 1000 (max. 500000)
+ 283 words of extra memory for PDF output out of 10000 (max. 10000000)
 

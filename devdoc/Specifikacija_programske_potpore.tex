@@ -601,10 +601,65 @@
 			\subsubsection{Obrazac uporabe UC8: Promjena osobnih podataka korisnika}
 			Korisnik šalje zahtjev za prikaz osobnih podataka. Poslužitelj dohvaća osobne podatke te ih prikazuje. Korisnik zatraži uređivanje osobnih podataka te mu aplikacija ponudi obrazac za promjenu podataka. Korisnik ispunjava podatke te bira "Spremi podatke". Ako su podaci u nesipravnom formatu, aplikacija ga upozorava na to. Ako korisnik uredi podatke u ispravan format, podaci se šalju bazi. U slučaju da je nova email adresa već zauzeta, baza šalje upozorenje aplikaciji, a aplikacija korisniku. Ako su podaci ispravni, aplikacija šalje korisniku poruku da su podaci uspješno izmijenjeni. U slučaju da korisnik izađe iz obrasca za uređivanje osobnih podataka, aplikacija korisniku šalje upozorenje da podaci nisu spremljeni.
 			\begin{figure}[H]
-				\includegraphics[scale=0.5]{dijagrami/SD1.png} %veličina u odnosu na širinu linije
-				\caption{Sekvencijski dijagram: Promjena osobnih podataka korisnika}
-				\label{fig:SD1} %label mora biti drugaciji za svaku sliku
+				\includegraphics[scale=0.5]{dijagrami/UC8.png} %veličina u odnosu na širinu linije
+				\caption{Sekvencijski dijagram: UC8 - Promjena osobnih podataka korisnika}
+				\label{fig:UC8} %label mora biti drugaciji za svaku sliku
 			\end{figure}
+		
+			\newpage
+		
+		
+			\subsubsection{Obrazac uporabe UC10: Dodavanje novog profila psa u listu prijavljene udruge}
+			
+			Korisnik (koji je prijavljena udruga) na izbornoj traci odabire opciju "Moji psi". Aplikacija od baze dohvaća listu pasa te ju prikazuje korisniku. Korisnik odabire opcija "Dodaj novog psa" u tom prozoru te mu aplikacija vraća prazni obrazac. Korisnik ispuni obrazac te odabire opciju "Dodaj psa". U slučaju da je neki od podataka u neispravnom obliku, aplikacija upozorava korisnika da podaci nisu spremljeni jer su u neispravnom formatu. Korisnik tada ispravlja podatke i ponovno ih šalje. Jednom kada su podaci ispravni, baza vraća potvrdu o unosu podataka te aplikacija vraća korisniku poruku da je dodan novi pas. U slučaju da korisnik izlazi prije uspješnog dodavanja novog psa, aplikacija mu šalje upozorenje da novi pas nije dodan.
+			
+			\begin{figure}[H]
+			\includegraphics[scale=0.6]{dijagrami/UC10.png} %veličina u odnosu na širinu linije
+			\caption{Sekvencijski dijagram: UC10 - Dodavanje novog profila psa u listu prijavljene udruge}
+			\label{fig:UC10} %label mora biti drugaciji za svaku sliku
+			\end{figure}
+		
+			\newpage
+	
+	
+			\subsubsection{Obrazac uporabe UC13: Rezervacija termina šetnje}
+			
+			Korisnik (koji je građanin) može pregledati pse na dva načina:
+			\begin{itemize}
+				\item preko liste svih pasa:
+				\begin{itemize}
+					\item korisnik na izbornoj traci odabire "Psi"
+					\item aplikacija od baze dohvaća sve pse
+					\item korisniku je sada prikazana lista pasa iz svih udruga
+				\end{itemize}
+				\item preko liste pasa određene udruge:
+				\begin{itemize}
+					\item korisnik na izbornoj traci odabire "Udruge"
+					\item aplikacija od baze dohvaća sve udruge te prikazuje korisniku listu svih udruga
+					\ korisnik odabire udrugu
+					\item aplikacija od baze dohvaća listu svih pasa iz odabrane udruge te ih prikazuje korisniku
+				\end{itemize}
+			\end{itemize}
+			Nakon otvaranja liste pasa, korisnik bira psa kojeg bi volio šetati. Aplikacija od baze dohvaća profil (informacije) te raspored željenog psa te ih prikazuje korisniku. Korisnik bira željeni termin šetnje te aplikacija šalje rezervaciju bazi. Baza potvrđuje unos te aplikacija korisniku potvrđuje rezervaciju.
+			
+			
+			\begin{figure}[H]
+				\includegraphics[scale=0.68]{dijagrami/UC13.png} %veličina u odnosu na širinu linije
+				\caption{Sekvencijski dijagram: UC13 - Rezervacija termina šetnje}
+			\label{fig:UC13} %label mora biti drugaciji za svaku sliku
+			\end{figure}
+	
+			\subsubsection{Obrazac uporabe UC15: Označavanje statistike šetnji kao javne}
+			
+			Korisnik (koji je građanin) odabire opciju "Moj profil" sa izborne trake. Web aplikacija dohvaća od baze podatke o korisniku te ih vraća. Aplikacija prikazuje korisniku njegove podatke. Korisnik odabire opciju "Moja statistika". Aplikacija od baze dohvaća podatke o obavljenim štenjama korisnika te ih prikazuje. U tom prozoru postoji opcija "Označi svoju statistiku javnom" te korisnik odabire tu opciju. Statistika postaje vidljiva u rang-listi svih šetača.
+	
+			\begin{figure}[H]
+			\includegraphics[scale=0.67]{dijagrami/UC15.png} %veličina u odnosu na širinu linije
+			\caption{Sekvencijski dijagram: UC15 - Označavanje statistike šetnji kao javne}
+			\label{fig:UC15} %label mora biti drugaciji za svaku sliku
+			\end{figure}
+	
+		\newpage
 		
 	\section{Ostali zahtjevi}
 	

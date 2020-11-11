@@ -6,9 +6,12 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Dijagram obrasca uporabe: Prikaz funkcionalnosti javnog posjetitelja te registriranog korisnika}}{19}{figure.3.1}%
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Dijagram obrasca uporabe: Prikaz funkcionalnosti registriranog građanina i udruge}}{20}{figure.3.2}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Sekvencijski dijagram: Promjena osobnih podataka korisnika}}{22}{figure.3.3}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Sekvencijski dijagram: UC8 - Promjena osobnih podataka korisnika}}{22}{figure.3.3}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Sekvencijski dijagram: UC10 - Dodavanje novog profila psa u listu prijavljene udruge}}{24}{figure.3.4}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Sekvencijski dijagram: UC13 - Rezervacija termina šetnje}}{26}{figure.3.5}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Sekvencijski dijagram: UC15 - Označavanje statistike šetnji kao javne}}{27}{figure.3.6}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Apstraktna arhitektura sustava}}{24}{figure.4.1}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Spring Boot arhitektura}}{26}{figure.4.2}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Apstraktna arhitektura sustava}}{29}{figure.4.1}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Spring Boot arhitektura}}{31}{figure.4.2}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
