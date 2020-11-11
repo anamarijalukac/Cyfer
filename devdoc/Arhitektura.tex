@@ -141,17 +141,49 @@ React omogućava sastavljanje korisničkog sučelja pomoću elemenata koji se na
 			
 		\section{Dijagram razreda}
 		
+		\iffalse
 			\textit{Potrebno je priložiti dijagram razreda s pripadajućim opisom. Zbog preglednosti je moguće dijagram razlomiti na više njih, ali moraju biti grupirani prema sličnim razinama apstrakcije i srodnim funkcionalnostima.}\\
 			
 			\textbf{\textit{dio 1. revizije}}\\
 			
 			\textit{Prilikom prve predaje projekta, potrebno je priložiti potpuno razrađen dijagram razreda vezan uz \textbf{generičku funkcionalnost} sustava. Ostale funkcionalnosti trebaju biti idejno razrađene u dijagramu sa sljedećim komponentama: nazivi razreda, nazivi metoda i vrste pristupa metodama (npr. javni, zaštićeni), nazivi atributa razreda, veze i odnosi između razreda.}\\
 			
+			\fi
+			
+			
+			Na slikama su prikazani dijagrami razreda koji predstavljaju backend dio MVC arhitekture ostvarene korištenjem Java Spring Boota.
+			
+			\vspace{15pt} 
+			\begin{figure}[H]
+				\includegraphics[scale=0.4]{dijagrami/controlleri.jpg} %veličina slike u odnosu na originalnu datoteku i pozicija slike
+				\centering
+				\caption{Razredi controlleri}
+				\label{fig:controlleri}
+			\end{figure}
+			
+			
+			Razredi prikazani na slici 4.3 predstavljaju MVC Kontrolere čije metode mapiraju određene zahtjeve putem URI-a, te vraćaju JSON datoteke koje se potom obrađuju na određeni način. Također šalju i HTML statusni kod.
+			Kontroleri su implementirani za četiri klase tipa Model: Dog, Walk, Shelter, Walker. Svaki razred ima konstruktor i metode koje mapiraju određene zahtjeve zadanim HTTP zahtjevom.
+			
+				\vspace{15pt} 
+			\begin{figure}[H]
+				\includegraphics[scale=0.5]{dijagrami/modeli.jpg} %veličina slike u odnosu na originalnu datoteku i pozicija slike
+				\centering
+				\caption{Razredi modeli}
+				\label{fig:modeli}
+			\end{figure}
+			
+			
+			Razredi prikazani na slici 4.4 predstavljaju MVC Modele koji odgovaraju entitetima u bazi podataka. Svaki razred sadrži svoj konstruktor, privatne članske varijable koje su mu svojstvene i koje odgovaraju atributima u bazi, kao i sve gettere i settere.
+			Razred Dog predstavlja psa koji je pridruženoj određenoj udruzi (Shelter) i dostupan je za šetnje. Razred Walker predstavlja registriranog korisnika (šetača) koji može odabrati psa/pse za šetnju. Razred Shelter predstavlja registriranu udrugu koja ima svoj profil i pse dostupne za šetnju. Razred Walk predstavlja šetnju koja se dogodila s jednim šetačom i jednim ili više pasa. Razred Location predstavlja lokaciju (grad i adresa) na kojoj može biti smješten pas ili udruga.
+			
+			
+			\iffalse
 			\textbf{\textit{dio 2. revizije}}\\			
 			
 			\textit{Prilikom druge predaje projekta dijagram razreda i opisi moraju odgovarati stvarnom stanju implementacije}
 			
-			
+			\fi
 			
 			\eject
 		

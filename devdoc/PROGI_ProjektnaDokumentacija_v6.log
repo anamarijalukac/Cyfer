@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.27)  11 NOV 2020 13:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.27)  11 NOV 2020 16:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1063,7 +1063,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.33 ...chapter}{Popis literature}{42}{chapter*.7}
+l.33 ...chapter}{Popis literature}{43}{chapter*.7}
                                                   % [1
 
 ])
@@ -1077,78 +1077,38 @@ l.33 ...chapter}{Popis literature}{42}{chapter*.7}
 (./Dnevnik_promjena_dokumentacije.tex
 Poglavlje 1.
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 36--36
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 39--39
 []\OT1/jkp/m/n/12 22.10.2020.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 36--36
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 39--39
 []\OT1/jkp/m/n/12 27.10.2020.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 36--36
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 39--39
 []\OT1/jkp/m/n/12 10.11.2020.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 36--36
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 39--39
 []\OT1/jkp/m/n/12 10.11.2020.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 36--36
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 39--39
 []\OT1/jkp/m/n/12 10.11.2020.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 36--36
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 39--39
 []\OT1/jkp/m/n/12 11.11.2020.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 36--36
-[]\OT1/jkp/m/n/12 10.09.2013.|  
- []
-
-
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 36--36
-[]\OT1/jkp/m/n/12 11.09.2013.|  
- []
-
-
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 36--36
-[]\OT1/jkp/m/n/12 11.09.2013.|  
- []
-
-
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 36--36
-[]\OT1/jkp/m/n/12 14.09.2013.|  
- []
-
-
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 36--36
-[]\OT1/jkp/m/n/12 15.09.2013.|  
- []
-
-
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 36--36
-[]\OT1/jkp/m/n/12 15.09.2013.|  
- []
-
-
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 36--36
-[]\OT1/jkp/m/n/12 19.09.2013.|  
- []
-
-
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 36--36
-[]\OT1/jkp/m/n/12 20.09.2013.|  
- []
-
-
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 36--36
-[]\OT1/jkp/m/n/12 28.09.2013.|  
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 39--39
+[]\OT1/jkp/m/n/12 10.11.2020.|  
  []
 
 ) [3
@@ -1439,41 +1399,48 @@ Overfull \hbox (1.82492pt too wide) in paragraph at lines 133--133
  []
 
 [32]
-Underfull \hbox (badness 10000) in paragraph at lines 144--145
+<dijagrami/controlleri.jpg, id=524, 1185.42876pt x 573.14125pt>
+File: dijagrami/controlleri.jpg Graphic file (type jpg)
+<use dijagrami/controlleri.jpg>
+Package pdftex.def Info: dijagrami/controlleri.jpg  used on input line 158.
+(pdftex.def)             Requested size: 474.1631pt x 229.25243pt.
 
+Overfull \hbox (38.5523pt too wide) in paragraph at lines 158--160
+ [][] 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 146--147
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 148--149
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 150--151
-
- []
-
-[33]
-Underfull \hbox (badness 10000) in paragraph at lines 161--162
-
- []
-
-[34]
-Underfull \hbox (badness 10000) in paragraph at lines 170--171
+<dijagrami/modeli.jpg, id=525, 869.2475pt x 714.67pt>
+File: dijagrami/modeli.jpg Graphic file (type jpg)
+<use dijagrami/modeli.jpg>
+Package pdftex.def Info: dijagrami/modeli.jpg  used on input line 170.
+(pdftex.def)             Requested size: 434.62268pt x 357.33412pt.
+[33pdfTeX warning (ext4): destination with the same identifier (name{figure.4.3
+}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.175 			
+          <./dijagrami/controlleri.jpg>] [34pdfTeX warning (ext4): destination 
+with the same identifier (name{figure.4.4}) has been already used, duplicate ig
+nored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.188 			\eject
+                <./dijagrami/modeli.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 193--194
 
  []
 
 [35]
-Underfull \hbox (badness 10000) in paragraph at lines 177--178
+Underfull \hbox (badness 10000) in paragraph at lines 202--203
 
  []
 
-) [36]
+[36]
+Underfull \hbox (badness 10000) in paragraph at lines 209--210
+
+ []
+
+) [37]
 \openout2 = `Implementacija.aux'.
 
  (./Implementacija.tex
@@ -1493,7 +1460,7 @@ Overfull \hbox (10.38434pt too wide) in paragraph at lines 1--1
 |[]\OT1/jkp/b/n/24.88 Implementacija i ko-risni[]cko su[]celje| 
  []
 
-[37
+[38
 
 
 
@@ -1512,12 +1479,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 28--29
 
  []
 
-[38] [39]
+[39] [40]
 Underfull \hbox (badness 10000) in paragraph at lines 50--51
 
  []
 
-[40])
+[41])
 \openout2 = `Zakljucak.aux'.
 
  (./Zakljucak.tex
@@ -1532,7 +1499,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--4
 
  []
 
-[41
+[42
 
 
 
@@ -1552,7 +1519,7 @@ Overfull \hbox (7.06pt too wide) in paragraph at lines 18--19
 12 http : / / www . ece . rutgers . edu / []marsic /
  []
 
-) [42
+) [43
 
 
 
@@ -1567,7 +1534,7 @@ ti re-gis-tri-ra-nog gra[]danina
 \tf@lof=\write6
 \openout6 = `PROGI_ProjektnaDokumentacija_v6.lof'.
 
- [43
+ [44
 
 
 
@@ -1579,7 +1546,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 6--7
 
  []
 
-[44
+[45
 
 
 ]
@@ -1587,12 +1554,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 41--42
 
  []
 
-[45] [46]
+[46] [47]
 Underfull \hbox (badness 10000) in paragraph at lines 103--104
 
  []
 
-) [47] 
+) [48] 
 AED: lastpage setting LastPage
 (./PROGI_ProjektnaDokumentacija_v6.aux (./Dnevnik_promjena_dokumentacije.aux)
 (./Opis_projektnog_zadatka.aux) (./Specifikacija_programske_potpore.aux)
@@ -1607,10 +1574,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 12202 strings out of 479918
- 173964 string characters out of 5886688
- 554799 words of memory out of 5000000
- 28162 multiletter control sequences out of 15000+600000
+ 12220 strings out of 479918
+ 174312 string characters out of 5886688
+ 554886 words of memory out of 5000000
+ 28174 multiletter control sequences out of 15000+600000
  583771 words of font info for 136 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  93i,12n,98p,909b,607s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1624,11 +1591,11 @@ type1/public/kpfonts/jkpbn8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public
 t8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/kpfonts/jkpmitc.pfb><c:/
 texlive/2020/texmf-dist/fonts/type1/public/kpfonts/jkpmn8a.pfb><c:/texlive/2020
 /texmf-dist/fonts/type1/public/kpfonts/jkpttmn8a.pfb>
-Output written on PROGI_ProjektnaDokumentacija_v6.pdf (48 pages, 4062644 bytes)
+Output written on PROGI_ProjektnaDokumentacija_v6.pdf (49 pages, 4357608 bytes)
 .
 PDF statistics:
- 721 PDF objects out of 1000 (max. 8388607)
- 637 compressed objects within 7 object streams
- 259 named destinations out of 1000 (max. 500000)
- 283 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 733 PDF objects out of 1000 (max. 8388607)
+ 646 compressed objects within 7 object streams
+ 262 named destinations out of 1000 (max. 500000)
+ 293 words of extra memory for PDF output out of 10000 (max. 10000000)
 
