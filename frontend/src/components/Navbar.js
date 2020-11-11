@@ -86,7 +86,7 @@ function Navbar() {
           buttonStyle='btn--outline'
           buttonSize='btn--small'
         >
-          Prijava Korisnika
+          Prijava korisnika
         </Button>
 
         </Link>

@@ -10,6 +10,7 @@ function LogIn(){
           const{name, value} = event.target;
           setForm(oldForm => ({...oldForm, [name] : value}))
         }
+        
 
         function onSubmit(e){
 
@@ -19,7 +20,7 @@ function LogIn(){
             username : form.username,
             password: form.password
           };
-        
+
           const options = {
             method: 'POST',
             headers: {
@@ -28,7 +29,31 @@ function LogIn(){
             body: JSON.stringify(data)
           };
 
-          return fetch('/walkers/login', options);
+          /*Ako se potvrda za postojeći sign up šalje preko POST koristi ovo*/
+
+          fetch('/walkers/login', options)
+          .then(response => {
+            if(response.status == 200){
+            console.log("BEEP");
+            }
+            else{
+              console.log("SHEEP");
+            }
+          }).catch(error => console.log(error));
+
+
+          /*Ako se šalje preko GET koristi ovo*/
+
+          /*fetch('http://localhost:8080/walkers/login')
+          .then(response => {
+            if(response.status == 200){
+            console.log("BEEP");
+            }
+            else{
+              console.log("SHEEP");
+            }
+          }).catch(error => console.log(error));*/
+
         }
 
 

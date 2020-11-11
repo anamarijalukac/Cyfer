@@ -17,7 +17,7 @@ function HeroSection() {
           buttonStyle='btn--outline'
           buttonSize='btn--large'
         >
-          Log in
+          Prijava
         </Button>
         </Link>
         <Link to='/sign-up' className='btn-mobile'>
