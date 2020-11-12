@@ -93,6 +93,8 @@ Kao što je navedeno, sloj korisničke strane (frontend) je implementiran u Java
 tip web-aplikacije koja u interakciji s korisnikom dinamički mijenja dijelove stranice, za razliku od tradicionalnih web-aplikacija koje učitavaju cijele nove stranice s poslužitelja. One se pokreću u browseru i ne zahtijevaju ponovno učitavanje nakon korištenja.
 React omogućava sastavljanje korisničkog sučelja pomoću elemenata koji se nazivaju komponente. Njih je mogucće iznova koristiti u aplikaciji proizvoljno veliki broj puta. Taj pristup pokazao se lakši za održavanje, proširivanje i višestruko korištenje.
 
+\newpage
+
 
 
 	
@@ -103,38 +105,190 @@ React omogućava sastavljanje korisničkog sučelja pomoću elemenata koji se na
 				
 		\section{Baza podataka}
 			
-			\textbf{\textit{dio 1. revizije}}\\
+			U sklopu svih zahtjeva vezanih uz razvoj aplikacije nalaze se različiti entiteti i opisi veza među njima. Nijedno se najčešće ne zadaje eksplicitno, već se od inženjera očekuje da ih prepozna, nekako zapiše i pravilno implementira u svoj sustav. Kako bi sve te entitete prikazali na jednom mjestu te kako bi mogli pohranjivati informacije o njima važno je razviti dobru bazu podataka. Baza podataka za koju smo se odlučili u ovome projektu je relacijska; njen glavni objekt je relacija. Jedna relacija predstavlja jedan entitet. Svaka relacija je prikazana u obliku tablice koja ima svoje ime i atribute koji ju opisuju. Tablice su međusobno povezane pri čemu treba pripaziti na vrste veza među njima.  
+			Baza podataka se sastoji od 6 glavnih entiteta:
 			
-		\textit{Potrebno je opisati koju vrstu i implementaciju baze podataka ste odabrali, glavne komponente od kojih se sastoji i slično.}
+			\begin{itemize}
+				\item Walker 
+				\item Shelter
+				\item Walk
+				\item Reservation
+				\item Dog
+				\item Location 
+			\end{itemize}
 		
+			Značenje entiteta i opisi veza među njima su dani ispod. 
+			
+			\vspace{15pt}
+			
 			\subsection{Opis tablica}
 			
-
-				\textit{Svaku tablicu je potrebno opisati po zadanom predlošku. Lijevo se nalazi točno ime varijable u bazi podataka, u sredini se nalazi tip podataka, a desno se nalazi opis varijable. Svjetlozelenom bojom označite primarni ključ. Svjetlo plavom označite strani ključ}
+			\vspace{10pt}
+			
+			\subsubsection{Walker}
+			
+				Tablica Walker predstavlja registriranog šetača/građana. Nakon što se korisnik aplikacije registrirao u sustavu, ili prijavio ukoliko već ima korisnički račun, on postaje registrirani šetač. Svaki registrirani šetač ima atribute poput imena, prezimena, adrese e-pošte i podataka za prijavu (korisničko ime i lozinka). Taj šetač ima opciju rezervacije termina i psa za šetnju. Iz tog razloga je povezan jedino s entitetom Reservation čija će uloga biti objašnjena ispod. Svaki šetač ima statistiku i raspored svojih šetnji. Ta dva entiteta nisu prepoznata kao zasebne tablice već kao potencijalni upiti nad rezervacijama koje je taj šetač napravio u sustavu. Važan atribut svakog šetača je statVisibility koji označava hoće li se šetačeva statistika šetanja vidjeti na javno dostupnoj rang listi. Svaki šetač ima opciju postavljanja te statistike kao javne ili privatne ovisno o vlastitim preferencijama. 
+				
+				\filbreak
 				
 				\begin{longtabu} to \textwidth {|X[6, l]|X[6, l]|X[20, l]|}
 					
-					\hline \multicolumn{3}{|c|}{\textbf{korisnik - ime tablice}}	 \\[3pt] \hline
+					\hline \multicolumn{3}{|c|}{\textbf{WALKER}}	 \\[3pt] \hline
 					\endfirsthead
 					
-					\hline \multicolumn{3}{|c|}{\textbf{korisnik - ime tablice}}	 \\[3pt] \hline
+					\hline \multicolumn{3}{|c|}{\textbf{WALKER}}	 \\[3pt] \hline
+					\endhead
+					
+					
+					\hline 
+					\endlastfoot
+					
+					\cellcolor{LightGreen}walkerId & INT	&  	Jedinstveni identifikator šetača 	\\ \hline
+					firstName	& VARCHAR &  Ime šetača 	\\ \hline 
+					lastName	& VARCHAR &  Prezime šetača 	\\ \hline 
+					password & VARCHAR &  Hash lozinka šetača za login u sustav \\ \hline 
+					email & VARCHAR &  Adresa e-pošte šetača \\ \hline 
+					username & VARCHAR	&  Korisničko ime šetača		\\ \hline 
+					statsVisibility	& BOOLEAN &  (Ne)vidljivost šetačeve statistike šetnji javno 	\\ \hline 
+						
+				\end{longtabu}
+			
+			\vspace{15pt}
+			
+			
+			\subsubsection{Reservation}
+			
+				Tablica Reservation predstavlja logičku poveznicu između tri entiteta. Naime, svaki pas kojeg je šetač odabrao za neki termin biva zapisan u zasebnu rezervaciju. Na taj način je omogućeno da se različiti psi nalaze u šetnji kod istog šetača. Svaka rezervacija sadržava 4 atributa, svoj identifikator koji nam u pogledu razumijevanja modela ne znači previše i ostala 3 koja zapravo definiraju jednu rezervaciju.  Ti atributi su: walkId, walkerId i dogId. Zapisi (n-torke) u tablici rezervacija nam daju jasne informacije o tome koji šetači su šetali koje pse i u kojim terminima. Na taj način smo kreirali tablicu iz koje pomoću jednostavnih upita možemo doći do statistika šetnji, kako za pse tako i za šetače.  
+			
+			
+				\begin{longtabu} to \textwidth {|X[6, l]|X[6, l]|X[20, l]|}
+		
+					\hline \multicolumn{3}{|c|}{\textbf{RESERVATION}}	 \\[3pt] \hline
+					\endhead
+					
+					\hline \multicolumn{3}{|c|}{\textbf{RESERVATION}}	 \\[3pt] \hline
 					\endhead
 					
 					\hline 
 					\endlastfoot
 					
-					\cellcolor{LightGreen}IDKorisnik & INT	&  	Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam 	\\ \hline
-					korisnickoIme	& VARCHAR &   	\\ \hline 
-					email & VARCHAR &   \\ \hline 
-					ime & VARCHAR	&  		\\ \hline 
-					\cellcolor{LightBlue} primjer	& VARCHAR &   	\\ \hline 
+					\cellcolor{LightGreen}reservationId & INT	&  	Jedinstveni identifikator rezervacije	\\ \hline
+					\cellcolor{LightBlue} walkerId	& INT &  Jedinstveni identifikator šetača 	\\ \hline 
+					\cellcolor{LightBlue} walkId & INT &  Jedinstveni identifikator šetnje \\ \hline 
+					\cellcolor{LightBlue} dogId &INT	&  	Jedinstveni identifikator psa	\\ \hline 
 					
+				\end{longtabu}
+			\newpage
+			
+			\subsubsection{Walk}
+		
+				Tablica Walk predstavlja jedan ugovoreni termin šetnje. Budući da je preko entiteta Reservation povezana s psima i šetačima, ne možemo direktno u n-torkama ove tablice vidjeti koji pas je sudjelovao u kojoj šetnji niti dobiti informaciju tko ga je šetao. Ukoliko poznajemo identifikator šetnje i ne koristimo druge tablice možemo saznati dvije informacije, a to su: datum i vrijeme početka i trajanje same šetnje. Kako bi se nova n-torka unijela u ovu tablicu nužno je da šetač napravi rezervaciju čime se implicitno podrazumijeva da se njen termin i ugovoreno trajanje tu zapisuje. 
+		
+				\begin{longtabu} to \textwidth {|X[6, l]|X[6, l]|X[20, l]|}
+				
+					\hline \multicolumn{3}{|c|}{\textbf{WALK}}	 \\[3pt] \hline
+					\endfirsthead
+					
+					\hline \multicolumn{3}{|c|}{\textbf{WALK}}	 \\[3pt] \hline
+					\endhead
+					
+					\hline 
+					\endlastfoot
+					
+					\cellcolor{LightGreen}	walkId & INT &  Jedinstveni identifikator šetnje \\ \hline 
+					dateTime	&TIMESTAMP &  Datum i vrijeme početka šetnje 	\\ \hline 
+					duration & INT &  Duljina šetnje u minutama \\ \hline 
+		
+				\end{longtabu}
+			
+			\vspace{5pt}
+			
+			\subsubsection{Dog}
+			
+			
+				Tablica Dog predstavlja psa. Svaki pas ima udrugu kojoj pripada, s time da je jasno da više pasa može pripadati istoj udruzi. Osim oznake kojoj udruzi pas pripada, on ima atribute koji označavaju njegovu lokaciju, ime, sliku i kratak opis. Osim toga svaki pas ima naznačeno koji tip šetnje preferira (grupne ili individualne). Individualna šetnja pretpostavlja da će jedan registrirani šetač rezervirati samo jednog psa za neki termin te će time napraviti jednu rezervaciju. Grupna šetnja označava situaciju u kojoj šetač odabire više pasa za isti termin te time radi onoliko rezervacija koliko je pasa odabrao. 
+	
+				\begin{longtabu} to \textwidth {|X[6, l]|X[6, l]|X[20, l]|}
+				
+					\hline \multicolumn{3}{|c|}{\textbf{DOG}}	 \\[3pt] \hline
+					\endfirsthead
+					
+					\hline \multicolumn{3}{|c|}{\textbf{DOG}}	 \\[3pt] \hline
+					\endhead
+					
+					\hline 
+					\endlastfoot
+					
+					\cellcolor{LightGreen}dogId & INT	&  	Jedinstveni identifikator psa	\\ \hline
+					image	& VARCHAR &   URI slike psa	\\ \hline 
+					description & VARCHAR &  Opis psa \\ \hline 
+					typeOfWalk & VARCHAR	&  	Tip šetnje za koju je pas predodređen (skupna/individualna)	\\ \hline 
+					name	& VARCHAR & Ime psa  	\\ \hline 
+					\cellcolor{LightBlue} shelterId &  INT	&  	Jedinstveni identifikator udruge	\\ \hline 
+					\cellcolor{LightBlue} locationId & INT	&  	Jedinstveni identifikator lokacije	\\ \hline 
+					
+				
+				\end{longtabu}
+			
+			
+			\subsubsection{Shelter}
+			
+				Tablica Shelter predstavlja udrugu koja se u kontekstu aplikacije smatra drugom vrstom prijavljenog korisnika (osim već spomenutog šetača). Udruga ima svoj profil koji prikazuje slike i kratke opise pasa koji joj pripadaju. Osim informacije s kojim psima udruga raspolaže ona ima i svoje ime, OIB, lokaciju na kojoj se nalazi i naravno podatke za prijavu (korisničko ime i lozinku). Udruga raspolaže statistikom o šetnjama svojih pasa koja se također prikazuje na njenom profilu. Do te statistike se također dolazi putem pregleda svih rezervacija na kojima su njeni psi sudjelovali.   
+
+
+				\begin{longtabu} to \textwidth {|X[6, l]|X[6, l]|X[20, l]|}
+				
+					\hline \multicolumn{3}{|c|}{\textbf{SHELTER}}	 \\[3pt] \hline
+					\endfirsthead
+					
+					\hline \multicolumn{3}{|c|}{\textbf{SHELTER}}	 \\[3pt] \hline
+					\endhead
+					
+					\hline 
+					\endlastfoot
+					
+					\cellcolor{LightGreen}	shelterId &  INT	&  	Jedinstveni identifikator udruge	\\ \hline 
+					password & VARCHAR &  Hash lozinka šetača za login u sustav \\ \hline 
+					name	& VARCHAR &  Ime udruge	\\ \hline 
+					username & VARCHAR	&  Korisničko ime udruge	\\ \hline 
+					OIB	& VARCHAR &  OIB udruge	\\ \hline 
+					\cellcolor{LightBlue} locationId & INT	&  	Jedinstveni identifikator lokacije	\\ \hline 
+				
+				\end{longtabu}
+			
+			
+			\subsubsection{Location}
+			
+				Tablica Location predstavlja geografsku lokaciju. Tu lokaciju mogu imati udruge i psi. Pretpostavili smo da se dvije udruge neće nalaziti na istoj lokaciji budući da ju definiraju grad i točna adresa. No, više pasa može živjeti na istoj lokaciji te time ograničenje između broja pasa i lokacije ne postoji. Informacije o lokaciji udruge se nalaze na profilu udruge, dok se lokacija nekog psa vidi u slučaju da ga neki šetač želi rezervirati.
+			
+				\begin{longtabu} to \textwidth {|X[6, l]|X[6, l]|X[20, l]|}
+					
+					\hline \multicolumn{3}{|c|}{\textbf{LOCATION}}	 \\[3pt] \hline
+					\endfirsthead
+					
+					\hline \multicolumn{3}{|c|}{\textbf{LOCATION}}	 \\[3pt] \hline
+					\endhead
+					
+					\hline 
+					\endlastfoot
+					
+					\cellcolor{LightGreen}	locationId &  INT	&  	Jedinstveni identifikator lokacije	\\ \hline 
+					city & VARCHAR &  Grad \\ \hline 
+					adress	& VARCHAR &  Adresa\\ \hline 
 					
 				\end{longtabu}
 			
 			
 			\subsection{Dijagram baze podataka}
-				\textit{ U ovom potpoglavlju potrebno je umetnuti dijagram baze podataka. Primarni i strani ključevi moraju biti označeni, a tablice povezane. Bazu podataka je potrebno normalizirati. Podsjetite se kolegija "Baze podataka".}
+				
+				\vspace{15pt} 
+				\begin{figure}[H]
+					\includegraphics[scale=0.9]{dijagrami/relacijski.PNG} %veličina slike u odnosu na originalnu datoteku i pozicija slike
+					\centering
+					\caption{Relacijski dijagram baze podataka}
+					\label{fig:relacijski}
+				\end{figure}
+				\vspace{15pt}
 			
 			\eject
 			

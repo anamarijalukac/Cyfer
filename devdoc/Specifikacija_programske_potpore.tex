@@ -18,6 +18,8 @@
 			\item Šetači pasa			
 			\item Zaposlenici i volonteri u udrugama
 			\item Razvojni tim
+			\item Administrator
+			\item Javni posjetitelji
 			
 		\end{packed_enum}
 		\vspace{5mm}
@@ -62,12 +64,14 @@
 				\begin{packed_enum}
 					\item ime i prezime
 					\item e-mail adresa
+					\item korisničko ime
 					\item lozinka 
 				\end{packed_enum}
 				\item registrirati u sustav svoju udrugu - za stvaranje korisničkog računa potrebni su mu:
 				\begin{packed_enum}
 					\item ime i prezime
 					\item e-mail adresa
+					\item korisničko ime
 					\item lozinka 
 					\item naziv udruge
 					\item OIB udruge
@@ -106,7 +110,11 @@
 			\end{packed_enum}
 			\vspace{5mm}
 		
-			
+			\item \underbar{Administrator (inicijator) može:} 
+			\begin{packed_enum}
+				\item vidjeti popis svih registriranih korisnika i njihovih osobnih podataka
+				\item brisati korisnike
+			\end{packed_enum}
 		
 			\item  \underbar{Baza podataka (sudionik)}:
 			\begin{packed_enum}
@@ -131,7 +139,7 @@
 				\item \textbf{Glavni sudionik:} Javni posjetitelj
 				\item  \textbf{Cilj:} Otvoriti profil pojedine udruge ili psa iz te udruge
 				\item  \textbf{Sudionici:} Baza podataka
-				\item  \textbf{Preduvjet:} -
+				\item  \textbf{Preduvjet:} Pristup aplikaciji
 				\item  \textbf{Opis osnovnog tijeka:}
 				
 				\item[] \begin{packed_enum}
@@ -149,7 +157,7 @@
 				\item \textbf{Glavni sudionik:} Javni posjetitelj
 				\item  \textbf{Cilj:} Otvoriti profil psa iz bilo koje udruge
 				\item  \textbf{Sudionici:} Baza podataka
-				\item  \textbf{Preduvjet:} -
+				\item  \textbf{Preduvjet:} Pristup aplikaciji
 				\item  \textbf{Opis osnovnog tijeka:}
 				
 				\item[] \begin{packed_enum}
@@ -168,7 +176,7 @@
 				\item \textbf{Glavni sudionik:} Javni posjetitelj
 				\item  \textbf{Cilj:} Otvoriti statistiku šetanja svih pasa
 				\item  \textbf{Sudionici:} Baza podataka
-				\item  \textbf{Preduvjet:} -
+				\item  \textbf{Preduvjet:} Pristup aplikaciji
 				\item  \textbf{Opis osnovnog tijeka:}
 				
 				\item[] \begin{packed_enum}
@@ -188,7 +196,7 @@
 				\item \textbf{Glavni sudionik:} Javni posjetitelj
 				\item  \textbf{Cilj:} Dobiti uvid u rang-listu svih šetača
 				\item  \textbf{Sudionici:} Baza podataka
-				\item  \textbf{Preduvjet:} -
+				\item  \textbf{Preduvjet:} Pristup aplikaciji
 				\item  \textbf{Opis osnovnog tijeka:}
 				
 				\item[] \begin{packed_enum}
@@ -213,14 +221,14 @@
 				\item \textbf{Glavni sudionik:} Javni posjetitelj
 				\item  \textbf{Cilj:} Stvoriti korisnički račun za pristup sustavu
 				\item  \textbf{Sudionici:} Baza podataka
-				\item  \textbf{Preduvjet:} -
+				\item  \textbf{Preduvjet:} Pristup aplikaciji
 				\item  \textbf{Opis osnovnog tijeka:}
 				
 				\item[] \begin{packed_enum}
 					
 					\item Javni posjetitelj odabire opciju (gumb) za registraciju 
 					\item Javni posjetitelj bira "Registriraj se kao građanin" ili "Registriraj se kao udruga"
-					\item Javni posjetitelj unosi potrebne korisničke podatke (ime, prezime, email adresa i lozinka za građanina te dodatno ime udruge i OIB udruge za udrugu)
+					\item Javni posjetitelj unosi potrebne korisničke podatke (ime, prezime, korisničko ime, email adresa i lozinka za građanina te dodatno ime udruge i OIB udruge za udrugu)
 					\item Javni posjetitelj odabire opciju "Stvori korisnički račun"
 					\item Korisnik prima obavijest o uspješnoj registraciji
 				\end{packed_enum}
@@ -236,10 +244,10 @@
 						\item Korisnik mijenja potrebne podatke te završava unos ili odustaje od registracije
 
 					\end{packed_enum}
-					\item [2.b] Odabrana email adresa je već zauzeta
+					\item [2.b] Odabrana email adresa i/ili korisničko ime su već zauzeti
 					\item[] \begin{packed_enum}
 					
-						\item Sustav obavještava korisnika o zauzetoj email adresi i vraća ga na stranicu za registraciju
+						\item Sustav obavještava korisnika o zauzetom korisničkom imenu/email adresi i vraća ga na stranicu za registraciju
 						\item Korisnik mijenja potrebne podatke te završava unos ili odustaje od registracije
 					
 				\end{packed_enum}
@@ -259,7 +267,7 @@
 				
 				\item[] \begin{packed_enum}
 					
-					\item Unos email adrese i lozinke
+					\item Unos korisničkog imena i lozinke
 					\item Potvrda o ispravnosti unesenih podataka
 					\item Pristup odgovarajućim korisničkim funkcijama (ovisi prijavljuje li se građanin ili udruga)
 				\end{packed_enum}
@@ -268,7 +276,7 @@
 				
 				\item[] \begin{packed_item}
 					
-					\item [2.a] Neispravno ime/lozinka
+					\item [2.a] Neispravno korisničko ime/lozinka
 					\item[] \begin{packed_enum}
 						
 						\item Sustav obavještava korisnika o neuspjelom upisu i vraća ga na stranicu za prijavu
@@ -332,11 +340,11 @@
 						\item Korisnik mijenja podatak i pohranjuje promjene ili izlazi iz prozora ostavljajući podatke bez promjene
 					\end{packed_enum}
 					
-						\item [6.b]  Korisnik promijeni svoje osobne podatke, ali je nova email adresa već zauzeta
+						\item [6.b]  Korisnik promijeni svoje osobne podatke, ali je nova email adresa i/ili korisničko ime već zauzeto
 					\item[] \begin{packed_enum}
 						
-						\item Sustav upozorava korisnika da je email adresa već zauzeta i da promjene ne mogu biti pohranjene
-						\item Korisnik mijenja email adresu i pohranjuje promjene ili izlazi iz prozora ostavljajući podatke bez promjene
+						\item Sustav upozorava korisnika da je email adresa i/ili korisničko već zauzeto i da promjene ne mogu biti pohranjene
+						\item Korisnik mijenja email adresu i/ili korisničko ime i pohranjuje promjene ili izlazi iz prozora ostavljajući podatke bez promjene
 					\end{packed_enum}
 				\end{packed_item}
 			\end{packed_item}
@@ -574,6 +582,39 @@
 			\item Šetač može skinuti odabrani raspored u PDF-u
 		\end{packed_enum}
 	\end{packed_item}
+
+
+	\noindent \underbar{\textbf{UC17 - Pregled korisnika}}
+	\begin{packed_item}
+		
+		\item \textbf{Glavni sudionik:} Administrator
+		\item  \textbf{Cilj:} Pregledati registrirane korisnike
+		\item  \textbf{Sudionici:} Baza podataka
+		\item  \textbf{Preduvjet:} Korisnik je registriran i dodijeljena su mu prava administratora
+		\item  \textbf{Opis osnovnog tijeka:}
+		
+		\item[] \begin{packed_enum}
+			\item Administrator bira opciju pregledavanja korisnika
+			\item Prikaže se lista svih ispravno registriranih korisnika s osobnim podacima
+		\end{packed_enum}
+	\end{packed_item}
+
+
+	\noindent \underbar{\textbf{UC18 - Brisanje korisnika korisnika}}
+	\begin{packed_item}
+		
+		\item \textbf{Glavni sudionik:} Administrator
+		\item  \textbf{Cilj:} Obrisati korisnika
+		\item  \textbf{Sudionici:} Baza podataka
+		\item  \textbf{Preduvjet:} Korisnik je registriran i dodijeljena su mu prava administratora
+		\item  \textbf{Opis osnovnog tijeka:}
+		
+		\item[] \begin{packed_enum}
+			\item Administrator bira opciju uklanjanja korisnika
+			\item Administrator pronalazi željenog korisnika
+			\item Administrator uklanja željenog korisnika i njegove podatke iz baze podataka
+		\end{packed_enum}
+	\end{packed_item}
 		
 
 		\subsubsection{Dijagrami obrazaca uporabe}
@@ -681,5 +722,6 @@
 	 	\item  Nadogradnja sustava ne smije narušavati postojeće funkcionalnosti sustava
 	 	\item  Veza s bazom podataka mora biti kvalitetno zastićena, brza i otporna na vanjske greške
 	 	\item  Pristup sustavu mora biti omogućen iz javne mreže pomoću HTTPS. 
+	 	\item S obzirom da je aplikacija na hrvatskom, datum prikazuje na odgovarajući način: DD.MM.YYYY.
 	 \end{packed_item}
 	 
