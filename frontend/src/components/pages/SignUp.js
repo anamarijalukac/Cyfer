@@ -1,7 +1,7 @@
 import React from "react";
 import '../../components/pages/LogIn.css';
 
-function SignUp() {
+function SignUp(props) {
 
   const [form, setForm] = React.useState({username: '', firstName: '', lastName: '', email:'', password:'', repeatPassword:''});
 
@@ -31,12 +31,21 @@ function SignUp() {
     };
 
     if(form.password !== form.repeatPassword){
-      return window.location.reload(false);
+      return window.location.reload();
     }
 
+    fetch('/walkers/signup', options)
+    .then(response => {
+      if(response.ok){
+      alert("Uspješna registracija");
+      props.history.push('/');
+      }
+      else{
+        alert("Neuspješna registracija");
+        window.location.reload();
+      }
+    }).catch(error => console.log(error));
 
-
-    return fetch('/walkers/signup', options);
   }
 
 

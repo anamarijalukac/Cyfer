@@ -1,7 +1,7 @@
 import React  from "react";
 import '../../components/pages/LogIn.css';
 
-function LogInUdr() {
+function LogInUdr(props) {
  
    const [form, setForm] = React.useState({username: '', password: '', checkbox: false});
 
@@ -27,7 +27,17 @@ function LogInUdr() {
        body: JSON.stringify(data)
      };
 
-     return fetch('/shelter/login', options);
+     fetch('/shelter/login', options)
+     .then(response => {
+       if(response.ok){
+       alert("Uspješna prijava");
+       props.history.push('/');
+       }
+       else{
+         alert("Neuspješna prijava");
+         window.location.reload();
+       }
+     }).catch(error => console.log(error));
    }
 
 

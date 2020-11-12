@@ -2,7 +2,7 @@ import React from "react";
 import '../../components/pages/LogIn.css';
 
 
-function LogIn(){
+function LogIn(props){
 
         const [form, setForm] = React.useState({username: '', password: '', checkbox: false});
 
@@ -33,11 +33,13 @@ function LogIn(){
 
           fetch('/walkers/login', options)
           .then(response => {
-            if(response.status == 200){
-            console.log("BEEP");
+            if(response.ok){
+            alert("Uspješna prijava");
+            props.history.push('/');
             }
             else{
-              console.log("SHEEP");
+              alert("Neuspješna prijava");
+              window.location.reload();
             }
           }).catch(error => console.log(error));
 
