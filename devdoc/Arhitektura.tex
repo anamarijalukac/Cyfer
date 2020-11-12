@@ -283,7 +283,7 @@ React omogućava sastavljanje korisničkog sučelja pomoću elemenata koji se na
 				
 				\vspace{15pt} 
 				\begin{figure}[H]
-					\includegraphics[scale=0.9]{dijagrami/relacijski.PNG} %veličina slike u odnosu na originalnu datoteku i pozicija slike
+					\includegraphics[scale=0.9]{dijagrami/relacijski.jpeg} %veličina slike u odnosu na originalnu datoteku i pozicija slike
 					\centering
 					\caption{Relacijski dijagram baze podataka}
 					\label{fig:relacijski}
@@ -309,7 +309,7 @@ React omogućava sastavljanje korisničkog sučelja pomoću elemenata koji se na
 			
 			\vspace{15pt} 
 			\begin{figure}[H]
-				\includegraphics[scale=0.4]{dijagrami/controlleri.jpg} %veličina slike u odnosu na originalnu datoteku i pozicija slike
+				\includegraphics[scale=0.38]{dijagrami/controlleri.jpeg} %veličina slike u odnosu na originalnu datoteku i pozicija slike
 				\centering
 				\caption{Razredi controlleri}
 				\label{fig:controlleri}
@@ -317,19 +317,19 @@ React omogućava sastavljanje korisničkog sučelja pomoću elemenata koji se na
 			
 			
 			Razredi prikazani na slici 4.3 predstavljaju MVC Kontrolere čije metode mapiraju određene zahtjeve putem URI-a, te vraćaju JSON datoteke koje se potom obrađuju na određeni način. Također šalju i HTML statusni kod.
-			Kontroleri su implementirani za četiri klase tipa Model: Dog, Walk, Shelter, Walker. Svaki razred ima konstruktor i metode koje mapiraju određene zahtjeve zadanim HTTP zahtjevom.
+			Kontroleri su implementirani za pet klasa tipa Model: Dog, Walk, Shelter, Walker i Reservation. Svaki razred ima konstruktor i metode koje mapiraju određene zahtjeve zadanim HTTP zahtjevom.
 			
 				\vspace{15pt} 
 			\begin{figure}[H]
-				\includegraphics[scale=0.5]{dijagrami/modeli.jpg} %veličina slike u odnosu na originalnu datoteku i pozicija slike
+				\includegraphics[scale=0.4]{dijagrami/modeli.jpeg} %veličina slike u odnosu na originalnu datoteku i pozicija slike
 				\centering
 				\caption{Razredi modeli}
 				\label{fig:modeli}
 			\end{figure}
 			
 			
-			Razredi prikazani na slici 4.4 predstavljaju MVC Modele koji odgovaraju entitetima u bazi podataka. Svaki razred sadrži svoj konstruktor, privatne članske varijable koje su mu svojstvene i koje odgovaraju atributima u bazi, kao i sve gettere i settere.
-			Razred Dog predstavlja psa koji je pridruženoj određenoj udruzi (Shelter) i dostupan je za šetnje. Razred Walker predstavlja registriranog korisnika (šetača) koji može odabrati psa/pse za šetnju. Razred Shelter predstavlja registriranu udrugu koja ima svoj profil i pse dostupne za šetnju. Razred Walk predstavlja šetnju koja se dogodila s jednim šetačom i jednim ili više pasa. Razred Location predstavlja lokaciju (grad i adresa) na kojoj može biti smješten pas ili udruga.
+		Razredi prikazani na slici 4.4 predstavljaju MVC Modele koji odgovaraju entitetima u bazi podataka. Svaki razred sadrži svoj konstruktor, privatne članske varijable koje su mu svojstvene i koje odgovaraju atributima u bazi, kao i sve gettere i settere.
+		Razred Dog predstavlja psa koji je pridruženoj određenoj udruzi (Shelter) i dostupan je za šetnje. Razred Walker predstavlja registriranog korisnika (šetača) koji može odabrati psa/pse za šetnju. Razred Shelter predstavlja registriranu udrugu koja ima svoj profil i pse dostupne za šetnju. Razred Walk predstavlja šetnju koja se dogodila s jednim šetačom i jednim ili više pasa. Razred Location predstavlja lokaciju (grad i adresa) na kojoj može biti smješten pas ili udruga. Kardinalnosti veza među razredima su prikazane na dijagramu.
 			
 			
 			\iffalse

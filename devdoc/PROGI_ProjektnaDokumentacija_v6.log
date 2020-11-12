@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.27)  12 NOV 2020 13:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.27)  12 NOV 2020 17:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1404,13 +1404,13 @@ elja. One se po-kre[]cu u browseru
                                                   
 l.95 
       <./slike/arhitektura.png>] [33] [34] [35] [36]
-<dijagrami/relacijski.PNG, id=563, 571.53525pt x 345.08925pt>
-File: dijagrami/relacijski.PNG Graphic file (type png)
-<use dijagrami/relacijski.PNG>
-Package pdftex.def Info: dijagrami/relacijski.PNG  used on input line 286.
-(pdftex.def)             Requested size: 514.37697pt x 310.57745pt.
+<dijagrami/relacijski.jpeg, id=563, 511.15968pt x 382.42876pt>
+File: dijagrami/relacijski.jpeg Graphic file (type jpg)
+<use dijagrami/relacijski.jpeg>
+Package pdftex.def Info: dijagrami/relacijski.jpeg  used on input line 286.
+(pdftex.def)             Requested size: 460.03944pt x 344.1827pt.
 
-Overfull \hbox (78.76617pt too wide) in paragraph at lines 286--288
+Overfull \hbox (24.42865pt too wide) in paragraph at lines 286--288
  [][] 
  []
 
@@ -1419,34 +1419,39 @@ e.4.3}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
 l.293 			\eject
-                <./dijagrami/relacijski.png>]
-<dijagrami/controlleri.jpg, id=580, 1185.42876pt x 573.14125pt>
-File: dijagrami/controlleri.jpg Graphic file (type jpg)
-<use dijagrami/controlleri.jpg>
-Package pdftex.def Info: dijagrami/controlleri.jpg  used on input line 312.
-(pdftex.def)             Requested size: 474.1631pt x 229.25243pt.
+                <./dijagrami/relacijski.jpeg>]
+<dijagrami/controlleri.jpeg, id=579, 1270.7475pt x 707.64375pt>
+File: dijagrami/controlleri.jpeg Graphic file (type jpg)
+<use dijagrami/controlleri.jpeg>
+Package pdftex.def Info: dijagrami/controlleri.jpeg  used on input line 312.
+(pdftex.def)             Requested size: 482.88907pt x 268.90742pt.
 
-Overfull \hbox (38.5523pt too wide) in paragraph at lines 312--314
+Overfull \hbox (47.27827pt too wide) in paragraph at lines 312--314
  [][] 
  []
 
-<dijagrami/modeli.jpg, id=581, 869.2475pt x 714.67pt>
-File: dijagrami/modeli.jpg Graphic file (type jpg)
-<use dijagrami/modeli.jpg>
-Package pdftex.def Info: dijagrami/modeli.jpg  used on input line 324.
-(pdftex.def)             Requested size: 434.62268pt x 357.33412pt.
+<dijagrami/modeli.jpeg, id=580, 1186.4325pt x 797.98125pt>
+File: dijagrami/modeli.jpeg Graphic file (type jpg)
+<use dijagrami/modeli.jpeg>
+Package pdftex.def Info: dijagrami/modeli.jpeg  used on input line 324.
+(pdftex.def)             Requested size: 474.56459pt x 319.18684pt.
+
+Overfull \hbox (38.9538pt too wide) in paragraph at lines 324--326
+ [][] 
+ []
+
 [39pdfTeX warning (ext4): destination with the same identifier (name{figure.4.4
 }) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
 l.329 			
-          <./dijagrami/controlleri.jpg>] [40pdfTeX warning (ext4): destination 
-with the same identifier (name{figure.4.5}) has been already used, duplicate ig
-nored
+          <./dijagrami/controlleri.jpeg>] [40pdfTeX warning (ext4): destination
+ with the same identifier (name{figure.4.5}) has been already used, duplicate i
+gnored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
 l.342 			\eject
-                <./dijagrami/modeli.jpg>]
+                <./dijagrami/modeli.jpeg>]
 Underfull \hbox (badness 10000) in paragraph at lines 347--348
 
  []
@@ -1596,7 +1601,7 @@ LaTeX Warning: There were multiply-defined labels.
  ) 
 Here is how much of TeX's memory you used:
  12304 strings out of 479918
- 175318 string characters out of 5886688
+ 175334 string characters out of 5886688
  560298 words of memory out of 5000000
  28224 multiletter control sequences out of 15000+600000
  583771 words of font info for 136 fonts, out of 8000000 for 9000
@@ -1612,10 +1617,10 @@ type1/public/kpfonts/jkpbn8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public
 t8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/kpfonts/jkpmitc.pfb><c:/
 texlive/2020/texmf-dist/fonts/type1/public/kpfonts/jkpmn8a.pfb><c:/texlive/2020
 /texmf-dist/fonts/type1/public/kpfonts/jkpttmn8a.pfb>
-Output written on PROGI_ProjektnaDokumentacija_v6.pdf (55 pages, 4404072 bytes)
+Output written on PROGI_ProjektnaDokumentacija_v6.pdf (55 pages, 4402777 bytes)
 .
 PDF statistics:
- 798 PDF objects out of 1000 (max. 8388607)
+ 797 PDF objects out of 1000 (max. 8388607)
  702 compressed objects within 8 object streams
  292 named destinations out of 1000 (max. 500000)
  298 words of extra memory for PDF output out of 10000 (max. 10000000)
