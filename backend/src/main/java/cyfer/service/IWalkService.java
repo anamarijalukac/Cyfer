@@ -7,7 +7,10 @@ import java.util.Optional;
 import cyfer.domain.Walk;
 
 public interface IWalkService {
-	Optional<Walk> findWalkByID(int walkId);
-	void setWalker(Walk walk);
+	
+	
 	List<Walk> getAllWalks();
+	void setWalk(Walk walk);
+
+	Walk getWalk(long walkId);
 }

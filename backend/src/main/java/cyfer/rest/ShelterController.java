@@ -18,21 +18,21 @@ import cyfer.domain.Walker;
 import cyfer.service.IShelterService;
 
 @RestController
-@RequestMapping("")
+@RequestMapping("/shelter")
 public class ShelterController {
 	
 	@Autowired
 	private IShelterService shelterService;
 	
 	
-	@PostMapping("/shelters/signup")
+	@PostMapping("/signup")
 	public ResponseEntity<Shelter> registerShelter(@RequestBody Shelter shelter) {
 		Shelter newShelter = shelterService.registerShelter(shelter);
-		return ResponseEntity.created(URI.create("/shelters" + newShelter.getName() + newShelter.getOIB()))
-				.body(newShelter);
+		if(newShelter != null) return new ResponseEntity<Shelter>(newShelter, HttpStatus.OK);
+		else return new ResponseEntity<Shelter>(HttpStatus.BAD_REQUEST);
 	}
 	
-	@PostMapping("/shelter/login")
+	@PostMapping("/login")
 	public ResponseEntity<Shelter> loginShelter(@RequestBody Shelter shelter) {
 		Shelter newShelter = shelterService.getByUsername(shelter.getUsername());
 		if(newShelter != null && newShelter.getPassword().equals(shelter.getPassword())) {
@@ -44,7 +44,7 @@ public class ShelterController {
 	}
 	
 	@GetMapping("/{id}")
-	public Shelter getUser(@PathVariable("id") long id) {
+	public Shelter getShelter(@PathVariable("id") long id) {
 		return shelterService.getShelter(id);
 	}
 	

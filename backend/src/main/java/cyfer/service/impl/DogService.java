@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import cyfer.dao.DogRepository;
 import cyfer.domain.Dog;
+import cyfer.domain.Walk;
 import cyfer.service.IDogService;
 
 @Service
@@ -33,5 +34,11 @@ public class DogService implements IDogService {
 	public Dog getDogByShelterOIB(String shelterOIB) { 
 		return null;
 	}
+	
+	@Override
+	public void setDog(Dog dog) {
+		dogRepository.save(dog);
+	}
+
 	
 }

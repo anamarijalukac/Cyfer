@@ -33,7 +33,7 @@ public class WalkController {
 
 	@PutMapping("walk")
 	public ResponseEntity<Walk> setWalker(@RequestBody Walk walk) {
-		walkService.setWalker(walk);
+		walkService.setWalk(walk);
 		return new ResponseEntity<Walk>(walk, HttpStatus.OK);
 	}
 }

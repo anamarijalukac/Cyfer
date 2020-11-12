@@ -40,14 +40,19 @@ public class WalkerService implements IWalkerService {
 
 	@Override
 	public Walker getWalker(long id) {
-		// TODO Auto-generated method stub
-		return null;
+		return walkerRepository.findById(id).get();
+
 	}
 
 	@Override
-	public Walker getWalker(String username) {
-		// TODO Auto-generated method stub
-		return null;
+	public void delete(Walker walker) {
+		walkerRepository.delete(walker);
+		
 	}
+
+
+	
+
+	
 
 }

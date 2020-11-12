@@ -1,19 +1,24 @@
 package cyfer.domain;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @Entity
+@Table(name = "walker")
 public class Walker {
-	
+
 	public Walker() {
 	}
-	
+
 	@Id
 	@GeneratedValue
 	@Column
 	private Long walkerId;
-	
+
 	@Column
 	@NotNull
 	private String username;
@@ -25,14 +30,29 @@ public class Walker {
 	@Column
 	@NotNull
 	private String password;
-	
+
 	@Column(unique = true)
 	@NotNull
 	private String email;
-	
+
 	@Column
 	@NotNull
-	private String firstName;
+	private String firstName;	
+	
+	
+	
+	@OneToMany(mappedBy="walker",cascade=CascadeType.ALL,orphanRemoval=true)
+	List<Reservation> reservations=new ArrayList<>();
+	
+	
+
+	public List<Reservation> getReservations() {
+		return reservations;
+	}
+
+	public void setReservations(List<Reservation> reservations) {
+		this.reservations = reservations;
+	}
 
 	public Long getWalkerId() {
 		return walkerId;
@@ -47,14 +67,13 @@ public class Walker {
 	}
 
 	public void setUsername(String username) {
-		System.out.println(username);
 		this.username = username;
 	}
 
 	public String getLastName() {
 		return lastName;
 	}
-	
+
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}

@@ -8,4 +8,5 @@ public interface IDogService {
 	Dog getDogByShelterOIB(String shelterOIB);
 	List<Dog> getAllDogs();
 	Dog getDog(long dogId);
+	void setDog(Dog dog);
 }

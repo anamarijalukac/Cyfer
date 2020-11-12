@@ -19,7 +19,7 @@ import cyfer.domain.Dog;
 import cyfer.service.IDogService;
 
 @RestController
-@RequestMapping("user")
+@RequestMapping("")
 public class DogController {
 
 	@Autowired

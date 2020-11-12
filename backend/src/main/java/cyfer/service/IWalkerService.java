@@ -8,12 +8,20 @@ public interface IWalkerService {
 
 	Walker registerWalker(Walker walker);
 
-	Walker getWalker(long id);
 
 	Walker getByUsername(String username);
 
 	List<Walker> getAllWalkers();
 
-	Walker getWalker(String username);
+
+	Walker getWalker(long id);
+
+
+	void delete(Walker walker);
+
+
+	
+
+	
 
 }

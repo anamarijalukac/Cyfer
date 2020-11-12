@@ -16,7 +16,7 @@ import cyfer.domain.Walker;
 import cyfer.service.IWalkerService;
 
 @RestController
-@RequestMapping("/walkers")
+@RequestMapping("/walker")
 public class WalkerController {
 
 	@Autowired
@@ -25,25 +25,25 @@ public class WalkerController {
 	@PostMapping("/login")
 	public ResponseEntity<Walker> loginWalker(@RequestBody Walker walker) {
 		Walker newWalker = walkerService.getByUsername(walker.getUsername());
-		System.out.println(newWalker.getUsername() + " " + newWalker.getPassword());
 		if(newWalker != null && newWalker.getPassword().equals(walker.getPassword())) {
 			System.out.println("USPJESAN LOGIN!");
 			return new ResponseEntity<Walker>(newWalker, HttpStatus.OK);
 		} else {
-			return new ResponseEntity<Walker>(walker, HttpStatus.BAD_REQUEST);
+			return new ResponseEntity<Walker>(HttpStatus.BAD_REQUEST);
 		}
 	}
-	
 	
 	@PostMapping("/signup")
 	public ResponseEntity<Walker> registerWalker(@RequestBody Walker walker) {
 		Walker newWalker = walkerService.registerWalker(walker);
-		return new ResponseEntity<Walker>(newWalker, HttpStatus.OK);
+		System.out.println(newWalker);
+		System.out.println(newWalker.getUsername());
+		if(newWalker != null) return new ResponseEntity<Walker>(newWalker, HttpStatus.OK);
+		else return new ResponseEntity<Walker>(HttpStatus.BAD_REQUEST);
 	}
 
-	
 	@GetMapping("/{id}")
-	public Walker getUser(@PathVariable("id") long id) {
+	public Walker getWalker(@PathVariable("id") long id) {
 		return walkerService.getWalker(id);
 	}
 

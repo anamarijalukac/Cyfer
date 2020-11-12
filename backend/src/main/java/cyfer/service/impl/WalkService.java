@@ -20,14 +20,10 @@ public class WalkService implements IWalkService {
 	@Autowired
 	private WalkRepository walkRepository;
 
-//	@Override
-//	public Walk getWalkByID(int walkId) {
-//		Walk obj = walkRepository.findWalkById(walkId);
-//		return obj;
-//	}
+
 
 	@Override
-	public void setWalker(Walk walk) {
+	public void setWalk(Walk walk) {
 		walkRepository.save(walk);
 	}
 
@@ -39,9 +35,10 @@ public class WalkService implements IWalkService {
 	}
 
 	@Override
-	public Optional<Walk> findWalkByID(int walkId) {
-		// TODO Auto-generated method stub
-		return null;
+	public Walk getWalk(long walkId) {
+		return walkRepository.findById(walkId).get();
+		
 	}
 
+	
 }
