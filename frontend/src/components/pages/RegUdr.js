@@ -3,7 +3,7 @@ import '../../components/pages/LogIn.css';
 
 function RegUdr(props) {
 
-  const [form, setForm] = React.useState({username: '', OIB: '', name:'', password:'', repeatPassword:''});
+  const [form, setForm] = React.useState({username: '', oib: '', name:'', password:'', repeatPassword:''});
 
   function onChange(event){
     const{name, value} = event.target;
@@ -16,7 +16,7 @@ function RegUdr(props) {
 
     const data = {
       username: form.username,
-      OIB: form.OIB,
+      oib: form.oib,
       name : form.name,
       password: form.password
     };
@@ -60,7 +60,7 @@ function RegUdr(props) {
           <input type="text" name='username' placeholder = "Upiši korisničko ime" onChange = {onChange} value = {form.username} required/>
 
           <label>OIB: </label>
-          <input type="text" name='OIB' placeholder = "Upiši OIB udruge" onChange = {onChange} value = {form.OIB} required/>
+          <input type="text" name='oib' placeholder = "Upiši OIB udruge" onChange = {onChange} value = {form.oib} required/>
 
           <label>Ime udruge: </label>
           <input type="text" name='name' placeholder="Upiši ime udruge" onChange = {onChange} value = {form.name}  required/>

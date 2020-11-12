@@ -34,7 +34,7 @@ function SignUp(props) {
       return window.location.reload();
     }
 
-    fetch('/walkers/signup', options)
+    fetch('/walker/signup', options)
     .then(response => {
       if(response.ok){
       alert("Uspješna registracija");

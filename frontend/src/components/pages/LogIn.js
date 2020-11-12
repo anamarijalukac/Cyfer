@@ -29,9 +29,8 @@ function LogIn(props){
             body: JSON.stringify(data)
           };
 
-          /*Ako se potvrda za postojeći sign up šalje preko POST koristi ovo*/
 
-          fetch('/walkers/login', options)
+          fetch('/walker/login', options)
           .then(response => {
             if(response.ok){
             alert("Uspješna prijava");
@@ -42,19 +41,6 @@ function LogIn(props){
               window.location.reload();
             }
           }).catch(error => console.log(error));
-
-
-          /*Ako se šalje preko GET koristi ovo*/
-
-          /*fetch('http://localhost:8080/walkers/login')
-          .then(response => {
-            if(response.status == 200){
-            console.log("BEEP");
-            }
-            else{
-              console.log("SHEEP");
-            }
-          }).catch(error => console.log(error));*/
 
         }
 
