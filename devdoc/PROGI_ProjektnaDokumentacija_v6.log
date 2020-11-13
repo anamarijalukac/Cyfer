@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.27)  13 NOV 2020 11:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.27)  13 NOV 2020 11:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1087,43 +1087,48 @@ l.39 ...hapter}{Popis literature}{49}{chapter*.13}
 (./Dnevnik_promjena_dokumentacije.tex
 Poglavlje 1.
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 40--40
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 43--43
 []\OT1/jkp/m/n/12 22.10.2020.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 40--40
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 43--43
 []\OT1/jkp/m/n/12 27.10.2020.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 40--40
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 43--43
 []\OT1/jkp/m/n/12 10.11.2020.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 40--40
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 43--43
 []\OT1/jkp/m/n/12 10.11.2020.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 40--40
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 43--43
 []\OT1/jkp/m/n/12 10.11.2020.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 40--40
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 43--43
 []\OT1/jkp/m/n/12 11.11.2020.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 40--40
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 43--43
 []\OT1/jkp/m/n/12 11.11.2020.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 40--40
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 43--43
 []\OT1/jkp/m/n/12 12.11.2020.|  
+ []
+
+
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 43--43
+[]\OT1/jkp/m/n/12 13.11.2020.|  
  []
 
 ) [3
@@ -1611,7 +1616,7 @@ type1/public/kpfonts/jkpbn8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public
 t8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/kpfonts/jkpmitc.pfb><c:/
 texlive/2020/texmf-dist/fonts/type1/public/kpfonts/jkpmn8a.pfb><c:/texlive/2020
 /texmf-dist/fonts/type1/public/kpfonts/jkpttmn8a.pfb>
-Output written on PROGI_ProjektnaDokumentacija_v6.pdf (55 pages, 4403053 bytes)
+Output written on PROGI_ProjektnaDokumentacija_v6.pdf (55 pages, 4403151 bytes)
 .
 PDF statistics:
  799 PDF objects out of 1000 (max. 8388607)
