@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.27)  12 NOV 2020 17:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.27)  13 NOV 2020 11:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1567,21 +1567,15 @@ ti re-gis-tri-ra-nog gra[]danina
 ]
 \openout2 = `Dodatak.aux'.
 
- (./Dodatak.tex
-Underfull \hbox (badness 10000) in paragraph at lines 6--7
-
- []
-
-[51
+ (./Dodatak.tex [51
 
 
-]
-Underfull \hbox (badness 10000) in paragraph at lines 41--42
+] [52]
+Overfull \vbox (2.0755pt too high) has occurred while \output is active []
 
- []
 
-[52] [53]
-Underfull \hbox (badness 10000) in paragraph at lines 103--104
+[53]
+Underfull \hbox (badness 10000) in paragraph at lines 121--122
 
  []
 
@@ -1601,9 +1595,9 @@ LaTeX Warning: There were multiply-defined labels.
  ) 
 Here is how much of TeX's memory you used:
  12304 strings out of 479918
- 175334 string characters out of 5886688
- 560298 words of memory out of 5000000
- 28224 multiletter control sequences out of 15000+600000
+ 175330 string characters out of 5886688
+ 559298 words of memory out of 5000000
+ 28222 multiletter control sequences out of 15000+600000
  583771 words of font info for 136 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  93i,13n,98p,1012b,614s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1617,11 +1611,11 @@ type1/public/kpfonts/jkpbn8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public
 t8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/kpfonts/jkpmitc.pfb><c:/
 texlive/2020/texmf-dist/fonts/type1/public/kpfonts/jkpmn8a.pfb><c:/texlive/2020
 /texmf-dist/fonts/type1/public/kpfonts/jkpttmn8a.pfb>
-Output written on PROGI_ProjektnaDokumentacija_v6.pdf (55 pages, 4402777 bytes)
+Output written on PROGI_ProjektnaDokumentacija_v6.pdf (55 pages, 4403053 bytes)
 .
 PDF statistics:
- 797 PDF objects out of 1000 (max. 8388607)
- 702 compressed objects within 8 object streams
- 292 named destinations out of 1000 (max. 500000)
+ 799 PDF objects out of 1000 (max. 8388607)
+ 704 compressed objects within 8 object streams
+ 294 named destinations out of 1000 (max. 500000)
  298 words of extra memory for PDF output out of 10000 (max. 10000000)
 
