@@ -25,10 +25,6 @@ public class Location {
 
 	@Column
 	private String address;
-	
-	@OneToOne(cascade = CascadeType.ALL, optional = false)
-    @JoinColumn(name = "shelterId")
-    private Shelter shelter;
 
 	public String getAddress() {
 		return address;

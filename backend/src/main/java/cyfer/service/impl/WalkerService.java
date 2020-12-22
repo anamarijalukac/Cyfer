@@ -46,7 +46,6 @@ public class WalkerService implements IWalkerService {
 
 	@Override
 	public Walker getWalker(long id) {
-		System.out.println(walkerRepository.findById(id).isPresent());
 		return walkerRepository.findById(id).get();
 	}
 

@@ -110,7 +110,7 @@ public class DataInitializer {
 		shelter1.setName("prvaudruga");
 		shelter1.setUsername("udruga1");
 		shelter1.setPassword("12345");
-		//shelter1.setLocation(location1);
+		shelter1.setLocation(location1);
 		
 		Dog dog1 = new Dog();
 		dog1.setDescription("mali");

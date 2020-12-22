@@ -35,7 +35,8 @@ public class Shelter {
 	@NotNull
 	private String password;
 
-	@ManyToOne(targetEntity = Location.class)
+
+	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "locationId")
     private Location location;
 	@Column
@@ -43,24 +44,21 @@ public class Shelter {
 	@Column
 	private String city;
 
-	public Location getLocation() {
-		return location;
-	}
 
-	public void setLocation(Location location) {
-		this.location = location;
-	}
+
+
 
 	public Long getShelterId() {
 		return shelterId;
 	}
 
-	public void setShelterId(Long shelterId) {
-		this.shelterId = shelterId;
-	}
 
 	public String getOIB() {
 		return OIB;
+	}
+
+	public Location getLocation() {
+		return location;
 	}
 
 	public void setOIB(String oib) {
@@ -91,4 +89,25 @@ public class Shelter {
 		this.username = username;
 	}
 
+	public void setLocation(Location l) {
+		this.location=l;
+		this.address=l.getAddress();
+		this.city=l.getCity();
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
 }

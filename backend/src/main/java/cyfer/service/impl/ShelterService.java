@@ -8,6 +8,7 @@ import cyfer.service.IShelterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,8 +17,8 @@ public class ShelterService implements IShelterService {
 
     @Autowired
     private ShelterRepository shelterRepository;
-    //@Autowired
-    //private DogRepository dogRepository;
+    @Autowired
+    private DogRepository dogRepository;
 
     @Override
     public Shelter getShelterByOIB(String OIB) {
@@ -27,7 +28,7 @@ public class ShelterService implements IShelterService {
     @Override
     public List<Shelter> getAllShelters() {
         List<Shelter> list = new ArrayList<>();
-        shelterRepository.findAll().forEach(e -> list.add(e));
+         shelterRepository.findAll().forEach(e -> list.add(e));
         return list;
     }
 
@@ -49,21 +50,14 @@ public class ShelterService implements IShelterService {
     @Override
     public void addDog(Shelter shelter, Dog dog) {
         dog.setShelter(shelter);
-        //dogRepository.save(dog);
+        dogRepository.save(dog);
 
     }
 
-    //rijesiti ovaj bug!!!
+
     @Override
     public Shelter getShelter(long id) {
-
-        //List<Shelter> list = new ArrayList<>();
-        //shelterRepository.findAll().forEach(e -> list.add(e));
-
-        boolean check = shelterRepository.existsById(id);
-        System.out.println(check);
         return shelterRepository.findById(id).get();
-
 
     }
 
