@@ -2,14 +2,7 @@ package cyfer.domain;
 
 import java.util.List;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -42,8 +35,13 @@ public class Shelter {
 	@NotNull
 	private String password;
 
-	@OneToOne(mappedBy = "shelter")
+	@ManyToOne(targetEntity = Location.class)
+	@JoinColumn(name = "locationId")
     private Location location;
+	@Column
+	private String address;
+	@Column
+	private String city;
 
 	public Location getLocation() {
 		return location;
