@@ -23,5 +23,5 @@ public interface IShelterService {
 
 
 
-	Shelter getShelter(Long id);
+	Shelter getShelter(long id);
 }

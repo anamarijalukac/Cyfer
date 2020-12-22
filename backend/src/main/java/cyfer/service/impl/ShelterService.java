@@ -16,8 +16,8 @@ public class ShelterService implements IShelterService {
 
     @Autowired
     private ShelterRepository shelterRepository;
-    @Autowired
-    private DogRepository dogRepository;
+    //@Autowired
+    //private DogRepository dogRepository;
 
     @Override
     public Shelter getShelterByOIB(String OIB) {
@@ -28,12 +28,8 @@ public class ShelterService implements IShelterService {
     public List<Shelter> getAllShelters() {
         List<Shelter> list = new ArrayList<>();
         shelterRepository.findAll().forEach(e -> list.add(e));
-        long id = list.get(0).getShelterId();
-        Shelter s = shelterRepository.findById(id).get();
-        System.out.println(s.getShelterId() + s.getName());
         return list;
     }
-
 
     @Override
     public Shelter registerShelter(Shelter shelter) {
@@ -48,26 +44,26 @@ public class ShelterService implements IShelterService {
     @Override
     public void deleteShelter(long id) {
         shelterRepository.deleteById(id);
-
     }
 
     @Override
     public void addDog(Shelter shelter, Dog dog) {
         dog.setShelter(shelter);
-        dogRepository.save(dog);
+        //dogRepository.save(dog);
 
     }
 
     //rijesiti ovaj bug!!!
     @Override
-    public Shelter getShelter(Long broj) {
+    public Shelter getShelter(long id) {
 
-        List<Shelter> list = new ArrayList<>();
-        shelterRepository.findAll().forEach(e -> list.add(e));
+        //List<Shelter> list = new ArrayList<>();
+        //shelterRepository.findAll().forEach(e -> list.add(e));
 
+        boolean check = shelterRepository.existsById(id);
+        System.out.println(check);
+        return shelterRepository.findById(id).get();
 
-        Shelter s = shelterRepository.findById(broj).get();
-        return s;
 
     }
 

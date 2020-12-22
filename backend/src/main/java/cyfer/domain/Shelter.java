@@ -22,7 +22,7 @@ public class Shelter {
 	
 	@Id
 	@GeneratedValue
-	@Column(unique = true)
+	@Column
 	private Long shelterId;
 
 	@Column(unique = true)
@@ -42,8 +42,7 @@ public class Shelter {
 	@NotNull
 	private String password;
 
-	
-	@OneToOne(mappedBy = "shelter", optional = false)
+	@OneToOne(mappedBy = "shelter")
     private Location location;
 
 	public Location getLocation() {

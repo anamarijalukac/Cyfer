@@ -101,13 +101,16 @@ public class DataInitializer {
 		walk5.setDateTime(Timestamp.valueOf("2017-09-08 03:13:15"));
 		walk5.setDuration(50);
 		
-		
+		Location location1 = new Location();
+		location1.setAddress("Ilica 35");
+		location1.setCity("Zagreb");
 
 		Shelter shelter1=new Shelter();
 		shelter1.setOIB("11111111111");
 		shelter1.setName("prvaudruga");
 		shelter1.setUsername("udruga1");
 		shelter1.setPassword("12345");
+		//shelter1.setLocation(location1);
 		
 		Dog dog1 = new Dog();
 		dog1.setDescription("mali");
@@ -138,9 +141,10 @@ public class DataInitializer {
 		dog5.setImage("bijeli5");
 		dog5.setName("vili5");
 		dog5.setTypeOfWalk("I");
-		
-		
-		
+
+
+
+		shelterService.registerShelter(shelter1);
 
 		walkerService.registerWalker(walker1);
 		walkerService.registerWalker(walker2);
@@ -166,7 +170,7 @@ public class DataInitializer {
 		reservationService.createReservation(walker3, walk3, dog3);
 		reservationService.createReservation(walker4, walk4, dog4);
 		reservationService.createReservation(walker5, walk5, dog5);
-		
+
 
 	}
 

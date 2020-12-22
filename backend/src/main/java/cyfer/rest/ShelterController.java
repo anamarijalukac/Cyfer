@@ -25,8 +25,8 @@ public class ShelterController {
 
 	@Autowired
 	private IShelterService shelterService;
-	@Autowired
-	private IDogService dogService;
+	//@Autowired
+	//private IDogService dogService;
 
 	@PostMapping("/signup")
 	public ResponseEntity<Shelter> registerShelter(@RequestBody Shelter shelter) {
@@ -40,6 +40,7 @@ public class ShelterController {
 	@PostMapping("/login")
 	public ResponseEntity<Shelter> loginShelter(@RequestBody Shelter shelter) {
 		Shelter newShelter = shelterService.getByUsername(shelter.getUsername());
+		System.out.println(newShelter.getShelterId() + " " + newShelter.getUsername() + " " + shelter.getShelterId());
 		if (newShelter != null && newShelter.getPassword().equals(shelter.getPassword())) {
 			System.out.println("USPJESAN LOGIN!");
 			return new ResponseEntity<Shelter>(newShelter, HttpStatus.OK);
@@ -50,7 +51,7 @@ public class ShelterController {
 
 	
 	@GetMapping("/id/{id}")
-	public Shelter getShelter(@PathVariable("id") Long id) {
+	public Shelter getShelter(@PathVariable("id") long id) {
 		return shelterService.getShelter(id);
 	}
 	
@@ -73,7 +74,7 @@ public class ShelterController {
 	}
 	
 
-	@PostMapping("/{shelterId}/add/{dogId}")
+	/*@PostMapping("/{shelterId}/add/{dogId}")
 	public ResponseEntity<HttpStatus> addDogToShelter(@PathVariable("shelterId") long shelterId,@PathVariable("dogId") long dogId) {
 		Shelter shelter=shelterService.getShelter(shelterId);
 		Dog dog=dogService.getDog(dogId);
@@ -81,7 +82,7 @@ public class ShelterController {
 			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 		shelterService.addDog(shelter,dog);
 		return new ResponseEntity<>(HttpStatus.OK);
-	}
+	}*/
 
 	
 }

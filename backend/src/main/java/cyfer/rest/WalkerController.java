@@ -36,8 +36,6 @@ public class WalkerController {
 	@PostMapping("/signup")
 	public ResponseEntity<Walker> registerWalker(@RequestBody Walker walker) {
 		Walker newWalker = walkerService.registerWalker(walker);
-		System.out.println(newWalker);
-		System.out.println(newWalker.getUsername());
 		if (newWalker != null)
 			return new ResponseEntity<Walker>(newWalker, HttpStatus.OK);
 		else

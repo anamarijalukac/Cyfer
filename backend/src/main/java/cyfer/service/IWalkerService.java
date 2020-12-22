@@ -24,10 +24,4 @@ public interface IWalkerService {
 
 
 	Walker getByEmail(String email);
-
-
-	
-
-	
-
 }
