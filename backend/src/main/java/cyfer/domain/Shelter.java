@@ -46,8 +46,6 @@ public class Shelter {
 
 
 
-
-
 	public Long getShelterId() {
 		return shelterId;
 	}

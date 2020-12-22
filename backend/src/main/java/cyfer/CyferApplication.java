@@ -3,10 +3,12 @@ package cyfer;
 import org.springframework.boot.SpringApplication;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 @SpringBootApplication
 public class CyferApplication {
-	//ne radi nam shelter.getbyid
 
 	/*
 	 * UC1 - Pregled profila udruga i pasa iz te udruge-boki
@@ -28,6 +30,11 @@ public class CyferApplication {
 	 * UC17 - Pregled korisnika-zaba
 	 * UC18 - Brisanje korisnika-zaba
 	 */
+
+	@Bean
+	public PasswordEncoder pswdEncoder() {
+		return new BCryptPasswordEncoder();
+	}
 
 	public static void main(String[] args) {
 		SpringApplication.run(CyferApplication.class, args);
