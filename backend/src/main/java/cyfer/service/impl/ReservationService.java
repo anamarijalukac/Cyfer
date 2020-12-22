@@ -4,8 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import cyfer.dao.DogRepository;
 import cyfer.dao.ReservationRepository;
 import cyfer.dao.WalkerRepository;
 import cyfer.domain.Dog;
@@ -21,7 +24,8 @@ public class ReservationService implements IReservationService {
 	private ReservationRepository reservationRepository;
 	@Autowired
 	private WalkerRepository walkerRepository;
-
+	@Autowired
+	private DogRepository dogRepository;
 	
 	@Override
 	public Reservation getReservation(long reservationId) {
@@ -42,15 +46,22 @@ public class ReservationService implements IReservationService {
 
 	
 	@Override
-	public void createReservation(Walker walker,Walk walk, Dog dog) {
+	public Reservation createReservation(Walker walker,Walk walk, Dog dog) {
 		
 		Reservation newReservation=new Reservation(walk,walker,dog);
-		List<Reservation> list=walker.getReservations();
-		list.add(newReservation);
-		walker.setReservations(list);
-		walkerRepository.save(walker);
-		return;
+		reservationRepository.save(newReservation);
+		return newReservation;
 		
+	}
+
+
+
+	@Override
+	public List<Dog> getDogsStatistics() {
+		List<Dog> list=new ArrayList<>();
+		Pageable top = PageRequest.of(0, 3);
+		reservationRepository.findDogsStatisticsFromReservation(top).forEach(e->list.add(e));
+		return list;
 	}
 
 	

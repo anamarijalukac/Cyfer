@@ -20,9 +20,9 @@ public class Shelter {
 	public Shelter() {
 	}
 	
-	@Column
 	@Id
 	@GeneratedValue
+	@Column(unique = true)
 	private Long shelterId;
 
 	@Column(unique = true)
@@ -36,15 +36,23 @@ public class Shelter {
 	
 	@Column
 	@NotNull
-	private String password;
+	private String username;
 
 	@Column
 	@NotNull
-	private String username;
+	private String password;
 
 	
 	@OneToOne(mappedBy = "shelter", optional = false)
     private Location location;
+
+	public Location getLocation() {
+		return location;
+	}
+
+	public void setLocation(Location location) {
+		this.location = location;
+	}
 
 	public Long getShelterId() {
 		return shelterId;

@@ -37,16 +37,10 @@ public class Walk {
 	private int duration;
 	
 	
-	@OneToMany(mappedBy="walk",cascade=CascadeType.ALL,orphanRemoval=true)
-	List<Reservation> reservations=new ArrayList<>();
+	
+	
+	
 
-	public List<Reservation> getReservations() {
-		return reservations;
-	}
-
-	public void setReservations(List<Reservation> reservations) {
-		this.reservations = reservations;
-	}
 
 	public Long getWalkId() {
 		return walkId;

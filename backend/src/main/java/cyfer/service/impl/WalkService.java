@@ -23,8 +23,9 @@ public class WalkService implements IWalkService {
 
 
 	@Override
-	public void setWalk(Walk walk) {
+	public Walk setWalk(Walk walk) {
 		walkRepository.save(walk);
+		return walk;
 	}
 
 	@Override

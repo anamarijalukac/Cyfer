@@ -20,6 +20,12 @@ public interface IWalkerService {
 	void delete(Walker walker);
 
 
+	void deleteWalker(long id);
+
+
+	Walker getByEmail(String email);
+
+
 	
 
 	

@@ -24,9 +24,9 @@ import cyfer.service.IWalkService;
 import cyfer.service.IWalkerService;
 
 @RestController
-@RequestMapping("/reservations")
+@RequestMapping("")
 public class ReservationController {
-	
+
 	@Autowired
 	private IReservationService reservationService;
 	@Autowired
@@ -35,35 +35,25 @@ public class ReservationController {
 	private IWalkService walkService;
 	@Autowired
 	private IDogService dogService;
-	
-	
-	
-	@PostMapping("")
-	public ResponseEntity<Reservation> createReservation(@RequestParam Long walkerId, @RequestParam Long walkId,@RequestParam Long dogId) {
-		
-		Walker walker=walkerService.getWalker(walkerId);
-		Walk walk=walkService.getWalk(walkId);
-		Dog dog=dogService.getDog(dogId);
-		reservationService.createReservation(walker,walk,dog);
-		return new ResponseEntity<>( HttpStatus.OK);
-	}
-	
-	//////////////izbrisati, ovo je samo demo
-	@PostMapping("/proba")
-	public ResponseEntity<Reservation> azuriraj(@RequestParam Long stari) {
-		
-		Walker walker=walkerService.getWalker(stari);
-		
-		walkerService.delete(walker);
 
-		return new ResponseEntity<>( HttpStatus.OK);
+	@PostMapping("walker/{walkerId}/dog/{dogId}/reservation")
+	public ResponseEntity<Reservation> createReservation(@PathVariable("walkerId") long walkerId,
+			@PathVariable("dogId") long dogId, @RequestBody Walk walk) {
+		Walk newWalk=walkService.setWalk(walk);
+		System.out.println(newWalk.toString());
+		Walker walker = walkerService.getWalker(walkerId);
+		Dog dog = dogService.getDog(dogId);
+		Reservation newReservation=reservationService.createReservation(walker, newWalk, dog);
+		return new ResponseEntity<Reservation>(newReservation,HttpStatus.OK);
 	}
-	
-	
-	
-	
-	
-	@GetMapping("")
+
+	@GetMapping("dog/statistics")
+	public ResponseEntity<List<Dog>> getAllDogStatistics() {
+		List<Dog> dogs = reservationService.getDogsStatistics();
+		return new ResponseEntity<List<Dog>>(dogs, HttpStatus.OK);
+	}
+
+	@GetMapping("/reservations")
 	public ResponseEntity<List<Reservation>> getAllReservations() {
 
 		List<Reservation> list = reservationService.getAllReservations();

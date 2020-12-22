@@ -18,7 +18,11 @@ public interface IReservationService {
 	
 
 	
-	void createReservation(Walker walker, Walk walk, Dog dog);
+	Reservation createReservation(Walker walker, Walk walk, Dog dog);
+
+
+
+	List<Dog> getDogsStatistics();
 
 	
 

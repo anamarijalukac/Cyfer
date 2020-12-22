@@ -21,25 +21,37 @@ public class WalkerController {
 
 	@Autowired
 	private IWalkerService walkerService;
-	
+
 	@PostMapping("/login")
 	public ResponseEntity<Walker> loginWalker(@RequestBody Walker walker) {
 		Walker newWalker = walkerService.getByUsername(walker.getUsername());
-		if(newWalker != null && newWalker.getPassword().equals(walker.getPassword())) {
+		if (newWalker != null && newWalker.getPassword().equals(walker.getPassword())) {
 			System.out.println("USPJESAN LOGIN!");
 			return new ResponseEntity<Walker>(newWalker, HttpStatus.OK);
 		} else {
 			return new ResponseEntity<Walker>(HttpStatus.BAD_REQUEST);
 		}
 	}
-	
+
 	@PostMapping("/signup")
 	public ResponseEntity<Walker> registerWalker(@RequestBody Walker walker) {
 		Walker newWalker = walkerService.registerWalker(walker);
 		System.out.println(newWalker);
 		System.out.println(newWalker.getUsername());
-		if(newWalker != null) return new ResponseEntity<Walker>(newWalker, HttpStatus.OK);
-		else return new ResponseEntity<Walker>(HttpStatus.BAD_REQUEST);
+		if (newWalker != null)
+			return new ResponseEntity<Walker>(newWalker, HttpStatus.OK);
+		else
+			return new ResponseEntity<Walker>(HttpStatus.BAD_REQUEST);
+	}
+
+	@PostMapping("/update/{id}")
+	public ResponseEntity<Walker> updateWalkerInfo(@RequestBody Walker walker) {
+		if (walkerService.getByUsername(walker.getUsername()) != null
+				&& walkerService.getByEmail(walker.getEmail()) != null)
+			return new ResponseEntity<Walker>(HttpStatus.BAD_REQUEST);
+		walkerService.registerWalker(walker);
+		return new ResponseEntity<Walker>(walker, HttpStatus.OK);
+
 	}
 
 	@GetMapping("/{id}")
@@ -52,5 +64,12 @@ public class WalkerController {
 
 		List<Walker> list = walkerService.getAllWalkers();
 		return new ResponseEntity<List<Walker>>(list, HttpStatus.OK);
+	}
+
+	@PostMapping("/delete/{id}")
+	public ResponseEntity<HttpStatus> deleteWalker(@PathVariable("id") long id) {
+		walkerService.deleteWalker(id);
+		return new ResponseEntity<>(HttpStatus.OK);
+
 	}
 }

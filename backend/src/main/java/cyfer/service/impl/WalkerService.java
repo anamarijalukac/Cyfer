@@ -30,6 +30,12 @@ public class WalkerService implements IWalkerService {
 		Walker walker = walkerRepository.findByUsername(username);
 		return walker;
 	}
+	
+	@Override
+	public Walker getByEmail(String email) {
+		Walker walker = walkerRepository.findByEmail(email);
+		return walker;
+	}
 
 	@Override
 	public List<Walker> getAllWalkers() {
@@ -48,6 +54,11 @@ public class WalkerService implements IWalkerService {
 	public void delete(Walker walker) {
 		walkerRepository.delete(walker);
 		
+	}
+
+	@Override
+	public void deleteWalker(long id) {
+		walkerRepository.deleteById(id);
 	}
 
 

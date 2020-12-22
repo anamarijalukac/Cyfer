@@ -19,8 +19,8 @@ public class DogService implements IDogService {
 
 	@Override
 	public Dog getDog(long dogId) {
-		Dog obj = dogRepository.findById(dogId).get();
-		return obj;
+		return dogRepository.findById(dogId).get();
+		
 	}
 
 	@Override
@@ -30,10 +30,7 @@ public class DogService implements IDogService {
 		return list;
 	}
 
-	@Override
-	public Dog getDogByShelterOIB(String shelterOIB) { 
-		return null;
-	}
+	
 	
 	@Override
 	public void setDog(Dog dog) {
