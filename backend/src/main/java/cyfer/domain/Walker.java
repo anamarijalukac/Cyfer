@@ -1,5 +1,7 @@
 package cyfer.domain;
 
+import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -39,7 +41,7 @@ public class Walker {
 	@NotNull
 	private String firstName;	
 	
-	
+
 	
 	
 

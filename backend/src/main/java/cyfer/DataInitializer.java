@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
 
@@ -48,7 +49,7 @@ public class DataInitializer {
 		walker1.setEmail("pero.peric@gmail.com");
 		walker1.setFirstName("Pero");
 		walker1.setLastName("Peric");
-		walker1.setPassword("12345671");
+		walker1.setPassword(new BCryptPasswordEncoder().encode("12345671"));
 		walker1.setUsername("maliPerica");
 		
 		Walker walker2 = new Walker();
