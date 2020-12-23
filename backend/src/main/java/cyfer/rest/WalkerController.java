@@ -51,7 +51,6 @@ public class WalkerController {
 		String passEncoded = encoder.encode(password);
 		walker.setPassword(passEncoded);
 
-		//System.out.println(walker.getPassword());
 		Walker newWalker = walkerService.registerWalker(walker);
 		if (newWalker != null)
 			return new ResponseEntity<Walker>(newWalker, HttpStatus.OK);

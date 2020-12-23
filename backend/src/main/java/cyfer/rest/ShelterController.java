@@ -7,6 +7,7 @@ import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,7 +16,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.net.URI;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import cyfer.domain.Dog;
 import cyfer.domain.Shelter;
@@ -48,8 +51,7 @@ public class ShelterController {
 	@PostMapping("/login")
 	public ResponseEntity<Shelter> loginShelter(@RequestBody Shelter shelter) {
 		Shelter newShelter = shelterService.getByUsername(shelter.getUsername());
-		boolean passwordTrue = new BCryptPasswordEncoder().matches(shelter.getPassword(),shelter.getPassword());
-		//System.out.println(newShelter.getShelterId() + " " + newShelter.getUsername() + " " + shelter.getShelterId());
+		boolean passwordTrue = new BCryptPasswordEncoder().matches(shelter.getPassword(),newShelter.getPassword());
 		if (passwordTrue) {
 			System.out.println("USPJESAN LOGIN!");
 			return new ResponseEntity<Shelter>(newShelter, HttpStatus.OK);
@@ -58,7 +60,6 @@ public class ShelterController {
 		}
 	}
 
-	
 	@GetMapping("/{id}")
 	@Secured("ROLE_SHELTER")
 	public Shelter getShelter(@PathVariable("id") long id, @AuthenticationPrincipal User user) {

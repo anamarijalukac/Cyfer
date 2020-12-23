@@ -9,4 +9,5 @@ public interface IDogService {
 	List<Dog> getAllDogs();
 	Dog getDog(long dogId);
 	void setDog(Dog dog);
+	List<Dog> getSheltersDogs(long shelterId);
 }

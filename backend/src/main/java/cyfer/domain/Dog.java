@@ -37,8 +37,7 @@ public class Dog {
 	@Size(min = 1, max = 1)
 	private String typeOfWalk;
 
-	
-	
+
 	@ManyToOne(targetEntity = Shelter.class)
 	@JoinColumn(name = "shelterId")
 	private Shelter shelter;

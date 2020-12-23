@@ -14,7 +14,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-
 import static org.springframework.security.core.authority.AuthorityUtils.commaSeparatedStringToAuthorityList;
 
 @Service
@@ -32,7 +31,7 @@ public class MyUserDetailsService implements UserDetailsService {
         String password;
         if(walker == null) {
             Shelter shelter = shelterService.getByUsername(username);
-            password = walker.getPassword();
+            password = shelter.getPassword();
         }
         else {
             password = walker.getPassword();

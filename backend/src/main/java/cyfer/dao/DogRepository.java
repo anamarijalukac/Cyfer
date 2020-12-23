@@ -10,7 +10,4 @@ import org.springframework.data.repository.query.Param;
 import cyfer.domain.Dog;
 
 public interface DogRepository extends JpaRepository<Dog, Long> {
-	
-	
-	
 }
