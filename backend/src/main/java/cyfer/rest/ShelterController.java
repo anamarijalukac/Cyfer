@@ -62,10 +62,12 @@ public class ShelterController {
 
 	@GetMapping("/{id}")
 	@Secured("ROLE_SHELTER")
-	public Shelter getShelter(@PathVariable("id") long id, @AuthenticationPrincipal User user) {
-		if(user.getUsername().equals(shelterService.getShelter(id).getUsername()))
-			return shelterService.getShelter(id);
-		else return null;
+	public ResponseEntity<Shelter> getShelter(@PathVariable("id") long id, @AuthenticationPrincipal User user) {
+		if(user.getUsername().equals(shelterService.getShelter(id).getUsername())) {
+			return new ResponseEntity<Shelter>(shelterService.getShelter(id), HttpStatus.OK);
+		} else {
+			return new ResponseEntity<Shelter>((Shelter) null, HttpStatus.UNAUTHORIZED);
+		}
 	}
 	
 	@GetMapping("/name/{name}")
