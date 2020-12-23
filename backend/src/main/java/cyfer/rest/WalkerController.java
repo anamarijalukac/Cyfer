@@ -1,7 +1,9 @@
 package cyfer.rest;
 
+import java.sql.Timestamp;
 import java.util.List;
 
+import cyfer.service.IReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -29,6 +31,9 @@ public class WalkerController {
 
 	@Autowired
 	private IWalkerService walkerService;
+
+	@Autowired
+	private IReservationService reservationService;
 
 	@PostMapping("/login")
 	public ResponseEntity<Walker> loginWalker(@RequestBody Walker walker) {
@@ -83,4 +88,13 @@ public class WalkerController {
 		return new ResponseEntity<>(HttpStatus.OK);
 
 	}
+	
+	@GetMapping("/{id}/calendar")
+	public List<Timestamp> getWalkSchedule(@PathVariable("id") long id, @AuthenticationPrincipal User user) {
+		if(user.getUsername().equals(walkerService.getWalker(id).getUsername()))
+			return reservationService.getCalendar(id);
+		else
+			return null;
+	}
+	
 }

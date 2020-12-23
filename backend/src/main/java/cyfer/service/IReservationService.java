@@ -1,5 +1,6 @@
 package cyfer.service;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 import cyfer.domain.Dog;
@@ -11,18 +12,13 @@ public interface IReservationService {
 
 	Reservation getReservation(long reservationId);
 
-	
-
 	List<Reservation> getAllReservations();
 
-	
-
-	
 	Reservation createReservation(Walker walker, Walk walk, Dog dog);
 
-
-
 	List<Dog> getDogsStatistics();
+
+	List<Timestamp> getCalendar(long walkerId);
 
 	
 

@@ -1,7 +1,10 @@
 package cyfer.service.impl;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
@@ -64,6 +67,15 @@ public class ReservationService implements IReservationService {
 		return list;
 	}
 
-	
+	@Override
+	public List<Timestamp> getCalendar(long walkerId) {
+		List<Reservation> list = reservationRepository.findAll().stream().filter(r -> r.getWalker().getWalkerId() == walkerId).collect(Collectors.toList());
+		List<Timestamp> dates = new LinkedList<>();
+		for(Reservation r : list) {
+			dates.add(r.getWalk().getDateTime());
+		}
+		return dates;
+	}
+
 
 }

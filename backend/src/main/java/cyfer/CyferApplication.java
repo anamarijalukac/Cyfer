@@ -29,7 +29,7 @@ public class CyferApplication {
 	 * UC13 - Rezervacija termina setnje-*
 	 * UC14 - Pregled vlastitih statistika setnji-sven
 	 * UC15 - Oznacavanje statistike setnji kao javne -sven
-	 * UC16 - Pregled i skidanje (eng.download) kalendara registriranog gradanina-dave
+	 * UC16 - Pregled i skidanje (eng.download) kalendara registriranog gradanina-*(dave)
 	 * UC17 - Pregled korisnika-zaba
 	 * UC18 - Brisanje korisnika-zaba
 	 */
