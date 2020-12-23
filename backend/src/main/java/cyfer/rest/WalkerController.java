@@ -40,17 +40,11 @@ public class WalkerController {
 		} else {
 			return new ResponseEntity<Walker>(HttpStatus.BAD_REQUEST);
 		}
-		//newWalker != null && newWalker.getPassword().equals(walker.getPassword())
 	}
 
 	@PostMapping("/signup")
 	public ResponseEntity<Walker> registerWalker(@RequestBody Walker walker,
 												 @AuthenticationPrincipal User user) {
-		String password = walker.getPassword();
-		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-		String passEncoded = encoder.encode(password);
-		walker.setPassword(passEncoded);
-
 		Walker newWalker = walkerService.registerWalker(walker);
 		if (newWalker != null)
 			return new ResponseEntity<Walker>(newWalker, HttpStatus.OK);
@@ -58,13 +52,12 @@ public class WalkerController {
 			return new ResponseEntity<Walker>(HttpStatus.BAD_REQUEST);
 	}
 
-	//METODA MI SE CINI POGRESKO IMPLEMENTIRANA
 	@PostMapping("/update/{id}")
 	@Secured("ROLE_WALKER")
-	public ResponseEntity<Walker> updateWalkerInfo(@RequestBody Walker walker) {
-		if (walkerService.getByUsername(walker.getUsername()) != null
-				&& walkerService.getByEmail(walker.getEmail()) != null)
+	public ResponseEntity<Walker> updateWalkerInfo(@RequestBody Walker walker, @PathVariable("id") long id) {
+		if (walkerService.getWalker(id) == null)
 			return new ResponseEntity<Walker>(HttpStatus.BAD_REQUEST);
+		walker.setWalkerId(id);
 		walkerService.registerWalker(walker);
 		return new ResponseEntity<Walker>(walker, HttpStatus.OK);
 	}

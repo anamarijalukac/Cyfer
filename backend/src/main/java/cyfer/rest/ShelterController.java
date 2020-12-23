@@ -37,10 +37,6 @@ public class ShelterController {
 
 	@PostMapping("/signup")
 	public ResponseEntity<Shelter> registerShelter(@RequestBody Shelter shelter) {
-		String password = shelter.getPassword();
-		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-		String passEncoded = encoder.encode(password);
-		shelter.setPassword(passEncoded);
 		Shelter newShelter = shelterService.registerShelter(shelter);
 		if (newShelter != null)
 			return new ResponseEntity<Shelter>(newShelter, HttpStatus.OK);
@@ -98,6 +94,14 @@ public class ShelterController {
 			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 		shelterService.addDog(shelter,dog);
 		return new ResponseEntity<>(HttpStatus.OK);
+	}
+
+	@GetMapping("/{shelterId}/dogs")
+	@Secured("ROLE_SHELTER")
+	public List<Dog> getDogsByShelterId(@PathVariable("shelterId") long shelterId) {
+		//Shelter shelter=shelterService.getShelter(shelterId);
+		List<Dog> dogs = dogService.getSheltersDogs(shelterId);
+		return dogs;
 	}
 
 	

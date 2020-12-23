@@ -14,7 +14,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 public class CyferApplication {
 
 	/*
-	 * UC1 - Pregled profila udruga i pasa iz te udruge-boki
+	 * UC1 - Pregled profila udruga i pasa iz te udruge-*
 	 * UC2 - Pregled liste profila svih pasa-*
 	 * UC3 - Pregled statistike svih pasa-*
 	 * UC4 - Pregled rang-liste svih setaca-dave

@@ -6,6 +6,7 @@ import cyfer.domain.Dog;
 import cyfer.domain.Shelter;
 import cyfer.service.IShelterService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -34,6 +35,7 @@ public class ShelterService implements IShelterService {
 
     @Override
     public Shelter registerShelter(Shelter shelter) {
+        shelter.setPassword(new BCryptPasswordEncoder().encode(shelter.getPassword()));
         return shelterRepository.save(shelter);
     }
 

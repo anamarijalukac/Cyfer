@@ -27,7 +27,7 @@ public class DogService implements IDogService {
 
 	@Override
 	public List<Dog> getSheltersDogs(long shelterId) {
-		List<Dog> dogs = dogRepository.findAll().stream().filter(s -> s.getShelter().getShelterId() == shelterId).collect(Collectors.toList());
+		List<Dog> dogs = dogRepository.findAll().stream().filter(d -> d.getShelter().getShelterId() == shelterId).collect(Collectors.toList());
 		return dogs;
 	}
 

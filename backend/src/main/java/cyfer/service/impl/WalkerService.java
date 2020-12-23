@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import cyfer.dao.ShelterRepository;
@@ -22,6 +23,7 @@ public class WalkerService implements IWalkerService {
 
 	@Override
 	public Walker registerWalker(Walker walker) {
+		walker.setPassword(new BCryptPasswordEncoder().encode(walker.getPassword()));
 		return walkerRepository.save(walker);
 	}
 
@@ -36,6 +38,7 @@ public class WalkerService implements IWalkerService {
 		Walker walker = walkerRepository.findByEmail(email);
 		return walker;
 	}
+
 
 	@Override
 	public List<Walker> getAllWalkers() {

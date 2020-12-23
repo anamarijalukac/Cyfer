@@ -1,6 +1,7 @@
 package cyfer.domain;
 
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -43,8 +44,6 @@ public class Shelter {
 	private String address;
 	@Column
 	private String city;
-
-
 
 	public Long getShelterId() {
 		return shelterId;

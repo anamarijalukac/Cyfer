@@ -1,6 +1,8 @@
 package cyfer;
 
 import java.sql.Timestamp;
+import java.util.HashSet;
+import java.util.Set;
 
 import org.apache.tomcat.jni.Time;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,7 +51,7 @@ public class DataInitializer {
 		walker1.setEmail("pero.peric@gmail.com");
 		walker1.setFirstName("Pero");
 		walker1.setLastName("Peric");
-		walker1.setPassword(new BCryptPasswordEncoder().encode("12345671"));
+		walker1.setPassword("12345671");
 		walker1.setUsername("maliPerica");
 		
 		Walker walker2 = new Walker();
@@ -110,7 +112,7 @@ public class DataInitializer {
 		shelter1.setOIB("11111111111");
 		shelter1.setName("prvaudruga");
 		shelter1.setUsername("udruga1");
-		shelter1.setPassword(new BCryptPasswordEncoder().encode("12345"));
+		shelter1.setPassword("12345");
 		shelter1.setLocation(location1);
 		
 		Dog dog1 = new Dog();
@@ -118,30 +120,36 @@ public class DataInitializer {
 		dog1.setImage("bijeli");
 		dog1.setName("vili");
 		dog1.setTypeOfWalk("I");
-		
+		dog1.setLocation(location1);
+		dog1.setShelter(shelter1);
+
 		Dog dog2 = new Dog();
 		dog2.setDescription("mali2");
 		dog2.setImage("bijeli2");
 		dog2.setName("vili2");
-		dog2.setTypeOfWalk("I");
+		dog2.setTypeOfWalk("I");dog2.setShelter(shelter1);
 		
 		Dog dog3 = new Dog();
 		dog3.setDescription("mali3");
 		dog3.setImage("bijeli3");
 		dog3.setName("vili3");
 		dog3.setTypeOfWalk("I");
+		dog3.setShelter(shelter1);
 		
 		Dog dog4 = new Dog();
 		dog4.setDescription("mali4");
 		dog4.setImage("bijeli4");
 		dog4.setName("vili4");
 		dog4.setTypeOfWalk("I");
+		dog4.setShelter(shelter1);
 		
 		Dog dog5 = new Dog();
 		dog5.setDescription("mali5");
 		dog5.setImage("bijeli5");
 		dog5.setName("vili5");
 		dog5.setTypeOfWalk("I");
+		dog5.setShelter(shelter1);
+
 
 
 
