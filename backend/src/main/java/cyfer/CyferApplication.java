@@ -24,7 +24,7 @@ public class CyferApplication {
 	 * UC8 - Promjena osobnih podataka korisnika-*
 	 * UC9 - Brisanje korisnickog racuna (udruge ili gradanina)-*
 	 * UC10 - Dodavanje novog profila psa u listu prijavljene udruge-sven
-	 * UC11 - Uredivanje profila psa neke udruge-boki
+	 * UC11 - Uredivanje profila psa neke udruge-*
 	 * UC12 - Brisanje profila psa iz liste neke udruge-dave
 	 * UC13 - Rezervacija termina setnje-*
 	 * UC14 - Pregled vlastitih statistika setnji-sven

@@ -2,7 +2,9 @@ package cyfer.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.NoSuchElementException;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -19,7 +21,9 @@ public class WalkerService implements IWalkerService {
 
 	@Autowired
 	private WalkerRepository walkerRepository;
-	
+
+	@Autowired
+	private ReservationService reservationService;
 
 	@Override
 	public Walker registerWalker(Walker walker) {

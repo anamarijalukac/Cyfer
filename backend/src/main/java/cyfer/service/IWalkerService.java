@@ -1,6 +1,7 @@
 package cyfer.service;
 
 import java.util.List;
+import java.util.Map;
 
 import cyfer.domain.Walker;
 
@@ -24,6 +25,5 @@ public interface IWalkerService {
 
 
 	Walker getByEmail(String email);
-
 
 }

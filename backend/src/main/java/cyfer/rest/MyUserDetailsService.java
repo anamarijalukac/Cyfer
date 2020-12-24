@@ -42,9 +42,9 @@ public class MyUserDetailsService implements UserDetailsService {
 
     private List<GrantedAuthority> authorities(String username) {
         if(walkerService.getByUsername(username) != null) {
-            return commaSeparatedStringToAuthorityList("ROLE_WALKER");
+            return commaSeparatedStringToAuthorityList("ROLE_WALKER, ROLE_PUBLIC");
         } else if(shelterService.getByUsername(username) != null) {
-            return commaSeparatedStringToAuthorityList("ROLE_SHELTER");
+            return commaSeparatedStringToAuthorityList("ROLE_SHELTER, ROLE_PUBLIC");
         } else {
             throw new UsernameNotFoundException("No such user!!");
         }

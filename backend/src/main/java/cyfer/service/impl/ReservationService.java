@@ -4,6 +4,7 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,8 +37,6 @@ public class ReservationService implements IReservationService {
 		
 	}
 
-	
-
 	@Override
 	public List<Reservation> getAllReservations() {
 		List<Reservation> list = new ArrayList<>();
@@ -52,6 +51,7 @@ public class ReservationService implements IReservationService {
 	public Reservation createReservation(Walker walker,Walk walk, Dog dog) {
 		
 		Reservation newReservation=new Reservation(walk,walker,dog);
+		walker.setWalkSum(walk.getDuration());
 		reservationRepository.save(newReservation);
 		return newReservation;
 		
@@ -75,6 +75,14 @@ public class ReservationService implements IReservationService {
 			dates.add(r.getWalk().getDateTime());
 		}
 		return dates;
+	}
+
+	//dodati filter da se vraćaju šetnje iz zadnjih mjesec dana
+	@Override
+	public Map<String, Integer> getRanklistByWalkNumber() {
+		Map<String, Integer> walkers = reservationRepository.findAll().stream()
+				.collect(Collectors.toMap(r-> r.getWalker().getUsername(), r -> r.getWalk().getDuration(), (w1, w2) -> w1 + w2));
+		return walkers;
 	}
 
 

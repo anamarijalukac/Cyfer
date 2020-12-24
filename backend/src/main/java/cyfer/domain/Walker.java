@@ -41,7 +41,7 @@ public class Walker {
 	@NotNull
 	private String firstName;	
 	
-
+	private int walkSum = 0;
 	
 	
 
@@ -93,4 +93,7 @@ public class Walker {
 		this.firstName = firstName;
 	}
 
+    public void setWalkSum(int sum) {
+		this.walkSum += sum;
+	}
 }

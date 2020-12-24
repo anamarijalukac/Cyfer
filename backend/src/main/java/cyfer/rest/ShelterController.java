@@ -67,15 +67,11 @@ public class ShelterController {
 	}
 	
 	@GetMapping("/name/{name}")
+	@Secured("ROLE_PUBLIC")
 	public Shelter getShelterByName(@PathVariable("name") String name) {
 		return shelterService.getByUsername(name);
 	}
-	
-	@GetMapping("")
-	public ResponseEntity<List<Shelter>> getAllShelter() {
-		List<Shelter> list = shelterService.getAllShelters();
-		return new ResponseEntity<List<Shelter>>(list, HttpStatus.OK);
-	}
+
 
 	@PostMapping("/delete/{id}")
 	@Secured("ROLE_SHELTER")
@@ -104,5 +100,16 @@ public class ShelterController {
 		return dogs;
 	}
 
+	@PostMapping("/{shelterId}/dogs/{dogId}/update")
+	@Secured("ROLE_SHELTER")
+	public ResponseEntity<Dog> updateDog(@PathVariable("shelterId") long shelterId,@PathVariable("dogId") long dogId,
+												@RequestBody Dog dog,
+												@AuthenticationPrincipal User user) {
+		Dog oldDog = dogService.getDog(dogId);
+		dog.setLocation(oldDog.getLocation());
+		dog.setShelter(oldDog.getShelter());
+		dogService.setDog(dog);
+		return new ResponseEntity<Dog>(dog, HttpStatus.OK);
+	}
 	
 }

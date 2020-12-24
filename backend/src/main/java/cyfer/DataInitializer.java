@@ -127,7 +127,8 @@ public class DataInitializer {
 		dog2.setDescription("mali2");
 		dog2.setImage("bijeli2");
 		dog2.setName("vili2");
-		dog2.setTypeOfWalk("I");dog2.setShelter(shelter1);
+		dog2.setTypeOfWalk("I");
+		dog2.setShelter(shelter1);
 		
 		Dog dog3 = new Dog();
 		dog3.setDescription("mali3");

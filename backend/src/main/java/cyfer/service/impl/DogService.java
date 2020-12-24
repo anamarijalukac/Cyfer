@@ -38,8 +38,6 @@ public class DogService implements IDogService {
 		return list;
 	}
 
-	
-	
 	@Override
 	public void setDog(Dog dog) {
 		dogRepository.save(dog);

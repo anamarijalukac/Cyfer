@@ -2,6 +2,8 @@ package cyfer.rest;
 
 import java.sql.Timestamp;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 import cyfer.service.IReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -76,6 +78,7 @@ public class WalkerController {
 	}
 
 	@GetMapping("")
+	@Secured("ROLE_PUBLIC")
 	public ResponseEntity<List<Walker>> getAllUsers() {
 
 		List<Walker> list = walkerService.getAllWalkers();
@@ -83,6 +86,7 @@ public class WalkerController {
 	}
 
 	@PostMapping("/delete/{id}")
+	@Secured("ROLE_WALKER")
 	public ResponseEntity<HttpStatus> deleteWalker(@PathVariable("id") long id) {
 		walkerService.deleteWalker(id);
 		return new ResponseEntity<>(HttpStatus.OK);
@@ -90,11 +94,13 @@ public class WalkerController {
 	}
 	
 	@GetMapping("/{id}/calendar")
+	@Secured("ROLE_WALKER")
 	public List<Timestamp> getWalkSchedule(@PathVariable("id") long id, @AuthenticationPrincipal User user) {
 		if(user.getUsername().equals(walkerService.getWalker(id).getUsername()))
 			return reservationService.getCalendar(id);
 		else
 			return null;
 	}
-	
+
+
 }

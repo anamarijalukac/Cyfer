@@ -2,6 +2,7 @@ package cyfer.service;
 
 import java.sql.Timestamp;
 import java.util.List;
+import java.util.Map;
 
 import cyfer.domain.Dog;
 import cyfer.domain.Reservation;
@@ -20,6 +21,6 @@ public interface IReservationService {
 
 	List<Timestamp> getCalendar(long walkerId);
 
-	
+	Map<String, Integer> getRanklistByWalkNumber();
 
 }
