@@ -1,7 +1,10 @@
 import React from "react";
+import {useHistory} from 'react-router-dom';
 import '../../components/pages/LogIn.css';
 
 function SignUp(props) {
+
+  let history = useHistory();
 
   const [form, setForm] = React.useState({username: '', firstName: '', lastName: '', email:'', password:'', repeatPassword:''});
 
@@ -41,7 +44,8 @@ function SignUp(props) {
     .then(response => {
       if(response.ok){
       alert("Uspješna registracija");
-      props.history.push('/');
+      props.onLogin();
+      history.push('/');
       }
       else{
         setError("Neuspješna registracija!");

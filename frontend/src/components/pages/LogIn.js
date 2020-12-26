@@ -1,8 +1,11 @@
 import React from "react";
+import {useHistory} from 'react-router-dom'
 import '../../components/pages/LogIn.css';
 
 
 function LogIn(props){
+
+        let history = useHistory();
 
         const [form, setForm] = React.useState({username: '', password: '', checkbox: false});
 
@@ -38,7 +41,8 @@ function LogIn(props){
           .then(response => {
             if(response.ok){
               alert("Uspješna prijava");
-              props.history.push('/');
+              props.onLogin();
+              history.push('/');
             }
             else{
               setForm({username : '', password : '', checkbox : false});
