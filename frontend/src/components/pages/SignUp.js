@@ -5,6 +5,8 @@ function SignUp(props) {
 
   const [form, setForm] = React.useState({username: '', firstName: '', lastName: '', email:'', password:'', repeatPassword:''});
 
+  const [error, setError] = React.useState('');
+
   function onChange(event){
     const{name, value} = event.target;
     setForm(oldForm => ({...oldForm, [name] : value}))
@@ -13,6 +15,7 @@ function SignUp(props) {
   function onSubmit(e){
 
     e.preventDefault();
+    setError("");
 
     const data = {
       username: form.username,
@@ -41,8 +44,8 @@ function SignUp(props) {
       props.history.push('/');
       }
       else{
-        alert("Neuspješna registracija");
-        window.location.reload();
+        setError("Neuspješna registracija!");
+        setForm({username: '', firstName: '', lastName: '', email:'', password:'', repeatPassword:''});
       }
     }).catch(error => console.log(error));
 
@@ -73,8 +76,10 @@ function SignUp(props) {
 
           <label>Ponovi lozinku: </label>
           <input type="password" name='repeatPassword' placeholder="Ponovi lozinku" onChange = {onChange} value = {form.repeatPassword}  required/>
-
+          {(error != "") ? <div className="error">{error}</div> : ""}
           <button class='loginbtn' type="submit">Registriraj se</button>
+
+          <a href='./RegUdr' className='linkToUdruga'>Želite registrirati udrugu?</a>
 
         </div>
       </form>

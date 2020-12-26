@@ -6,6 +6,8 @@ function LogIn(props){
 
         const [form, setForm] = React.useState({username: '', password: '', checkbox: false});
 
+        const [error, setError] = React.useState('');
+
         function onChange(event){
           const{name, value} = event.target;
           setForm(oldForm => ({...oldForm, [name] : value}))
@@ -15,6 +17,7 @@ function LogIn(props){
         function onSubmit(e){
 
           e.preventDefault();
+          setError("");
 
           const data = {
             username : form.username,
@@ -33,12 +36,12 @@ function LogIn(props){
           fetch('/walker/login', options)
           .then(response => {
             if(response.ok){
-            alert("Uspješna prijava");
-            props.history.push('/');
+              alert("Uspješna prijava");
+              props.history.push('/');
             }
             else{
-              alert("Neuspješna prijava");
-              window.location.reload();
+              setForm({username : '', password : '', checkbox : false});
+              setError("Neuspješna prijava!");
             }
           }).catch(error => console.log(error));
 
@@ -57,12 +60,15 @@ function LogIn(props){
                     <label>Lozinka: </label>
                     <input type="password" name='password' placeholder="Upiši lozinku" onChange = {onChange} value = {form.password} required/>
 
+
                     <div className="custom-control custom-checkbox">
                         <input type="checkbox" name="checkbox" onChange = {onChange} value = {form.checkbox} />
                         <label name="checkbox" htmlFor="customCheck1"> Zapamti</label>
                     </div>
-
+                    {(error != "") ? <div className="error">{error}</div> : ""}
                 <button class = 'loginbtn' type="submit" >Log in</button>
+
+                <a href='./LogInUdr' className='linkToUdruga'>Prijavljujete se kao udruga?</a>
                 </div>
             </form>
           </div>
