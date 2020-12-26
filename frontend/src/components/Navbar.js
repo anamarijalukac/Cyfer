@@ -36,11 +36,11 @@ function Navbar() {
             <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
           </div>
           <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-            <li className='nav-item'>
+           {/*} <li className='nav-item'>
               <Link to='/' className='nav-links' onClick={closeMobileMenu}>
                 Početna
               </Link>
-            </li>
+  </li> */}
             <li className='nav-item'>
               <Link
                 to='/RangList'
@@ -52,25 +52,30 @@ function Navbar() {
             </li>
             <li className='nav-item'>
               <Link
-                to='/RegUdr'
+                to='/log-in'
                 className='nav-links'
                 onClick={closeMobileMenu}
               >
-                Registriraj udrugu
+                Prijava
               </Link>
             </li>
             <li className='nav-item'>
               <Link
-                to='/LogInUdr'
+                to='/sign-up'
                 className='nav-links'
                 onClick={closeMobileMenu}
               >
-                Prijava udruge
+                Registriracija
+              </Link>
+            </li>
+            <li className='nav-item'>
+              <Link to='/LogInRedirect' className='nav-links' onClick={closeMobileMenu}>
+                test
               </Link>
             </li>
           </ul>
-         <div class='navbar-buttons'>
-          <Link to='/sign-up' className='btn-mobile'>
+       {/*  <div class='navbar-buttons'>
+         <Link to='/sign-up' className='btn-mobile'>
         <Button
           className='btns'
           buttonStyle='btn--outline'
@@ -89,8 +94,8 @@ function Navbar() {
           Prijava korisnika
         </Button>
 
-        </Link>
-        </div>
+  </Link>
+        </div>*/}
         </div>
       </nav>
     </>

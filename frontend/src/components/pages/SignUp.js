@@ -48,6 +48,7 @@ function SignUp(props) {
         setForm({username: '', firstName: '', lastName: '', email:'', password:'', repeatPassword:''});
       }
     }).catch(error => console.log(error));
+    
 
   }
 

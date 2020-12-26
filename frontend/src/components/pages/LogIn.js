@@ -11,6 +11,7 @@ function LogIn(props){
         function onChange(event){
           const{name, value} = event.target;
           setForm(oldForm => ({...oldForm, [name] : value}))
+          
         }
         
 
