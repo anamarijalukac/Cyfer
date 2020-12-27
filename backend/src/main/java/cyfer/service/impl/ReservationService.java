@@ -5,7 +5,9 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Function;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
@@ -44,20 +46,14 @@ public class ReservationService implements IReservationService {
 		return list;
 	}
 
-
-
-	
 	@Override
 	public Reservation createReservation(Walker walker,Walk walk, Dog dog) {
 		
 		Reservation newReservation=new Reservation(walk,walker,dog);
-		walker.setWalkSum(walk.getDuration());
 		reservationRepository.save(newReservation);
 		return newReservation;
 		
 	}
-
-
 
 	@Override
 	public List<Dog> getDogsStatistics() {
@@ -79,10 +75,21 @@ public class ReservationService implements IReservationService {
 
 	//dodati filter da se vraćaju šetnje iz zadnjih mjesec dana
 	@Override
-	public Map<String, Integer> getRanklistByWalkNumber() {
+	public Map<String, Integer> getRanklistByWalkDuration() {
 		Map<String, Integer> walkers = reservationRepository.findAll().stream()
-				.collect(Collectors.toMap(r-> r.getWalker().getUsername(), r -> r.getWalk().getDuration(), (w1, w2) -> w1 + w2));
+				.collect(Collectors.toMap(r -> r.getWalker().getUsername(), r -> r.getWalk().getDuration(), (w1, w2) -> w1 + w2));
 		return walkers;
+	}
+
+	@Override
+	public Map<String, Integer> getRankListByWalkNumber() {
+		/*Map<String, Integer> walkers = reservationRepository.findAll().stream()
+				.collect(Collectors.toMap());
+		Map<String, Integer> freq =
+				Stream.of(reservationRepository.findAll())
+						.collect(Collectors.groupingBy(Function.identity(),
+								Collectors.counting()));*/
+		return null;
 	}
 
 
