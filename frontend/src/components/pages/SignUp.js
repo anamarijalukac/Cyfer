@@ -37,22 +37,25 @@ function SignUp(props) {
     };
 
     if(form.password !== form.repeatPassword){
-      return window.location.reload();
+      setError("Neuspješna registracija!");
+      setForm({username: '', firstName: '', lastName: '', email:'', password:'', repeatPassword:''});
     }
-
+    else{
     fetch('/walker/signup', options)
     .then(response => {
       if(response.ok){
       alert("Uspješna registracija");
       props.onLogin();
       history.push('/');
+      return response.json;
       }
       else{
         setError("Neuspješna registracija!");
         setForm({username: '', firstName: '', lastName: '', email:'', password:'', repeatPassword:''});
       }
-    }).catch(error => console.log(error));
-    
+    }).then(data => localStorage.setItem("user", JSON.stringify(data)))
+    .catch(error => console.log(error));
+  }
 
   }
 

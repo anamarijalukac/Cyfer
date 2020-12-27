@@ -1,9 +1,13 @@
 import React from 'react';
+import {useHistory} from 'react-router-dom';
 import '../../components/pages/LogIn.css';
 
 function RegUdr(props) {
 
+  let history = useHistory();
+
   const [form, setForm] = React.useState({username: '', oib: '', name:'', password:'', repeatPassword:''});
+  const [error, setError] = React.useState('');
 
   function onChange(event){
     const{name, value} = event.target;
@@ -13,6 +17,7 @@ function RegUdr(props) {
   function onSubmit(e){
 
     e.preventDefault();
+    setError("");
 
     const data = {
       username: form.username,
@@ -30,23 +35,24 @@ function RegUdr(props) {
     };
 
     if(form.password !== form.repeatPassword){
-      return window.location.reload();
+      setForm({username: '', oib: '', name:'', password:'', repeatPassword:''});
+      setError("Neuspješna registracija");
     }
+    else{
 
+      fetch('/shelter/signup', options)
+      .then(response => {
+        if(response.ok){
+          props.onLogin();
+          history.push('/');
+        }
+        else{
+          setForm({username: '', oib: '', name:'', password:'', repeatPassword:''});
+          setError("Neuspješna registracija");
+        }
+      }).catch(error => console.log(error));
 
-
-    fetch('/shelter/signup', options)
-    .then(response => {
-      if(response.ok){
-      alert("Uspješna registracija");
-      props.history.push('/');
-      }
-      else{
-        alert("Neuspješna registracija");
-        window.location.reload();
-      }
-    }).catch(error => console.log(error));
-
+    }
   }
 
 
@@ -70,7 +76,7 @@ function RegUdr(props) {
 
           <label>Ponovi lozinku: </label>
           <input type="password" name='repeatPassword' placeholder="Ponovi lozinku" onChange = {onChange} value = {form.repeatPassword}  required/>
-
+          {(error != "") ? <div className="error">{error}</div> : ""}
           <button class='loginbtn' type="submit">Registriraj se</button>
 
         </div>

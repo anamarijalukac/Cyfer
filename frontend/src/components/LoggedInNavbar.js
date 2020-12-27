@@ -30,7 +30,6 @@ function Navbar(props) {
   window.addEventListener('resize', showButton);
 
   let item = localStorage.getItem("loggedIn");
-  console.log("item is " + item);
 
     return(
       <nav className='navbar'>
@@ -50,6 +49,15 @@ function Navbar(props) {
                 onClick={closeMobileMenu}
               >
                 Rang lista
+              </Link>
+            </li>
+            <li className='nav-item'>
+              <Link
+                to='/LogInRedirect'
+                className='nav-links'
+                onClick={closeMobileMenu}
+              >
+                test
               </Link>
             </li>
             </ul>

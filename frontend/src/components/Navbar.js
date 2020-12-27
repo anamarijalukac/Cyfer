@@ -3,7 +3,7 @@ import { Button } from './Button';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 
-function Navbar(props) {
+function Navbar() {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
 
@@ -17,10 +17,6 @@ function Navbar(props) {
       setButton(true);
     }
   };
-
-  function logout(){
-    props.onLogout();
-  }
 
 
   useEffect(() => {
@@ -53,6 +49,7 @@ function Navbar(props) {
                 Rang lista
               </Link>
             </li>
+
             {/*}
             <li className='nav-item'>
               <Link
@@ -87,7 +84,7 @@ function Navbar(props) {
           buttonStyle='btn--outline'
           buttonSize='btn--small'
         >
-          Registracija korisnika
+          Registracija
         </Button>
         </Link>
 
@@ -97,7 +94,7 @@ function Navbar(props) {
           buttonStyle='btn--outline'
           buttonSize='btn--small'
         >
-          Prijava korisnika
+          Prijava 
         </Button>
 
   </Link>
