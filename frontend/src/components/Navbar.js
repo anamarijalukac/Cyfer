@@ -3,7 +3,7 @@ import { Button } from './Button';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 
-function Navbar(props) {
+function Navbar() {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
 
@@ -17,10 +17,6 @@ function Navbar(props) {
       setButton(true);
     }
   };
-
-  function logout(){
-    props.onLogout();
-  }
 
 
   useEffect(() => {
@@ -54,6 +50,7 @@ function Navbar(props) {
               </Link>
             </li>
 
+
             <li className='nav-item'>
               <Link
                   to='/dogs'
@@ -63,31 +60,6 @@ function Navbar(props) {
                 Lista pasa
               </Link>
             </li>
-            {/*}
-            <li className='nav-item'>
-              <Link
-                to='/log-in'
-                className='nav-links'
-                onClick={closeMobileMenu}
-              >
-                Prijava
-              </Link>
-            </li>
-            <li className='nav-item'>
-              <Link
-                to='/sign-up'
-                className='nav-links'
-                onClick={closeMobileMenu}
-              >
-                Registriracija
-              </Link>
-            </li>
-            <li className='nav-item'>
-              <Link to='/LogInRedirect' className='nav-links' onClick={closeMobileMenu}>
-                test
-              </Link>
-            </li>
-  */}
           </ul>
   
         <div class='navbar-buttons'>
@@ -97,7 +69,7 @@ function Navbar(props) {
           buttonStyle='btn--outline'
           buttonSize='btn--small'
         >
-          Registracija korisnika
+          Registracija
         </Button>
         </Link>
 
@@ -107,7 +79,7 @@ function Navbar(props) {
           buttonStyle='btn--outline'
           buttonSize='btn--small'
         >
-          Prijava korisnika
+          Prijava 
         </Button>
 
   </Link>

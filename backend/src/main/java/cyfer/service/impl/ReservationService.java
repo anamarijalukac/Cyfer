@@ -1,12 +1,17 @@
 package cyfer.service.impl;
 
+import java.sql.Date;
+import java.sql.Time;
 import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
+import cyfer.dao.WalkRepository;
+import org.apache.tomcat.jni.Local;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -30,11 +35,12 @@ public class ReservationService implements IReservationService {
 	private WalkerRepository walkerRepository;
 	@Autowired
 	private DogRepository dogRepository;
+	@Autowired
+	private WalkRepository walkRepository;
 	
 	@Override
 	public Reservation getReservation(long reservationId) {
 		return reservationRepository.findById(reservationId).get();
-		
 	}
 
 	@Override
@@ -44,19 +50,19 @@ public class ReservationService implements IReservationService {
 		return list;
 	}
 
-
-
-	
 	@Override
-	public Reservation createReservation(Walker walker,Walk walk, Dog dog) {
+	public Reservation createReservation(Walker walker, Walk walk, Dog dog) {
 		
 		Reservation newReservation=new Reservation(walk,walker,dog);
-		walker.setWalkSum(walk.getDuration());
 		reservationRepository.save(newReservation);
 		return newReservation;
 		
 	}
 
+	@Override
+	public void deleteReservation(long reservationId) {
+		reservationRepository.deleteById(reservationId);
+	}
 
 
 	@Override
@@ -77,12 +83,41 @@ public class ReservationService implements IReservationService {
 		return dates;
 	}
 
-	//dodati filter da se vraćaju šetnje iz zadnjih mjesec dana
+	//sortirati silazno!!!
 	@Override
-	public Map<String, Integer> getRanklistByWalkNumber() {
-		Map<String, Integer> walkers = reservationRepository.findAll().stream()
-				.collect(Collectors.toMap(r-> r.getWalker().getUsername(), r -> r.getWalk().getDuration(), (w1, w2) -> w1 + w2));
+	public Map<String, Integer> getRankListByWalkDuration() {
+		Map<String, Integer> walkers = reservationRepository.findAll().stream().filter(r -> LocalDate.now().minusMonths(1).isBefore(r.getWalk().getDateTime().toLocalDateTime().toLocalDate()))
+				.collect(Collectors.toMap(r -> r.getWalker().getUsername(), r -> r.getWalk().getDuration(), (w1, w2) -> w1 + w2));
 		return walkers;
+	}
+
+	//sortirati silazno!!!
+	@Override
+	public Map<String, Integer> getRankListByDogNumber() {
+		Map<String, Integer> map = new HashMap<>();
+		for(Reservation r : reservationRepository.findAll()) {
+			if(!LocalDate.now().minusMonths(1).isBefore(r.getWalk().getDateTime().toLocalDateTime().toLocalDate())) continue;
+			if(map.containsKey(r.getWalker().getUsername())) {
+				map.put(r.getWalker().getUsername(), map.get(r.getWalker().getUsername()) + 1);
+			} else map.put(r.getWalker().getUsername(), 1);
+		}
+		return map;
+	}
+
+	//sortirati silazno!!!
+	@Override
+	public Map<String, Integer> getRankListByWalkNumber() {
+		Map<String, Integer> map = new HashMap<>();
+		List<Reservation> list = reservationRepository.findAll();
+		for(Reservation reservation : reservationRepository.findAll()) {
+			List<Reservation> listRes = reservationRepository.findByWalkAndWalker(reservation.getWalk(), reservation.getWalker());
+			String username = listRes.get(0).getWalker().getUsername();
+			if(!LocalDate.now().minusMonths(1).isBefore(reservation.getWalk().getDateTime().toLocalDateTime().toLocalDate())) continue;
+			if(map.containsKey(username)) {
+				map.put(username, map.get(username) + 1);
+			} else map.put(username, 1);
+		}
+		return map;
 	}
 
 

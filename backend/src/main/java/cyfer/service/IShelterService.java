@@ -21,7 +21,7 @@ public interface IShelterService {
 
 	void addDog(Shelter shelter,Dog dog);
 
-
+	void deleteDog(Dog dog);
 
 	Shelter getShelter(long id);
 }
