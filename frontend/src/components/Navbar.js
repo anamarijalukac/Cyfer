@@ -53,6 +53,16 @@ function Navbar(props) {
                 Rang lista
               </Link>
             </li>
+
+            <li className='nav-item'>
+              <Link
+                  to='/dogs'
+                  className='nav-links'
+                  onClick={closeMobileMenu}
+              >
+                Lista pasa
+              </Link>
+            </li>
             {/*}
             <li className='nav-item'>
               <Link
