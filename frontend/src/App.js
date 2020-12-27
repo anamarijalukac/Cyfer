@@ -32,7 +32,7 @@ function App() {
         <LoggedInNavbar onLogout={onLogout} />
         <Switch>
           <Route path='/' exact component={Home} />
-          <Route path='/LogInRedirect' component={LogInRedirect} />
+          <LogInRedirect path='/LogInRedirect' component={LogInRedirect} onLogout={onLogout} />
         </Switch>
       </Router>
     )

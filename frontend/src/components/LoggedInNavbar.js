@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from './Button';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import './Navbar.css';
 
 function Navbar(props) {
+
+  let history = useHistory();
+
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
 
@@ -20,6 +23,8 @@ function Navbar(props) {
 
   function logout(){
     props.onLogout();
+    history.push('/');
+
   }
 
 
@@ -28,8 +33,6 @@ function Navbar(props) {
   }, []);
 
   window.addEventListener('resize', showButton);
-
-  let item = localStorage.getItem("loggedIn");
 
     return(
       <nav className='navbar'>
@@ -48,7 +51,7 @@ function Navbar(props) {
                 className='nav-links'
                 onClick={closeMobileMenu}
               >
-                Rang lista
+                Rang lista šetaća
               </Link>
             </li>
             <li className='nav-item'>
@@ -57,7 +60,7 @@ function Navbar(props) {
                 className='nav-links'
                 onClick={closeMobileMenu}
               >
-                test
+                Profil
               </Link>
             </li>
             </ul>

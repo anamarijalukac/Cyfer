@@ -33,14 +33,14 @@ function LogInUdr(props) {
       if(response.ok){
         props.onLogin();
         history.push('/');
-        return response.json;
+        return response.json();
       }
       else{
         setForm({username: '', password: '', checkbox: false});
         setError("Neuspješna prijava");
       }
     })
-    .then(data => localStorage.setItem("user", JSON.stringify(data)))
+    .then(data => localStorage.setItem("udruga", JSON.stringify(data)))
     .catch(error => console.log(error));
   }
 
