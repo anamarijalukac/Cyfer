@@ -64,7 +64,7 @@ function Navbar(props) {
               </Link>
             </li>
             </ul>
-            <div class='navbar-buttons'>
+            <div className='navbar-buttons'>
                 <Button
                   className='btns'
                   buttonStyle='btn--outline'

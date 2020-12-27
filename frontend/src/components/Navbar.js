@@ -50,31 +50,16 @@ function Navbar() {
               </Link>
             </li>
 
-            {/*}
+
             <li className='nav-item'>
               <Link
-                to='/log-in'
-                className='nav-links'
-                onClick={closeMobileMenu}
+                  to='/dogs'
+                  className='nav-links'
+                  onClick={closeMobileMenu}
               >
-                Prijava
+                Lista pasa
               </Link>
             </li>
-            <li className='nav-item'>
-              <Link
-                to='/sign-up'
-                className='nav-links'
-                onClick={closeMobileMenu}
-              >
-                Registriracija
-              </Link>
-            </li>
-            <li className='nav-item'>
-              <Link to='/LogInRedirect' className='nav-links' onClick={closeMobileMenu}>
-                test
-              </Link>
-            </li>
-  */}
           </ul>
   
         <div class='navbar-buttons'>
