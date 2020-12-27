@@ -53,6 +53,7 @@ function Navbar(props) {
                 Rang lista
               </Link>
             </li>
+            {/*}
             <li className='nav-item'>
               <Link
                 to='/log-in'
@@ -76,8 +77,10 @@ function Navbar(props) {
                 test
               </Link>
             </li>
+  */}
           </ul>
-       {/*  <div class='navbar-buttons'>
+  
+        <div class='navbar-buttons'>
          <Link to='/sign-up' className='btn-mobile'>
         <Button
           className='btns'
@@ -98,7 +101,7 @@ function Navbar(props) {
         </Button>
 
   </Link>
-        </div>*/}
+        </div>
         </div>
       </nav>
     </>
