@@ -48,7 +48,7 @@ function LogIn(props) {
                     setError("Neuspješna prijava!");
                 }
             })
-            .then(data => localStorage.setItem("user", JSON.stringify(data)))
+            .then(data => localStorage.setItem("korisnik", JSON.stringify(data)))
                 .catch(error => console.log(error));
 
     }

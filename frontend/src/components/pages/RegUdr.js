@@ -45,12 +45,15 @@ function RegUdr(props) {
         if(response.ok){
           props.onLogin();
           history.push('/');
+          return response.json();
         }
         else{
           setForm({username: '', oib: '', name:'', password:'', repeatPassword:''});
           setError("Neuspješna registracija");
         }
-      }).catch(error => console.log(error));
+      })
+      .then(data => localStorage.setItem("udruga", JSON.stringify(data)))
+      .catch(error => console.log(error));
 
     }
   }

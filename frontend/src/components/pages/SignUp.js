@@ -44,16 +44,15 @@ function SignUp(props) {
     fetch('/walker/signup', options)
     .then(response => {
       if(response.ok){
-      alert("Uspješna registracija");
       props.onLogin();
       history.push('/');
-      return response.json;
+      return response.json();
       }
       else{
         setError("Neuspješna registracija!");
         setForm({username: '', firstName: '', lastName: '', email:'', password:'', repeatPassword:''});
       }
-    }).then(data => localStorage.setItem("user", JSON.stringify(data)))
+    }).then(data => localStorage.setItem("korisnik", JSON.stringify(data)))
     .catch(error => console.log(error));
   }
 
