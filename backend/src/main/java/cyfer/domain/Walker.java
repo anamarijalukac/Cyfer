@@ -14,6 +14,7 @@ import javax.validation.constraints.NotNull;
 public class Walker {
 
 	public Walker() {
+		statVisibility = false;
 	}
 
 	@Id
@@ -39,11 +40,15 @@ public class Walker {
 
 	@Column
 	@NotNull
-	private String firstName;	
-	
+	private String firstName;
 
+	@Column
+	@NotNull
+	private boolean statVisibility;
 	
-	
+	public void changeStatVisibility() {
+		statVisibility = !statVisibility;
+	}
 
 	public Long getWalkerId() {
 		return walkerId;

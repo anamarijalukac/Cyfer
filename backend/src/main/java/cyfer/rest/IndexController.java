@@ -26,8 +26,20 @@ public class IndexController {
 
     @GetMapping("/ranking/1")
     @Secured("ROLE_PUBLIC")
-    public Map<String, Integer> getRanking() {
-        return reservationService.getRanklistByWalkNumber();
+    public Map<String, Integer> getRankingByDuration() {
+        return reservationService.getRanklistByWalkDuration();
+    }
+
+    @GetMapping("/ranking/2")
+    @Secured("ROLE_PUBLIC")
+    public Map<String, Integer> getRankingByWalks() {
+        return reservationService.getRankListByWalkNumber();
+    }
+
+    @GetMapping("/ranking/3")
+    @Secured("ROLE_PUBLIC")
+    public Map<String, Integer> getRankingByDogs() {
+        return reservationService.getRankListByDogNumber();
     }
 
     @GetMapping("")

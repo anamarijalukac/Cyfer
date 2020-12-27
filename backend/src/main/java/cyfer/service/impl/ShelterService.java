@@ -53,7 +53,12 @@ public class ShelterService implements IShelterService {
     public void addDog(Shelter shelter, Dog dog) {
         dog.setShelter(shelter);
         dogRepository.save(dog);
+    }
 
+    //izbrisati sve rezervacije za tog psa
+    @Override
+    public void deleteDog(Dog dog) {
+        dogRepository.delete(dog);
     }
 
 

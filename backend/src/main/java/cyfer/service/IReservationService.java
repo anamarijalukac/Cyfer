@@ -21,6 +21,10 @@ public interface IReservationService {
 
 	List<Timestamp> getCalendar(long walkerId);
 
-	Map<String, Integer> getRanklistByWalkNumber();
+	Map<String, Integer> getRanklistByWalkDuration();
+
+	Map<String, Integer> getRankListByWalkNumber();
+
+	Map<String, Integer> getRankListByDogNumber();
 
 }
