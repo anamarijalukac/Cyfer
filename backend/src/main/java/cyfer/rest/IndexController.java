@@ -27,7 +27,7 @@ public class IndexController {
     @GetMapping("/ranking/1")
     @Secured("ROLE_PUBLIC")
     public Map<String, Integer> getRankingByDuration() {
-        return reservationService.getRanklistByWalkDuration();
+        return reservationService.getRankListByWalkDuration();
     }
 
     @GetMapping("/ranking/2")

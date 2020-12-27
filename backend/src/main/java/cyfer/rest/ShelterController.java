@@ -72,7 +72,6 @@ public class ShelterController {
 		return shelterService.getByUsername(name);
 	}
 
-
 	@PostMapping("/delete/{id}")
 	@Secured("ROLE_SHELTER")
 	public ResponseEntity<HttpStatus> deleteShelter(@PathVariable("id") long id) {

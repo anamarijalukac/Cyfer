@@ -51,13 +51,19 @@ public class ReservationService implements IReservationService {
 	}
 
 	@Override
-	public Reservation createReservation(Walker walker,Walk walk, Dog dog) {
+	public Reservation createReservation(Walker walker, Walk walk, Dog dog) {
 		
 		Reservation newReservation=new Reservation(walk,walker,dog);
 		reservationRepository.save(newReservation);
 		return newReservation;
 		
 	}
+
+	@Override
+	public void deleteReservation(long reservationId) {
+		reservationRepository.deleteById(reservationId);
+	}
+
 
 	@Override
 	public List<Dog> getDogsStatistics() {
@@ -79,7 +85,7 @@ public class ReservationService implements IReservationService {
 
 	//sortirati silazno!!!
 	@Override
-	public Map<String, Integer> getRanklistByWalkDuration() {
+	public Map<String, Integer> getRankListByWalkDuration() {
 		Map<String, Integer> walkers = reservationRepository.findAll().stream().filter(r -> LocalDate.now().minusMonths(1).isBefore(r.getWalk().getDateTime().toLocalDateTime().toLocalDate()))
 				.collect(Collectors.toMap(r -> r.getWalker().getUsername(), r -> r.getWalk().getDuration(), (w1, w2) -> w1 + w2));
 		return walkers;

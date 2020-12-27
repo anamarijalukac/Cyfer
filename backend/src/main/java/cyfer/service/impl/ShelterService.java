@@ -1,8 +1,10 @@
 package cyfer.service.impl;
 
 import cyfer.dao.DogRepository;
+import cyfer.dao.ReservationRepository;
 import cyfer.dao.ShelterRepository;
 import cyfer.domain.Dog;
+import cyfer.domain.Reservation;
 import cyfer.domain.Shelter;
 import cyfer.service.IShelterService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +14,7 @@ import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class ShelterService implements IShelterService {
@@ -20,6 +23,8 @@ public class ShelterService implements IShelterService {
     private ShelterRepository shelterRepository;
     @Autowired
     private DogRepository dogRepository;
+    @Autowired
+    private ReservationRepository reservationRepository;
 
     @Override
     public Shelter getShelterByOIB(String OIB) {
@@ -46,6 +51,11 @@ public class ShelterService implements IShelterService {
 
     @Override
     public void deleteShelter(long id) {
+        List<Dog> list = dogRepository.findAll().stream()
+                .filter(d -> d.getShelter().getShelterId() == id).collect(Collectors.toList());
+        for(Dog d : list)
+            deleteDog(d);
+
         shelterRepository.deleteById(id);
     }
 
@@ -55,9 +65,13 @@ public class ShelterService implements IShelterService {
         dogRepository.save(dog);
     }
 
-    //izbrisati sve rezervacije za tog psa
     @Override
     public void deleteDog(Dog dog) {
+        List<Reservation> list = reservationRepository.findAll().stream()
+                .filter(r -> r.getDog().getDogId() == dog.getDogId()).collect(Collectors.toList());
+        for(Reservation r : list)
+            reservationRepository.deleteById(r.getReservationId());
+
         dogRepository.delete(dog);
     }
 
