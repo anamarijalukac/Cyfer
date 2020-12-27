@@ -60,7 +60,7 @@ public class DataInitializer {
 		walker2.setLastName("Peric2");
 		walker2.setPassword("12345672");
 		walker2.setUsername("maliPerica2");
-		
+
 		Walker walker3 = new Walker();
 		walker3.setEmail("pero.peric3@gmail.com");
 		walker3.setFirstName("Pero3");
@@ -179,7 +179,7 @@ public class DataInitializer {
 		reservationService.createReservation(walker1, walk2, dog2);
 		reservationService.createReservation(walker1, walk3, dog4);
 		reservationService.createReservation(walker2, walk2, dog3);
-		reservationService.createReservation(walker2, walk3, dog5);
+		reservationService.createReservation(walker2, walk5, dog5);
 		reservationService.createReservation(walker3, walk3, dog3);
 		reservationService.createReservation(walker4, walk4, dog4);
 		reservationService.createReservation(walker5, walk5, dog5);

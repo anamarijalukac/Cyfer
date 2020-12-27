@@ -50,6 +50,8 @@ public class Walker {
 		statVisibility = !statVisibility;
 	}
 
+	public boolean getStatVisibility() { return statVisibility; }
+
 	public Long getWalkerId() {
 		return walkerId;
 	}

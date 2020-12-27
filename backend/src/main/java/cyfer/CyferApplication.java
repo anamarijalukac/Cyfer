@@ -17,7 +17,7 @@ public class CyferApplication {
      * UC1 - Pregled profila udruga i pasa iz te udruge-*
      * UC2 - Pregled liste profila svih pasa-*
      * UC3 - Pregled statistike svih pasa-*
-     * UC4 - Pregled rang-liste svih setaca-dave (SORT SAMO)
+     * UC4 - Pregled rang-liste svih setaca-*
      * UC5 - Registracija korisnika (gradanina ili udruge) u sustav-*
      * UC6 - Prijava korisnika (gradanina ili udruge) u sustav-*
      * UC7 - Pregled osobnih podataka korisnika (udruge ili gradanina)-*
