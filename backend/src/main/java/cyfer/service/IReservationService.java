@@ -25,4 +25,6 @@ public interface IReservationService {
 
 	Map<String, Integer> getRankListByWalkNumber();
 
+	Map<String, Integer> getRankListByDogNumber();
+
 }

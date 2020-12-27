@@ -36,6 +36,12 @@ public class IndexController {
         return reservationService.getRankListByWalkNumber();
     }
 
+    @GetMapping("/ranking/3")
+    @Secured("ROLE_PUBLIC")
+    public Map<String, Integer> getRankingByDogs() {
+        return reservationService.getRankListByDogNumber();
+    }
+
     @GetMapping("")
     @Secured("ROLE_PUBLIC")
     public ResponseEntity<List<Shelter>> getAllShelter() {

@@ -85,15 +85,15 @@ public class DataInitializer {
 		
 
 		Walk walk1 = new Walk();
-		walk1.setDateTime(Timestamp.valueOf("2017-09-08 03:13:11"));
+		walk1.setDateTime(Timestamp.valueOf("2020-12-08 03:13:11"));
 		walk1.setDuration(10);
 		
 		Walk walk2 = new Walk();
-		walk2.setDateTime(Timestamp.valueOf("2017-09-08 03:13:12"));
+		walk2.setDateTime(Timestamp.valueOf("2020-12-08 03:13:12"));
 		walk2.setDuration(20);
 		
 		Walk walk3 = new Walk();
-		walk3.setDateTime(Timestamp.valueOf("2017-09-08 03:13:13"));
+		walk3.setDateTime(Timestamp.valueOf("2020-12-08 03:13:13"));
 		walk3.setDuration(30);
 		
 		Walk walk4 = new Walk();
@@ -177,7 +177,9 @@ public class DataInitializer {
 
 		reservationService.createReservation(walker1, walk1, dog1);
 		reservationService.createReservation(walker1, walk2, dog2);
-		reservationService.createReservation(walker2, walk2, dog2);
+		reservationService.createReservation(walker1, walk3, dog4);
+		reservationService.createReservation(walker2, walk2, dog3);
+		reservationService.createReservation(walker2, walk3, dog5);
 		reservationService.createReservation(walker3, walk3, dog3);
 		reservationService.createReservation(walker4, walk4, dog4);
 		reservationService.createReservation(walker5, walk5, dog5);
