@@ -13,6 +13,8 @@ import LoggedInNavbar from './components/LoggedInNavbar';
 import Dogs from './components/pages/Dogs';
 import Dog from './components/pages/Dog';
 import Profile from "./components/pages/Profile";
+import Shelters from './components/pages/Shelters';
+import ShelterDogs from './components/pages/ShelterDogs';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = React.useState(localStorage.getItem("loggedIn") === null ? false : localStorage.getItem("loggedIn"));
@@ -28,6 +30,7 @@ function App() {
   }
 
   console.log("Logged in is: " + isLoggedIn);
+  /*
   if(isLoggedIn){
     return(
       <Router>
@@ -39,6 +42,7 @@ function App() {
       </Router>
     )
   }
+  */
 
   return (
     <>
@@ -51,12 +55,13 @@ function App() {
           <LogInUdr path='/LogInUdr' component={LogInUdr} onLogin={onLogin}/>
           <Route path='/info' component={info} />
           <Route path='/dogs' component={Dogs} />
+          <Route path='/shelters' component={Shelters} />
           {/*<Route path='/sign-up' component={SignUp} />*/}
           {/*<Route path='/log-in' component={LogIn} onLogin={onLogin}/>*/}
           <SignUp path='/sign-up' component={SignUp} onLogin={onLogin} />
           <LogIn path='/log-in' component={LogIn} onLogin={onLogin} />
           <Route path='/dog/:dogId' component={(routerProps) => <Dog dogId={routerProps.match.params.dogId}/>}/>
-
+          <Route path='/shelter/:shelterId/dogs' component={(routerProps) => <ShelterDogs shelterId={routerProps.match.params.shelterId}/>}/>
         </Switch>
       </Router>
     </>
