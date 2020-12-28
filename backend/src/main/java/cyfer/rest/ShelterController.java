@@ -65,6 +65,12 @@ public class ShelterController {
 			return new ResponseEntity<Shelter>((Shelter) null, HttpStatus.UNAUTHORIZED);
 		}
 	}
+
+	@GetMapping("")
+	public ResponseEntity<List<Shelter>> getAllShelters() {
+		List<Shelter> list = shelterService.getAllShelters();
+		return new ResponseEntity<List<Shelter>>(list, HttpStatus.OK);
+	}
 	
 	@GetMapping("/name/{name}")
 	@Secured("ROLE_PUBLIC")

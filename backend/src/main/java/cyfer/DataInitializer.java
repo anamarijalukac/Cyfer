@@ -117,7 +117,7 @@ public class DataInitializer {
 		
 		Dog dog1 = new Dog();
 		dog1.setDescription("mali");
-		dog1.setImage("bijeli");
+		dog1.setImage("https://pngimg.com/uploads/dachshund/dachshund_PNG51.png");
 		dog1.setName("vili");
 		dog1.setTypeOfWalk("I");
 		dog1.setLocation(location1);
@@ -125,28 +125,28 @@ public class DataInitializer {
 
 		Dog dog2 = new Dog();
 		dog2.setDescription("mali2");
-		dog2.setImage("bijeli2");
-		dog2.setName("vili2");
+		dog2.setImage("https://upload.wikimedia.org/wikipedia/commons/9/94/My_dog.jpg");
+		dog2.setName("viliiiii");
 		dog2.setTypeOfWalk("I");
 		dog2.setShelter(shelter1);
 		
 		Dog dog3 = new Dog();
 		dog3.setDescription("mali3");
-		dog3.setImage("bijeli3");
+		dog3.setImage("https://upload.wikimedia.org/wikipedia/commons/4/43/Cute_dog.jpg");
 		dog3.setName("vili3");
 		dog3.setTypeOfWalk("I");
 		dog3.setShelter(shelter1);
 		
 		Dog dog4 = new Dog();
 		dog4.setDescription("mali4");
-		dog4.setImage("bijeli4");
+		dog4.setImage("https://upload.wikimedia.org/wikipedia/commons/f/fe/American_Eskimo_Dog_1.jpg");
 		dog4.setName("vili4");
 		dog4.setTypeOfWalk("I");
 		dog4.setShelter(shelter1);
 		
 		Dog dog5 = new Dog();
 		dog5.setDescription("mali5");
-		dog5.setImage("bijeli5");
+		dog5.setImage("https://upload.wikimedia.org/wikipedia/commons/d/dd/Golden_Retriever_Hund_Dog.JPG");
 		dog5.setName("vili5");
 		dog5.setTypeOfWalk("I");
 		dog5.setShelter(shelter1);
