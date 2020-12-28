@@ -176,6 +176,7 @@ public class DataInitializer {
 		walkService.setWalk(walk5);
 
 		reservationService.createReservation(walker1, walk1, dog1);
+		reservationService.createReservation(walker1, walk1, dog3);
 		reservationService.createReservation(walker1, walk2, dog2);
 		reservationService.createReservation(walker1, walk3, dog4);
 		reservationService.createReservation(walker2, walk2, dog3);

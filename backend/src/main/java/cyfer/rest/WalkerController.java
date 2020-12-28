@@ -1,15 +1,19 @@
 package cyfer.rest;
 
+import java.awt.desktop.UserSessionEvent;
 import java.sql.Timestamp;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
 import cyfer.service.IReservationService;
+import org.apache.catalina.Authenticator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.context.SecurityContext;
@@ -100,5 +104,28 @@ public class WalkerController {
 			return null;
 	}
 
+	@PostMapping("/{id}/visibility")
+	@Secured("ROLE_WALKER")
+	public void toggleVisibility(@PathVariable("id") long id, @AuthenticationPrincipal User user) {
+		if(!user.getUsername().equals(walkerService.getWalker(id).getUsername()))
+			return;
+		walkerService.toggleVisibility(id);
+	}
 
+	@GetMapping("/{id}/stats/1")
+	@Secured("ROLE_WALKER")
+	public ResponseEntity<Integer> getStatsByWalkDuration(@PathVariable("id") long id, @AuthenticationPrincipal User user) {
+		if(!user.getUsername().equals(walkerService.getWalker(id).getUsername()))
+			return new ResponseEntity<>(0, HttpStatus.UNAUTHORIZED);
+		return new ResponseEntity<>(walkerService.getWalkDurationStatistics(id), HttpStatus.OK);
+	}
+
+	//Treba testirati!
+	@GetMapping("/{id}/stats/2")
+	@Secured("ROLE_WALKER")
+	public ResponseEntity<Integer> getStatsByDogCount(@PathVariable("id") long id, @AuthenticationPrincipal User user) {
+		if(!user.getUsername().equals(walkerService.getWalker(id).getUsername()))
+			return new ResponseEntity<>(0, HttpStatus.UNAUTHORIZED);
+		return new ResponseEntity<>(walkerService.getDogCountStatistics(id), HttpStatus.OK);
+	}
 }

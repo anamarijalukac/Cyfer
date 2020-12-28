@@ -26,4 +26,12 @@ public interface IWalkerService {
 
 	Walker getByEmail(String email);
 
+
+	int getWalkDurationStatistics(long id);
+
+
+	void toggleVisibility(long id);
+
+
+	int getDogCountStatistics(long id);
 }

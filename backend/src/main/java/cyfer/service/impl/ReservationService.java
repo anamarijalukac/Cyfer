@@ -84,6 +84,7 @@ public class ReservationService implements IReservationService {
 		return dates;
 	}
 
+	//krivo implementirano, ne ići po rezervacijama jer onda zbraja više puta istu duljinu šetnje!!!
 	@Override
 	public Map<String, Integer> getRankListByWalkDuration() {
 		Map<String, Integer> walkers = reservationRepository.findAll().stream()
