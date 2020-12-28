@@ -100,5 +100,11 @@ public class WalkerController {
 			return null;
 	}
 
-
+	@PostMapping("/{id}/visibility")
+	@Secured("ROLE_WALKER")
+	public void toggleVisibility(@PathVariable("id") long id, @AuthenticationPrincipal User user) {
+		if(!user.getUsername().equals(walkerService.getWalker(id).getUsername()))
+			return;
+		walkerService.toggleVisibility(id);
+	}
 }

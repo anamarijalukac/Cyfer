@@ -67,9 +67,15 @@ public class WalkerService implements IWalkerService {
 		walkerRepository.deleteById(id);
 	}
 
+	@Override
+	public int getWalkDurationStatistics(long id) {
+		return 0;
+	}
 
-	
-
-	
-
+	@Override
+	public void toggleVisibility(long id) {
+		Walker walker = walkerRepository.findById(id).get();
+		walker.changeStatVisibility();
+		walkerRepository.save(walker);
+	}
 }
