@@ -116,7 +116,16 @@ public class WalkerController {
 	@Secured("ROLE_WALKER")
 	public ResponseEntity<Integer> getStatsByWalkDuration(@PathVariable("id") long id, @AuthenticationPrincipal User user) {
 		if(!user.getUsername().equals(walkerService.getWalker(id).getUsername()))
-			return new ResponseEntity<Integer>(0, HttpStatus.UNAUTHORIZED);
-		return new ResponseEntity<Integer>(walkerService.getWalkDurationStatistics(id), HttpStatus.OK);
+			return new ResponseEntity<>(0, HttpStatus.UNAUTHORIZED);
+		return new ResponseEntity<>(walkerService.getWalkDurationStatistics(id), HttpStatus.OK);
+	}
+
+	//Treba testirati!
+	@GetMapping("/{id}/stats/2")
+	@Secured("ROLE_WALKER")
+	public ResponseEntity<Integer> getStatsByDogCount(@PathVariable("id") long id, @AuthenticationPrincipal User user) {
+		if(!user.getUsername().equals(walkerService.getWalker(id).getUsername()))
+			return new ResponseEntity<>(0, HttpStatus.UNAUTHORIZED);
+		return new ResponseEntity<>(walkerService.getDogCountStatistics(id), HttpStatus.OK);
 	}
 }

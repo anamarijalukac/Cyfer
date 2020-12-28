@@ -88,4 +88,10 @@ public class WalkerService implements IWalkerService {
 		walker.changeStatVisibility();
 		walkerRepository.save(walker);
 	}
+
+	@Override
+	public int getDogCountStatistics(long id) {
+		return (int)reservationRepository.findAll().stream()
+				.filter(r -> r.getWalker().getWalkerId() == id).count();
+	}
 }
