@@ -56,7 +56,7 @@ function Navbar(props) {
             </li>
             <li className='nav-item'>
               <Link
-                to='/LogInRedirect'
+                to='/Profile'
                 className='nav-links'
                 onClick={closeMobileMenu}
               >

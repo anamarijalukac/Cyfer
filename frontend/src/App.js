@@ -9,10 +9,10 @@ import RegUdr from './components/pages/RegUdr';
 import SignUp from './components/pages/SignUp';
 import LogIn from './components/pages/LogIn';
 import LogInUdr from './components/pages/LogInUdr';
-import LogInRedirect from './components/pages/LogInRedirect';
 import LoggedInNavbar from './components/LoggedInNavbar';
 import Dogs from './components/pages/Dogs';
 import Dog from './components/pages/Dog';
+import Profile from "./components/pages/Profile";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = React.useState(localStorage.getItem("loggedIn") === null ? false : localStorage.getItem("loggedIn"));
@@ -34,7 +34,7 @@ function App() {
         <LoggedInNavbar onLogout={onLogout} />
         <Switch>
           <Route path='/' exact component={Home} />
-          <LogInRedirect path='/LogInRedirect' component={LogInRedirect} onLogout={onLogout} />
+          <Profile path='/Profile' component={Profile} onLogout={onLogout} />
         </Switch>
       </Router>
     )
@@ -55,8 +55,6 @@ function App() {
           {/*<Route path='/log-in' component={LogIn} onLogin={onLogin}/>*/}
           <SignUp path='/sign-up' component={SignUp} onLogin={onLogin} />
           <LogIn path='/log-in' component={LogIn} onLogin={onLogin} />
-
-          <Route path='/logInRedirect' component={LogInRedirect} />
           <Route path='/dog/:dogId' component={(routerProps) => <Dog dogId={routerProps.match.params.dogId}/>}/>
 
         </Switch>

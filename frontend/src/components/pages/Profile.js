@@ -3,7 +3,7 @@ import '../../components/pages/profile.css';
 import {useHistory} from 'react-router-dom';
 
 
-function LogInRedirect(props){
+function Profile(props){
 
     let history = useHistory();
 
@@ -18,25 +18,25 @@ function LogInRedirect(props){
     if(localStorage.getItem("korisnik") === null){
 
         let shelterData = JSON.parse(localStorage.getItem("udruga"));
-        
+
         return (
             <div class="profile">
-            <h1>Profil udruge: {shelterData.username}</h1>
-            
-
-            <div className="container">
-                <p className="fontstyle">Korisničko ime udruge: {shelterData.username} </p> 
-
-                <p className="fontstyle">Ime: {shelterData.name} </p>
-                <p className="fontstyle">OIB: {shelterData.oib} </p>
+                <h1>Profil udruge: {shelterData.username}</h1>
 
 
-                <button className="loginbtn fontstyle" onClick={onClick}>
-                    Izbriši profil
-                </button>
+                <div className="container">
+                    <p className="fontstyle">Korisničko ime udruge: {shelterData.username} </p>
 
+                    <p className="fontstyle">Ime: {shelterData.name} </p>
+                    <p className="fontstyle">OIB: {shelterData.oib} </p>
+
+
+                    <button className="loginbtn fontstyle" onClick={onClick}>
+                        Izbriši profil
+                    </button>
+
+                </div>
             </div>
-      </div>
         )
     }
 
@@ -46,10 +46,10 @@ function LogInRedirect(props){
     return (
         <div class="profile">
             <h1>Profil korisnika: {data.username}</h1>
-            
+
 
             <div className="container">
-                <p className="fontstyle">Korisničko ime: {data.username} </p> 
+                <p className="fontstyle">Korisničko ime: {data.username} </p>
 
                 <p className="fontstyle">Ime: {data.firstName} </p>
                 <p className="fontstyle">Prezime: {data.lastName} </p>
@@ -61,9 +61,9 @@ function LogInRedirect(props){
                 </button>
 
             </div>
-      </div>
+        </div>
     );
 }
 
 
-export default LogInRedirect; 
+export default Profile;
