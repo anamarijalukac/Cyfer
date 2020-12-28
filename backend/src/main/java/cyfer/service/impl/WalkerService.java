@@ -6,6 +6,9 @@ import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.stream.Collectors;
 
+import cyfer.dao.ReservationRepository;
+import cyfer.dao.WalkRepository;
+import cyfer.domain.Walk;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -23,7 +26,8 @@ public class WalkerService implements IWalkerService {
 	private WalkerRepository walkerRepository;
 
 	@Autowired
-	private ReservationService reservationService;
+	private ReservationRepository reservationRepository;
+
 
 	@Override
 	public Walker registerWalker(Walker walker) {
@@ -69,7 +73,13 @@ public class WalkerService implements IWalkerService {
 
 	@Override
 	public int getWalkDurationStatistics(long id) {
-		return 0;
+		Map<Walk, Integer> walks = reservationRepository.findAll().stream().filter(r -> r.getWalker().getWalkerId() == id)
+				.collect(Collectors.toMap(r -> r.getWalk(), r -> r.getWalk().getDuration(), (w1, w2) -> w1));
+		int result = 0;
+		for(Map.Entry<Walk,Integer> e : walks.entrySet()) {
+			result += e.getValue();
+		}
+		return result;
 	}
 
 	@Override
