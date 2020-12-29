@@ -6,9 +6,20 @@ import CardItem from '../CardItem';
 function ShelterDogs(props) {
 
     const [dogs, setDogs] = React.useState([]);
+    const udruga = JSON.parse(localStorage.getItem("udruga"))
+    var auth = 'Basic ' + new Buffer(udruga.username + ':' + localStorage.getItem("password")).toString('base64');
 
+    const options = {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': auth
+        },
+    };
+
+    const shelterId = udruga.shelterId
     React.useEffect(() => {
-        fetch('/shelter/'+ props.shelterId +'/dogs')
+        fetch('/shelter/'+ shelterId +'/dogs', options)
             .then(data => data.json())
             .then(dogs => {
                 setDogs(dogs)
@@ -17,6 +28,7 @@ function ShelterDogs(props) {
 
     }, []);
 
+    debugger
     //console.log(dogs)
     const dogCards =  dogs.map(dog =>
         <CardItem

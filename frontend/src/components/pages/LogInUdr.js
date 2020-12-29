@@ -32,6 +32,7 @@ function LogInUdr(props) {
       .then(response => {
       if(response.ok){
         props.onLogin();
+        localStorage.setItem("password", data.password)
         history.push('/');
         return response.json();
       }
@@ -46,7 +47,7 @@ function LogInUdr(props) {
 
 
   return (
-    <div class="container">
+    <div className="container">
       <form onSubmit = {onSubmit}>
           <h1>Prijavi se kao udruga</h1>
            <div className="container">
@@ -59,7 +60,7 @@ function LogInUdr(props) {
                   <label name="checkbox" htmlFor="customCheck1"> Zapamti</label>
               </div>
               {(error != "") ? <div className="error">{error}</div> : ""}
-           <button class = 'loginbtn' type="submit" >Log in</button>
+           <button className = 'loginbtn' type="submit" >Log in</button>
           </div>
       </form>
     </div>
