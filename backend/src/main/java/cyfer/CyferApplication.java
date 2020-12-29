@@ -27,7 +27,7 @@ public class CyferApplication {
      * UC11 - Uredivanje profila psa neke udruge-*
      * UC12 - Brisanje profila psa iz liste neke udruge-*
      * UC13 - Rezervacija termina setnje-*
-     * UC14 - Pregled vlastitih statistika setnji-sven
+     * UC14 - Pregled vlastitih statistika setnji-*
      * UC15 - Oznacavanje statistike setnji kao javne -*
      * UC16 - Pregled i skidanje (eng.download) kalendara registriranog gradanina-*
      * UC17 - Pregled korisnika-zaba?

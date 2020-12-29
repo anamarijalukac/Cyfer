@@ -31,12 +31,7 @@ public class ReservationService implements IReservationService {
 
 	@Autowired
 	private ReservationRepository reservationRepository;
-	@Autowired
-	private WalkerRepository walkerRepository;
-	@Autowired
-	private DogRepository dogRepository;
-	@Autowired
-	private WalkRepository walkRepository;
+
 	
 	@Override
 	public Reservation getReservation(long reservationId) {
@@ -52,18 +47,17 @@ public class ReservationService implements IReservationService {
 
 	@Override
 	public Reservation createReservation(Walker walker, Walk walk, Dog dog) {
-		
+		if(reservationRepository.findByWalkAndDog(walk, dog) != null)
+			return null;
 		Reservation newReservation=new Reservation(walk,walker,dog);
 		reservationRepository.save(newReservation);
 		return newReservation;
-		
 	}
 
 	@Override
 	public void deleteReservation(long reservationId) {
 		reservationRepository.deleteById(reservationId);
 	}
-
 
 	@Override
 	public List<Dog> getDogsStatistics() {
@@ -84,15 +78,27 @@ public class ReservationService implements IReservationService {
 		return dates;
 	}
 
-	//krivo implementirano, ne ići po rezervacijama jer onda zbraja više puta istu duljinu šetnje!!!
 	@Override
 	public Map<String, Integer> getRankListByWalkDuration() {
-		Map<String, Integer> walkers = reservationRepository.findAll().stream()
+		/*Map<String, Integer> walkers = reservationRepository.findAll().stream()
 				.filter(r -> LocalDate.now().minusMonths(1)
 						.isBefore(r.getWalk().getDateTime().toLocalDateTime().toLocalDate()) && r.getWalker().getStatVisibility())
 				.collect(Collectors.toMap(r -> r.getWalker().getUsername(), r -> r.getWalk().getDuration(), (w1, w2) -> w1 + w2));
-
-		return sortByValue(walkers);
+		*/
+		Map<String, Integer> result = new HashMap<>();
+		List<List<Reservation>> listForChecking = new ArrayList<>();
+		for(Reservation r : reservationRepository.findAll()) {
+			if(!LocalDate.now().minusMonths(1).isBefore(r.getWalk().getDateTime().toLocalDateTime().toLocalDate()))
+				continue;
+			List<Reservation> list = reservationRepository.findByWalkAndWalker(r.getWalk(), r.getWalker());
+			if(listForChecking.contains(list)) continue;
+			listForChecking.add(list);
+			if(result.containsKey(r.getWalker().getUsername()))
+				result.put(r.getWalker().getUsername(), result.get(r.getWalker().getUsername()) + r.getWalk().getDuration());
+			else
+				result.put(r.getWalker().getUsername(), r.getWalk().getDuration());
+		}
+		return sortByValue(result);
 	}
 
 	@Override
@@ -113,13 +119,16 @@ public class ReservationService implements IReservationService {
 	@Override
 	public Map<String, Integer> getRankListByWalkNumber() {
 		Map<String, Integer> map = new HashMap<>();
-		List<Reservation> list = reservationRepository.findAll();
+		List<List<Reservation>> list = new ArrayList<>();
+
 		for(Reservation reservation : reservationRepository.findAll()) {
-			List<Reservation> listRes = reservationRepository.findByWalkAndWalker(reservation.getWalk(), reservation.getWalker());
-			String username = listRes.get(0).getWalker().getUsername();
 			if(!LocalDate.now().minusMonths(1).isBefore(reservation.getWalk().getDateTime().toLocalDateTime().toLocalDate())) continue;
 			if(!reservation.getWalker().getStatVisibility())
 				continue;
+			List<Reservation> listRes = reservationRepository.findByWalkAndWalker(reservation.getWalk(), reservation.getWalker());
+			if(list.contains(listRes)) continue;
+			list.add(listRes);
+			String username = listRes.get(0).getWalker().getUsername();
 			if(map.containsKey(username)) {
 				map.put(username, map.get(username) + 1);
 			} else map.put(username, 1);

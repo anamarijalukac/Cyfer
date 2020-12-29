@@ -46,6 +46,8 @@ public class WalkerController {
 		Walker newWalker = walkerService.getByUsername(walker.getUsername());
 		boolean passwordTrue = new BCryptPasswordEncoder().matches(walker.getPassword(),newWalker.getPassword());
 		if (passwordTrue) {
+			//dodan red samo da se na frontendu moze dobiti obicna sifra
+			//newWalker.setPassword(walker.getPassword());
 			return new ResponseEntity<Walker>(newWalker, HttpStatus.OK);
 		} else {
 			return new ResponseEntity<Walker>(HttpStatus.BAD_REQUEST);
@@ -55,9 +57,11 @@ public class WalkerController {
 	@PostMapping("/signup")
 	public ResponseEntity<Walker> registerWalker(@RequestBody Walker walker) {
 		Walker newWalker = walkerService.registerWalker(walker);
-		if (newWalker != null)
+		if (newWalker != null) {
+			//dodan red samo da se na frontendu moze dobiti obicna sifra
+			//newWalker.setPassword(walker.getPassword());
 			return new ResponseEntity<Walker>(newWalker, HttpStatus.OK);
-		else
+		} else
 			return new ResponseEntity<Walker>(HttpStatus.BAD_REQUEST);
 	}
 
@@ -120,12 +124,19 @@ public class WalkerController {
 		return new ResponseEntity<>(walkerService.getWalkDurationStatistics(id), HttpStatus.OK);
 	}
 
-	//Treba testirati!
 	@GetMapping("/{id}/stats/2")
 	@Secured("ROLE_WALKER")
 	public ResponseEntity<Integer> getStatsByDogCount(@PathVariable("id") long id, @AuthenticationPrincipal User user) {
 		if(!user.getUsername().equals(walkerService.getWalker(id).getUsername()))
 			return new ResponseEntity<>(0, HttpStatus.UNAUTHORIZED);
 		return new ResponseEntity<>(walkerService.getDogCountStatistics(id), HttpStatus.OK);
+	}
+
+	@GetMapping("/{id}/stats/3")
+	@Secured("ROLE_WALKER")
+	public ResponseEntity<Integer> getStatsByWalkCount(@PathVariable("id") long id, @AuthenticationPrincipal User user) {
+		if(!user.getUsername().equals(walkerService.getWalker(id).getUsername()))
+			return new ResponseEntity<>(0, HttpStatus.UNAUTHORIZED);
+		return new ResponseEntity<>(walkerService.getWalkCountStatistics(id), HttpStatus.OK);
 	}
 }
