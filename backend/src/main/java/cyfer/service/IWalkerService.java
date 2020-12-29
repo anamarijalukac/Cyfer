@@ -34,4 +34,6 @@ public interface IWalkerService {
 
 
 	int getDogCountStatistics(long id);
+
+	int getWalkCountStatistics(long id);
 }

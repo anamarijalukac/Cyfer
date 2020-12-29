@@ -14,7 +14,7 @@ import javax.validation.constraints.NotNull;
 public class Walker {
 
 	public Walker() {
-		statVisibility = false;
+		statVisibility = true;
 	}
 
 	@Id

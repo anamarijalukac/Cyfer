@@ -185,6 +185,8 @@ public class DataInitializer {
 		reservationService.createReservation(walker4, walk4, dog4);
 		reservationService.createReservation(walker5, walk5, dog5);
 
+		//testni primjerak koji ne bi smio raditi!!!
+		reservationService.createReservation(walker2, walk5, dog5);
 
 	}
 

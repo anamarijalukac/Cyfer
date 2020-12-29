@@ -94,4 +94,12 @@ public class WalkerService implements IWalkerService {
 		return (int)reservationRepository.findAll().stream()
 				.filter(r -> r.getWalker().getWalkerId() == id).count();
 	}
+
+	@Override
+	public int getWalkCountStatistics(long id) {
+		Map<Walk, Integer> walks = reservationRepository.findAll().stream().filter(r -> r.getWalker().getWalkerId() == id)
+				.collect(Collectors.toMap(r -> r.getWalk(), r -> r.getWalk().getDuration(), (w1, w2) -> w1));
+		int result = walks.entrySet().size();
+		return result;
+	}
 }
