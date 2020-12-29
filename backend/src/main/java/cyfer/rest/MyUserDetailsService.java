@@ -37,7 +37,7 @@ public class MyUserDetailsService implements UserDetailsService {
         else {
             password = walker.getPassword();
         }
-        return new User(username, password, authorities(username));
+        return new User(username, new BCryptPasswordEncoder().encode(password), authorities(username));
     }
 
     private List<GrantedAuthority> authorities(String username) {

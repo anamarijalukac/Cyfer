@@ -46,6 +46,8 @@ public class WalkerController {
 		Walker newWalker = walkerService.getByUsername(walker.getUsername());
 		boolean passwordTrue = new BCryptPasswordEncoder().matches(walker.getPassword(),newWalker.getPassword());
 		if (passwordTrue) {
+			//dodan red samo da se na frontendu moze dobiti obicna sifra
+			//newWalker.setPassword(walker.getPassword());
 			return new ResponseEntity<Walker>(newWalker, HttpStatus.OK);
 		} else {
 			return new ResponseEntity<Walker>(HttpStatus.BAD_REQUEST);
@@ -55,9 +57,11 @@ public class WalkerController {
 	@PostMapping("/signup")
 	public ResponseEntity<Walker> registerWalker(@RequestBody Walker walker) {
 		Walker newWalker = walkerService.registerWalker(walker);
-		if (newWalker != null)
+		if (newWalker != null) {
+			//dodan red samo da se na frontendu moze dobiti obicna sifra
+			//newWalker.setPassword(walker.getPassword());
 			return new ResponseEntity<Walker>(newWalker, HttpStatus.OK);
-		else
+		} else
 			return new ResponseEntity<Walker>(HttpStatus.BAD_REQUEST);
 	}
 
