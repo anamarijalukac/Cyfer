@@ -110,7 +110,6 @@ public class ShelterController {
 	}
 
 	@GetMapping("/{shelterId}/dogs")
-	@Secured("ROLE_SHELTER")
 	public List<Dog> getDogsByShelterId(@PathVariable("shelterId") long shelterId) {
 		//Shelter shelter=shelterService.getShelter(shelterId);
 		List<Dog> dogs = dogService.getSheltersDogs(shelterId);

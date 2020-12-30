@@ -30,8 +30,6 @@ public class CyferApplication {
      * UC14 - Pregled vlastitih statistika setnji-*
      * UC15 - Oznacavanje statistike setnji kao javne -*
      * UC16 - Pregled i skidanje (eng.download) kalendara registriranog gradanina-*
-     * UC17 - Pregled korisnika-zaba?
-     * UC18 - Brisanje korisnika-zaba?
      */
 
     @Bean
