@@ -40,8 +40,9 @@ function LogIn(props) {
         fetch('/walker/login', options)
             .then(response => {
                 if (response.ok) {
-                    props.onLogin();
+                    props.onLogin()
                     history.push('/');
+                    localStorage.setItem("password", data.password)
                     return response.json()
                 } else {
                     setForm({username: '', password: '', checkbox: false});

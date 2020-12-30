@@ -3,9 +3,12 @@ import { Button } from './Button';
 import {Link, useHistory} from 'react-router-dom';
 import './Navbar.css';
 
-function Navbar() {
+function Navbar(props) {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
+
+
+  console.log("props-logged-in: " + props.isLoggedIn)
 
   let history = useHistory();
   const handleClick = () => setClick(!click);
@@ -26,15 +29,20 @@ function Navbar() {
 
   window.addEventListener('resize', showButton);
 
-  let item = localStorage.getItem("loggedIn");
-  console.log("item is " + item);
+
+
 
   var isShelter, isWalker;
-  if(localStorage.getItem("udruga") !== null && localStorage.getItem("udruga") !== undefined) {
+
+  if(localStorage.getItem("udruga") !== null && localStorage.getItem("udruga") !== "undefined") {
     isShelter = true;
+  } else {
+    isShelter = false;
   }
-  if(localStorage.getItem("korisnik") !== null && localStorage.getItem("korisnik") !== undefined) {
+  if(localStorage.getItem("korisnik") !== null && localStorage.getItem("korisnik") !== "undefined") {
     isWalker = true;
+  } else {
+    isWalker = false;
   }
 
   console.log("shelter " + isShelter)
@@ -42,8 +50,9 @@ function Navbar() {
 
 
   const login =  <Link to='/log-in' className='btn-mobile'>
-    <Button className='btns' buttonStyle='btn--outline' buttonSize='btn--small'>
+    <Button className='btns' buttonStyle='btn--outline' buttonSize='btn--small' >
       Prijava </Button></Link>
+
 
 
   const registrate = <Link to='/sign-up' className='btn-mobile'>
@@ -56,9 +65,10 @@ function Navbar() {
       </Button>
     </Link>
 
-  var shelterId = ""
+  var shelterId
   if(isShelter)
-    shelterId = localStorage.getItem("udruga").shelterId
+    shelterId = JSON.parse(localStorage.getItem("udruga")).shelterId
+
 
     const listaPasaUdruge = <li className='nav-item'>
       <Link
@@ -110,7 +120,7 @@ function Navbar() {
   </Button>
 
   function logout(){
-    localStorage.clear();
+    props.onLogout()
     history.push('/');
   }
 
@@ -145,10 +155,11 @@ function Navbar() {
           </div>
           <ul className={click ? 'nav-menu active' : 'nav-menu'}>
             {listaPasa}
-            {isShelter && listaPasaUdruge}
+            {props.isLoggedIn && props.isLoggedInShelter && listaPasaUdruge}
             {listaUdruga}
             {rangListaŠetača}
-            {localStorage.getItem("loggedIn") && profile}
+            {props.isLoggedIn && profile}
+
 
 
 
@@ -158,9 +169,9 @@ function Navbar() {
           </ul>
 
           <div className='navbar-buttons'>
-            {!localStorage.getItem("loggedIn") && login }
-            {!localStorage.getItem("loggedIn") && registrate }
-            {localStorage.getItem("loggedIn") && odjava }
+            {!props.isLoggedIn && login }
+            {!props.isLoggedIn && registrate }
+            {props.isLoggedIn && odjava }
         </div>
         </div>
       </nav>
