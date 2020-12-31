@@ -127,5 +127,9 @@ public class ShelterController {
 		dogService.setDog(dog);
 		return new ResponseEntity<Dog>(dog, HttpStatus.OK);
 	}
-	
+
+	@GetMapping("/info/{id}")
+	public ResponseEntity<Shelter> getShelterInfo(@PathVariable("id") long id) {
+		return new ResponseEntity<Shelter>(shelterService.getShelter(id), HttpStatus.OK);
+	}
 }
