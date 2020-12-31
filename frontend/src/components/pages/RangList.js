@@ -98,6 +98,9 @@ function RangList() {
 
   return (
       <div>
+        <h1 className={"title"}>
+          Rang liste šetača zadnjih mjesec dana
+        </h1>
         <p className="text">Rang lista šetača po duljini
         </p>
         <TableContainer component={Paper}>
@@ -128,7 +131,7 @@ function RangList() {
           </Table>
         </TableContainer>
         <div className="pad">
-          <p className="text">The second table
+          <p className="text">Rang lista šetača po broju šetnji
           </p>
           <TableContainer component={Paper}>
             <Table className={classes.table} aria-label="customized table">
@@ -158,7 +161,7 @@ function RangList() {
           </TableContainer>
         </div>
         <div className="pad">
-          <p className="text">The third table
+          <p className="text">Rang lista šetača po broju šetanih pasa
           </p>
           <TableContainer component={Paper}>
             <Table className={classes.table} aria-label="customized table">
