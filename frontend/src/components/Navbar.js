@@ -66,6 +66,7 @@ function Navbar(props) {
     </Link>
 
   var shelterId
+  debugger
   if(isShelter)
     shelterId = JSON.parse(localStorage.getItem("udruga")).shelterId
 
