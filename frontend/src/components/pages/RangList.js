@@ -49,59 +49,81 @@ function RangList() {
 
   const classes = useStyles();
 
+  const [walkers1, setWalkers1] = React.useState([]);
 
-
-  const [walkers, setWalkers] = React.useState([]);
-
-  {/*} React.useEffect(() => {
+   React.useEffect(() => {
     fetch("/ranking/1")
       .then(data => {
         return data.json();
       })
       .then(data => {
-        console.log("Data: " + data);
-        setWalkers(JSON.stringify(data));
+        setWalkers1(Object.entries(data));
       })
       .catch(error => console.log(error));
-  })*/}
-
-  //console.log("Walkers are: " + walkers);
+  }, [walkers1.length]);
 
 
+
+
+  const [walkers2, setWalkers2] = React.useState([]);
+
+  React.useEffect(() => {
+    fetch("/ranking/2")
+        .then(data => {
+          return data.json();
+        })
+        .then(data => {
+          setWalkers2(Object.entries(data));
+        })
+        .catch(error => console.log(error));
+  }, [walkers2.length]);
+
+
+
+
+  const [walkers3, setWalkers3] = React.useState([]);
+
+  React.useEffect(() => {
+    fetch("/ranking/3")
+        .then(data => {
+          return data.json();
+        })
+        .then(data => {
+          setWalkers3(Object.entries(data));
+        })
+        .catch(error => console.log(error));
+  }, [walkers3.length]);
 
 
 
   return (
       <div>
-        <p className="text">The first table
+        <p className="text">Rang lista šetača po duljini
         </p>
         <TableContainer component={Paper}>
           <Table className={classes.table} aria-label="customized table">
             <TableHead>
               <TableRow>
                 {/*Ovo predstavlja gornji dio tablice koji opisuje koji podatak se predstavlja gdje*/}
-                <StyledTableCell>Position</StyledTableCell>
-                <StyledTableCell align={"left"}>Dessert (100g serving)</StyledTableCell>
-                <StyledTableCell align="left">Calories</StyledTableCell>
-                <StyledTableCell align="left">Fat&nbsp;(g)</StyledTableCell>
-                <StyledTableCell align="left">Carbs&nbsp;(g)</StyledTableCell>
-                <StyledTableCell align="left">Protein&nbsp;(g)</StyledTableCell>
+                <StyledTableCell>Položaj</StyledTableCell>
+                <StyledTableCell align={"center"}>Ime šetača</StyledTableCell>
+                <StyledTableCell align={"right"}>Duljina šetnje</StyledTableCell>
+
               </TableRow>
             </TableHead>
             <TableBody>
-              {rows.map((row) => (
-                  //ovo predstavlja retke u tablici koji su podatci pojedinog setaca
-                  <StyledTableRow key={row.position}>
-                    <StyledTableCell component="th" scope="row">
-                      {row.position}
-                    </StyledTableCell>
-                    <StyledTableCell align={"left"}>{row.name}</StyledTableCell>
-                    <StyledTableCell align="left">{row.calories}</StyledTableCell>
-                    <StyledTableCell align="left">{row.fat}</StyledTableCell>
-                    <StyledTableCell align="left">{row.carbs}</StyledTableCell>
-                    <StyledTableCell align="left">{row.protein}</StyledTableCell>
-                  </StyledTableRow>
-              ))}
+              {
+                walkers1.map((row, index) => (
+                    <StyledTableRow key={index}>
+                      <StyledTableCell component="th" scope="row">
+                        {index + 1}
+                      </StyledTableCell>
+                      <StyledTableCell align={"center"}>{row[0]}</StyledTableCell>
+                      <StyledTableCell align={"right"}>{row[1]}</StyledTableCell>
+                    </StyledTableRow>
+                ))
+              }
+
             </TableBody>
           </Table>
         </TableContainer>
@@ -113,28 +135,24 @@ function RangList() {
               <TableHead>
                 <TableRow>
                   {/*Ovo predstavlja gornji dio tablice koji opisuje koji podatak se predstavlja gdje*/}
-                  <StyledTableCell>Position</StyledTableCell>
-                  <StyledTableCell align={"left"}>Dessert (100g serving)</StyledTableCell>
-                  <StyledTableCell align="left">Calories</StyledTableCell>
-                  <StyledTableCell align="left">Fat&nbsp;(g)</StyledTableCell>
-                  <StyledTableCell align="left">Carbs&nbsp;(g)</StyledTableCell>
-                  <StyledTableCell align="left">Protein&nbsp;(g)</StyledTableCell>
+                  <StyledTableCell>Položaj</StyledTableCell>
+                  <StyledTableCell align={"center"}>Ime šetača</StyledTableCell>
+                  <StyledTableCell align={"right"}>Broj šetnji</StyledTableCell>
+
                 </TableRow>
               </TableHead>
               <TableBody>
-                {rows.map((row) => (
-                    //ovo predstavlja retke u tablici koji su podatci pojedinog setaca
-                    <StyledTableRow key={row.position}>
-                      <StyledTableCell component="th" scope="row">
-                        {row.position}
-                      </StyledTableCell>
-                      <StyledTableCell align={"left"}>{row.name}</StyledTableCell>
-                      <StyledTableCell align="left">{row.calories}</StyledTableCell>
-                      <StyledTableCell align="left">{row.fat}</StyledTableCell>
-                      <StyledTableCell align="left">{row.carbs}</StyledTableCell>
-                      <StyledTableCell align="left">{row.protein}</StyledTableCell>
-                    </StyledTableRow>
-                ))}
+                {
+                  walkers2.map((row, index) => (
+                      <StyledTableRow key={index}>
+                        <StyledTableCell component="th" scope="row">
+                          {index + 1}
+                        </StyledTableCell>
+                        <StyledTableCell align={"center"}>{row[0]}</StyledTableCell>
+                        <StyledTableCell align={"right"}>{row[1]}</StyledTableCell>
+                      </StyledTableRow>
+                  ))
+                }
               </TableBody>
             </Table>
           </TableContainer>
@@ -147,28 +165,24 @@ function RangList() {
               <TableHead>
                 <TableRow>
                   {/*Ovo predstavlja gornji dio tablice koji opisuje koji podatak se predstavlja gdje*/}
-                  <StyledTableCell>Position</StyledTableCell>
-                  <StyledTableCell align={"left"}>Dessert (100g serving)</StyledTableCell>
-                  <StyledTableCell align="left">Calories</StyledTableCell>
-                  <StyledTableCell align="left">Fat&nbsp;(g)</StyledTableCell>
-                  <StyledTableCell align="left">Carbs&nbsp;(g)</StyledTableCell>
-                  <StyledTableCell align="left">Protein&nbsp;(g)</StyledTableCell>
+                  <StyledTableCell>Položaj</StyledTableCell>
+                  <StyledTableCell align={"center"}>Ime šetača</StyledTableCell>
+                  <StyledTableCell align={"right"}>Broj šetanih pasa</StyledTableCell>
+
                 </TableRow>
               </TableHead>
               <TableBody>
-                {rows.map((row) => (
-                    //ovo predstavlja retke u tablici koji su podatci pojedinog setaca
-                    <StyledTableRow key={row.position}>
-                      <StyledTableCell component="th" scope="row">
-                        {row.position}
-                      </StyledTableCell>
-                      <StyledTableCell align={"left"}>{row.name}</StyledTableCell>
-                      <StyledTableCell align="left">{row.calories}</StyledTableCell>
-                      <StyledTableCell align="left">{row.fat}</StyledTableCell>
-                      <StyledTableCell align="left">{row.carbs}</StyledTableCell>
-                      <StyledTableCell align="left">{row.protein}</StyledTableCell>
-                    </StyledTableRow>
-                ))}
+                {
+                  walkers3.map((row, index) => (
+                      <StyledTableRow key={index}>
+                        <StyledTableCell component="th" scope="row">
+                          {index + 1}
+                        </StyledTableCell>
+                        <StyledTableCell align={"center"}>{row[0]}</StyledTableCell>
+                        <StyledTableCell align={"right"}>{row[1]}</StyledTableCell>
+                      </StyledTableRow>
+                  ))
+                }
               </TableBody>
             </Table>
           </TableContainer>
