@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.StreamingHttpOutputMessage.Body;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -36,14 +38,14 @@ public class ReservationController {
 	@Autowired
 	private IDogService dogService;
 
-	@PostMapping("walker/{walkerId}/dog/{dogId}/reservation")
-	public ResponseEntity<Reservation> createReservation(@PathVariable("walkerId") long walkerId,
-			@PathVariable("dogId") long dogId, @RequestBody Walk walk) {
+	@PostMapping("/shelter/{shelterId}/{dogId}/reserve")
+	public ResponseEntity<Reservation> createReservation(@PathVariable("dogId") long dogId, @RequestBody Walk walk,
+														 @AuthenticationPrincipal User user) {
 		Walk newWalk=walkService.setWalk(walk);
 		System.out.println(newWalk.toString());
-		Walker walker = walkerService.getWalker(walkerId);
+		Walker walker = walkerService.getByUsername(user.getUsername());
 		Dog dog = dogService.getDog(dogId);
-		Reservation newReservation=reservationService.createReservation(walker, newWalk, dog);
+		Reservation newReservation = reservationService.createReservation(walker, newWalk, dog);
 		return new ResponseEntity<Reservation>(newReservation,HttpStatus.OK);
 	}
 

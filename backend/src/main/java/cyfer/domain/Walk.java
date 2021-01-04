@@ -35,12 +35,6 @@ public class Walk {
 
 	@Column
 	private int duration;
-	
-	
-	
-	
-	
-
 
 	public Long getWalkId() {
 		return walkId;
