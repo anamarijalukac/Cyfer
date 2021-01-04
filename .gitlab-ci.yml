@@ -1,0 +1,59 @@
+variables:
+  APP_NAME_FRONTEND: App.js
+  APP_NAME_BACKEND: CyferApplication.java
+
+stages:
+  - build
+  - deploy
+
+Build-Deploy-Frontend-to-Heroku:
+  stage: build
+  image: docker:latest
+  services:
+    - docker:dind
+  only:
+    - master
+  script:
+    - echo "Deploying Frontend..."
+    - docker login -u _ -p $HEROKU_API_KEY registry.heroku.com
+    - docker build --file=frontend/frontend.dockerfile --rm=true -t registry.heroku.com/$APP_NAME_FRONTEND/web .
+    - docker push registry.heroku.com/$APP_NAME_FRONTEND/web
+    - docker run -e HEROKU_API_KEY=$HEROKU_API_KEY wingrunr21/alpine-heroku-cli:latest container:release web -a $APP_NAME_FRONTEND
+    - echo "Frontend Deployment Complete!"
+
+Build-Backend:
+  stage: build
+  image: gradle:6.0.1-jdk13
+  before_script:
+    - export GRADLE_USER_HOME=`pwd`/backend/.gradle
+  script:
+    - echo "Building Backend..."
+    - cd ./backend
+    - gradle build
+    - echo "Backend Build Complete!"
+  cache:
+    key: "$CI_COMMIT_SHA"
+    policy: push
+    paths:
+      - backend/build
+  artifacts:
+    paths:
+      - backend/build/libs/*.jar
+    expire_in: 1 week
+  only:
+    - master
+
+Deploy-Backend-to-Heroku:
+  stage: deploy
+  image: docker:latest
+  services:
+    - docker:dind
+  only:
+    - master
+  script:
+    - echo "Deploying Backend..."
+    - docker login -u _ -p $HEROKU_API_KEY registry.heroku.com
+    - docker build --file=backend/backend.dockerfile --rm=true -t registry.heroku.com/$APP_NAME_BACKEND/web .
+    - docker push registry.heroku.com/$APP_NAME_BACKEND/web
+    - docker run -e HEROKU_API_KEY=$HEROKU_API_KEY wingrunr21/alpine-heroku-cli:latest container:release web -a $APP_NAME_BACKEND
+    - echo "Backend Deployment Complete!"
