@@ -10,8 +10,9 @@ function EditProfile(props) {
     var input = ""
     var data;
     var lokacija
+    let isShelter = localStorage.getItem("korisnik") === null
     //shelter
-    if (localStorage.getItem("korisnik") === null) {
+    if (isShelter) {
         data = JSON.parse(localStorage.getItem("udruga"));
         lokacija = JSON.parse(localStorage.getItem("lokacija"));
         input = 'shelter/update/' + JSON.parse(localStorage.getItem("udruga")).shelterId
@@ -27,12 +28,8 @@ function EditProfile(props) {
 
         var auth = 'Basic ' + new Buffer(data.username + ':' + localStorage.getItem("password")).toString('base64');
 
-        console.log(input);
-        console.log(data.username)
-        console.log(localStorage.getItem("password"))
-
         var body
-        if (localStorage.getItem("korisnik") === null)
+        if (isShelter)
             body = {
                 'name': document.getElementById("name").value,
                 'username': document.getElementById("username").value,
@@ -50,48 +47,90 @@ function EditProfile(props) {
             }
 
 
+        console.log(body)
         const options = {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': auth
             },
-            body: body
+            body: JSON.stringify(body)
         };
 
-        fetch(input, options)
+        fetch(String(props.id), options)
             .then(response => {
                 if (response.ok) {
-                    localStorage.clear();
-                    props.onLogout();
+                    alert("Promjene uspješno pohranjene.")
                     history.push('/');
-                    console.log("Success");
+                    localStorage.setItem("password", data.password)
+                    return response.json()
                 }
             })
-            .catch(error => console.log(error));
+            .then(data => {
+                if (isShelter) {
+                    localStorage.setItem("udruga", JSON.stringify(data))
+                    localStorage.setItem("lokacija", JSON.stringify(data.location))
+                } else
+                    localStorage.setItem("korisnik", JSON.stringify(data))
+            })
+            .catch(error => {
+                console.log(error)
+                alert("Greška pri pohranjivanju promjena.")
+            });
     }
 
 
-    //korisnik
-    if ((localStorage.getItem("udruga") === null))
+        //korisnik
+        if ((localStorage.getItem("udruga") === null))
+            return (
+                <div className="profile">
+                    <h1>Profil korisnika: {data.username}</h1>
+
+
+                    <div className="container">
+
+                        <p className="fontstyle">Ime:</p>
+                        <input type="text" name="firstName" id="firstName" className="form-control" required="required"
+                               defaultValue={data.firstName}/>
+
+                        <p className="fontstyle">Prezime:</p>
+                        <input type="text" name="lastName" id="lastName" className="form-control" required="required"
+                               defaultValue={data.lastName}/>
+
+                        <p className="fontstyle">Email adresa:</p>
+                        <input type="text" name="email" id="email" className="form-control" required="required"
+                               defaultValue={data.email}/>
+
+                        <p className="fontstyle">Korisničko ime:</p>
+                        <input type="text" name="username" id="username" className="form-control" required="required"
+                               defaultValue={data.username}/>
+
+
+                        <p className="fontstyle">Lozinka:</p>
+                        <input type="password" name="password" id="password" className="form-control"
+                               required="required"
+                               defaultValue={localStorage.getItem("password")}/>
+
+
+                        <button className="loginbtn fontstyle" onClick={onClick}>
+                            Pohrani promjene
+                        </button>
+                    </div>
+                </div>
+            );
+
+        //shelter
         return (
             <div className="profile">
-                <h1>Profil korisnika: {data.username}</h1>
+                <h1>Profil udruge: {data.username}</h1>
 
 
                 <div className="container">
 
                     <p className="fontstyle">Ime:</p>
-                    <input type="text" name="firstName" id="firstName" className="form-control" required="required"
-                           defaultValue={data.firstName}/>
+                    <input type="text" name="name" id="name" className="form-control" required="required"
+                           defaultValue={data.name}/>
 
-                    <p className="fontstyle">Prezime:</p>
-                    <input type="text" name="lastName" id="lastName" className="form-control" required="required"
-                           defaultValue={data.lastName}/>
-
-                    <p className="fontstyle">Email adresa:</p>
-                    <input type="text" name="email" id="email" className="form-control" required="required"
-                           defaultValue={data.email}/>
 
                     <p className="fontstyle">Korisničko ime:</p>
                     <input type="text" name="username" id="username" className="form-control" required="required"
@@ -103,52 +142,22 @@ function EditProfile(props) {
                            defaultValue={localStorage.getItem("password")}/>
 
 
+                    <p className="fontstyle">Adresa:</p>
+                    <input type="text" name="address" id="address" className="form-control" required="required"
+                           defaultValue={lokacija.address}/>
+
+                    <p className="fontstyle">Grad:</p>
+                    <input type="text" name="city" id="city" className="form-control" required="required"
+                           defaultValue={lokacija.city}/>
+
+
                     <button className="loginbtn fontstyle" onClick={onClick}>
                         Pohrani promjene
                     </button>
                 </div>
             </div>
         );
-
-    //shelter
-    return (
-        <div className="profile">
-            <h1>Profil udruge: {data.username}</h1>
+    }
 
 
-            <div className="container">
-
-                <p className="fontstyle">Ime:</p>
-                <input type="text" name="name" id="name" className="form-control" required="required"
-                       defaultValue={data.name}/>
-
-
-                <p className="fontstyle">Korisničko ime:</p>
-                <input type="text" name="username" id="username" className="form-control" required="required"
-                       defaultValue={data.username}/>
-
-
-                <p className="fontstyle">Lozinka:</p>
-                <input type="password" name="password" id="password" className="form-control" required="required"
-                       defaultValue={localStorage.getItem("password")}/>
-
-
-                <p className="fontstyle">Adresa:</p>
-                <input type="text" name="address" id="address" className="form-control" required="required"
-                       defaultValue={lokacija.address}/>
-
-                <p className="fontstyle">Grad:</p>
-                <input type="text" name="city" id="city" className="form-control" required="required"
-                       defaultValue={lokacija.city}/>
-
-
-                <button className="loginbtn fontstyle" onClick={onClick}>
-                    Pohrani promjene
-                </button>
-            </div>
-        </div>
-    );
-}
-
-
-export default EditProfile;
+    export default EditProfile;
