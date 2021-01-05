@@ -25,16 +25,20 @@ function DogReservation(props) {
 
         e.preventDefault();
 
+        const localWalker = JSON.parse(localStorage.getItem("korisnik"));
+        let auth = 'Basic '+ new Buffer(localWalker.username + ':' + localStorage.getItem("password")).toString('base64');
+
+
         const data = {
             dateTime: form.dateAndTime + ":00.000",
             duration: form.duration,
-            walker: localStorage.getItem("korisnik")
         };
 
         const options = {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': auth
             },
             body: JSON.stringify(data)
         };
@@ -50,7 +54,7 @@ function DogReservation(props) {
                     alert("Uspješna rezervacija!");
                     history.push('/');
                 } else {
-                    setForm({dateAndTime: '', duration: 0});
+                    setForm({dateAndTime: '', duration: ''});
                 }
             })
             .catch(error => console.log(error));
