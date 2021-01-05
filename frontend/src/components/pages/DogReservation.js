@@ -27,7 +27,8 @@ function DogReservation(props) {
 
         const data = {
             dateTime: form.dateAndTime + ":00.000",
-            duration: form.duration
+            duration: form.duration,
+            walker: localStorage.getItem("korisnik")
         };
 
         const options = {
