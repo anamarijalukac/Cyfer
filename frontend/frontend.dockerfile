@@ -1,6 +1,6 @@
 # We don't want to start from scratch.
 # That is why we tell node here to use the current node image as base.
-FROM node:react17.0
+FROM node:13.12.0-alpine
 
 # Create an application directory
 RUN mkdir -p /app
