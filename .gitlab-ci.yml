@@ -39,6 +39,6 @@ Deploy-Backend-to-Heroku:
     - echo "Deploying Backend..."
     - docker login -u _ -p $HEROKU_API_KEY registry.heroku.com
     - docker build --file=backend/backend.dockerfile --rm=true -t registry.heroku.com/$APP_NAME_BACKEND/web .
-    - docker push registry.heroku.com/$APP_NAME_BACKEND/web
+    - docker push luka.bokarica1999@gmail/registry.heroku.com/$APP_NAME_BACKEND/web
     - docker run -e HEROKU_API_KEY=$HEROKU_API_KEY wingrunr21/alpine-heroku-cli:latest container:release web -a $APP_NAME_BACKEND
     - echo "Backend Deployment Complete!"
