@@ -1,6 +1,6 @@
 variables:
   APP_NAME_FRONTEND: index.js
-  APP_NAME_BACKEND: CyferApplication.java
+  APP_NAME_BACKEND: cyfer-application.java
 
 stages:
   - build
