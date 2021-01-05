@@ -26,13 +26,19 @@ function Dog(props) {
 
     function rezervacija(){
 
-        history.push({
-            pathname: "/DogReservation",
-            state: {
-                dogId : dog.dogId,
-                shelterId : shelter.shelterId
-            }
-        });
+        if(localStorage.getItem("loggedIn") === null){
+            history.push('/log-in');
+            alert("Morate biti ulogirani za rezervaciju šetnje");
+        }
+        else {
+            history.push({
+                pathname: "/DogReservation",
+                state: {
+                    dogId: dog.dogId,
+                    shelterId: shelter.shelterId
+                }
+            });
+        }
     }
 
 
