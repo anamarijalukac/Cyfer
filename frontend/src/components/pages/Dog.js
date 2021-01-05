@@ -30,6 +30,10 @@ function Dog(props) {
             history.push('/log-in');
             alert("Morate biti ulogirani za rezervaciju šetnje");
         }
+        else if(localStorage.getItem("loggedInUser") === null){
+            alert("Morate biti ulogirani kao korisnik za rezervaciju šetnje");
+            history.push('/');
+        }
         else {
             history.push({
                 pathname: "/DogReservation",
@@ -41,6 +45,18 @@ function Dog(props) {
         }
     }
 
+
+    let isLoggedIn = true;
+
+    if(localStorage.getItem("loggedInUser") === null){
+        isLoggedIn = false;
+    }
+
+
+    let button =
+        <button onClick={rezervacija}>
+            Rezerviraj Šetnju!
+        </button>
 
 
 
@@ -60,9 +76,7 @@ function Dog(props) {
                     <div>Udruga: {shelter.name}</div>
                     <div>Mogućnost grupnih šetnji: {dog.typeOfWalk === "I" ? "DA" : "NE"}</div>
                     <div>Opis: {dog.description}</div>
-                <button onClick={rezervacija}>
-                    Rezerviraj Šetnju!
-                </button>
+                {isLoggedIn && button}
 
             </div>
         </div>
