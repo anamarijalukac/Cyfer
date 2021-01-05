@@ -1,7 +1,10 @@
 import React from "react";
 import CardItem from "../CardItem";
+import {useHistory} from 'react-router-dom';
 
 function Dog(props) {
+
+    let history = useHistory();
 
     const [dog, setDog] = React.useState("");
     const [shelter, setShelter] = React.useState("");
@@ -17,6 +20,20 @@ function Dog(props) {
                 setLocation(dog.shelter.location)
             })
     }, []);
+
+
+
+
+    function rezervacija(){
+
+        history.push({
+            pathname: "/DogReservation",
+            state: {
+                dogId : dog.dogId,
+                shelterId : shelter.shelterId
+            }
+        });
+    }
 
 
 
@@ -37,7 +54,9 @@ function Dog(props) {
                     <div>Udruga: {shelter.name}</div>
                     <div>Mogućnost grupnih šetnji: {dog.typeOfWalk === "I" ? "DA" : "NE"}</div>
                     <div>Opis: {dog.description}</div>
-                    <div>Opis: {dog.description}</div>
+                <button onClick={rezervacija}>
+                    Rezerviraj Šetnju!
+                </button>
 
             </div>
         </div>
