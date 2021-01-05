@@ -16,6 +16,7 @@ import Shelters from './components/pages/Shelters';
 import ShelterDogs from './components/pages/ShelterDogs';
 import ShelterProfile from "./components/pages/ShelterProfile";
 import DogReservation from "./components/pages/DogReservation";
+import EditProfile from "./components/pages/EditProfile"
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = React.useState(localStorage.getItem("loggedIn") === null ? false : localStorage.getItem("loggedIn"));
@@ -76,8 +77,10 @@ function App() {
           <Route path='/dog/:dogId' component={(routerProps) => <Dog dogId={routerProps.match.params.dogId}/>}/>
           <Route path='/DogReservation' component={DogReservation} />
           <Route path='/shelter/:shelterId/dogs' component={(routerProps) => <ShelterDogs shelterId={routerProps.match.params.shelterId}/>}/>
-          <Route path='/Profile' component={Profile}/>
+          <Route path='/profile' component={Profile}/>
           <Route path='/shelter/info/:shelterId' component={(routerProps) => <ShelterProfile shelterId={routerProps.match.params.shelterId}/>}/>
+          <Route path='/walker/update/:walkerId' component={(routerProps) => <EditProfile walkerId={routerProps.match.params.walkerId}/>}/>
+          <Route path='/shelter/update/:shelterId' component={(routerProps) => <EditProfile shelterId={routerProps.match.params.shelterId}/>}/>
         </Switch>
       </Router>
     </>

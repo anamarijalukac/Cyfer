@@ -32,6 +32,7 @@ function createData(position, name, calories, fat, carbs, protein) {
   return { position, name, calories, fat, carbs, protein };
 }
 
+/*
 const rows = [
   createData(1,'Frozen yoghurt', 159, 6.0, 24, 4.0),
   createData(2, 'Ice cream sandwich', 237, 9.0, 37, 4.3),
@@ -39,6 +40,8 @@ const rows = [
   createData(4,'Cupcake', 305, 3.7, 67, 4.3),
   createData(5,'Gingerbread', 356, 16.0, 49, 3.9),
 ];
+
+ */
 
 const useStyles = makeStyles({
   table: {

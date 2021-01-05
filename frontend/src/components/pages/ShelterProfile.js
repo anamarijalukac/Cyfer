@@ -21,7 +21,6 @@ function ShelterProfile(props) {
             .then(shelter => {
                 setShelter(shelter)
                 setLocation(shelter.location)
-                debugger
                 console.log(shelter)
             })
     }, []);

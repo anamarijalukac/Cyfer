@@ -126,7 +126,7 @@ function Navbar(props) {
 
   const profile = <li className='nav-item'>
     <Link
-        to='/Profile'
+        to='/profile'
         className='nav-links'
         onClick={closeMobileMenu}
     >
