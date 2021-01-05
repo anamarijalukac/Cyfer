@@ -107,4 +107,8 @@ public class Shelter {
 	public void setCity(String city) {
 		this.city = city;
 	}
+
+    public void setShelterId(long id) {
+		this.shelterId = id;
+    }
 }

@@ -117,6 +117,11 @@ public class ReservationService implements IReservationService {
 	}
 
 	@Override
+	public List<Reservation> getByWalker(Walker walker) {
+		return reservationRepository.findByWalker(walker);
+	}
+
+	@Override
 	public Map<String, Integer> getRankListByWalkNumber() {
 		Map<String, Integer> map = new HashMap<>();
 		List<List<Reservation>> list = new ArrayList<>();

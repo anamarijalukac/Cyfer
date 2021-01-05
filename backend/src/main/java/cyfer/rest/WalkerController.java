@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import cyfer.domain.Reservation;
 import cyfer.service.IReservationService;
 import org.apache.catalina.Authenticator;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -94,6 +95,9 @@ public class WalkerController {
 	@PostMapping("/delete/{id}")
 	@Secured("ROLE_WALKER")
 	public ResponseEntity<HttpStatus> deleteWalker(@PathVariable("id") long id) {
+		List<Reservation> reservations = reservationService.getByWalker(walkerService.getWalker(id));
+		for(Reservation r : reservations)
+			reservationService.deleteReservation(r.getReservationId());
 		walkerService.deleteWalker(id);
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
