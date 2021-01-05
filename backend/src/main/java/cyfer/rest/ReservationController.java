@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.StreamingHttpOutputMessage.Body;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,9 +26,9 @@ import cyfer.service.IWalkService;
 import cyfer.service.IWalkerService;
 
 @RestController
-@RequestMapping("/reservations")
+@RequestMapping("")
 public class ReservationController {
-	
+
 	@Autowired
 	private IReservationService reservationService;
 	@Autowired
@@ -35,35 +37,25 @@ public class ReservationController {
 	private IWalkService walkService;
 	@Autowired
 	private IDogService dogService;
-	
-	
-	
-	@PostMapping("")
-	public ResponseEntity<Reservation> createReservation(@RequestParam Long walkerId, @RequestParam Long walkId,@RequestParam Long dogId) {
-		
-		Walker walker=walkerService.getWalker(walkerId);
-		Walk walk=walkService.getWalk(walkId);
-		Dog dog=dogService.getDog(dogId);
-		reservationService.createReservation(walker,walk,dog);
-		return new ResponseEntity<>( HttpStatus.OK);
-	}
-	
-	//////////////izbrisati, ovo je samo demo
-	@PostMapping("/proba")
-	public ResponseEntity<Reservation> azuriraj(@RequestParam Long stari) {
-		
-		Walker walker=walkerService.getWalker(stari);
-		
-		walkerService.delete(walker);
 
-		return new ResponseEntity<>( HttpStatus.OK);
+	@PostMapping("/shelter/{shelterId}/{dogId}/reserve")
+	public ResponseEntity<Reservation> createReservation(@PathVariable("dogId") long dogId, @RequestBody Walk walk,
+														 @AuthenticationPrincipal User user) {
+		Walk newWalk=walkService.setWalk(walk);
+		System.out.println(newWalk.toString());
+		Walker walker = walkerService.getByUsername(user.getUsername());
+		Dog dog = dogService.getDog(dogId);
+		Reservation newReservation = reservationService.createReservation(walker, newWalk, dog);
+		return new ResponseEntity<Reservation>(newReservation,HttpStatus.OK);
 	}
-	
-	
-	
-	
-	
-	@GetMapping("")
+
+	@GetMapping("dog/statistics")
+	public ResponseEntity<List<Dog>> getAllDogStatistics() {
+		List<Dog> dogs = reservationService.getDogsStatistics();
+		return new ResponseEntity<List<Dog>>(dogs, HttpStatus.OK);
+	}
+
+	@GetMapping("/reservations")
 	public ResponseEntity<List<Reservation>> getAllReservations() {
 
 		List<Reservation> list = reservationService.getAllReservations();

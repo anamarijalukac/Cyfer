@@ -3,6 +3,8 @@ package cyfer.service.impl;
 import java.util.ArrayList;
 
 import java.util.List;
+import java.util.stream.Collectors;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,8 +21,14 @@ public class DogService implements IDogService {
 
 	@Override
 	public Dog getDog(long dogId) {
-		Dog obj = dogRepository.findById(dogId).get();
-		return obj;
+		return dogRepository.findById(dogId).get();
+		
+	}
+
+	@Override
+	public List<Dog> getSheltersDogs(long shelterId) {
+		List<Dog> dogs = dogRepository.findAll().stream().filter(d -> d.getShelter().getShelterId() == shelterId).collect(Collectors.toList());
+		return dogs;
 	}
 
 	@Override
@@ -30,11 +38,6 @@ public class DogService implements IDogService {
 		return list;
 	}
 
-	@Override
-	public Dog getDogByShelterOIB(String shelterOIB) { 
-		return null;
-	}
-	
 	@Override
 	public void setDog(Dog dog) {
 		dogRepository.save(dog);

@@ -7,4 +7,6 @@ public interface WalkerRepository extends JpaRepository<Walker, Long> {
 
 	Walker findByUsername(String username);
 
+	Walker findByEmail(String email);
+
 }

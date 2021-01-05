@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,7 +20,7 @@ import cyfer.service.IDogService;
 import cyfer.service.IWalkService;
 
 @RestController
-@RequestMapping("user")
+@RequestMapping("")
 public class WalkController {
 
 	@Autowired
@@ -31,7 +32,7 @@ public class WalkController {
 		return new ResponseEntity<List<Walk>>(list, HttpStatus.OK);
 	}
 
-	@PutMapping("walk")
+	@PostMapping("walk")
 	public ResponseEntity<Walk> setWalker(@RequestBody Walk walk) {
 		walkService.setWalk(walk);
 		return new ResponseEntity<Walk>(walk, HttpStatus.OK);

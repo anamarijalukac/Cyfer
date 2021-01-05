@@ -1,15 +1,9 @@
 package cyfer.domain;
 
 import java.util.List;
+import java.util.Set;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -20,9 +14,9 @@ public class Shelter {
 	public Shelter() {
 	}
 	
-	@Column
 	@Id
 	@GeneratedValue
+	@Column
 	private Long shelterId;
 
 	@Column(unique = true)
@@ -36,26 +30,32 @@ public class Shelter {
 	
 	@Column
 	@NotNull
-	private String password;
+	private String username;
 
 	@Column
 	@NotNull
-	private String username;
+	private String password;
 
-	
-	@OneToOne(mappedBy = "shelter", optional = false)
+
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "locationId")
     private Location location;
+	@Column
+	private String address;
+	@Column
+	private String city;
 
 	public Long getShelterId() {
 		return shelterId;
 	}
 
-	public void setShelterId(Long shelterId) {
-		this.shelterId = shelterId;
-	}
 
 	public String getOIB() {
 		return OIB;
+	}
+
+	public Location getLocation() {
+		return location;
 	}
 
 	public void setOIB(String oib) {
@@ -86,4 +86,25 @@ public class Shelter {
 		this.username = username;
 	}
 
+	public void setLocation(Location l) {
+		this.location=l;
+		this.address=l.getAddress();
+		this.city=l.getCity();
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
 }

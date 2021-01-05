@@ -1,6 +1,7 @@
 package cyfer.service;
 
 import java.util.List;
+import java.util.Map;
 
 import cyfer.domain.Walker;
 
@@ -20,8 +21,19 @@ public interface IWalkerService {
 	void delete(Walker walker);
 
 
-	
+	void deleteWalker(long id);
 
-	
 
+	Walker getByEmail(String email);
+
+
+	int getWalkDurationStatistics(long id);
+
+
+	void toggleVisibility(long id);
+
+
+	int getDogCountStatistics(long id);
+
+	int getWalkCountStatistics(long id);
 }
