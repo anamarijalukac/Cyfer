@@ -21,7 +21,7 @@ function Shelters() {
         <CardItem
             key={shelter.shelterId}
             src={"https://upload.wikimedia.org/wikipedia/commons/f/fe/American_Eskimo_Dog_1.jpg"}
-            text={shelter.location.city}
+            text={shelter.city}
             label={shelter.name}
             path={'/shelter/info/'+shelter.shelterId}
         />

@@ -10,9 +10,18 @@ function Profile(props){
 
 
     function onClick(){
-        localStorage.removeItem("user");
-        props.onLogout();
-        history.push('/');
+        console.log('/delete/' + JSON.parse(localStorage.getItem("korisnik")).walkerId );
+
+        fetch('/delete/' + JSON.parse(localStorage.getItem("korisnik")).walkerId)
+            .then(response =>{
+                if(response.ok){
+                    localStorage.removeItem("user");
+                    props.onLogout();
+                    history.push('/');
+                    console.log("Success");
+                }
+            })
+            .catch(error => console.log(error));
     }
 
     if(localStorage.getItem("korisnik") === null){

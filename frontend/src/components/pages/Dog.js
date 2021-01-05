@@ -1,7 +1,10 @@
 import React from "react";
 import CardItem from "../CardItem";
+import {useHistory} from 'react-router-dom';
 
 function Dog(props) {
+
+    let history = useHistory();
 
     const [dog, setDog] = React.useState("");
     const [shelter, setShelter] = React.useState("");
@@ -21,6 +24,42 @@ function Dog(props) {
 
 
 
+    function rezervacija(){
+
+        if(localStorage.getItem("loggedIn") === null){
+            history.push('/log-in');
+            alert("Morate biti ulogirani za rezervaciju šetnje");
+        }
+        else if(localStorage.getItem("loggedInUser") === null){
+            alert("Morate biti ulogirani kao korisnik za rezervaciju šetnje");
+            history.push('/');
+        }
+        else {
+            history.push({
+                pathname: "/DogReservation",
+                state: {
+                    dogId: dog.dogId,
+                    shelterId: shelter.shelterId
+                }
+            });
+        }
+    }
+
+
+    let isLoggedIn = true;
+
+    if(localStorage.getItem("loggedInUser") === null){
+        isLoggedIn = false;
+    }
+
+
+    let button =
+        <button onClick={rezervacija}>
+            Rezerviraj Šetnju!
+        </button>
+
+
+
     console.log(dog)
     console.log(shelter)
     console.log(location)
@@ -37,7 +76,7 @@ function Dog(props) {
                     <div>Udruga: {shelter.name}</div>
                     <div>Mogućnost grupnih šetnji: {dog.typeOfWalk === "I" ? "DA" : "NE"}</div>
                     <div>Opis: {dog.description}</div>
-                    <div>Opis: {dog.description}</div>
+                {isLoggedIn && button}
 
             </div>
         </div>
