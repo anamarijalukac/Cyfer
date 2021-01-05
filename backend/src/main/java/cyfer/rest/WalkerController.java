@@ -96,7 +96,6 @@ public class WalkerController {
 	public ResponseEntity<HttpStatus> deleteWalker(@PathVariable("id") long id) {
 		walkerService.deleteWalker(id);
 		return new ResponseEntity<>(HttpStatus.OK);
-
 	}
 	
 	@GetMapping("/{id}/calendar")

@@ -41,10 +41,10 @@ public class ReservationController {
 	@PostMapping("/shelter/{shelterId}/{dogId}/reserve")
 	public ResponseEntity<Reservation> createReservation(@PathVariable("dogId") long dogId, @RequestBody Walk walk,
 														 @AuthenticationPrincipal User user) {
-		Walk newWalk=walkService.setWalk(walk);
-		System.out.println(newWalk.toString());
-		Walker walker = walkerService.getByUsername(user.getUsername());
+		Walk newWalk = walkService.setWalk(walk);
+		//System.out.println(newWalk.toString());
 		Dog dog = dogService.getDog(dogId);
+		Walker walker = walkerService.getByUsername(user.getUsername());
 		Reservation newReservation = reservationService.createReservation(walker, newWalk, dog);
 		return new ResponseEntity<Reservation>(newReservation,HttpStatus.OK);
 	}

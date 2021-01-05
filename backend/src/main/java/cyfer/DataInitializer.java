@@ -108,12 +108,24 @@ public class DataInitializer {
 		location1.setAddress("Ilica 35");
 		location1.setCity("Zagreb");
 
+		Location location2 = new Location();
+		location1.setAddress("Dedovići 9");
+		location1.setCity("Zagreb");
+
 		Shelter shelter1=new Shelter();
 		shelter1.setOIB("11111111111");
 		shelter1.setName("prvaudruga");
 		shelter1.setUsername("udruga1");
 		shelter1.setPassword("12345");
 		shelter1.setLocation(location1);
+
+		Shelter shelter2=new Shelter();
+		shelter2.setOIB("11111111112");
+		shelter2.setName("drugaudruga");
+		shelter2.setUsername("udruga2");
+		shelter2.setPassword("123456");
+		shelter2.setLocation(location2);
+
 		
 		Dog dog1 = new Dog();
 		dog1.setDescription("mali");
@@ -151,10 +163,23 @@ public class DataInitializer {
 		dog5.setTypeOfWalk("I");
 		dog5.setShelter(shelter1);
 
+		Dog dog6 = new Dog();
+		dog6.setDescription("Ovo je pesek udruge 2. Voli grupne šetnje.");
+		dog6.setImage("https://upload.wikimedia.org/wikipedia/commons/1/1f/SURF_DOGS_USA_DOGS_SURFING.jpg");
+		dog6.setName("pesek1");
+		dog6.setTypeOfWalk("G");
+		dog6.setShelter(shelter2);
 
+		Dog dog7 = new Dog();
+		dog7.setDescription("Ovo je pesek udruge 2. Voli grupne šetnje, ali ne voli previše šetati.");
+		dog7.setImage("https://upload.wikimedia.org/wikipedia/commons/d/d6/French_bulldog_in_life_jacket.jpg");
+		dog7.setName("pesek2");
+		dog7.setTypeOfWalk("G");
+		dog7.setShelter(shelter2);
 
 
 		shelterService.registerShelter(shelter1);
+		shelterService.registerShelter(shelter2);
 
 		walkerService.registerWalker(walker1);
 		walkerService.registerWalker(walker2);
@@ -168,6 +193,8 @@ public class DataInitializer {
 		dogService.setDog(dog3);
 		dogService.setDog(dog4);
 		dogService.setDog(dog5);
+		dogService.setDog(dog6);
+		dogService.setDog(dog7);
 
 		walkService.setWalk(walk1);
 		walkService.setWalk(walk2);
