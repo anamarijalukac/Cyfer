@@ -79,8 +79,8 @@ function App() {
           <Route path='/shelter/:shelterId/dogs' component={(routerProps) => <ShelterDogs shelterId={routerProps.match.params.shelterId}/>}/>
           <Route path='/profile' component={Profile}/>
           <Route path='/shelter/info/:shelterId' component={(routerProps) => <ShelterProfile shelterId={routerProps.match.params.shelterId}/>}/>
-          <Route path='/walker/update/:walkerId' component={(routerProps) => <EditProfile walkerId={routerProps.match.params.walkerId}/>}/>
-          <Route path='/shelter/update/:shelterId' component={(routerProps) => <EditProfile shelterId={routerProps.match.params.shelterId}/>}/>
+          <Route path='/walker/update/:walkerId' component={(routerProps) => <EditProfile id={routerProps.match.params.walkerId}/>}/>
+          <Route path='/shelter/update/:shelterId' component={(routerProps) => <EditProfile id={routerProps.match.params.shelterId}/>}/>
         </Switch>
       </Router>
     </>
