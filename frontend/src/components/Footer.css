@@ -1,6 +1,5 @@
 .footer-container {
   background: linear-gradient(90deg, rgb(51, 255, 119) 0%, rgb(0, 128, 43) 100%);
-  padding: 4rem 0 2rem 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -115,7 +114,7 @@
   align-items: center;
   width: 90%;
   max-width: 1000px;
-  margin: 40px auto 0 auto;
+  margin: 20px auto 10px auto;
 }
 
 .social-icons {

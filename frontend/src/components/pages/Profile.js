@@ -6,16 +6,39 @@ import {useHistory} from 'react-router-dom';
 function Profile(props){
 
     let history = useHistory();
+    var inputDelete;
+    var inputUpdate;
+    var data;
+    var lokacija
+
+    if(localStorage.getItem("korisnik") === null) {
+        data = JSON.parse(localStorage.getItem("udruga"));
+        lokacija = JSON.parse(localStorage.getItem("lokacija"));
+        inputDelete = 'shelter/delete/' + data.shelterId
+        inputUpdate = 'shelter/update/' + data.shelterId
+    }
+    else {
+        data = JSON.parse(localStorage.getItem("korisnik"));
+        inputDelete = 'walker/delete/' + data.walkerId
+        inputUpdate = 'walker/update/' + data.walkerId
+    }
 
 
+    function onClickDelete(){
 
-    function onClick(){
-        console.log('/delete/' + JSON.parse(localStorage.getItem("korisnik")).walkerId );
+        var auth = 'Basic ' + new Buffer(data.username + ':' + localStorage.getItem("password")).toString('base64');
 
-        fetch('/delete/' + JSON.parse(localStorage.getItem("korisnik")).walkerId)
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': auth
+            },
+        };
+        fetch(inputDelete, options)
             .then(response =>{
                 if(response.ok){
-                    localStorage.removeItem("user");
+                    localStorage.clear();
                     props.onLogout();
                     history.push('/');
                     console.log("Success");
@@ -24,24 +47,31 @@ function Profile(props){
             .catch(error => console.log(error));
     }
 
+
+    function onClickUpdate() {
+        history.push(inputUpdate)
+    }
+
     if(localStorage.getItem("korisnik") === null){
-
-        let shelterData = JSON.parse(localStorage.getItem("udruga"));
-
+        //udruga
         return (
-            <div class="profile">
-                <h1>Profil udruge: {shelterData.username}</h1>
-
+            <div className="profile">
+                <h1>Profil udruge: {data.username}</h1>
 
                 <div className="container">
-                    <p className="fontstyle">Korisničko ime udruge: {shelterData.username} </p>
+                    <p className="fontstyle">Korisničko ime udruge: {data.username} </p>
 
-                    <p className="fontstyle">Ime: {shelterData.name} </p>
-                    <p className="fontstyle">OIB: {shelterData.oib} </p>
+                    <p className="fontstyle">Ime: {data.name} </p>
+                    <p className="fontstyle">OIB: {data.oib} </p>
+                    <p className="fontstyle">Adresa: {lokacija.address} </p>
+                    <p className="fontstyle">Grad: {lokacija.city} </p>
 
 
-                    <button className="loginbtn fontstyle" onClick={onClick}>
+                    <button className="loginbtn fontstyle" onClick={onClickDelete}>
                         Izbriši profil
+                    </button>
+                    <button className="loginbtn fontstyle" onClick={onClickUpdate}>
+                        Uredi profil
                     </button>
 
                 </div>
@@ -49,13 +79,10 @@ function Profile(props){
         )
     }
 
-    let data = JSON.parse(localStorage.getItem("korisnik"));
-
-
+    //korisnik
     return (
-        <div class="profile">
+        <div className="profile">
             <h1>Profil korisnika: {data.username}</h1>
-
 
             <div className="container">
                 <p className="fontstyle">Korisničko ime: {data.username} </p>
@@ -65,10 +92,12 @@ function Profile(props){
                 <p className="fontstyle">E-mail: {data.email} </p>
 
 
-                <button className="loginbtn fontstyle" onClick={onClick}>
+                <button className="loginbtn fontstyle" onClick={onClickDelete}>
                     Izbriši profil
                 </button>
-
+                <button className="loginbtn fontstyle" onClick={onClickUpdate}>
+                    Uredi profil
+                </button>
             </div>
         </div>
     );

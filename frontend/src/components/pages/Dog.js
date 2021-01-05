@@ -1,5 +1,4 @@
 import React from "react";
-import CardItem from "../CardItem";
 import {useHistory} from 'react-router-dom';
 
 function Dog(props) {

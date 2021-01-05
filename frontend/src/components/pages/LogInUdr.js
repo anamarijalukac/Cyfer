@@ -41,7 +41,10 @@ function LogInUdr(props) {
         setError("Neuspješna prijava");
       }
     })
-    .then(data => localStorage.setItem("udruga", JSON.stringify(data)))
+    .then(data => {
+        localStorage.setItem("udruga", JSON.stringify(data))
+        localStorage.setItem("lokacija", JSON.stringify(data.location))
+    })
     .catch(error => console.log(error));
   }
 
