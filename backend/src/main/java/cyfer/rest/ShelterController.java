@@ -136,8 +136,10 @@ public class ShelterController {
 	@PostMapping("/update/{id}")
 	@Secured("ROLE_SHELTER")
 	public ResponseEntity<Shelter> updateShelterInfo(@RequestBody Shelter shelter, @PathVariable("id") long id) {
-		if (shelterService.getShelter(id) == null)
+		Shelter shelter1 = shelterService.getShelter(id);
+		if (shelter1 == null)
 			return new ResponseEntity<Shelter>(HttpStatus.BAD_REQUEST);
+		shelter.setOIB(shelter1.getOIB());
 		shelter.setShelterId(id);
 		shelterService.registerShelter(shelter);
 		return new ResponseEntity<Shelter>(shelter, HttpStatus.OK);
