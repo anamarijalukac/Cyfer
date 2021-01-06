@@ -54,7 +54,7 @@ function RangList() {
 
   const [walkers1, setWalkers1] = React.useState([]);
 
-   React.useEffect(() => {
+  React.useEffect(() => {
     fetch("/ranking/1")
       .then(data => {
         return data.json();
@@ -72,13 +72,13 @@ function RangList() {
 
   React.useEffect(() => {
     fetch("/ranking/2")
-        .then(data => {
-          return data.json();
-        })
-        .then(data => {
-          setWalkers2(Object.entries(data));
-        })
-        .catch(error => console.log(error));
+      .then(data => {
+        return data.json();
+      })
+      .then(data => {
+        setWalkers2(Object.entries(data));
+      })
+      .catch(error => console.log(error));
   }, [walkers2.length]);
 
 
@@ -88,112 +88,104 @@ function RangList() {
 
   React.useEffect(() => {
     fetch("/ranking/3")
-        .then(data => {
-          return data.json();
-        })
-        .then(data => {
-          setWalkers3(Object.entries(data));
-        })
-        .catch(error => console.log(error));
+      .then(data => {
+        return data.json();
+      })
+      .then(data => {
+        setWalkers3(Object.entries(data));
+      })
+      .catch(error => console.log(error));
   }, [walkers3.length]);
 
 
 
   return (
-      <div>
-        <h1 className={"title"}>
-          Rang liste šetača zadnjih mjesec dana
+    <div>
+      <h1 className={"title"}>
+        Rang liste šetača zadnjih mjesec dana
         </h1>
+      <div style={{ margin: '70px' }}>
         <p className="text">Rang lista šetača po duljini
         </p>
-        <TableContainer component={Paper}>
-          <Table className={classes.table} aria-label="customized table">
-            <TableHead>
-              <TableRow>
-                {/*Ovo predstavlja gornji dio tablice koji opisuje koji podatak se predstavlja gdje*/}
-                <StyledTableCell>Položaj</StyledTableCell>
-                <StyledTableCell align={"center"}>Ime šetača</StyledTableCell>
-                <StyledTableCell align={"right"}>Duljina šetnje</StyledTableCell>
+        <Table class="table table-hover table-striped" style={{ margin: 'auto', backgroundColor: 'white' }}>
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Položaj</th>
+              <th scope="col">Ime šetača</th>
+              <th scope="col">Duljina</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              walkers1.map((row, index) => (
+                <tr key={index}>
+                  <th scope="row">
+                    {index + 1}
+                  </th>
+                  <td>{row[0]}</td>
+                  <td>{row[1]}</td>
+                </tr>
+              ))
+            }
 
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {
-                walkers1.map((row, index) => (
-                    <StyledTableRow key={index}>
-                      <StyledTableCell component="th" scope="row">
-                        {index + 1}
-                      </StyledTableCell>
-                      <StyledTableCell align={"center"}>{row[0]}</StyledTableCell>
-                      <StyledTableCell align={"right"}>{row[1]}</StyledTableCell>
-                    </StyledTableRow>
-                ))
-              }
-
-            </TableBody>
-          </Table>
-        </TableContainer>
-        <div className="pad">
-          <p className="text">Rang lista šetača po broju šetnji
-          </p>
-          <TableContainer component={Paper}>
-            <Table className={classes.table} aria-label="customized table">
-              <TableHead>
-                <TableRow>
-                  {/*Ovo predstavlja gornji dio tablice koji opisuje koji podatak se predstavlja gdje*/}
-                  <StyledTableCell>Položaj</StyledTableCell>
-                  <StyledTableCell align={"center"}>Ime šetača</StyledTableCell>
-                  <StyledTableCell align={"right"}>Broj šetnji</StyledTableCell>
-
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                {
-                  walkers2.map((row, index) => (
-                      <StyledTableRow key={index}>
-                        <StyledTableCell component="th" scope="row">
-                          {index + 1}
-                        </StyledTableCell>
-                        <StyledTableCell align={"center"}>{row[0]}</StyledTableCell>
-                        <StyledTableCell align={"right"}>{row[1]}</StyledTableCell>
-                      </StyledTableRow>
-                  ))
-                }
-              </TableBody>
-            </Table>
-          </TableContainer>
-        </div>
-        <div className="pad">
-          <p className="text">Rang lista šetača po broju šetanih pasa
-          </p>
-          <TableContainer component={Paper}>
-            <Table className={classes.table} aria-label="customized table">
-              <TableHead>
-                <TableRow>
-                  {/*Ovo predstavlja gornji dio tablice koji opisuje koji podatak se predstavlja gdje*/}
-                  <StyledTableCell>Položaj</StyledTableCell>
-                  <StyledTableCell align={"center"}>Ime šetača</StyledTableCell>
-                  <StyledTableCell align={"right"}>Broj šetanih pasa</StyledTableCell>
-
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                {
-                  walkers3.map((row, index) => (
-                      <StyledTableRow key={index}>
-                        <StyledTableCell component="th" scope="row">
-                          {index + 1}
-                        </StyledTableCell>
-                        <StyledTableCell align={"center"}>{row[0]}</StyledTableCell>
-                        <StyledTableCell align={"right"}>{row[1]}</StyledTableCell>
-                      </StyledTableRow>
-                  ))
-                }
-              </TableBody>
-            </Table>
-          </TableContainer>
-        </div>
+          </tbody>
+        </Table>
       </div>
+      <div style={{ margin: '70px' }}>
+        <p className="text">Rang lista šetača po broju šetnji
+          </p>
+        <Table class="table table-hover table-striped" style={{ margin: 'auto', backgroundColor: 'white' }}>
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Položaj</th>
+              <th scope="col">Ime šetača</th>
+              <th scope="col">Broj šetnji</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              walkers2.map((row, index) => (
+                <tr key={index}>
+                  <th scope="row">
+                    {index + 1}
+                  </th>
+                  <td>{row[0]}</td>
+                  <td>{row[1]}</td>
+                </tr>
+              ))
+            }
+
+          </tbody>
+        </Table>
+      </div>
+      <div style={{ margin: '70px' }}>
+        <p className="text">Rang lista šetača po broju šetanih pasa
+          </p>
+        <Table class="table table-hover table-striped" style={{margin: 'auto', backgroundColor: 'white' }}>
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Položaj</th>
+              <th scope="col">Ime šetača</th>
+              <th scope="col">Broj šetanih pasa</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              walkers1.map((row, index) => (
+                <tr key={index}>
+                  <th scope="row">
+                    {index + 1}
+                  </th>
+                  <td>{row[0]}</td>
+                  <td>{row[1]}</td>
+                </tr>
+              ))
+            }
+
+          </tbody>
+        </Table>
+      </div>
+    </div>
   );
 }
 

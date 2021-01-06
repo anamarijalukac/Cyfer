@@ -6,12 +6,12 @@ import { Link } from 'react-router-dom';
 
 
 function HeroSection() {
-    const loggedIn = localStorage.getItem("loggedIn") === true
+    const loggedIn = localStorage.getItem("loggedIn") === "true"
   return (
     <div className='hero-container'>
         {<h1>ŠETANJE PASA</h1>}
-        {loggedIn === true && <p>Što čekaš? Prijavi se!</p>}
-        {loggedIn === true &&
+        {!loggedIn && <p>Što čekaš? Prijavi se!</p>}
+        {!loggedIn &&
         <div className='hero-btns'>
             <Link to='/log-in' className='btn-mobile'>
                 <Button
