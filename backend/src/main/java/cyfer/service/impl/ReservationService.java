@@ -61,9 +61,24 @@ public class ReservationService implements IReservationService {
 
 	@Override
 	public List<Dog> getDogsStatistics() {
+		Map<Dog,Integer> dogs=new HashMap<>();
+		List<Reservation> rez=getAllReservations();
+		for(Reservation el:rez){
+			Dog dog=el.getDog();
+			if(dogs.containsKey(el.getDog()))
+				dogs.replace(dog,dogs.get(dog)+el.getDuration());
+			else
+				dogs.put(dog,el.getDuration());
+		}
+
 		List<Dog> list=new ArrayList<>();
-		Pageable top = PageRequest.of(0, 3);
-		reservationRepository.findDogsStatisticsFromReservation(top).forEach(e->list.add(e));
+		list=dogs.entrySet().stream()
+				.sorted(Map.Entry.comparingByValue())
+				.map(entry->entry.getKey())
+				.limit(3)
+				.collect(Collectors.toList());
+
+
 		return list;
 	}
 

@@ -88,6 +88,10 @@ public class Reservation {
 	public Reservation() {
 	}
 
+	public int getDuration() {
+		return duration;
+	}
+
 	public Reservation(Walk walk, Walker walker, Dog dog) {
 		super();
 		this.walk = walk;

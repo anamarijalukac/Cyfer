@@ -9,8 +9,7 @@ import org.springframework.data.jpa.repository.Query;
 
 public interface ReservationRepository extends JpaRepository<Reservation, Long>{
 
-	@Query("select c.dog from Reservation c ORDER BY c.duration")
-	List<Dog> findDogsStatisticsFromReservation(Pageable pageable);
+
 
 	List<Reservation> findByWalkAndWalker(Walk walk, Walker walker);
 
