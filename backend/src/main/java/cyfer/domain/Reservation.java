@@ -46,7 +46,7 @@ public class Reservation {
 	private int duration;
 
 	@ManyToOne(targetEntity = Walker.class)
-	@OnDelete(action = OnDeleteAction.CASCADE)
+	@OnDelete(action = OnDeleteAction.CASCADE )
 	@JoinColumn(name = "walkerId")
 	private Walker walker;
 	@Column
