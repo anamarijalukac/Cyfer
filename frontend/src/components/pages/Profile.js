@@ -26,6 +26,10 @@ function Profile(props){
 
     function onClickDelete(){
 
+        // eslint-disable-next-line no-restricted-globals
+        if(!confirm("Jeste li sigurni da želite obrisati profil?"))
+            return
+
         var auth = 'Basic ' + new Buffer(data.username + ':' + localStorage.getItem("password")).toString('base64');
 
         const options = {
@@ -38,19 +42,22 @@ function Profile(props){
         fetch(inputDelete, options)
             .then(response =>{
                 if(response.ok){
-                    localStorage.clear();
-                    props.onLogout();
+                    debugger
                     history.push('/');
-                    console.log("Success");
+                    props.onLogout();
                 }
             })
-            .catch(error => console.log(error));
+            .catch(error => {
+                console.log(error)
+                alert("Neuspješno brisanje profila.")
+            });
     }
 
 
     function onClickUpdate() {
         history.push(inputUpdate)
     }
+
 
     if(localStorage.getItem("korisnik") === null){
         //udruga
