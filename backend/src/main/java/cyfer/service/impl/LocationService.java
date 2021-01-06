@@ -27,4 +27,14 @@ public class LocationService implements ILocationService {
         return locationRepository.findById(id).get();
     }
 
+    @Override
+    public Location saveLocation(Location location) {
+        return locationRepository.save(location);
+    }
+
+    @Override
+    public Location getByAddressAndCity(String address, String city) {
+        return locationRepository.findByAddressAndCity(address, city);
+    }
+
 }
