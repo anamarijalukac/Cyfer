@@ -101,8 +101,8 @@ function RangList() {
 
   return (
     <div>
-      <h1 className={"title"}>
-        Rang liste šetača zadnjih mjesec dana
+      <h1 class ="text-dark">
+        Rang liste šetača u zadnjih mjesec dana
         </h1>
       <div style={{ margin: '70px' }}>
         <p className="text">Rang lista šetača po duljini
