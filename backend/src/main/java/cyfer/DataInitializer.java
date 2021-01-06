@@ -4,6 +4,7 @@ import java.sql.Timestamp;
 import java.util.HashSet;
 import java.util.Set;
 
+import cyfer.service.*;
 import org.apache.tomcat.jni.Time;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -18,11 +19,6 @@ import cyfer.domain.Location;
 import cyfer.domain.Shelter;
 import cyfer.domain.Walk;
 import cyfer.domain.Walker;
-import cyfer.service.IDogService;
-import cyfer.service.IReservationService;
-import cyfer.service.IShelterService;
-import cyfer.service.IWalkService;
-import cyfer.service.IWalkerService;
 
 /**
  * Example component used to insert some test students at application startup.
@@ -41,6 +37,8 @@ public class DataInitializer {
 	private IReservationService reservationService;
 	@Autowired
 	private IShelterService shelterService;
+	@Autowired
+	private ILocationService locationService;
 
 	@EventListener
 	public void appReady(ApplicationReadyEvent event) {
@@ -107,10 +105,12 @@ public class DataInitializer {
 		Location location1 = new Location();
 		location1.setAddress("Ilica 35");
 		location1.setCity("Zagreb");
+		//locationService.saveLocation(location1);
 
 		Location location2 = new Location();
-		location1.setAddress("Dedovići 9");
-		location1.setCity("Zagreb");
+		location2.setAddress("Dedovići 9");
+		location2.setCity("Zagreb");
+		//locationService.saveLocation(location2);
 
 		Shelter shelter1=new Shelter();
 		shelter1.setOIB("11111111111");

@@ -1,5 +1,7 @@
 package cyfer.rest;
 
+import cyfer.domain.Location;
+import cyfer.service.ILocationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -34,6 +36,8 @@ public class ShelterController {
 	private IShelterService shelterService;
 	@Autowired
 	private IDogService dogService;
+	@Autowired
+	private ILocationService locationService;
 
 	@PostMapping("/signup")
 	public ResponseEntity<Shelter> registerShelter(@RequestBody Shelter shelter) {
@@ -141,6 +145,19 @@ public class ShelterController {
 			return new ResponseEntity<Shelter>(HttpStatus.BAD_REQUEST);
 		shelter.setOIB(shelter1.getOIB());
 		shelter.setShelterId(id);
+		if(shelter.getAddress().equals(shelter1.getAddress()) && shelter.getCity().equals(shelter1.getCity()))
+			shelter.setLocation(shelter1.getLocation());
+		else {
+			Location location =locationService.getByAddressAndCity(shelter.getAddress(), shelter.getCity());
+			if(location != null)
+				shelter.setLocation(location);
+			else {
+				Location locationNew = new Location();
+				locationNew.setAddress(shelter.getAddress());
+				locationNew.setCity(shelter.getCity());
+				shelter.setLocation(locationNew);
+			}
+		}
 		shelterService.registerShelter(shelter);
 		return new ResponseEntity<Shelter>(shelter, HttpStatus.OK);
 	}
