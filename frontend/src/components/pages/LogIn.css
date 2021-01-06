@@ -1,7 +1,7 @@
 /* Bordered form */ /* Bordered form */
 
 body {
-   background: linear-gradient(lightgray, lightgray), url('/images/doggies.png') top center/cover no-repeat;
+   background: url('/images/doggies.png') top center/cover no-repeat;
 }
 
 form {

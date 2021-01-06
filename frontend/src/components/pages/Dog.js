@@ -1,5 +1,7 @@
 import React from "react";
 import {useHistory} from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './Dog.css'
 
 function Dog(props) {
 
@@ -53,8 +55,8 @@ function Dog(props) {
 
 
     let button =
-        <button onClick={rezervacija}>
-            Rezerviraj Šetnju!
+        <button class='btndog' type="submit" onClick={rezervacija}>
+            Rezerviraj šetnju!
         </button>
 
 
@@ -65,20 +67,77 @@ function Dog(props) {
 
 
     return (
-        <div className='cards'>
-            <h1 className='udruge'>Ovo je {dog.name}</h1>
-            <div className='cards__container'>
-
-                    <img src={dog.image} alt="nema"/>
-                    <div>Opis: {dog.description}</div>
-                    <div>Grad: {location.city}</div>
-                    <div>Udruga: {shelter.name}</div>
-                    <div>Mogućnost grupnih šetnji: {dog.typeOfWalk === "I" ? "DA" : "NE"}</div>
-                    <div>Opis: {dog.description}</div>
-                {isLoggedIn && button}
-
+        <div class="container bootstrap snippets bootdey">
+        <div class="panel-body inf-content"  style = {{backgroundColor: 'white', margin: '30px'}}>
+        <h2 class="text-dark" style = {{textAlign: 'center'}}>Informacije</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <img  src ={dog.image} alt="" style={{width:'600 px' }}title="" class="img-circle img-thumbnail isTooltip"></img> 
+                </div>
+                <div class="col-md-6">
+                    <div class="table-responsive">
+                    <table class="table table-user-information">
+                        <tbody>
+                            <tr>    
+                                <td class ="text-secondary">
+                                        Ime                                                
+                                </td>
+                                <td >
+                                {dog.name}     
+                                </td>
+                            </tr>
+                            <tr>        
+                                <td class ="text-secondary">
+                                    Opis
+                                </td>
+                                <td>
+                                {dog.description}     
+                                </td>
+                            </tr>
+        
+                            <tr>        
+                                <td class ="text-secondary">
+                                        Grad
+                                </td>
+                                <td class>
+                                    {location.city} 
+                                </td>
+                            </tr>
+        
+        
+                            <tr>        
+                            <td class ="text-secondary">
+                                        Udruga                                                
+                                </td>
+                                <td>
+                                {shelter.name}
+                                </td>
+                            </tr>
+                            <tr>        
+                            <td class ="text-secondary">
+                                        Mogućnost grupnih šetnji                                                
+                                </td>
+                                <td class>
+                                {dog.typeOfWalk === "I" ? "DA" : "NE"} 
+                                </td>
+                            </tr>
+                            <tr>        
+                            <td class ="text-secondary">
+                                        Opis                                                
+                                </td>
+                                <td classs>
+                                    {dog.description}
+                                </td>
+                            </tr>
+                            {isLoggedIn && button}
+                                  
+                        </tbody>
+                    </table>
+                    </div>
+                </div>
             </div>
         </div>
+        </div>    
     );
 }
 

@@ -8,8 +8,11 @@
   outline: none;
   border: none;
   cursor: pointer;
+  margin-bottom: 15px;
 }
-
+.h2 {
+  text-align: center;
+}
 .btn--primary {
   background-color: var(--primary);
   color: #242424;

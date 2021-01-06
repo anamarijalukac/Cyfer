@@ -1,13 +1,13 @@
-.pad{
-    padding-top: 50px;
-}
+table {
+    table-layout: fixed ;
+    width: 100% ;
+    text-align: center;
+  }
+  td {
+    width: 25% ;
+  }
 
 .text{
     text-align: center;
     font-size: 30px;
-}
-
-.title{
-    padding-top: 0px;
-    padding-bottom: 30px;
 }
