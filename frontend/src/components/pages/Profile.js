@@ -10,8 +10,9 @@ function Profile(props){
     var inputUpdate;
     var data;
     var lokacija
+    let isShelter = localStorage.getItem("loggedInShelter") === "true"
 
-    if(localStorage.getItem("korisnik") === null) {
+    if(isShelter) {
         data = JSON.parse(localStorage.getItem("udruga"));
         lokacija = JSON.parse(localStorage.getItem("lokacija"));
         inputDelete = 'shelter/delete/' + data.shelterId
@@ -59,7 +60,7 @@ function Profile(props){
     }
 
 
-    if(localStorage.getItem("korisnik") === null){
+    if(isShelter){
         //udruga
         return (
             <div className="profile">
