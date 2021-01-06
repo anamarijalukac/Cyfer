@@ -67,6 +67,7 @@ function EditProfile(props) {
                 }
             })
             .then(data => {
+                debugger
                 if (isShelter) {
                     localStorage.setItem("udruga", JSON.stringify(data))
                     localStorage.setItem("lokacija", JSON.stringify(data.location))
