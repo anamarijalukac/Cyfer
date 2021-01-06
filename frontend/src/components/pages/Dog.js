@@ -10,6 +10,7 @@ function Dog(props) {
     const [dog, setDog] = React.useState("");
     const [shelter, setShelter] = React.useState("");
     const [location, setLocation] = React.useState("");
+    const [edit, setEdit] = React.useState(false);
 
 
     React.useEffect(() => {
@@ -46,18 +47,34 @@ function Dog(props) {
         }
     }
 
-
-    let isLoggedIn = true;
-
-    if(localStorage.getItem("loggedInUser") === null){
-        isLoggedIn = false;
+    function uredivanje() {
+        history.push('dog/edit/'+dog.id)
     }
 
 
-    let button =
+    let isLoggedInUser = true;
+    if(localStorage.getItem("loggedInUser") === null){
+        isLoggedInUser = false;
+    }
+    let isLoggedInShelter = true;
+    if(localStorage.getItem("loggedInShelter") === null){
+        isLoggedInShelter = false;
+    }
+
+    debugger
+
+
+    let rezerviraj =
         <button class='btndog' type="submit" onClick={rezervacija}>
             Rezerviraj šetnju!
         </button>
+
+    let uredi =
+        <button class='btndog' type="submit" onClick={uredivanje}>
+            Uredi podatke
+        </button>
+
+
 
 
 
@@ -118,7 +135,7 @@ function Dog(props) {
                                         Mogućnost grupnih šetnji                                                
                                 </td>
                                 <td class>
-                                {dog.typeOfWalk === "I" ? "DA" : "NE"} 
+                                {dog.typeOfWalk === "I" ? "NE" : "DA"}
                                 </td>
                             </tr>
                             <tr>        
@@ -129,8 +146,8 @@ function Dog(props) {
                                     {dog.description}
                                 </td>
                             </tr>
-                            {isLoggedIn && button}
-                                  
+                            {isLoggedInUser && rezerviraj}
+                            {isLoggedInShelter && uredi}
                         </tbody>
                     </table>
                     </div>

@@ -68,10 +68,10 @@ function DogReservation(props) {
                 <h1>Rezerviraj šetnju!</h1>
 
                 <div className="container">
-                    <label>Datum i vrijeme šetnje: </label>
+                    <label style = {{marginRight: '10px'}}>Datum i vrijeme šetnje: </label>
                     <input type="datetime-local" id="dateAndTime" name="dateAndTime"  onChange={onChange} value={form.dateAndTime}/>
                     <br/>
-                    <label>Upiši trajanje šetnje: </label>
+                    <label style = {{marginRight: '10px'}}>Upiši trajanje šetnje: </label>
                     <input type="number" name={"duration"} onChange={onChange} value={form.duration}/>
                     <button class='loginbtn' type="submit">Rezerviraj!</button>
                 </div>

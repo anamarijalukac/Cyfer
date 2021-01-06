@@ -10,7 +10,7 @@ function EditProfile(props) {
     var input = ""
     var data;
     var lokacija
-    let isShelter = localStorage.getItem("korisnik") === null
+    let isShelter = localStorage.getItem("loggedInShelter") === "true"
     //shelter
     if (isShelter) {
         data = JSON.parse(localStorage.getItem("udruga"));
@@ -62,11 +62,12 @@ function EditProfile(props) {
                 if (response.ok) {
                     alert("Promjene uspješno pohranjene.")
                     history.push('/');
-                    localStorage.setItem("password", data.password)
+                    localStorage.setItem("password", body.password)
                     return response.json()
                 }
             })
             .then(data => {
+                debugger
                 if (isShelter) {
                     localStorage.setItem("udruga", JSON.stringify(data))
                     localStorage.setItem("lokacija", JSON.stringify(data.location))
@@ -81,7 +82,7 @@ function EditProfile(props) {
 
 
         //korisnik
-        if ((localStorage.getItem("udruga") === null))
+        if (!isShelter)
             return (
                 <div className="profile">
                     <h1>Profil korisnika: {data.username}</h1>
