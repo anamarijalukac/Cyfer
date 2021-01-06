@@ -1,5 +1,5 @@
 import React from "react";
-import {useHistory} from 'react-router-dom';
+import {useHistory, Link} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Dog.css'
 
@@ -10,11 +10,10 @@ function Dog(props) {
     const [dog, setDog] = React.useState("");
     const [shelter, setShelter] = React.useState("");
     const [location, setLocation] = React.useState("");
-    const [edit, setEdit] = React.useState(false);
 
 
     React.useEffect(() => {
-        fetch('/dog/id/'+props.dogId)
+        fetch('/dog/id/' + props.dogId)
             .then(data => data.json())
             .then(dog => {
                 setDog(dog)
@@ -24,19 +23,27 @@ function Dog(props) {
     }, []);
 
 
+    let isLoggedInUser = true;
+    if (localStorage.getItem("loggedInUser") === null) {
+        isLoggedInUser = false;
+    }
+    let isLoggedInShelter = true;
+    if (localStorage.getItem("loggedInShelter") === null) {
+        isLoggedInShelter = false;
+    }
+
+    let udruga = JSON.parse(localStorage.getItem("udruga"))
 
 
-    function rezervacija(){
+    function rezervacija() {
 
-        if(localStorage.getItem("loggedIn") === null){
+        if (localStorage.getItem("loggedIn") === null) {
             history.push('/log-in');
             alert("Morate biti ulogirani za rezervaciju šetnje");
-        }
-        else if(localStorage.getItem("loggedInUser") === null){
+        } else if (localStorage.getItem("loggedInUser") === null) {
             alert("Morate biti ulogirani kao korisnik za rezervaciju šetnje");
             history.push('/');
-        }
-        else {
+        } else {
             history.push({
                 pathname: "/DogReservation",
                 state: {
@@ -47,114 +54,138 @@ function Dog(props) {
         }
     }
 
-    function uredivanje() {
-        history.push('dog/edit/'+dog.id)
-    }
 
+    function brisanje() {
+        // eslint-disable-next-line no-restricted-globals
+        if (!confirm("Jeste li sigurni da želite obrisati profil psa?"))
+            return
 
-    let isLoggedInUser = true;
-    if(localStorage.getItem("loggedInUser") === null){
-        isLoggedInUser = false;
-    }
-    let isLoggedInShelter = true;
-    if(localStorage.getItem("loggedInShelter") === null){
-        isLoggedInShelter = false;
-    }
+        var auth = 'Basic ' + new Buffer(udruga.username + ':' + localStorage.getItem("password")).toString('base64');
 
-    debugger
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': auth
+            },
+        };
+        fetch('/shelter/' + udruga.shelterId + '/' + dog.dogId + '/delete', options)
+            .then(response => {
+                if (response.ok) {
+                    history.goBack()
+                }
+            })
+            .catch(error => {
+                console.log(error)
+                alert("Neuspješno brisanje profila psa.")
+            });
+    }
 
 
     let rezerviraj =
-        <button class='btndog' type="submit" onClick={rezervacija}>
+        <button className='btndog' type="submit" onClick={rezervacija}>
             Rezerviraj šetnju!
         </button>
 
     let uredi =
-        <button class='btndog' type="submit" onClick={uredivanje}>
-            Uredi podatke
+        <Link to={'/dog/edit/' + props.dogId}>
+            <button className='btndog' type="submit">
+                Uredi podatke
+            </button>
+        </Link>
+
+    let obrisi =
+        <button className='btndog' type="submit" onClick={brisanje}>
+            Obriši profil psa
         </button>
 
 
-
-
-
-    console.log(dog)
-    console.log(shelter)
-    console.log(location)
-
-
     return (
-        <div class="container bootstrap snippets bootdey">
-        <div class="panel-body inf-content"  style = {{backgroundColor: 'white', margin: '30px'}}>
-        <h2 class="text-dark" style = {{textAlign: 'center'}}>Informacije</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <img  src ={dog.image} alt="" style={{width:'600 px' }}title="" class="img-circle img-thumbnail isTooltip"></img> 
-                </div>
-                <div class="col-md-6">
-                    <div class="table-responsive">
-                    <table class="table table-user-information">
-                        <tbody>
-                            <tr>    
-                                <td class ="text-secondary">
-                                        Ime                                                
-                                </td>
-                                <td >
-                                {dog.name}     
-                                </td>
-                            </tr>
-                            <tr>        
-                                <td class ="text-secondary">
-                                    Opis
-                                </td>
-                                <td>
-                                {dog.description}     
-                                </td>
-                            </tr>
-        
-                            <tr>        
-                                <td class ="text-secondary">
+        <div className="container bootstrap snippets bootdey">
+            <div className="panel-body inf-content" style={{backgroundColor: 'white', margin: '30px'}}>
+                <h2 className="text-dark" style={{textAlign: 'center'}}>Informacije</h2>
+                <div className="row">
+                    <div className="col-md-4">
+                        <img src={dog.image} alt="" style={{width: '600 px'}} title=""
+                             className="img-circle img-thumbnail isTooltip"/>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="table-responsive">
+                            <table className="table table-user-information">
+                                <tbody>
+                                <tr>
+                                    <td className="text-secondary">
+                                        Ime
+                                    </td>
+                                    <td>
+                                        {dog.name}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td className="text-secondary">
+                                        Opis
+                                    </td>
+                                    <td>
+                                        {dog.description}
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td className="text-secondary">
                                         Grad
-                                </td>
-                                <td class>
-                                    {location.city} 
-                                </td>
-                            </tr>
-        
-        
-                            <tr>        
-                            <td class ="text-secondary">
-                                        Udruga                                                
-                                </td>
-                                <td>
-                                {shelter.name}
-                                </td>
-                            </tr>
-                            <tr>        
-                            <td class ="text-secondary">
-                                        Mogućnost grupnih šetnji                                                
-                                </td>
-                                <td class>
-                                {dog.typeOfWalk === "I" ? "NE" : "DA"}
-                                </td>
-                            </tr>
-                            <tr>        
-                            <td class ="text-secondary">
-                                        Opis                                                
-                                </td>
-                                <td classs>
-                                    {dog.description}
-                                </td>
-                            </tr>
-                            {isLoggedInUser && rezerviraj}
-                            {isLoggedInShelter && uredi}
-                        </tbody>
-                    </table>
+                                    </td>
+                                    <td>
+                                        {location.city}
+                                    </td>
+                                </tr>
+
+
+                                <tr>
+                                    <td className="text-secondary">
+                                        Udruga
+                                    </td>
+                                    <td>
+                                        {shelter.name}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td className="text-secondary">
+                                        Mogućnost grupnih šetnji
+                                    </td>
+                                    <td className>
+                                        {dog.typeOfWalk === "I" ? "NE" : "DA"}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td className="text-secondary">
+                                        Opis
+                                    </td>
+                                    <td className>
+                                        {dog.description}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    {isLoggedInUser &&
+                                    <td>
+                                        {rezerviraj}
+                                    </td>}
+                                    {isLoggedInShelter && shelter.shelterId === udruga.shelterId &&
+                                    <td>
+                                        {uredi}
+                                    </td>}
+                                    {isLoggedInShelter && shelter.shelterId === udruga.shelterId &&
+                                    <td>
+                                        {obrisi}
+                                    </td>
+                                    }
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        </div>    
     );
 }
 

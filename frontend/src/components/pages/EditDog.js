@@ -10,7 +10,7 @@ function EditDog(props) {
     const [dog, setDog] = React.useState("");
     const [shelter, setShelter] = React.useState("");
     const [location, setLocation] = React.useState("");
-    const [edit, setEdit] = React.useState(false);
+    const [individual, setIndividual] = React.useState("");
 
 
     React.useEffect(() => {
@@ -20,7 +20,7 @@ function EditDog(props) {
                 setDog(dog)
                 setShelter(dog.shelter)
                 setLocation(dog.shelter.location)
-                debugger
+                setIndividual(dog.typeOfWalk)
             })
     }, []);
 
@@ -43,7 +43,8 @@ function EditDog(props) {
         let body = {
             'name': document.getElementById("name").value,
             'username': document.getElementById("description").value,
-            'typeOfWalk': document.getElementById("walk").value
+            'typeOfWalk': individual,
+            'image': dog.image
         }
 
 
@@ -57,7 +58,7 @@ function EditDog(props) {
             body: JSON.stringify(body)
         };
 
-        fetch('dog/update/'+props.dogId, options)
+        fetch('/shelter/' + shelter.shelterId + '/dogs/' + props.dogId + '/update', options)
             .then(response => {
                 if (response.ok) {
                     alert("Promjene uspješno pohranjene.")
@@ -66,7 +67,7 @@ function EditDog(props) {
                 }
             })
             .then(data => {
-
+                history.goBack()
             })
             .catch(error => {
                 console.log(error)
@@ -139,11 +140,13 @@ function EditDog(props) {
                                         Mogućnost grupnih šetnji
                                     </td>
                                     <td>
-                                        <input type="radio" id="grupne" name="walk" value="grupne"
-                                               checked={dog.typeOfWalk === "I" ? "" : "checked"}/>
+                                        <input type="radio" id="grupne" name="walk" value="G"
+                                               checked={individual === "I" ? "" : "checked"}
+                                               onChange={e => setIndividual(e.target.value)}/>
                                         <label htmlFor="grupne">DA</label>
-                                        <input type="radio" id="individual" name="walk" value="individual"
-                                               checked={dog.typeOfWalk === "I" ? "checked" : ""}/>
+                                        <input type="radio" id="individual" name="walk" value="I"
+                                               checked={individual === "I" ? "checked" : ""}
+                                               onChange={e => setIndividual(e.target.value)}/>
                                         <label htmlFor="individual">NE</label>
                                     </td>
                                 </tr>

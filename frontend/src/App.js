@@ -18,11 +18,14 @@ import ShelterProfile from "./components/pages/ShelterProfile";
 import DogReservation from "./components/pages/DogReservation";
 import EditProfile from "./components/pages/EditProfile"
 import EditDog from "./components/pages/EditDog";
+import {Link, useHistory} from 'react-router-dom';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = React.useState(localStorage.getItem("loggedIn") === null ? false : localStorage.getItem("loggedIn"));
   const [isLoggedInUser, setIsLoggedInUser] = React.useState(localStorage.getItem("loggedInUser") === null ? false : localStorage.getItem("loggedInUser"));
   const [isLoggedInShelter, setIsLoggedInShelter] = React.useState(localStorage.getItem("loggedInShelter") === null ? false : localStorage.getItem("loggedInShelter"));
+
+  let history = useHistory();
 
   function onLoginUser(){
     setIsLoggedIn(true);
@@ -71,12 +74,10 @@ function App() {
           <Route path='/info' component={info} />
           <Route path='/dogs' component={Dogs} />
           <Route path='/shelters' component={Shelters} />
-          {/*<Route path='/sign-up' component={SignUp} />*/}
-          {/*<Route path='/log-in' component={LogIn} onLogin={onLogin}/>*/}
           <SignUp path='/sign-up' component={SignUp} onLogin={onLoginUser} />
           <LogIn path='/log-in' component={LogIn} onLogin={onLoginUser} />
           <Route path='/dog/edit/:dogId' component={(routerProps) => <EditDog dogId={routerProps.match.params.dogId}/>}/>
-          <Route path='/dog/:dogId' component={(routerProps) => <Dog dogId={routerProps.match.params.dogId}/>}/>
+          <Route Dog path='/dog/:dogId' component={(routerProps) => <Dog dogId={routerProps.match.params.dogId} history={history}/>}/>
           <Route path='/DogReservation' component={DogReservation} />
           <Route path='/shelter/:shelterId/dogs' component={(routerProps) => <ShelterDogs shelterId={routerProps.match.params.shelterId}/>}/>
           <Profile path='/profile' component={Profile} onLogout={onLogout}/>
