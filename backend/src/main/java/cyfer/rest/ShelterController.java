@@ -41,6 +41,15 @@ public class ShelterController {
 
 	@PostMapping("/signup")
 	public ResponseEntity<Shelter> registerShelter(@RequestBody Shelter shelter) {
+		Location location = locationService.getByAddressAndCity(shelter.getAddress(), shelter.getCity());
+		if(location != null) {
+			shelter.setLocation(location);
+		} else {
+			Location location1 = new Location();
+			location1.setAddress(shelter.getAddress());
+			location1.setCity(shelter.getCity());
+			shelter.setLocation(location1);
+		}
 		Shelter newShelter = shelterService.registerShelter(shelter);
 		if (newShelter != null)
 			return new ResponseEntity<Shelter>(newShelter, HttpStatus.OK);
@@ -108,7 +117,10 @@ public class ShelterController {
 
 	@PostMapping("/{shelterId}/{dogId}/delete")
 	@Secured("ROLE_SHELTER")
-	public ResponseEntity<HttpStatus> deleteDogFromShelter(@PathVariable("shelterId") long shelterId,@PathVariable("dogId") long dogId) {
+	public ResponseEntity<HttpStatus> deleteDogFromShelter(@PathVariable("shelterId") long shelterId,@PathVariable("dogId") long dogId,
+														   @AuthenticationPrincipal User user) {
+		if(!user.getUsername().equals(shelterService.getShelter(shelterId).getUsername()))
+			return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
 		shelterService.deleteDog(dogService.getDog(dogId));
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
@@ -125,6 +137,8 @@ public class ShelterController {
 	public ResponseEntity<Dog> updateDog(@PathVariable("shelterId") long shelterId,@PathVariable("dogId") long dogId,
 												@RequestBody Dog dog,
 												@AuthenticationPrincipal User user) {
+		if(!user.getUsername().equals(shelterService.getShelter(shelterId).getUsername()))
+			return new ResponseEntity<>(null, HttpStatus.UNAUTHORIZED);
 		Dog oldDog = dogService.getDog(dogId);
 		dog.setLocation(oldDog.getLocation());
 		dog.setShelter(oldDog.getShelter());
@@ -139,7 +153,11 @@ public class ShelterController {
 
 	@PostMapping("/update/{id}")
 	@Secured("ROLE_SHELTER")
-	public ResponseEntity<Shelter> updateShelterInfo(@RequestBody Shelter shelter, @PathVariable("id") long id) {
+	public ResponseEntity<Shelter> updateShelterInfo(@RequestBody Shelter shelter, @PathVariable("id") long id,
+													 @AuthenticationPrincipal User user) {
+		if(!user.getUsername().equals(shelterService.getShelter(id).getUsername()))
+			return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+
 		Shelter shelter1 = shelterService.getShelter(id);
 		if (shelter1 == null)
 			return new ResponseEntity<Shelter>(HttpStatus.BAD_REQUEST);

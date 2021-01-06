@@ -6,7 +6,7 @@ function RegUdr(props) {
 
   let history = useHistory();
 
-  const [form, setForm] = React.useState({username: '', oib: '', name:'', password:'', repeatPassword:''});
+  const [form, setForm] = React.useState({username: '', oib: '', name:'',city:'', address:'', password:'', repeatPassword:''});
   const [error, setError] = React.useState('');
 
   function onChange(event){
@@ -23,6 +23,8 @@ function RegUdr(props) {
       username: form.username,
       oib: form.oib,
       name : form.name,
+      city: form.city,
+      address: form.address,
       password: form.password
     };
   
@@ -35,7 +37,7 @@ function RegUdr(props) {
     };
 
     if(form.password !== form.repeatPassword){
-      setForm({username: '', oib: '', name:'', password:'', repeatPassword:''});
+      setForm({username: '', oib: '', name:'',city:'', address:'', password:'', repeatPassword:''});
       setError("Neuspješna registracija");
     }
     else{
@@ -48,7 +50,7 @@ function RegUdr(props) {
           return response.json();
         }
         else{
-          setForm({username: '', oib: '', name:'', password:'', repeatPassword:''});
+          setForm({username: '', oib: '', name:'',city:'', address:'', password:'', repeatPassword:''});
           setError("Neuspješna registracija");
         }
       })
@@ -73,6 +75,12 @@ function RegUdr(props) {
 
           <label>Ime udruge: </label>
           <input type="text" name='name' placeholder="Upiši ime udruge" onChange = {onChange} value = {form.name}  required/>
+
+          <label>Grad udruge: </label>
+          <input type="text" name='city' placeholder="Upiši grad udruge" onChange = {onChange} value = {form.city}  required/>
+
+          <label>Adresa udruge: </label>
+          <input type="text" name='address' placeholder="Upiši adresu udruge" onChange = {onChange} value = {form.address}  required/>
 
           <label>Lozinka: </label>
           <input type="password" name='password' placeholder="Upiši lozinku" onChange = {onChange} value = {form.password}  required/>
