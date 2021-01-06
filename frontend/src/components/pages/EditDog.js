@@ -42,10 +42,12 @@ function EditDog(props) {
 
         let body = {
             'name': document.getElementById("name").value,
-            'username': document.getElementById("description").value,
+            'description': document.getElementById("description").value,
             'typeOfWalk': individual,
             'image': dog.image
         }
+
+        debugger
 
 
         console.log(body)
