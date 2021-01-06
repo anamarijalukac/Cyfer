@@ -148,9 +148,9 @@ function Profile(props){
                 <p className="fontstyle">Ime: {data.firstName} </p>
                 <p className="fontstyle">Prezime: {data.lastName} </p>
                 <p className="fontstyle">E-mail: {data.email} </p>
-                <p className="fontstyle">Walks duration: {walksDuration}</p>
-                <p className="fontstyle">Number of dogs walked: {numberOfDogsWalked}</p>
-                <p className="fontstyle">Number of walks: {numberOfWalks}</p>
+                <p className="fontstyle">Ukupna duljina šetnji: {walksDuration}</p>
+                <p className="fontstyle">Broj pasa koje sam šetao: {numberOfDogsWalked}</p>
+                <p className="fontstyle">Ukupan broj šetnji: {numberOfWalks}</p>
 
 
                 <button className="loginbtn fontstyle" onClick={onClickDelete}>
