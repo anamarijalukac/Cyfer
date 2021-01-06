@@ -33,7 +33,7 @@ function ShelterProfile(props) {
 
 
             <div className="container">
-                <p className="fontstyle">Lokacija udruge: {location.address + ", " + location.city} </p>
+                <p className="fontstyle">Lokacija udruge: {shelter.address + ", " + shelter.city} </p>
                 <p className="fontstyle">OIB: {shelter.oib} </p>
 
 
