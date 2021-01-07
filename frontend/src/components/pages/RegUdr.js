@@ -45,6 +45,7 @@ function RegUdr(props) {
       fetch('/shelter/signup', options)
       .then(response => {
         if(response.ok){
+          localStorage.setItem("password", data.password)
           history.push('/');
           return response.json();
         }
@@ -54,6 +55,9 @@ function RegUdr(props) {
         }
       })
       .then(data => {
+        if(data === undefined){
+          return;
+        }
         localStorage.setItem("udruga", JSON.stringify(data))
         props.onLogin();
       })
