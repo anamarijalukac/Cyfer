@@ -45,6 +45,7 @@ function SignUp(props) {
     .then(response => {
       if(response.ok){
       history.push('/');
+      localStorage.setItem("password", data.password)
       return response.json();
       }
       else{
@@ -52,6 +53,9 @@ function SignUp(props) {
         setForm({username: '', firstName: '', lastName: '', email:'', password:'', repeatPassword:''});
       }
     }).then(data =>  {
+      if(data === undefined){
+        return;
+      }
       localStorage.setItem("korisnik", JSON.stringify(data))
       props.onLogin();
     })

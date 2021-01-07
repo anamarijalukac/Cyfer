@@ -49,6 +49,9 @@ function LogIn(props) {
                 }
             })
             .then(data => {
+                if(data === undefined){
+                    return;
+                }
                 localStorage.setItem("korisnik", JSON.stringify(data))
                 props.onLogin()
             })

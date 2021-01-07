@@ -114,13 +114,12 @@ function Profile(props){
         //udruga
         return (
             <div className="profile">
-                <h1>Profil udruge: {data.username}</h1>
 
                 <div className="container">
                     <div>
-                        <img src={data.image !== "" ? data.image : "https://pngimg.com/uploads/dog/dog_PNG50375.png"} alt="" style={{width: '400 px'}} title=""
-                             className="img-circle img-thumbnail isTooltip"/>
+                        <img className="image1" src={data.image !== "" ? data.image : "https://pngimg.com/uploads/dog/dog_PNG50375.png"}/>
                     </div>
+                    <h1>Profil udruge: {data.username}</h1>
                     <p className="fontstyle">Korisničko ime udruge: {data.username} </p>
 
                     <p className="fontstyle">Ime: {data.name} </p>

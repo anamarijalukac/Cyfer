@@ -151,11 +151,11 @@ function EditProfile(props) {
 
                     <p className="fontstyle">Adresa:</p>
                     <input type="text" name="address" id="address" className="form-control" required="required"
-                           defaultValue={lokacija.address}/>
+                           defaultValue={data.address}/>
 
                     <p className="fontstyle">Grad:</p>
                     <input type="text" name="city" id="city" className="form-control" required="required"
-                           defaultValue={lokacija.city}/>
+                           defaultValue={data.city}/>
 
 
 

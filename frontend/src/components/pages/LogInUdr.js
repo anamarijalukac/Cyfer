@@ -41,6 +41,9 @@ function LogInUdr(props) {
       }
     })
     .then(data => {
+        if(data === undefined){
+            return;
+        }
         localStorage.setItem("udruga", JSON.stringify(data))
         localStorage.setItem("lokacija", JSON.stringify(data.location))
         props.onLogin();
