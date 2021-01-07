@@ -157,14 +157,6 @@ function Dog(props) {
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td className="text-secondary">
-                                        Opis
-                                    </td>
-                                    <td className>
-                                        {dog.description}
-                                    </td>
-                                </tr>
-                                <tr>
                                     {isLoggedInUser &&
                                     <td>
                                         {rezerviraj}

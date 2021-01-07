@@ -24,6 +24,7 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = React.useState(localStorage.getItem("loggedIn") === null ? false : localStorage.getItem("loggedIn"));
   const [isLoggedInUser, setIsLoggedInUser] = React.useState(localStorage.getItem("loggedInUser") === null ? false : localStorage.getItem("loggedInUser"));
   const [isLoggedInShelter, setIsLoggedInShelter] = React.useState(localStorage.getItem("loggedInShelter") === null ? false : localStorage.getItem("loggedInShelter"));
+  const [id, setId] = React.useState("");
 
   let history = useHistory();
 
@@ -32,12 +33,15 @@ function App() {
     setIsLoggedInUser(true)
     localStorage.setItem("loggedIn", true);
     localStorage.setItem("loggedInUser", true);
+    setId(JSON.parse(localStorage.getItem("korisnik")).id)
   }
   function onLoginShelter(){
     setIsLoggedIn(true);
     setIsLoggedInShelter(true)
     localStorage.setItem("loggedIn", true);
     localStorage.setItem("loggedInShelter", true);
+    setId(JSON.parse(localStorage.getItem("udruga")).shelterId)
+    debugger
   }
 
   function onLogout(){
@@ -65,7 +69,7 @@ function App() {
   return (
     <>
       <Router>
-        <Navbar isLoggedIn={isLoggedIn} onLogout={onLogout} isLoggedInUser = {isLoggedInUser} isLoggedInShelter={isLoggedInShelter}/>
+        <Navbar isLoggedIn={isLoggedIn} onLogout={onLogout} isLoggedInUser = {isLoggedInUser} isLoggedInShelter={isLoggedInShelter} id={id}/>
         <Switch>
           <Route path='/' exact component={Home} />
           <Route path='/RangList' component={RangList} />

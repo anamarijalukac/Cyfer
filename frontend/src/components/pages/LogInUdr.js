@@ -31,7 +31,6 @@ function LogInUdr(props) {
       fetch('/shelter/login', options)
       .then(response => {
       if(response.ok){
-        props.onLogin();
         localStorage.setItem("password", data.password)
         history.push('/');
         return response.json();
@@ -44,6 +43,7 @@ function LogInUdr(props) {
     .then(data => {
         localStorage.setItem("udruga", JSON.stringify(data))
         localStorage.setItem("lokacija", JSON.stringify(data.location))
+        props.onLogin();
     })
     .catch(error => console.log(error));
   }

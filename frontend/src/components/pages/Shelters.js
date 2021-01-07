@@ -6,27 +6,40 @@ import CardItem from '../CardItem';
 function Shelters() {
 
     const [shelters, setShelters] = React.useState([]);
+    const [images, setImages] = React.useState([]);
 
     React.useEffect(() => {
-        fetch('/shelter')
-            .then(data => data.json())
-            .then(shelters => {
-                setShelters(shelters)
-                console.log(shelters)
-            })
-    }, []);
+        fetch('/dog')
+            .then(data => data.json()).then(dogs => {
+            fetch('/shelter')
+                .then(data => data.json())
+                .then(shelters => {
+                    debugger
+                        shelters = shelters.map(s => {
+                            s.image = dogs.filter(d => d.shelter.shelterId === s.shelterId)[0].image
+                            return s
+                        })
+                    console.log(shelters)
+                    setShelters(shelters)
+                    }
+                )
+        })
+    }, [])
 
-    //console.log(dogs)
-    const shelterCards =  shelters.map(shelter =>
-        <CardItem
-            key={shelter.shelterId}
-            src={"https://upload.wikimedia.org/wikipedia/commons/f/fe/American_Eskimo_Dog_1.jpg"}
-            text={shelter.city}
-            label={shelter.name}
-            path={'/shelter/info/'+shelter.shelterId}
-        />
+
+    const shelterCards = shelters.map(shelter => {
+            console.log(shelter)
+
+
+            return <CardItem
+                key={shelter.shelterId}
+                src={shelter.image}
+                text={shelter.city}
+                label={shelter.name}
+                path={'/shelter/info/' + shelter.shelterId}
+            />
+        }
     )
-
 
 
     return (

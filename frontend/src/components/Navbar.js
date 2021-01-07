@@ -33,18 +33,9 @@ function Navbar(props) {
 
 
 
-  var isShelter, isWalker;
+  let isShelter = localStorage.getItem("loggedInShelter") === "true"
+  let isWalker = localStorage.getItem("loggedInUser") === "true"
 
-  if(localStorage.getItem("udruga") !== null && localStorage.getItem("udruga") !== "undefined") {
-    isShelter = true;
-  } else {
-    isShelter = false;
-  }
-  if(localStorage.getItem("korisnik") !== null && localStorage.getItem("korisnik") !== "undefined") {
-    isWalker = true;
-  } else {
-    isWalker = false;
-  }
 
   console.log("shelter " + isShelter)
   console.log("walker " + isWalker)
