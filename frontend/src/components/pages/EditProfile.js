@@ -62,7 +62,7 @@ function EditProfile(props) {
             .then(response => {
                 if (response.ok) {
                     alert("Promjene uspješno pohranjene.")
-                    history.push('/');
+                    history.push('/profile');
                     localStorage.setItem("password", body.password)
                     return response.json()
                 }
