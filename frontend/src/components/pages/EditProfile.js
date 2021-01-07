@@ -33,6 +33,7 @@ function EditProfile(props) {
             body = {
                 'name': document.getElementById("name").value,
                 'username': document.getElementById("username").value,
+                'image': document.getElementById("image").value,
                 'city': document.getElementById("city").value,
                 'address': document.getElementById("address").value,
                 'password': document.getElementById("password").value
@@ -138,6 +139,11 @@ function EditProfile(props) {
                            defaultValue={data.username}/>
 
 
+                    <p className="fontstyle">URL slike:</p>
+                    <input type="text" name="image" id="image" className="form-control"
+                           defaultValue={data.image}/>
+
+
                     <p className="fontstyle">Lozinka:</p>
                     <input type="password" name="password" id="password" className="form-control" required="required"
                            defaultValue={localStorage.getItem("password")}/>
@@ -150,6 +156,8 @@ function EditProfile(props) {
                     <p className="fontstyle">Grad:</p>
                     <input type="text" name="city" id="city" className="form-control" required="required"
                            defaultValue={lokacija.city}/>
+
+
 
 
                     <button className="loginbtn fontstyle" onClick={onClick}>
