@@ -149,7 +149,6 @@ function Profile(props) {
     //korisnik
     return (
         <div>
-            <DemoApp />
             <div className="profile">
                 <h1>Profil korisnika: {data.username}</h1>
 
