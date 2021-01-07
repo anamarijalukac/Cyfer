@@ -45,7 +45,8 @@ public class Shelter {
 	@Column
 	private String city;
 
-	@Column()
+
+	@Column
 	private String image;
 
 	public Long getShelterId() {

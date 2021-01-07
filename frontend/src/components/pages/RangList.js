@@ -171,7 +171,7 @@ function RangList() {
           </thead>
           <tbody>
             {
-              walkers1.map((row, index) => (
+              walkers3.map((row, index) => (
                 <tr key={index}>
                   <th scope="row">
                     {index + 1}
