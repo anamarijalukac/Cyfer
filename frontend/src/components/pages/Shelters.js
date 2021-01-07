@@ -47,7 +47,7 @@ function Shelters() {
 
             return <CardItem
                 key={shelter.shelterId}
-                src={shelter.image}
+                src={shelter.image !== "" ? shelter.image : "https://pngimg.com/uploads/dog/dog_PNG50375.png"}
                 text={shelter.city}
                 label={shelter.name}
                 path={'/shelter/info/' + shelter.shelterId}

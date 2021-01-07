@@ -33,6 +33,10 @@ function ShelterProfile(props) {
 
 
             <div className="container">
+                <div>
+                    <img src={shelter.image !== "" ? shelter.image : "https://pngimg.com/uploads/dog/dog_PNG50375.png"} alt="" style={{width: '400 px'}} title=""
+                         className="img-circle img-thumbnail isTooltip"/>
+                </div>
                 <p className="fontstyle">Lokacija udruge: {shelter.address + ", " + shelter.city} </p>
                 <p className="fontstyle">OIB: {shelter.oib} </p>
 
