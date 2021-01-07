@@ -74,7 +74,7 @@ function Dog(props) {
         fetch('/shelter/' + udruga.shelterId + '/' + dog.dogId + '/delete', options)
             .then(response => {
                 if (response.ok) {
-                    history.goBack()
+                    history.push('/shelter/'+udruga.shelterId+'/dogs')
                 }
             })
             .catch(error => {
