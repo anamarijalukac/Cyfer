@@ -1,9 +1,9 @@
 import React from 'react';
 import '../../components/pages/profile.css';
-import {useHistory} from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
+import DemoApp from '../../components/pages/Calendar.js';
 
-
-function Profile(props){
+function Profile(props) {
 
     let history = useHistory();
     var inputDelete;
@@ -13,7 +13,7 @@ function Profile(props){
     let inputStatistics;
     let isShelter = localStorage.getItem("loggedInShelter") === "true"
 
-    if(isShelter) {
+    if (isShelter) {
         data = JSON.parse(localStorage.getItem("udruga"));
         lokacija = JSON.parse(localStorage.getItem("lokacija"));
         inputDelete = 'shelter/delete/' + data.shelterId
@@ -27,10 +27,10 @@ function Profile(props){
     }
 
 
-    function onClickDelete(){
+    function onClickDelete() {
 
         // eslint-disable-next-line no-restricted-globals
-        if(!confirm("Jeste li sigurni da želite obrisati profil?"))
+        if (!confirm("Jeste li sigurni da želite obrisati profil?"))
             return
 
         var auth = 'Basic ' + new Buffer(data.username + ':' + localStorage.getItem("password")).toString('base64');
@@ -43,8 +43,8 @@ function Profile(props){
             },
         };
         fetch(inputDelete, options)
-            .then(response =>{
-                if(response.ok){
+            .then(response => {
+                if (response.ok) {
                     debugger
                     history.push('/');
                     props.onLogout();
@@ -78,7 +78,7 @@ function Profile(props){
 
     const [numberOfWalks, setNumberOfWalks] = React.useState(0);
 
-    if(!isShelter){
+    if (!isShelter) {
 
         fetch(inputStatistics + '1', options)
             .then(data => {
@@ -98,26 +98,26 @@ function Profile(props){
             })
             .catch(error => console.log(error))
 
-            fetch(inputStatistics + '3', options)
-                .then(data => {
-                    return data.json();
-                })
-                .then(data => {
-                    setNumberOfWalks(data);
-                })
-                .catch(error => console.log(error))
+        fetch(inputStatistics + '3', options)
+            .then(data => {
+                return data.json();
+            })
+            .then(data => {
+                setNumberOfWalks(data);
+            })
+            .catch(error => console.log(error))
 
     }
 
 
-    if(isShelter){
+    if (isShelter) {
         //udruga
         return (
             <div className="profile">
 
                 <div className="container">
                     <div>
-                        <img className="image1" src={data.image !== "" ? data.image : "https://pngimg.com/uploads/dog/dog_PNG50375.png"}/>
+                        <img className="image1" src={data.image !== "" ? data.image : "https://pngimg.com/uploads/dog/dog_PNG50375.png"} />
                     </div>
                     <h1>Profil udruge: {data.username}</h1>
                     <p className="fontstyle">Korisničko ime udruge: {data.username} </p>
@@ -142,26 +142,29 @@ function Profile(props){
 
     //korisnik
     return (
-        <div className="profile">
-            <h1>Profil korisnika: {data.username}</h1>
+        <div>
+            <DemoApp />
+            <div className="profile">
+                <h1>Profil korisnika: {data.username}</h1>
 
-            <div className="container">
-                <p className="fontstyle">Korisničko ime: {data.username} </p>
+                <div className="container">
+                    <p className="fontstyle">Korisničko ime: {data.username} </p>
 
-                <p className="fontstyle">Ime: {data.firstName} </p>
-                <p className="fontstyle">Prezime: {data.lastName} </p>
-                <p className="fontstyle">E-mail: {data.email} </p>
-                <p className="fontstyle">Ukupna duljina šetnji: {walksDuration}</p>
-                <p className="fontstyle">Broj pasa koje sam šetao: {numberOfDogsWalked}</p>
-                <p className="fontstyle">Ukupan broj šetnji: {numberOfWalks}</p>
+                    <p className="fontstyle">Ime: {data.firstName} </p>
+                    <p className="fontstyle">Prezime: {data.lastName} </p>
+                    <p className="fontstyle">E-mail: {data.email} </p>
+                    <p className="fontstyle">Ukupna duljina šetnji: {walksDuration}</p>
+                    <p className="fontstyle">Broj pasa koje sam šetao: {numberOfDogsWalked}</p>
+                    <p className="fontstyle">Ukupan broj šetnji: {numberOfWalks}</p>
 
 
-                <button className="loginbtn fontstyle" onClick={onClickDelete}>
-                    Izbriši profil
+                    <button className="loginbtn fontstyle" onClick={onClickDelete}>
+                        Izbriši profil
                 </button>
-                <button className="loginbtn fontstyle" onClick={onClickUpdate}>
-                    Uredi profil
+                    <button className="loginbtn fontstyle" onClick={onClickUpdate}>
+                        Uredi profil
                 </button>
+                </div>
             </div>
         </div>
     );
