@@ -64,12 +64,12 @@ function EditDog(props) {
             .then(response => {
                 if (response.ok) {
                     alert("Promjene uspješno pohranjene.")
-                    history.push('/');
                     return response.json()
                 }
             })
             .then(data => {
-                history.goBack()
+                history.push('/dog/'+props.dogId)
+                console.log('/dog/'+props.dogId)
             })
             .catch(error => {
                 console.log(error)
