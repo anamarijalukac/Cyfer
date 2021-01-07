@@ -45,6 +45,9 @@ public class Shelter {
 	@Column
 	private String city;
 
+	@Column(unique = true, nullable = false)
+	private String image;
+
 	public Long getShelterId() {
 		return shelterId;
 	}
@@ -111,4 +114,7 @@ public class Shelter {
     public void setShelterId(long id) {
 		this.shelterId = id;
     }
+	public void setImage(String image) {
+		this.image = image;
+	}
 }

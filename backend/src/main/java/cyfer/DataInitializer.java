@@ -46,39 +46,39 @@ public class DataInitializer {
 		
 
 		Walker walker1 = new Walker();
-		walker1.setEmail("pero.peric@gmail.com");
-		walker1.setFirstName("Pero");
-		walker1.setLastName("Peric");
+		walker1.setEmail("luka.novak@gmail.com");
+		walker1.setFirstName("Luka");
+		walker1.setLastName("Novak");
 		walker1.setPassword("12345671");
-		walker1.setUsername("maliPerica");
+		walker1.setUsername("lukaNovak");
 		
 		Walker walker2 = new Walker();
-		walker2.setEmail("pero.peric2@gmail.com");
-		walker2.setFirstName("Pero2");
-		walker2.setLastName("Peric2");
+		walker2.setEmail("nika.babic@gmail.com");
+		walker2.setFirstName("Nika");
+		walker2.setLastName("Babic");
 		walker2.setPassword("12345672");
-		walker2.setUsername("maliPerica2");
+		walker2.setUsername("nikaBabic");
 
 		Walker walker3 = new Walker();
-		walker3.setEmail("pero.peric3@gmail.com");
-		walker3.setFirstName("Pero3");
-		walker3.setLastName("Peric3");
+		walker3.setEmail("lovro.tomic@gmail.com");
+		walker3.setFirstName("Lovro");
+		walker3.setLastName("Tomic");
 		walker3.setPassword("12345673");
-		walker3.setUsername("maliPerica3");
+		walker3.setUsername("lovroTomic");
 		
 		Walker walker4 = new Walker();
-		walker4.setEmail("pero.peric4@gmail.com");
-		walker4.setFirstName("Pero4");
-		walker4.setLastName("Peric4");
+		walker4.setEmail("lara.novak@gmail.com");
+		walker4.setFirstName("Lara");
+		walker4.setLastName("Novak");
 		walker4.setPassword("12345674");
-		walker4.setUsername("maliPerica4");
+		walker4.setUsername("laraNovak");
 		
 		Walker walker5 = new Walker();
-		walker5.setEmail("pero.peric5@gmail.com");
-		walker5.setFirstName("Pero5");
-		walker5.setLastName("Peric5");
+		walker5.setEmail("fran.klaric@gmail.com");
+		walker5.setFirstName("Fran");
+		walker5.setLastName("Klaric");
 		walker5.setPassword("123456785");
-		walker5.setUsername("maliPerica5");
+		walker5.setUsername("franKlaric");
 
 		
 
@@ -114,66 +114,68 @@ public class DataInitializer {
 
 		Shelter shelter1=new Shelter();
 		shelter1.setOIB("11111111111");
-		shelter1.setName("prvaudruga");
-		shelter1.setUsername("udruga1");
+		shelter1.setName("Snoopy");
+		shelter1.setUsername("snoopy");
 		shelter1.setPassword("12345");
 		shelter1.setLocation(location1);
+		shelter1.setImage("https://www.peanuts.com/sites/default/files/sn-color.jpg");
 
 		Shelter shelter2=new Shelter();
 		shelter2.setOIB("11111111112");
-		shelter2.setName("drugaudruga");
-		shelter2.setUsername("udruga2");
+		shelter2.setName("Mala Šapa");
+		shelter2.setUsername("malasapa");
 		shelter2.setPassword("123456");
 		shelter2.setLocation(location2);
+		shelter2.setImage("https://cdn1.vectorstock.com/i/1000x1000/69/50/paw-dog-animal-cute-logo-vector-27106950.jpg");
 
 		
 		Dog dog1 = new Dog();
-		dog1.setDescription("mali");
+		dog1.setDescription("Dachshund");
 		dog1.setImage("https://pngimg.com/uploads/dachshund/dachshund_PNG51.png");
-		dog1.setName("vili");
+		dog1.setName("Roko");
 		dog1.setTypeOfWalk("I");
 		dog1.setLocation(location1);
 		dog1.setShelter(shelter1);
 
 		Dog dog2 = new Dog();
-		dog2.setDescription("mali2");
+		dog2.setDescription("Samoyed");
 		dog2.setImage("https://upload.wikimedia.org/wikipedia/commons/9/94/My_dog.jpg");
-		dog2.setName("viliiiii");
+		dog2.setName("Pahuljica");
 		dog2.setTypeOfWalk("I");
 		dog2.setShelter(shelter1);
 		
 		Dog dog3 = new Dog();
-		dog3.setDescription("mali3");
+		dog3.setDescription("Cavalier King Charles Spaniel");
 		dog3.setImage("https://upload.wikimedia.org/wikipedia/commons/4/43/Cute_dog.jpg");
-		dog3.setName("vili3");
+		dog3.setName("Dama");
 		dog3.setTypeOfWalk("I");
 		dog3.setShelter(shelter1);
 		
 		Dog dog4 = new Dog();
-		dog4.setDescription("mali4");
+		dog4.setDescription("American Eskimo Dog");
 		dog4.setImage("https://upload.wikimedia.org/wikipedia/commons/f/fe/American_Eskimo_Dog_1.jpg");
-		dog4.setName("vili4");
+		dog4.setName("Max");
 		dog4.setTypeOfWalk("I");
 		dog4.setShelter(shelter1);
 		
 		Dog dog5 = new Dog();
-		dog5.setDescription("mali5");
+		dog5.setDescription("Golden Retriever");
 		dog5.setImage("https://upload.wikimedia.org/wikipedia/commons/d/dd/Golden_Retriever_Hund_Dog.JPG");
-		dog5.setName("vili5");
+		dog5.setName("Tara");
 		dog5.setTypeOfWalk("I");
 		dog5.setShelter(shelter1);
 
 		Dog dog6 = new Dog();
-		dog6.setDescription("Ovo je pesek udruge 2. Voli grupne šetnje.");
+		dog6.setDescription("Surfer dog");
 		dog6.setImage("https://upload.wikimedia.org/wikipedia/commons/1/1f/SURF_DOGS_USA_DOGS_SURFING.jpg");
-		dog6.setName("pesek1");
+		dog6.setName("Loki");
 		dog6.setTypeOfWalk("G");
 		dog6.setShelter(shelter2);
 
 		Dog dog7 = new Dog();
-		dog7.setDescription("Ovo je pesek udruge 2. Voli grupne šetnje, ali ne voli previše šetati.");
+		dog7.setDescription("French bulldog");
 		dog7.setImage("https://upload.wikimedia.org/wikipedia/commons/d/d6/French_bulldog_in_life_jacket.jpg");
-		dog7.setName("pesek2");
+		dog7.setName("Dino");
 		dog7.setTypeOfWalk("G");
 		dog7.setShelter(shelter2);
 
