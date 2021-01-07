@@ -29,14 +29,14 @@ function ShelterProfile(props) {
 
     return (
         <div class="profile">
-            <h1>Profil udruge: {shelter.name}</h1>
 
 
             <div className="container">
-                <div>
-                    <img src={shelter.image !== "" ? shelter.image : "https://pngimg.com/uploads/dog/dog_PNG50375.png"} alt="" style={{width: '400 px'}} title=""
-                         className="img-circle img-thumbnail isTooltip"/>
+                <div >
+                    <img className="image1" src={shelter.image !== "" ? shelter.image : "https://pngimg.com/uploads/dog/dog_PNG50375.png"} />
                 </div>
+                <h1>Profil udruge: {shelter.name}</h1>
+
                 <p className="fontstyle">Lokacija udruge: {shelter.address + ", " + shelter.city} </p>
                 <p className="fontstyle">OIB: {shelter.oib} </p>
 
