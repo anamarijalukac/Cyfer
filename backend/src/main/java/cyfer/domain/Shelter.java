@@ -45,6 +45,7 @@ public class Shelter {
 	@Column
 	private String city;
 
+
 	@Column
 	private String image;
 
