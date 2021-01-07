@@ -33,6 +33,9 @@ public class Dog {
 	private String description;
 
 	@Column
+	private String image;
+
+	@Column
 	@NotNull
 	@Size(min = 1, max = 1)
 	private String typeOfWalk;
@@ -103,7 +106,6 @@ public class Dog {
 	}
 	
 
-	@Column(unique = true, nullable = false)
-	private String image;
+
 
 }

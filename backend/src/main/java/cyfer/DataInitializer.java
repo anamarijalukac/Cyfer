@@ -112,6 +112,10 @@ public class DataInitializer {
 		location2.setCity("Zagreb");
 		//locationService.saveLocation(location2);
 
+		Location location3 = new Location();
+		location3.setAddress("Ilica 9");
+		location3.setCity("Zagreb");
+
 		Shelter shelter1=new Shelter();
 		shelter1.setOIB("11111111111");
 		shelter1.setName("Snoopy");
@@ -127,6 +131,14 @@ public class DataInitializer {
 		shelter2.setPassword("123456");
 		shelter2.setLocation(location2);
 		shelter2.setImage("https://cdn1.vectorstock.com/i/1000x1000/69/50/paw-dog-animal-cute-logo-vector-27106950.jpg");
+
+		Shelter shelter3=new Shelter();
+		shelter2.setOIB("11111111113");
+		shelter2.setName("Šetanje pasa Zagreb");
+		shelter2.setUsername("setanjezg");
+		shelter2.setPassword("12345");
+		shelter2.setLocation(location3);
+		shelter2.setImage("https://images.vexels.com/media/users/3/199950/isolated/preview/afafccf3b0569e27313c4aa7cbd8a556-great-dane-dog-illustration-by-vexels.png");
 
 		
 		Dog dog1 = new Dog();
