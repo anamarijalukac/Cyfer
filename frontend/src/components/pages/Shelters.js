@@ -8,6 +8,18 @@ function Shelters() {
     const [shelters, setShelters] = React.useState([]);
     const [images, setImages] = React.useState([]);
 
+
+    React.useEffect(() => {
+            fetch('/shelter')
+                .then(data => data.json())
+                .then(shelters => {
+                        console.log(shelters)
+                        setShelters(shelters)
+                    }
+                )
+    }, [])
+
+    /*
     React.useEffect(() => {
         fetch('/dog')
             .then(data => data.json()).then(dogs => {
@@ -25,6 +37,8 @@ function Shelters() {
                 )
         })
     }, [])
+
+     */
 
 
     const shelterCards = shelters.map(shelter => {

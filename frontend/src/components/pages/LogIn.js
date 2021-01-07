@@ -40,7 +40,6 @@ function LogIn(props) {
         fetch('/walker/login', options)
             .then(response => {
                 if (response.ok) {
-                    props.onLogin()
                     history.push('/');
                     localStorage.setItem("password", data.password)
                     return response.json()
@@ -51,6 +50,7 @@ function LogIn(props) {
             })
             .then(data => {
                 localStorage.setItem("korisnik", JSON.stringify(data))
+                props.onLogin()
             })
                 .catch(error => console.log(error));
 

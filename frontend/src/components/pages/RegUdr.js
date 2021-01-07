@@ -45,7 +45,6 @@ function RegUdr(props) {
       fetch('/shelter/signup', options)
       .then(response => {
         if(response.ok){
-          props.onLogin();
           history.push('/');
           return response.json();
         }
@@ -54,7 +53,10 @@ function RegUdr(props) {
           setError("Neuspješna registracija");
         }
       })
-      .then(data => localStorage.setItem("udruga", JSON.stringify(data)))
+      .then(data => {
+        localStorage.setItem("udruga", JSON.stringify(data))
+        props.onLogin();
+      })
       .catch(error => console.log(error));
 
     }

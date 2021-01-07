@@ -32,7 +32,9 @@ function Dog(props) {
         isLoggedInShelter = false;
     }
 
-    let udruga = JSON.parse(localStorage.getItem("udruga"))
+    var udruga
+    if(localStorage.getItem("loggedInShelter")==="true")
+        udruga = JSON.parse(localStorage.getItem("udruga"))
 
 
     function rezervacija() {
