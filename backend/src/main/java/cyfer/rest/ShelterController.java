@@ -164,7 +164,7 @@ public class ShelterController {
 			return new ResponseEntity<Shelter>(HttpStatus.BAD_REQUEST);
 		shelter.setOIB(shelter1.getOIB());
 		shelter.setShelterId(id);
-		shelter.setImage(shelter1.getImage());
+		//shelter.setImage(shelter1.getImage());
 		if(shelter.getAddress().equals(shelter1.getAddress()) && shelter.getCity().equals(shelter1.getCity()))
 			shelter.setLocation(shelter1.getLocation());
 		else {
