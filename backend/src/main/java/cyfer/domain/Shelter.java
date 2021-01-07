@@ -114,7 +114,8 @@ public class Shelter {
     public void setShelterId(long id) {
 		this.shelterId = id;
     }
-	public String getImage() {
+
+    public String getImage() {
 		return image;
 	}
 

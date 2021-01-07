@@ -143,6 +143,7 @@ public class DataInitializer {
 		dog2.setName("Pahuljica");
 		dog2.setTypeOfWalk("I");
 		dog2.setShelter(shelter1);
+		dog2.setLocation(shelter1.getLocation());
 		
 		Dog dog3 = new Dog();
 		dog3.setDescription("Cavalier King Charles Spaniel");
@@ -150,6 +151,7 @@ public class DataInitializer {
 		dog3.setName("Dama");
 		dog3.setTypeOfWalk("I");
 		dog3.setShelter(shelter1);
+		dog3.setLocation(shelter1.getLocation());
 		
 		Dog dog4 = new Dog();
 		dog4.setDescription("American Eskimo Dog");
@@ -157,6 +159,7 @@ public class DataInitializer {
 		dog4.setName("Max");
 		dog4.setTypeOfWalk("I");
 		dog4.setShelter(shelter1);
+		dog4.setLocation(shelter1.getLocation());
 		
 		Dog dog5 = new Dog();
 		dog5.setDescription("Golden Retriever");
@@ -164,6 +167,7 @@ public class DataInitializer {
 		dog5.setName("Tara");
 		dog5.setTypeOfWalk("I");
 		dog5.setShelter(shelter1);
+		dog5.setLocation(shelter1.getLocation());
 
 		Dog dog6 = new Dog();
 		dog6.setDescription("Surfer dog");
@@ -171,6 +175,7 @@ public class DataInitializer {
 		dog6.setName("Loki");
 		dog6.setTypeOfWalk("G");
 		dog6.setShelter(shelter2);
+		dog6.setLocation(shelter2.getLocation());
 
 		Dog dog7 = new Dog();
 		dog7.setDescription("French bulldog");
@@ -178,6 +183,7 @@ public class DataInitializer {
 		dog7.setName("Dino");
 		dog7.setTypeOfWalk("G");
 		dog7.setShelter(shelter2);
+		dog7.setLocation(shelter2.getLocation());
 
 
 		shelterService.registerShelter(shelter1);
