@@ -3,7 +3,7 @@ import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";  
 import timeGridPlugin from "@fullcalendar/timegrid";  
   
-function DemoApp() {  
+function Calendar() {
     const data = JSON.parse(localStorage.getItem("reservation"));
     console.log(data);
     const events = [{ title: "Today", date: new Date() }];  
@@ -22,4 +22,4 @@ function DemoApp() {
   
 }  
   
-export default DemoApp  
+export default Calendar

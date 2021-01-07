@@ -18,6 +18,7 @@ import ShelterProfile from "./components/pages/ShelterProfile";
 import DogReservation from "./components/pages/DogReservation";
 import EditProfile from "./components/pages/EditProfile"
 import EditDog from "./components/pages/EditDog";
+import Calendar from "./components/pages/Calendar";
 import {Link, useHistory} from 'react-router-dom';
 
 function App() {
@@ -88,6 +89,7 @@ function App() {
           <Route path='/shelter/info/:shelterId' component={(routerProps) => <ShelterProfile shelterId={routerProps.match.params.shelterId}/>}/>
           <Route path='/walker/update/:walkerId' component={(routerProps) => <EditProfile id={routerProps.match.params.walkerId}/>}/>
           <Route path='/shelter/update/:shelterId' component={(routerProps) => <EditProfile id={routerProps.match.params.shelterId}/>}/>
+          <Route path='/walker/:walkerId/calendar' component={(routerProps) => <Calendar id={routerProps.match.params.walkerId}/>}/>
         </Switch>
       </Router>
     </>

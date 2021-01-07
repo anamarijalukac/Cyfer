@@ -56,10 +56,15 @@ function Profile(props) {
             });
     }
 
+    function onClickCalendar() {
+        history.push('/walker/'+data.walkerId+'/calendar')
+    }
+
 
     function onClickUpdate() {
         history.push(inputUpdate)
     }
+
 
 
     let auth = 'Basic ' + new Buffer(data.username + ':' + localStorage.getItem("password")).toString('base64');
@@ -128,12 +133,13 @@ function Profile(props) {
                     <p className="fontstyle">Grad: {data.city} </p>
 
 
-                    <button className="loginbtn fontstyle" onClick={onClickDelete}>
-                        Izbriši profil
-                    </button>
                     <button className="loginbtn fontstyle" onClick={onClickUpdate}>
                         Uredi profil
                     </button>
+                    <button className="loginbtn fontstyle" onClick={onClickDelete}>
+                        Izbriši profil
+                    </button>
+
 
                 </div>
             </div>
@@ -158,12 +164,16 @@ function Profile(props) {
                     <p className="fontstyle">Ukupan broj šetnji: {numberOfWalks}</p>
 
 
+                    <button className="loginbtn fontstyle" onClick={onClickCalendar}>
+                        Pregledaj kalendar šetnji
+                    </button>
+                    <button className="loginbtn fontstyle" onClick={onClickUpdate}>
+                        Uredi profil
+                    </button>
                     <button className="loginbtn fontstyle" onClick={onClickDelete}>
                         Izbriši profil
                 </button>
-                    <button className="loginbtn fontstyle" onClick={onClickUpdate}>
-                        Uredi profil
-                </button>
+
                 </div>
             </div>
         </div>
