@@ -20,8 +20,7 @@ export default class Calendar extends Component{
             const imgData = canvas.toDataURL('image/png', 1.0);
             const pdf = new jsPDF();
             pdf.addImage(imgData, 'JPEG', 10, 10, 180, 150);
-            // pdf.output('dataurlnewwindow');
-            pdf.save("download.pdf");
+            pdf.save("raspored-setnji.pdf");
           })
         ;
       }
@@ -43,7 +42,7 @@ export default class Calendar extends Component{
                     />
                 </div>
                 <div>
-                    <button onClick={this.printDocument} >to pdf</button>
+                    <button className="calbtn" onClick={this.printDocument} >Skini u pdf-u</button>
                 </div>
             </div>
         )
