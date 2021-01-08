@@ -11,6 +11,13 @@
    margin-top: 100px;
 }
 
+.cal {
+   display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  background-color: white;
+}
 .loginbtn {
    background: linear-gradient(90deg, rgb(51, 255, 119) 0%, rgb(0, 128, 43) 100%);
    color: white;
