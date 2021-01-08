@@ -83,15 +83,15 @@ public class DataInitializer {
 		
 
 		Walk walk1 = new Walk();
-		walk1.setDateTime(Timestamp.valueOf("2020-12-08 03:13:11"));
+		walk1.setDateTime(Timestamp.valueOf("2020-12-20 03:13:11"));
 		walk1.setDuration(10);
 		
 		Walk walk2 = new Walk();
-		walk2.setDateTime(Timestamp.valueOf("2020-12-08 03:13:12"));
+		walk2.setDateTime(Timestamp.valueOf("2020-12-20 03:13:12"));
 		walk2.setDuration(20);
 		
 		Walk walk3 = new Walk();
-		walk3.setDateTime(Timestamp.valueOf("2020-12-08 03:13:13"));
+		walk3.setDateTime(Timestamp.valueOf("2020-12-20 03:13:13"));
 		walk3.setDuration(30);
 		
 		Walk walk4 = new Walk();
