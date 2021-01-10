@@ -22,7 +22,7 @@ public class Walker {
 	@Column
 	private Long walkerId;
 
-	@Column
+	@Column(unique = true)
 	@NotNull
 	private String username;
 

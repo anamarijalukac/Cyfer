@@ -25,14 +25,14 @@ public class Dog {
 	@Column(unique = true)
 	private Long dogId;
 
-	@Column(unique = true)
+	@Column
 	@NotNull
 	private String name;
 
-	@Column
+	@Column(unique = true)
 	private String description;
 
-	@Column
+	@Column(unique = true)
 	private String image;
 
 	@Column

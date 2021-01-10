@@ -49,6 +49,19 @@ public class ReservationController {
 		return new ResponseEntity<Reservation>(newReservation,HttpStatus.OK);
 	}
 
+	@PostMapping("/shelter/{shelterId}/dogs")
+	public ResponseEntity<Reservation> createGroupReservation(List<Long> dogIds, @RequestBody Walk walk,
+														 @AuthenticationPrincipal User user) {
+		Walk newWalk = walkService.setWalk(walk);
+		//System.out.println(newWalk.toString());
+		for(Long dogId : dogIds) {
+			Dog dog = dogService.getDog(dogId);
+			Walker walker = walkerService.getByUsername(user.getUsername());
+			Reservation newReservation = reservationService.createReservation(walker, newWalk, dog);
+		}
+		return new ResponseEntity<>(null,HttpStatus.OK);
+	}
+
 	@GetMapping("dog/statistics")
 	public ResponseEntity<List<Dog>> getAllDogStatistics() {
 		List<Dog> dogs = reservationService.getDogsStatistics();

@@ -43,7 +43,7 @@ public class DataInitializer {
 	@EventListener
 	public void appReady(ApplicationReadyEvent event) {
 		
-		
+
 
 		Walker walker1 = new Walker();
 		walker1.setEmail("luka.novak@gmail.com");
@@ -235,6 +235,8 @@ public class DataInitializer {
 		//testni primjerak koji ne bi smio raditi!!!
 		reservationService.createReservation(walker2, walk5, dog5);
 
+
 	}
+
 
 }

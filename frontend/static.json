@@ -1,0 +1,7 @@
+{
+  "proxies": {
+    "/api/": {
+      "origin": "https://cyfer-backend.herokuapp.com/"
+    }
+  }
+}

@@ -28,7 +28,7 @@ public class Shelter {
 	@NotNull
 	private String name;
 	
-	@Column
+	@Column(unique = true)
 	@NotNull
 	private String username;
 
@@ -41,9 +41,9 @@ public class Shelter {
 	@JoinColumn(name = "locationId")
     private Location location;
 	@Column
-	private String address;
-	@Column
 	private String city;
+	@Column
+	private String address;
 
 
 	@Column
