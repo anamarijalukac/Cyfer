@@ -4,38 +4,48 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import ReactToPdf from "react-to-pdf";
 import '../../components/pages/profile.css';
+import { Button } from 'bootstrap';
+import html2canvas from 'html2canvas';
+import jsPDF from 'jspdf';
 
-function Calendar() {
-  const data = JSON.parse(localStorage.getItem("reservation"));
-  const options = {
-    orientation: 'landscape',
+export default class Calendar extends Component{
+    constructor(props) {
+        super(props);
+      }
+    
+      printDocument() {
+        const input = document.getElementById('cal');
+        html2canvas(input, {scrollY: -window.scrollY})
+          .then((canvas) => {
+            const imgData = canvas.toDataURL('image/png', 1.0);
+            const pdf = new jsPDF();
+            pdf.addImage(imgData, 'JPEG', 10, 10, 180, 150);
+            pdf.save("raspored-setnji.pdf");
+          })
+        ;
+      }
+
+    render() {
+        const events = [{ title: "Today", date: new Date() }];
+        return (
+            <div>
+                <div className="cal" id="cal" ng-show="cal" >
+                    <FullCalendar
+                        defaultView="dayGridMonth"
+                        header={{
+                            left: "prev,next",
+                            center: "title",
+                            right: "dayGridMonth,timeGridWeek,timeGridDay"
+                        }}
+                        plugins={[dayGridPlugin, timeGridPlugin]}
+                        events={events}
+                    />
+                </div>
+                <div>
+                    <button className="calbtn" onClick={this.printDocument} >Skini u pdf-u</button>
+                </div>
+            </div>
+        )
+    }
 }
-  console.log(data);
-  const events = [{ title: "Today", date: new Date() }];
-  const ref = React.createRef();
-  return (
-    <div className="cal" ref={ref} >
-      <FullCalendar
-        defaultView="dayGridMonth"
-        header={{
-          left: "prev,next",
-          center: "title",
-          right: "dayGridMonth,timeGridWeek,timeGridDay"
-        }}
-        plugins={[dayGridPlugin, timeGridPlugin]}
-        events={events}
-      />
 
-      <div>
-        <ReactToPdf targetRef={ref} options={options} filename="raspored_setnje.pdf" x={.5} y={.7} scale={0.8}>
-          {({ toPdf }) => (
-            <button onClick={toPdf}>Skini u pdf-u</button>
-          )}
-        </ReactToPdf>
-      </div>
-    </div>
-  )
-
-}
-
-export default Calendar
