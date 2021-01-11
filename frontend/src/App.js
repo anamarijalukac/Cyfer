@@ -26,10 +26,12 @@ function App() {
   const [isLoggedInUser, setIsLoggedInUser] = React.useState(localStorage.getItem("loggedInUser") === null ? false : localStorage.getItem("loggedInUser"));
   const [isLoggedInShelter, setIsLoggedInShelter] = React.useState(localStorage.getItem("loggedInShelter") === null ? false : localStorage.getItem("loggedInShelter"));
   const [id, setId] = React.useState("");
+  const [params, setParams] = React.useState("");
   const[walker, setWalker] = React.useState();
   const[shelter, setShelter] = React.useState();
 
   let history = useHistory();
+  debugger
 
   function onLoginUser(){
     setIsLoggedIn(true);
@@ -83,13 +85,14 @@ function App() {
           <RegUdr path='/RegUdr' component={RegUdr} onLogin={onLoginShelter} />
           <LogInUdr path='/LogInUdr' component={LogInUdr} onLogin={onLoginShelter}/>
           <Route path='/info' component={info} />
-          <Route path='/dogs' component={Dogs} />
+          <Dogs path='/dogs' component={Dogs} history={history} dog={"dog"} setParams={setParams}/>
           <Route path='/shelters' component={Shelters} />
           <SignUp path='/sign-up' component={SignUp} onLogin={onLoginUser} />
           <LogIn path='/log-in' component={LogIn} onLogin={onLoginUser} />
           <Route path='/dog/edit/:dogId' component={(routerProps) => <EditDog dogId={routerProps.match.params.dogId}/>}/>
-          <Route Dog path='/dog/:dogId' component={(routerProps) => <Dog dogId={routerProps.match.params.dogId} history={history}/>}/>
-          <Route path='/DogReservation' component={DogReservation} />
+          <Route Dog path='/dog/:dogId' component={(routerProps) => <Dog dogId={routerProps.match.params.dogId}/>}/>
+          <Route path='/DogReservation' component={DogReservation} params={{params}}/>
+          <Route path='/multipleDogReservation/:dogs' component={(routerProps) => <DogReservation dogs={routerProps.match.params.dogs}/>}/>
           <Route path='/shelter/:shelterId/dogs' component={(routerProps) => <ShelterDogs shelterId={routerProps.match.params.shelterId}/>}/>
           <Profile path='/profile' component={Profile} onLogout={onLogout} shelter={shelter} walker={walker} />
           <Route path='/shelter/info/:shelterId' component={(routerProps) => <ShelterProfile shelterId={routerProps.match.params.shelterId}/>}/>
