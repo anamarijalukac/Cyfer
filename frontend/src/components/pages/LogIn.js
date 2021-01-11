@@ -61,7 +61,7 @@ function LogIn(props) {
 
 
     return (
-        <div class="container">
+        <div className="container">
             <form onSubmit={onSubmit}>
                 <h1>Prijavi se kao korisnik</h1>
 
@@ -77,10 +77,10 @@ function LogIn(props) {
 
                     <div className="custom-control custom-checkbox">
                         <input type="checkbox" name="checkbox" onChange={onChange} value={form.checkbox}/>
-                        <label name="checkbox" htmlFor="customCheck1"> Zapamti</label>
+                        <label name="checkbox" htmlFor="customCheck1">   Zapamti  </label>
                     </div>
                     {(error != "") ? <div className="error">{error}</div> : ""}
-                    <button class='loginbtn' type="submit">Log in</button>
+                    <button className='loginbtn' type="submit">Log in</button>
 
                     <a href='./LogInUdr' className='linkToUdruga'>Prijavljujete se kao udruga?</a>
                 </div>

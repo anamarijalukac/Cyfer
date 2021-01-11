@@ -31,6 +31,25 @@ body {
   width: 100%;
 }
 
+.multiplebtn {
+  background: linear-gradient(90deg, rgb(51, 255, 119) 0%, rgb(0, 128, 43) 100%);
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: auto;
+}
+
+.button-container {
+  text-align:center;
+  margin-top: 50px;
+}
+
+.gridbuttons {
+  grid-auto-columns: auto auto;
+}
+
 .m-r-0 {
   margin-right: 0px
 }

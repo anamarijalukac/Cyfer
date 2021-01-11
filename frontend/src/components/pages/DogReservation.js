@@ -34,6 +34,8 @@ function DogReservation(props) {
             duration: form.duration,
         };
 
+        console.log(data)
+
         const options = {
             method: 'POST',
             headers: {

@@ -63,10 +63,12 @@ function LogInUdr(props) {
               <input type="password" name='password' placeholder="Upiši lozinku" onChange = {onChange} value = {form.password} required/>
                <div className="custom-control custom-checkbox">
                   <input type="checkbox" name="checkbox" onChange = {onChange} value = {form.checkbox} />
-                  <label name="checkbox" htmlFor="customCheck1"> Zapamti</label>
+                  <label name="checkbox" htmlFor="customCheck1">   Zapamti</label>
               </div>
               {(error != "") ? <div className="error">{error}</div> : ""}
            <button className = 'loginbtn' type="submit" >Log in</button>
+
+               <a href='./log-in' className='linkToUdruga'>Prijavljujete se kao korisnik?</a>
           </div>
       </form>
     </div>

@@ -26,6 +26,8 @@ function App() {
   const [isLoggedInUser, setIsLoggedInUser] = React.useState(localStorage.getItem("loggedInUser") === null ? false : localStorage.getItem("loggedInUser"));
   const [isLoggedInShelter, setIsLoggedInShelter] = React.useState(localStorage.getItem("loggedInShelter") === null ? false : localStorage.getItem("loggedInShelter"));
   const [id, setId] = React.useState("");
+  const[walker, setWalker] = React.useState();
+  const[shelter, setShelter] = React.useState();
 
   let history = useHistory();
 
@@ -35,6 +37,7 @@ function App() {
     localStorage.setItem("loggedIn", true);
     localStorage.setItem("loggedInUser", true);
     setId(JSON.parse(localStorage.getItem("korisnik")).id)
+    setWalker(JSON.parse(localStorage.getItem("korisnik")))
   }
   function onLoginShelter(){
     setIsLoggedIn(true);
@@ -42,6 +45,7 @@ function App() {
     localStorage.setItem("loggedIn", true);
     localStorage.setItem("loggedInShelter", true);
     setId(JSON.parse(localStorage.getItem("udruga")).shelterId)
+    setShelter(JSON.parse(localStorage.getItem("udruga")))
     debugger
   }
 
@@ -50,6 +54,8 @@ function App() {
     setIsLoggedIn(false);
     setIsLoggedInUser(false);
     setIsLoggedInShelter(false);
+    setShelter(null)
+    setWalker(null)
   }
 
 
@@ -85,10 +91,10 @@ function App() {
           <Route Dog path='/dog/:dogId' component={(routerProps) => <Dog dogId={routerProps.match.params.dogId} history={history}/>}/>
           <Route path='/DogReservation' component={DogReservation} />
           <Route path='/shelter/:shelterId/dogs' component={(routerProps) => <ShelterDogs shelterId={routerProps.match.params.shelterId}/>}/>
-          <Profile path='/profile' component={Profile} onLogout={onLogout}/>
+          <Profile path='/profile' component={Profile} onLogout={onLogout} shelter={shelter} walker={walker} />
           <Route path='/shelter/info/:shelterId' component={(routerProps) => <ShelterProfile shelterId={routerProps.match.params.shelterId}/>}/>
-          <Route path='/walker/update/:walkerId' component={(routerProps) => <EditProfile id={routerProps.match.params.walkerId}/>}/>
-          <Route path='/shelter/update/:shelterId' component={(routerProps) => <EditProfile id={routerProps.match.params.shelterId}/>}/>
+          <Route EditProfile path='/walker/update/:walkerId' component={(routerProps) => <EditProfile id={routerProps.match.params.walkerId} onLoginUser={onLoginUser}/>}/>
+          <Route EditProfile path='/shelter/update/:shelterId' component={(routerProps) => <EditProfile id={routerProps.match.params.shelterId} onLoginShelter={onLoginShelter}/>}/>
           <Route path='/walker/:walkerId/calendar' component={(routerProps) => <Calendar id={routerProps.match.params.walkerId}/>}/>
         </Switch>
       </Router>

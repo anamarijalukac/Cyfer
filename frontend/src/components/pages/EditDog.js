@@ -68,6 +68,7 @@ function EditDog(props) {
                 }
             })
             .then(data => {
+                debugger
                 history.push('/dog/'+props.dogId)
                 console.log('/dog/'+props.dogId)
             })
@@ -79,26 +80,26 @@ function EditDog(props) {
     }
 
     let pohrani =
-        <button class='btndog' type="submit" onClick={pohraniPromjene}>
+        <button className='btndog' type="submit" onClick={pohraniPromjene}>
             Pohrani promjene
         </button>
 
 
     return (
-        <div class="container bootstrap snippets bootdey">
-            <div class="panel-body inf-content" style={{backgroundColor: 'white', margin: '30px'}}>
-                <h2 class="text-dark" style={{textAlign: 'center'}}>Informacije</h2>
-                <div class="row">
-                    <div class="col-md-4">
+        <div className="container bootstrap snippets bootdey">
+            <div className="panel-body inf-content" style={{backgroundColor: 'white', margin: '30px'}}>
+                <h2 className="text-dark" style={{textAlign: 'center'}}>Informacije</h2>
+                <div className="row">
+                    <div className="col-md-4">
                         <img src={dog.image} alt="" style={{width: '600 px'}} title=""
-                             class="img-circle img-thumbnail isTooltip"></img>
+                             className="img-circle img-thumbnail isTooltip"></img>
                     </div>
-                    <div class="col-md-6">
-                        <div class="table-responsive">
-                            <table class="table table-user-information">
+                    <div className="col-md-6">
+                        <div className="table-responsive">
+                            <table className="table table-user-information">
                                 <tbody>
                                 <tr>
-                                    <td class="text-secondary">
+                                    <td className="text-secondary">
                                         Ime
                                     </td>
                                     <td>
@@ -108,7 +109,7 @@ function EditDog(props) {
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="text-secondary">
+                                    <td className="text-secondary">
                                         Opis
                                     </td>
                                     <td>
@@ -119,7 +120,7 @@ function EditDog(props) {
                                 </tr>
 
                                 <tr>
-                                    <td class="text-secondary">
+                                    <td className="text-secondary">
                                         Grad
                                     </td>
                                     <td>
@@ -130,7 +131,7 @@ function EditDog(props) {
 
 
                                 <tr>
-                                    <td class="text-secondary">
+                                    <td className="text-secondary">
                                         Udruga
                                     </td>
                                     <td>
@@ -138,7 +139,7 @@ function EditDog(props) {
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="text-secondary">
+                                    <td className="text-secondary">
                                         Mogućnost grupnih šetnji
                                     </td>
                                     <td>

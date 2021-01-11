@@ -58,7 +58,10 @@ function EditProfile(props) {
             body: JSON.stringify(body)
         };
 
-        fetch(String(props.id), options)
+        let path = '/'+(isShelter?'shelter':'walker')+'/update/'+props.id
+        debugger
+
+        fetch(path, options)
             .then(response => {
                 if (response.ok) {
                     alert("Promjene uspješno pohranjene.")
@@ -72,8 +75,12 @@ function EditProfile(props) {
                 if (isShelter) {
                     localStorage.setItem("udruga", JSON.stringify(data))
                     localStorage.setItem("lokacija", JSON.stringify(data.location))
-                } else
+                    debugger
+                    props.onLoginShelter()
+                } else {
                     localStorage.setItem("korisnik", JSON.stringify(data))
+                    props.onLoginUser()
+                }
             })
             .catch(error => {
                 console.log(error)

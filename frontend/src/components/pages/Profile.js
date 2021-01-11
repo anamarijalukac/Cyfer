@@ -1,9 +1,10 @@
 import React from 'react';
 import '../../components/pages/profile.css';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useState } from 'react-router-dom';
 import DemoApp from '../../components/pages/Calendar.js';
 
 function Profile(props) {
+
 
     let history = useHistory();
     var inputDelete;
@@ -12,15 +13,18 @@ function Profile(props) {
     var lokacija;
     let inputStatistics;
     let isShelter = localStorage.getItem("loggedInShelter") === "true"
+    debugger
+
+
 
     if (isShelter) {
-        data = JSON.parse(localStorage.getItem("udruga"));
+        data = JSON.parse(localStorage.getItem("udruga"))
         lokacija = JSON.parse(localStorage.getItem("lokacija"));
         inputDelete = 'shelter/delete/' + data.shelterId
         inputUpdate = 'shelter/update/' + data.shelterId
     }
     else {
-        data = JSON.parse(localStorage.getItem("korisnik"));
+        data = JSON.parse(localStorage.getItem("korisnik"))
         inputDelete = 'walker/delete/' + data.walkerId
         inputUpdate = 'walker/update/' + data.walkerId
         inputStatistics = '/walker/' + data.walkerId + '/stats/';
@@ -94,7 +98,7 @@ function Profile(props) {
             })
             .catch(error => console.log(error))
 
-        fetch(inputStatistics + '2', options)
+        fetch(inputStatistics + '3', options)
             .then(data => {
                 return data.json();
             })
@@ -103,7 +107,7 @@ function Profile(props) {
             })
             .catch(error => console.log(error))
 
-        fetch(inputStatistics + '3', options)
+        fetch(inputStatistics + '2', options)
             .then(data => {
                 return data.json();
             })
