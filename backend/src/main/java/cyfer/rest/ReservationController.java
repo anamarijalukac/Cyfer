@@ -50,7 +50,7 @@ public class ReservationController {
 	}
 
 	@PostMapping("/shelter/{shelterId}/dogs")
-	public ResponseEntity<Reservation> createGroupReservation(List<Long> dogIds, @RequestBody Walk walk,
+	public ResponseEntity<Reservation> createGroupReservation(@RequestBody List<Long> dogIds, @RequestBody Walk walk,
 														 @AuthenticationPrincipal User user) {
 		Walk newWalk = walkService.setWalk(walk);
 		//System.out.println(newWalk.toString());
