@@ -2,12 +2,16 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../Cards.css';
 import CardItem from '../CardItem';
+import { useHistory } from "react-router-dom";
 
 
-function Dogs() {
+function Dogs(props) {
 
     const [dogs, setDogs] = React.useState([]);
     const [chooseDogs, setChooseDogs] = React.useState(false);
+    let history = useHistory()
+
+    debugger
 
     React.useEffect(() => {
         fetch('/dog')
@@ -39,6 +43,7 @@ function Dogs() {
         </div>
     )
 
+
     function multiDogs() {
         setChooseDogs(true)
     }
@@ -48,15 +53,14 @@ function Dogs() {
     }
 
     function rezerviraj() {
-        let dogsToWalk;
-        dogs.filter(dog => document.getElementById(dog.dogId).checked)
-
+        let dogsToWalk = dogs.filter(dog => document.getElementById(dog.dogId).checked).map(dog=> 'dog='+dog.dogId).join("&")
+        console.log(dogsToWalk)
+        history.push('/multipleDogReservation/'+dogsToWalk)
 
     }
 
 
     return (
-
         <div className='cards'>
             <h1 className='udruge'>Odaberi psa za šetnju:</h1>
             {!chooseDogs &&

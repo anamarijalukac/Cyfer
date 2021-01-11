@@ -1,6 +1,7 @@
 package cyfer.rest;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -38,7 +39,7 @@ public class ReservationController {
 	@Autowired
 	private IDogService dogService;
 
-	@PostMapping("/shelter/{shelterId}/{dogId}/reserve")
+	@PostMapping("/reserve/{dogId}")
 	public ResponseEntity<Reservation> createReservation(@PathVariable("dogId") long dogId, @RequestBody Walk walk,
 														 @AuthenticationPrincipal User user) {
 		Walk newWalk = walkService.setWalk(walk);
@@ -49,16 +50,29 @@ public class ReservationController {
 		return new ResponseEntity<Reservation>(newReservation,HttpStatus.OK);
 	}
 
-	@PostMapping("/shelter/{shelterId}/dogs")
-	public ResponseEntity<Reservation> createGroupReservation(List<Long> dogIds, @RequestBody Walk walk,
-														 @AuthenticationPrincipal User user) {
+	@PostMapping(path="/reserve/dogs", consumes = "application/json", produces = "application/json")
+	public ResponseEntity<Reservation> createGroupReservation(@RequestParam("dog")List<Long> dogIds, @RequestBody Walk walk,
+															  @AuthenticationPrincipal User user) {
 		Walk newWalk = walkService.setWalk(walk);
 		//System.out.println(newWalk.toString());
-		for(Long dogId : dogIds) {
+		for(long dogId : dogIds) {
 			Dog dog = dogService.getDog(dogId);
 			Walker walker = walkerService.getByUsername(user.getUsername());
 			Reservation newReservation = reservationService.createReservation(walker, newWalk, dog);
 		}
+		return new ResponseEntity<>(null,HttpStatus.OK);
+	}
+
+	@PostMapping(path="/shelter/{shelterId}/reserve/dogs", consumes = "application/json", produces = "application/json")
+	public ResponseEntity<Reservation> createGroupReservationn(@RequestParam("dogs")List<Long> dogIds, @RequestBody Walk walk,
+															  @AuthenticationPrincipal User user) {
+		//Walk newWalk = walkService.setWalk(walk);
+		//System.out.println(newWalk.toString());
+		for (Long dogId : dogIds) {
+			System.out.println(dogId);
+		}
+		System.out.println(walk.getDateTime());
+		System.out.println(walk.getDuration());
 		return new ResponseEntity<>(null,HttpStatus.OK);
 	}
 
@@ -73,6 +87,23 @@ public class ReservationController {
 
 		List<Reservation> list = reservationService.getAllReservations();
 		return new ResponseEntity<List<Reservation>>(list, HttpStatus.OK);
+	}
+
+	public class ListWrapper{
+
+		List<Long> ids;
+
+		public List<Long> getIds() {
+			return ids;
+		}
+
+		public void setIds(List<Long> ids) {
+			this.ids = ids;
+		}
+
+		public ListWrapper(List<Long> ids) {
+			this.ids = ids;
+		}
 	}
 
 }

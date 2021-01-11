@@ -11,6 +11,8 @@ function DogReservation(props) {
 
     let history = useHistory();
 
+    console.log(props.dogs)
+
     const [form, setForm] = React.useState({dateAndTime: '', duration: ''});
 
 
@@ -46,7 +48,12 @@ function DogReservation(props) {
         };
 
         console.log(data);
-        let path = '/shelter/' + props.location.state.shelterId + '/' + props.location.state.dogId + '/reserve';
+        var path
+        if(props.dogs) {
+            path = '/reserve/dogs'+'?'+props.dogs
+        } else {
+            path =  '/reserve/'+props.location.state.dogId;
+        }
         console.log(path);
 
 
@@ -75,7 +82,7 @@ function DogReservation(props) {
                     <br/>
                     <label style = {{marginRight: '10px'}}>Upiši trajanje šetnje: </label>
                     <input type="number" name={"duration"} onChange={onChange} value={form.duration}/>
-                    <button class='loginbtn' type="submit">Rezerviraj!</button>
+                    <button className='loginbtn' type="submit">Rezerviraj!</button>
                 </div>
             </form>
         </div>
