@@ -1,25 +1,14 @@
 package cyfer.service.impl;
 
-import java.sql.Date;
-import java.sql.Time;
 import java.sql.Timestamp;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.*;
-import java.util.function.Function;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
-import cyfer.dao.WalkRepository;
-import org.apache.tomcat.jni.Local;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import cyfer.dao.DogRepository;
 import cyfer.dao.ReservationRepository;
-import cyfer.dao.WalkerRepository;
 import cyfer.domain.Dog;
 import cyfer.domain.Reservation;
 import cyfer.domain.Walk;
@@ -129,6 +118,14 @@ public class ReservationService implements IReservationService {
 			} else map.put(r.getWalker().getUsername(), 1);
 		}
 		return sortByValue(map);
+	}
+
+	@Override
+	public Map<Walk, List<Reservation>> getByWalkerAndWalk(Walker walker) {
+		Map<Integer, List<Reservation>> mapa = new HashMap<>();
+		return reservationRepository.findByWalker(walker).stream()
+				//.map(reservation -> { return new reservation.getDog().getName(), reservation.getWalk().getDateTime(), reservation.getDuration() })
+		.collect(Collectors.groupingBy(Reservation::getWalk));
 	}
 
 	@Override

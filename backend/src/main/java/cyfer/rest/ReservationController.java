@@ -1,11 +1,13 @@
 package cyfer.rest;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.StreamingHttpOutputMessage.Body;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -74,6 +76,16 @@ public class ReservationController {
 
 		List<Reservation> list = reservationService.getAllReservations();
 		return new ResponseEntity<List<Reservation>>(list, HttpStatus.OK);
+	}
+
+	@GetMapping("/reservations/{walkerId}")
+	@Secured({"ROLE_WALKER"})
+	public ResponseEntity<Map<Walk, List<Reservation>>> getUserReservations(@PathVariable("walkerId") long walkerId, @AuthenticationPrincipal User user) {
+		if(user.getUsername().equals(walkerService.getWalker(walkerId).getUsername())) {
+			Map<Walk, List<Reservation>> list = reservationService.getByWalkerAndWalk(walkerService.getWalker(walkerId));
+			return new ResponseEntity<Map<Walk, List<Reservation>>>(list, HttpStatus.OK);
+		}
+		else return null;
 	}
 
 }

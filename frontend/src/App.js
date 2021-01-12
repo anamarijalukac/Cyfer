@@ -31,7 +31,6 @@ function App() {
   const[shelter, setShelter] = React.useState();
 
   let history = useHistory();
-  debugger
 
   function onLoginUser(){
     setIsLoggedIn(true);
@@ -99,6 +98,7 @@ function App() {
           <Route EditProfile path='/walker/update/:walkerId' component={(routerProps) => <EditProfile id={routerProps.match.params.walkerId} onLoginUser={onLoginUser}/>}/>
           <Route EditProfile path='/shelter/update/:shelterId' component={(routerProps) => <EditProfile id={routerProps.match.params.shelterId} onLoginShelter={onLoginShelter}/>}/>
           <Route path='/walker/:walkerId/calendar' component={(routerProps) => <Calendar id={routerProps.match.params.walkerId}/>}/>
+          <Route path='/calendar' component={Calendar}/>
         </Switch>
       </Router>
     </>
