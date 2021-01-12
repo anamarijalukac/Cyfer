@@ -89,7 +89,6 @@ function ShelterDogs(props) {
             }
 
 
-            <div className='button-container'><h2 className='udruge'>Ostali psi: </h2></div>
             <div className='cards__container'>
                 <div className='cards__wrapper'>
                     <div className='grid-container'>
