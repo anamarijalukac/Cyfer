@@ -30,4 +30,6 @@ public interface IReservationService {
 	Map<String, Integer> getRankListByDogNumber();
 
     List<Reservation> getByWalker(Walker walker);
+
+	Map<Walk, List<Reservation>> getByWalkerAndWalk(Walker walker);
 }
