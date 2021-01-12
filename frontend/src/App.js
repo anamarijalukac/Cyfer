@@ -31,7 +31,6 @@ function App() {
   const[shelter, setShelter] = React.useState();
 
   let history = useHistory();
-  debugger
 
   function onLoginUser(){
     setIsLoggedIn(true);
