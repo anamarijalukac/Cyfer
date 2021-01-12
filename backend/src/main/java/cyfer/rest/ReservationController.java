@@ -38,7 +38,7 @@ public class ReservationController {
 	@Autowired
 	private IDogService dogService;
 
-	@PostMapping("/shelter/{shelterId}/{dogId}/reserve")
+	@PostMapping("/reserve/{dogId}")
 	public ResponseEntity<Reservation> createReservation(@PathVariable("dogId") long dogId, @RequestBody Walk walk,
 														 @AuthenticationPrincipal User user) {
 		Walk newWalk = walkService.setWalk(walk);
@@ -49,18 +49,19 @@ public class ReservationController {
 		return new ResponseEntity<Reservation>(newReservation,HttpStatus.OK);
 	}
 
-	@PostMapping("/shelter/{shelterId}/dogs")
-	public ResponseEntity<Reservation> createGroupReservation(@RequestBody List<Long> dogIds, @RequestBody Walk walk,
-														 @AuthenticationPrincipal User user) {
+	@PostMapping(path="/reserve/dogs", consumes = "application/json", produces = "application/json")
+	public ResponseEntity<Reservation> createGroupReservation(@RequestParam("dog")List<Long> dogIds, @RequestBody Walk walk,
+															  @AuthenticationPrincipal User user) {
 		Walk newWalk = walkService.setWalk(walk);
 		//System.out.println(newWalk.toString());
-		for(Long dogId : dogIds) {
+		for(long dogId : dogIds) {
 			Dog dog = dogService.getDog(dogId);
 			Walker walker = walkerService.getByUsername(user.getUsername());
 			Reservation newReservation = reservationService.createReservation(walker, newWalk, dog);
 		}
 		return new ResponseEntity<>(null,HttpStatus.OK);
 	}
+
 
 	@GetMapping("dog/statistics")
 	public ResponseEntity<List<Dog>> getAllDogStatistics() {
