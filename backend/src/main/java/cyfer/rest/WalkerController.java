@@ -57,6 +57,10 @@ public class WalkerController {
 
 	@PostMapping("/signup")
 	public ResponseEntity<Walker> registerWalker(@RequestBody Walker walker) {
+		if(walkerService.getByUsername(walker.getUsername()) != null)
+			return new ResponseEntity<>(HttpStatus.CONFLICT);
+		if(walkerService.getByEmail(walker.getEmail()) != null)
+			return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
 		Walker newWalker = walkerService.registerWalker(walker);
 		if (newWalker != null) {
 			//dodan red samo da se na frontendu moze dobiti obicna sifra

@@ -3,7 +3,7 @@ import {useHistory} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Dog.css'
 
-function EditDog(props) {
+function AddDog(props) {
 
     let history = useHistory();
 
@@ -11,28 +11,32 @@ function EditDog(props) {
     const [shelter, setShelter] = React.useState("");
     const [location, setLocation] = React.useState("");
     const [individual, setIndividual] = React.useState("");
+    let savedShelter = JSON.parse(localStorage.getItem("udruga"))
 
 
     React.useEffect(() => {
-        fetch('/dog/id/' + props.dogId)
+
+        var auth = 'Basic ' + new Buffer(savedShelter.username + ':' + localStorage.getItem("password")).toString('base64');
+        const options = {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': auth
+            },
+        };
+        fetch('/shelter/' + props.shelterId, options)
             .then(data => data.json())
-            .then(dog => {
-                setDog(dog)
-                setShelter(dog.shelter)
-                setLocation(dog.shelter.location)
-                setIndividual(dog.typeOfWalk)
+            .then(shelter => {
+                setShelter(shelter)
+                setLocation(shelter.location)
+                setIndividual("I")
             })
     }, []);
 
 
-    let isLoggedInUser = true;
-    if (localStorage.getItem("loggedInUser") === null) {
-        isLoggedInUser = false;
-    }
-    let isLoggedInShelter = true;
-    if (localStorage.getItem("loggedInShelter") === null) {
-        isLoggedInShelter = false;
-    }
+    let isLoggedInUser = localStorage.getItem("loggedInUser") === "true";
+    let isLoggedInShelter = localStorage.getItem("loggedInShelter") === "true";
+
 
 
     function pohraniPromjene() {
@@ -44,10 +48,14 @@ function EditDog(props) {
             'name': document.getElementById("name").value,
             'description': document.getElementById("description").value,
             'typeOfWalk': individual,
-            'image': dog.image
+            'image': document.getElementById("image").value
         }
 
         debugger
+        if(body.name === "" || body.description === "") {
+            alert("Ime i opis psa ne smiju biti prazni.")
+            return
+        }
 
 
         console.log(body)
@@ -60,17 +68,17 @@ function EditDog(props) {
             body: JSON.stringify(body)
         };
 
-        fetch('/shelter/' + shelter.shelterId + '/dogs/' + props.dogId + '/update', options)
+        fetch('/shelter/' + shelter.shelterId + '/dog/add', options)
             .then(response => {
                 if (response.ok) {
-                    alert("Promjene uspješno pohranjene.")
+                    alert("Novi pas uspješno dodan.")
                     return response.json()
                 }
             })
             .then(data => {
                 debugger
-                history.push('/dog/'+props.dogId)
-                console.log('/dog/'+props.dogId)
+                history.push('/dog/'+data.dogId)
+                console.log('/dog/'+data.dogId)
             })
             .catch(error => {
                 console.log(error)
@@ -87,11 +95,11 @@ function EditDog(props) {
 
     return (
         <div className="container bootstrap snippets bootdey">
-            <div className="panel-body inf-content" style={{backgroundColor: 'white', margin: '30px'}}>
+            <div className="panel-body inf-content" style={{backgroundColor: 'white', margin: '30px', padding:'40px'}}>
                 <h2 className="text-dark" style={{textAlign: 'center'}}>Informacije</h2>
                 <div className="row">
                     <div className="col-md-4">
-                        <img src={dog.image} alt="" style={{width: '600 px'}} title=""
+                        <img src={"https://cdn4.vectorstock.com/i/thumb-large/08/08/adult-coloring-bookpage-a-cute-dog-image-vector-23000808.jpg"} alt="" style={{width: '700 px', marginTop:'70px'}} title=""
                              className="img-circle img-thumbnail isTooltip"></img>
                     </div>
                     <div className="col-md-6">
@@ -104,8 +112,7 @@ function EditDog(props) {
                                     </td>
                                     <td>
                                         <input type="text" name="name" id="name" className="form-control"
-                                               required="required"
-                                               defaultValue={dog.name}/>
+                                               required="required"/>
                                     </td>
                                 </tr>
                                 <tr>
@@ -114,8 +121,7 @@ function EditDog(props) {
                                     </td>
                                     <td>
                                         <input type="text" name="description" id="description" className="form-control"
-                                               required="required"
-                                               defaultValue={dog.description}/>
+                                               required="required"/>
                                     </td>
                                 </tr>
 
@@ -124,8 +130,7 @@ function EditDog(props) {
                                         URL slike
                                     </td>
                                     <td>
-                                        <input type="text" name="image" id="image" className="form-control"
-                                               defaultValue={dog.image}/>
+                                        <input type="text" name="image" id="image" className="form-control"/>
                                     </td>
                                 </tr>
 
@@ -177,4 +182,4 @@ function EditDog(props) {
     );
 }
 
-export default EditDog;
+export default AddDog;

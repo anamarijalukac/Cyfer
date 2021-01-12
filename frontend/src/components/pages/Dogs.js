@@ -56,7 +56,7 @@ function Dogs(props) {
         </div>
     )
 
-    dogs.forEach(dog => console.log(needyDogs.includes(dog)))
+
 
     const dogCards = dogs.map(dog =>
         <div>
@@ -90,7 +90,9 @@ function Dogs(props) {
     function rezerviraj() {
         let dogs1 = dogs.filter(dog => document.getElementById(dog.dogId).checked).map(dog=> 'dog='+dog.dogId).join("&")
         let dogs2 = needyDogs.filter(dog => document.getElementById(dog.dogId).checked).map(dog=> 'dog='+dog.dogId).join("&")
-        let broj = dogs.filter(dog => document.getElementById(dog.dogId).checked)
+        let broj = dogs.filter(dog => document.getElementById(dog.dogId).checked).length + needyDogs.filter(dog => document.getElementById(dog.dogId).checked).length
+        if (broj <= 0)
+            return
         let dogsToWalk = dogs1 + "&"+ dogs2
         history.push('/multipleDogReservation/'+dogsToWalk)
 

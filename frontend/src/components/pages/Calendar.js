@@ -55,7 +55,6 @@ function Calendar() {
                     var event = []
                     event.title = walk.title
                     event.start = walk.start
-                    event.end = walk.end
                     events.push(event)
                 })
                 debugger

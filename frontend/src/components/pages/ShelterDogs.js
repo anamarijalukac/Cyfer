@@ -11,7 +11,12 @@ function ShelterDogs(props) {
 
     const [dogs, setDogs] = React.useState([]);
     const [chooseDogs, setChooseDogs] = React.useState(false);
-    const isLoggedInUser = localStorage.getItem("loggedInUser")==="true"
+    const isLoggedInUser = localStorage.getItem("loggedInUser") === "true"
+    const isLoggedInShelter = localStorage.getItem("loggedInShelter") === "true"
+    var shelter
+    if (isLoggedInShelter)
+        shelter = JSON.parse(localStorage.getItem("udruga"))
+
     //const udruga = JSON.parse(localStorage.getItem("udruga"))
     //var auth = 'Basic ' + new Buffer(udruga.username + ':' + localStorage.getItem("password")).toString('base64');
 
@@ -24,6 +29,7 @@ function ShelterDogs(props) {
     };
 
     const shelterId = props.shelterId
+    debugger
     React.useEffect(() => {
         fetch('/shelter/' + shelterId + '/dogs', options)
             .then(data => data.json())
@@ -66,15 +72,22 @@ function ShelterDogs(props) {
     }
 
     function rezerviraj() {
-        let dogsToWalk = dogs.filter(dog => document.getElementById(dog.dogId).checked).map(dog=> 'dog='+dog.dogId).join("&")
-        history.push('/multipleDogReservation/'+dogsToWalk)
+        let dogsToWalk = dogs.filter(dog => document.getElementById(dog.dogId).checked).map(dog => 'dog=' + dog.dogId).join("&")
+        history.push('/multipleDogReservation/' + dogsToWalk)
+    }
 
+    function dodajNovogPsa() {
+        history.push('/shelter/'+props.shelterId+'/dog/add')
     }
 
 
     return (
         <div className='cards'>
-            <h1 className='udruge'>Odaberi psa za šetnju:</h1>
+            {isLoggedInShelter && (parseInt(shelterId) === shelter.shelterId) &&
+            <h1 className='udruge'>Lista naših pasa:</h1>}
+
+            {(!isLoggedInShelter || !(parseInt(shelterId) === shelter.shelterId)) &&
+            <h1 className='udruge'>Odaberi psa za šetnju:</h1>}
 
             {!chooseDogs && isLoggedInUser &&
             <div className='button-container'>
@@ -83,9 +96,15 @@ function ShelterDogs(props) {
             }
             {chooseDogs &&
             <div className='button-container'>
-                <button className='multiplebtn' style={{marginRight:'20px'}} onClick={rezerviraj}>Rezerviraj</button>
-                <button className='multiplebtn' style={{marginLeft:'20px'}} onClick={vrati}>Odustani</button>
+                <button className='multiplebtn' style={{marginRight: '20px'}} onClick={rezerviraj}>Rezerviraj</button>
+                <button className='multiplebtn' style={{marginLeft: '20px'}} onClick={vrati}>Odustani</button>
             </div>
+            }
+            {
+                isLoggedInShelter && (parseInt(shelterId) === shelter.shelterId) &&
+                <div className='button-container'>
+                    <button className='multiplebtn' onClick={dodajNovogPsa}>Dodaj novog psa</button>
+                </div>
             }
 
 

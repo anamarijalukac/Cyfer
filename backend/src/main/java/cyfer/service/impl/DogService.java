@@ -5,7 +5,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import cyfer.domain.Shelter;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import cyfer.dao.DogRepository;
@@ -42,6 +44,8 @@ public class DogService implements IDogService {
 	public void setDog(Dog dog) {
 		dogRepository.save(dog);
 	}
+
+
 
 	
 }

@@ -27,6 +27,16 @@ function RegUdr(props) {
       address: form.address,
       password: form.password
     };
+
+    if(form.password !== form.repeatPassword){
+      setError("Lozinke se ne poklapaju.");
+      return
+    }
+
+    if(data.oib.length !== 11) {
+      setError("OIB se mora sastojati od 11 znamenki.")
+      return
+    }
   
     const options = {
       method: 'POST',
@@ -36,11 +46,6 @@ function RegUdr(props) {
       body: JSON.stringify(data)
     };
 
-    if(form.password !== form.repeatPassword){
-      setForm({username: '', oib: '', name:'',city:'', address:'', password:'', repeatPassword:''});
-      setError("Neuspješna registracija");
-    }
-    else{
 
       fetch('/shelter/signup', options)
       .then(response => {
@@ -50,8 +55,13 @@ function RegUdr(props) {
           return response.json();
         }
         else{
-          setForm({username: '', oib: '', name:'',city:'', address:'', password:'', repeatPassword:''});
-          setError("Neuspješna registracija");
+          //setForm({username: '', oib: '', name:'',city:'', address:'', password:'', repeatPassword:''});
+          if(response.status === 409)
+            setError("Neuspješna registracija - korisničko ime je već zauzeto.")
+          else if(response.status === 406)
+            setError("Neuspješna registracija - postoji već udruga sa danim OIB-om.");
+          else
+            setError("Neuspješna registracija.")
         }
       })
       .then(data => {
@@ -63,7 +73,7 @@ function RegUdr(props) {
       })
       .catch(error => console.log(error));
 
-    }
+
   }
 
 
@@ -95,6 +105,8 @@ function RegUdr(props) {
           <input type="password" name='repeatPassword' placeholder="Ponovi lozinku" onChange = {onChange} value = {form.repeatPassword}  required/>
           {(error != "") ? <div className="error">{error}</div> : ""}
           <button class='loginbtn' type="submit">Registriraj se</button>
+
+          <a href='./sign-up' className='linkToUdruga'>Želite se registrirati kao korisnik?</a>
 
         </div>
       </form>
