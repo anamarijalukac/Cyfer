@@ -90,6 +90,7 @@ function Dogs(props) {
     function rezerviraj() {
         let dogs1 = dogs.filter(dog => document.getElementById(dog.dogId).checked).map(dog=> 'dog='+dog.dogId).join("&")
         let dogs2 = needyDogs.filter(dog => document.getElementById(dog.dogId).checked).map(dog=> 'dog='+dog.dogId).join("&")
+        let broj = dogs.filter(dog => document.getElementById(dog.dogId).checked)
         let dogsToWalk = dogs1 + "&"+ dogs2
         history.push('/multipleDogReservation/'+dogsToWalk)
 
