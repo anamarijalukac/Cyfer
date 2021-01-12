@@ -36,6 +36,10 @@ function DogReservation(props) {
             duration: form.duration,
         };
 
+        if(data.duration < 0 || data.duration > 180) {
+            alert("Trajanje šetnje mora biti veće od 0 i manje od 180 minuta.")
+        }
+
         console.log(data)
 
         const options = {
@@ -80,7 +84,7 @@ function DogReservation(props) {
                     <label style = {{marginRight: '10px'}}>Datum i vrijeme šetnje: </label>
                     <input type="datetime-local" id="dateAndTime" name="dateAndTime"  onChange={onChange} value={form.dateAndTime}/>
                     <br/>
-                    <label style = {{marginRight: '10px'}}>Upiši trajanje šetnje: </label>
+                    <label style = {{marginRight: '10px'}}>Trajanje šetnje u minutama: </label>
                     <input type="number" name={"duration"} onChange={onChange} value={form.duration}/>
                     <button className='loginbtn' type="submit">Rezerviraj!</button>
                 </div>
