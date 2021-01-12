@@ -41,6 +41,9 @@ public class ReservationController {
 	@PostMapping("/reserve/{dogId}")
 	public ResponseEntity<Reservation> createReservation(@PathVariable("dogId") long dogId, @RequestBody Walk walk,
 														 @AuthenticationPrincipal User user) {
+		if(walk.getDuration() < 0 || walk.getDuration() > 180) {
+			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+		}
 		Walk newWalk = walkService.setWalk(walk);
 		//System.out.println(newWalk.toString());
 		Dog dog = dogService.getDog(dogId);
@@ -52,6 +55,9 @@ public class ReservationController {
 	@PostMapping(path="/reserve/dogs", consumes = "application/json", produces = "application/json")
 	public ResponseEntity<Reservation> createGroupReservation(@RequestParam("dog")List<Long> dogIds, @RequestBody Walk walk,
 															  @AuthenticationPrincipal User user) {
+		if(walk.getDuration() < 0 || walk.getDuration() > 180) {
+			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+		}
 		Walk newWalk = walkService.setWalk(walk);
 		//System.out.println(newWalk.toString());
 		for(long dogId : dogIds) {
