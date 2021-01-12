@@ -77,6 +77,14 @@ public class ReservationController {
 		return new ResponseEntity<List<Dog>>(dogs, HttpStatus.OK);
 	}
 
+	@GetMapping("dog/statistics/other")
+	public ResponseEntity<List<Dog>> getAllDogStatisticsOther() {
+		List<Dog> dogs = reservationService.getDogsStatistics();
+		List<Dog> allDogs = dogService.getAllDogs();
+		allDogs.removeAll(dogs);
+		return new ResponseEntity<List<Dog>>(allDogs, HttpStatus.OK);
+	}
+
 	@GetMapping("/reservations")
 	public ResponseEntity<List<Reservation>> getAllReservations() {
 

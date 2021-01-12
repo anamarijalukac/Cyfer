@@ -10,19 +10,54 @@ function Dogs(props) {
     const [dogs, setDogs] = React.useState([]);
     const [chooseDogs, setChooseDogs] = React.useState(false);
     let history = useHistory()
+    let isLoggedInUser = localStorage.getItem("loggedInUser") === "true";
 
-    debugger
+
+    const [needyDogs, setNeedyDogs] = React.useState([]);
+    const [otherDogs, setOtherDogs] = React.useState([]);
+    let needy = []
+
 
     React.useEffect(() => {
-        fetch('/dog')
+        fetch('/dog/statistics/other')
             .then(data => data.json())
             .then(dogs => {
                 setDogs(dogs)
-                console.log(dogs)
             })
     }, []);
 
-    //console.log(dogs)
+    React.useEffect((needy) => {
+        fetch('/dog/statistics')
+            .then(data => data.json())
+            .then(data => {
+                setNeedyDogs(data);
+                needy=data
+                console.log(needyDogs);
+            })
+    }, [])
+
+    const needyDogCards = needyDogs.map(dog =>
+        <div>
+            <CardItem
+                key={dog.dogId}
+                src={dog.image}
+                text={dog.description}
+                label={dog.name}
+                path={'/dog/' + dog.dogId}
+            />
+            {chooseDogs &&
+            <div className='cards__item__text' style={{textAlign: 'center', height: '50px', margin: '15px'}}>
+                <span>
+                    <span>Odaberi psa za šetnju   </span>
+                <input type='checkbox' name='walk' id={dog.dogId}></input>
+                </span>
+            </div>
+            }
+        </div>
+    )
+
+    dogs.forEach(dog => console.log(needyDogs.includes(dog)))
+
     const dogCards = dogs.map(dog =>
         <div>
             <CardItem
@@ -53,8 +88,9 @@ function Dogs(props) {
     }
 
     function rezerviraj() {
-        let dogsToWalk = dogs.filter(dog => document.getElementById(dog.dogId).checked).map(dog=> 'dog='+dog.dogId).join("&")
-        console.log(dogsToWalk)
+        let dogs1 = dogs.filter(dog => document.getElementById(dog.dogId).checked).map(dog=> 'dog='+dog.dogId).join("&")
+        let dogs2 = needyDogs.filter(dog => document.getElementById(dog.dogId).checked).map(dog=> 'dog='+dog.dogId).join("&")
+        let dogsToWalk = dogs1 + "&"+ dogs2
         history.push('/multipleDogReservation/'+dogsToWalk)
 
     }
@@ -63,7 +99,8 @@ function Dogs(props) {
     return (
         <div className='cards'>
             <h1 className='udruge'>Odaberi psa za šetnju:</h1>
-            {!chooseDogs &&
+
+            {!chooseDogs && isLoggedInUser &&
             <div className='button-container'>
                 <button className='multiplebtn' onClick={multiDogs}>Odaberi više pasa za grupnu šetnju</button>
             </div>
@@ -75,6 +112,17 @@ function Dogs(props) {
             </div>
             }
 
+
+            <div className='button-container'><h2 className='udruge'>Psi kojima je najpotrebnija šetnja: </h2></div>
+            <div className='cards__container'>
+                <div className='cards__wrapper'>
+                    <div className='grid-container'>
+                        {needyDogCards}
+                    </div>
+                </div>
+            </div>
+
+            <div className='button-container'><h2 className='udruge'>Ostali psi: </h2></div>
             <div className='cards__container'>
                 <div className='cards__wrapper'>
                     <div className='grid-container'>

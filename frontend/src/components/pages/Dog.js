@@ -23,17 +23,12 @@ function Dog(props) {
     }, []);
 
 
-    let isLoggedInUser = true;
-    if (localStorage.getItem("loggedInUser") === null) {
-        isLoggedInUser = false;
-    }
-    let isLoggedInShelter = true;
-    if (localStorage.getItem("loggedInShelter") === null) {
-        isLoggedInShelter = false;
-    }
+    let isLoggedInUser = localStorage.getItem("loggedInUser") === "true";
+    let isLoggedInShelter = localStorage.getItem("loggedInShelter") === "true"
+    let isLoggedIn = localStorage.getItem("loggedIn") === "true"
 
     var udruga
-    if(localStorage.getItem("loggedInShelter")==="true")
+    if (localStorage.getItem("loggedInShelter") === "true")
         udruga = JSON.parse(localStorage.getItem("udruga"))
 
 
@@ -74,7 +69,7 @@ function Dog(props) {
         fetch('/shelter/' + udruga.shelterId + '/' + dog.dogId + '/delete', options)
             .then(response => {
                 if (response.ok) {
-                    history.push('/shelter/'+udruga.shelterId+'/dogs')
+                    history.push('/shelter/' + udruga.shelterId + '/dogs')
                 }
             })
             .catch(error => {
@@ -101,10 +96,15 @@ function Dog(props) {
             Obriši profil psa
         </button>
 
+    let registracija =
+        <button className='btndog' onClick={brisanje}>
+            Registriraj se
+        </button>
+
 
     return (
         <div className="container bootstrap snippets bootdey">
-            <div className="panel-body inf-content" style={{backgroundColor: 'white', margin: '30px'}}>
+            <div className="panel-body inf-content" style={{backgroundColor: 'white', margin: '30px', padding:'30px'}}>
                 <h2 className="text-dark" style={{textAlign: 'center'}}>Informacije</h2>
                 <div className="row">
                     <div className="col-md-4">
@@ -154,7 +154,7 @@ function Dog(props) {
                                     <td className="text-secondary">
                                         Mogućnost grupnih šetnji
                                     </td>
-                                    <td className>
+                                    <td className="text-secondary">
                                         {dog.typeOfWalk === "I" ? "NE" : "DA"}
                                     </td>
                                 </tr>
@@ -177,6 +177,11 @@ function Dog(props) {
                             </table>
                         </div>
                     </div>
+                </div>
+                <div>
+                    {!isLoggedIn &&
+                    <h5 className="text-dark" style={{textAlign: 'center', marginTop: '30px'}}>Morate biti prijavljeni da biste rezervirali
+                        šetnju.</h5>}
                 </div>
             </div>
         </div>
