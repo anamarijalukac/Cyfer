@@ -1,5 +1,5 @@
 body {
-  background: url('/images/doggies.png') top center/cover no-repeat;
+  background: url('/images/doggies.png') top center/cover;
 }
 
 .padding {
@@ -95,6 +95,10 @@ h6 {
   p {
       font-size: 14px
   }
+}
+
+.btndog {
+  width: 200%;
 }
 
 .card-block {
