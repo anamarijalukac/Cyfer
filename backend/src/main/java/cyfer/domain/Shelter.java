@@ -1,6 +1,7 @@
 package cyfer.domain;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
 
 import javax.persistence.*;
@@ -124,5 +125,24 @@ public class Shelter {
 		this.image = image;
 	}
 
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		Shelter shelter = (Shelter) o;
+		return Objects.equals(shelterId, shelter.shelterId) &&
+				Objects.equals(OIB, shelter.OIB) &&
+				Objects.equals(name, shelter.name) &&
+				Objects.equals(username, shelter.username) &&
+				Objects.equals(password, shelter.password) &&
+				Objects.equals(location, shelter.location) &&
+				Objects.equals(city, shelter.city) &&
+				Objects.equals(address, shelter.address) &&
+				Objects.equals(image, shelter.image);
+	}
 
+	@Override
+	public int hashCode() {
+		return Objects.hash(shelterId, OIB, name, username, password, location, city, address, image);
+	}
 }
