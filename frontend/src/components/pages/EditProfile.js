@@ -65,9 +65,12 @@ function EditProfile(props) {
             .then(response => {
                 if (response.ok) {
                     alert("Promjene uspješno pohranjene.")
-                    history.push('/profile');
                     localStorage.setItem("password", body.password)
+                    //history.push('/profile');
                     return response.json()
+                }
+                else{
+                    history.push('/profile');
                 }
             })
             .then(data => {
@@ -78,9 +81,11 @@ function EditProfile(props) {
                     debugger
                     props.onLoginShelter()
                 } else {
+                    data.username = body.username;
                     localStorage.setItem("korisnik", JSON.stringify(data))
                     props.onLoginUser()
                 }
+                history.push('/profile');
             })
             .catch(error => {
                 console.log(error)
