@@ -36,11 +36,23 @@ public class ReservationService implements IReservationService {
 
 	@Override
 	public Reservation createReservation(Walker walker, Walk walk, Dog dog) {
-		if(reservationRepository.findByWalkAndDog(walk, dog) != null)
-			return null;
 		Reservation newReservation=new Reservation(walk,walker,dog);
 		reservationRepository.save(newReservation);
 		return newReservation;
+	}
+
+	@Override
+	public boolean checkAvailable(Walk walk, Dog dog) {
+		List<Reservation> reservations = reservationRepository.findByDog(dog);
+		for(Reservation reservation : reservations) {
+			LocalDateTime begOfWalk = reservation.getWalk().getDateTime().toLocalDateTime();
+			LocalDateTime endOfWalk = begOfWalk.plusMinutes(reservation.getWalk().getDuration());
+			if((begOfWalk.isBefore(walk.getDateTime().toLocalDateTime()) || begOfWalk.isEqual(walk.getDateTime().toLocalDateTime()))
+			&& endOfWalk.isAfter(walk.getDateTime().toLocalDateTime())) {
+				return false;
+			}
+		}
+		return true;
 	}
 
 	@Override

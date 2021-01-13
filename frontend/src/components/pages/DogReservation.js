@@ -69,6 +69,7 @@ function DogReservation(props) {
                     alert("Uspješna rezervacija!");
                     history.push('/');
                 } else {
+                    alert("Željeni pas/psi su već rezervirani u željenom terminu. Pokušajte ponovno.")
                     setForm({dateAndTime: '', duration: ''});
                 }
             })

@@ -16,4 +16,7 @@ public interface ReservationRepository extends JpaRepository<Reservation, Long>{
     Reservation findByWalkAndDog(Walk walk, Dog dog);
 
     List<Reservation> findByWalker(Walker walker);
+
+    List<Reservation> findByDog(Dog dog);
+
 }
