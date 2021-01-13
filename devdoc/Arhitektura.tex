@@ -365,6 +365,10 @@ React omogućava sastavljanje korisničkog sučelja pomoću elemenata koji se na
 			\eject
 		\section{Dijagram komponenti}
 		
-			\textbf{\textit{dio 2. revizije}}\\
-		
-			 \textit{Potrebno je priložiti dijagram komponenti s pripadajućim opisom. Dijagram komponenti treba prikazivati strukturu cijele aplikacije.}
+			React-view komponenta s aplikacijom komunicira preko dva sučelja. Jednim sučeljem dohvaća potrebne HTML, CSS i JS datoteke s \textit{frontend} dijela aplikacije. Komponenta Router je zadužena za određivanje koja će se datoteka poslužiti na sučelje. JavaScript datoteke gumbe, forme i slične gotove komponente dohvaćaju iz React biblioteke. Podacima sa \textit{backend} dijela aplikacije, tj. REST API-u se pristupa sučeljem za dohvat JSON podataka. Za dohvaćanje podataka iz baze podataka zadužen je JPA Repository.
+			\newpage
+			\begin{figure}[H]
+				\includegraphics[width=1\textwidth]{dijagrami/Component-diagram-2.png} %veličina u odnosu na širinu linije
+				\caption{Dijagram komponenti}
+				\label{fig:Act1} %label mora biti drugaciji za svaku sliku
+			\end{figure}
