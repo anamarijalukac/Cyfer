@@ -32,4 +32,7 @@ public interface IReservationService {
     List<Reservation> getByWalker(Walker walker);
 
 	Map<Walk, List<Reservation>> getByWalkerAndWalk(Walker walker);
+
+	boolean checkAvailable(Walk walk, Dog dog);
+
 }

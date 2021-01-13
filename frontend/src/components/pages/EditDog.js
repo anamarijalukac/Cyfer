@@ -121,6 +121,16 @@ function EditDog(props) {
 
                                 <tr>
                                     <td className="text-secondary">
+                                        URL slike
+                                    </td>
+                                    <td>
+                                        <input type="text" name="image" id="image" className="form-control"
+                                               defaultValue={dog.image}/>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td className="text-secondary">
                                         Grad
                                     </td>
                                     <td>

@@ -10,12 +10,7 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
 import java.util.HashMap;
@@ -42,6 +37,12 @@ public class ShelterController {
 	@PostMapping("/signup")
 	public ResponseEntity<Shelter> registerShelter(@RequestBody Shelter shelter) {
 		Location location = locationService.getByAddressAndCity(shelter.getAddress(), shelter.getCity());
+		if(shelterService.getByUsername(shelter.getUsername()) != null) {
+			return new ResponseEntity<Shelter>(HttpStatus.CONFLICT);
+		}
+		if(shelterService.getShelterByOIB(shelter.getOIB()) != null) {
+			return new ResponseEntity<Shelter>(HttpStatus.NOT_ACCEPTABLE);
+		}
 		if(location != null) {
 			shelter.setLocation(location);
 		} else {
@@ -99,21 +100,7 @@ public class ShelterController {
 	}
 	
 
-	@PostMapping("/{shelterId}/add/{dogId}")
-	@Secured("ROLE_SHELTER")
-	public ResponseEntity<HttpStatus> addDogToShelter(@PathVariable("shelterId") long shelterId,
-													  @PathVariable("dogId") long dogId,
-													  @AuthenticationPrincipal User user) {
-		if (!user.getUsername().equals(shelterService.getShelter(shelterId).getUsername())) {
-			return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
-		}
-		Shelter shelter=shelterService.getShelter(shelterId);
-		Dog dog=dogService.getDog(dogId);
-		if(dog.getShelter()!=null)
-			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-		shelterService.addDog(shelter,dog);
-		return new ResponseEntity<>(HttpStatus.OK);
-	}
+
 
 	@PostMapping("/{shelterId}/{dogId}/delete")
 	@Secured("ROLE_SHELTER")
@@ -144,6 +131,20 @@ public class ShelterController {
 		dog.setShelter(oldDog.getShelter());
 		dog.setDogId(oldDog.getDogId());
 		dogService.setDog(dog);
+		return new ResponseEntity<Dog>(dog, HttpStatus.OK);
+	}
+
+	@PostMapping("/{shelterId}/dog/add")
+	@Secured("ROLE_SHELTER")
+	public ResponseEntity<Dog> addDogToShelter(@PathVariable("shelterId") long shelterId,
+													  @RequestBody Dog dog,
+													  @AuthenticationPrincipal User user) {
+		if (!user.getUsername().equals(shelterService.getShelter(shelterId).getUsername())) {
+			return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+		}
+		Shelter shelter=shelterService.getShelter(shelterId);
+		//Dog dog=dogService.getDog(dogId);
+		shelterService.addDog(shelter,dog);
 		return new ResponseEntity<Dog>(dog, HttpStatus.OK);
 	}
 

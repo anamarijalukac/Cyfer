@@ -31,10 +31,16 @@ function DogReservation(props) {
         let auth = 'Basic '+ new Buffer(localWalker.username + ':' + localStorage.getItem("password")).toString('base64');
 
 
+
         const data = {
-            dateTime: form.dateAndTime + ":00.000",
+            dateTime: form.dateAndTime + ":00.000+01:00",
             duration: form.duration,
         };
+
+        debugger
+        if(data.duration <= 0 || data.duration > 180) {
+            alert("Trajanje šetnje mora biti veće od 0 i manje od 180 minuta.")
+        }
 
         console.log(data)
 
@@ -63,6 +69,7 @@ function DogReservation(props) {
                     alert("Uspješna rezervacija!");
                     history.push('/');
                 } else {
+                    alert("Željeni pas/psi su već rezervirani u željenom terminu. Pokušajte ponovno.")
                     setForm({dateAndTime: '', duration: ''});
                 }
             })
@@ -80,7 +87,7 @@ function DogReservation(props) {
                     <label style = {{marginRight: '10px'}}>Datum i vrijeme šetnje: </label>
                     <input type="datetime-local" id="dateAndTime" name="dateAndTime"  onChange={onChange} value={form.dateAndTime}/>
                     <br/>
-                    <label style = {{marginRight: '10px'}}>Upiši trajanje šetnje: </label>
+                    <label style = {{marginRight: '10px'}}>Trajanje šetnje u minutama: </label>
                     <input type="number" name={"duration"} onChange={onChange} value={form.duration}/>
                     <button className='loginbtn' type="submit">Rezerviraj!</button>
                 </div>

@@ -104,7 +104,7 @@ function RangList() {
       <h1 class ="text-dark">
         Rang liste šetača u zadnjih mjesec dana
         </h1>
-      <div style={{ margin: '70px' }}>
+      <div className="marg">
         <p className="text">Rang lista šetača po duljini
         </p>
         <Table class="table table-hover table-striped" style={{ margin: 'auto', backgroundColor: 'white' }}>
@@ -131,7 +131,7 @@ function RangList() {
           </tbody>
         </Table>
       </div>
-      <div style={{ margin: '70px' }}>
+      <div className="marg">
         <p className="text">Rang lista šetača po broju šetnji
           </p>
         <Table class="table table-hover table-striped" style={{ margin: 'auto', backgroundColor: 'white' }}>
@@ -144,7 +144,7 @@ function RangList() {
           </thead>
           <tbody>
             {
-              walkers3.map((row, index) => (
+              walkers2.map((row, index) => (
                 <tr key={index}>
                   <th scope="row">
                     {index + 1}
@@ -158,7 +158,7 @@ function RangList() {
           </tbody>
         </Table>
       </div>
-      <div style={{ margin: '70px' }}>
+      <div className="marg">
         <p className="text">Rang lista šetača po broju šetanih pasa
           </p>
         <Table class="table table-hover table-striped" style={{margin: 'auto', backgroundColor: 'white' }}>
@@ -171,7 +171,7 @@ function RangList() {
           </thead>
           <tbody>
             {
-              walkers2.map((row, index) => (
+              walkers3.map((row, index) => (
                 <tr key={index}>
                   <th scope="row">
                     {index + 1}

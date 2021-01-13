@@ -2,9 +2,7 @@ import React, {Component} from 'react'
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
-import ReactToPdf from "react-to-pdf";
 import '../../components/pages/profile.css';
-import {Button} from 'bootstrap';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 
@@ -43,7 +41,7 @@ function Calendar() {
                             novi.start = new Date(oneWalk.walk.dateTime)
                             novi.end = new Date()
                             novi.duration = oneWalk.walk.duration
-                            novi.end.setTime(novi.start.getTime()+novi.duration*3600*1000)
+                            novi.end.setTime(novi.start.getTime()+novi.duration*60*1000)
                             novi.dogs.push(oneWalk.dog.name)
                         }
                         novi.title = novi.dogs.join(" ")
@@ -55,7 +53,7 @@ function Calendar() {
                     var event = []
                     event.title = walk.title
                     event.start = walk.start
-                    event.end = walk.end
+                    event.end=walk.end
                     events.push(event)
                 })
                 debugger
@@ -80,7 +78,7 @@ function Calendar() {
 
 
     return (
-        <div>
+        <div className>
             <div className="cal" id="cal" ng-show="cal">
                 <FullCalendar
                     defaultView="dayGridMonth"

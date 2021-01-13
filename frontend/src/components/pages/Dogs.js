@@ -30,6 +30,7 @@ function Dogs(props) {
         fetch('/dog/statistics')
             .then(data => data.json())
             .then(data => {
+                debugger
                 setNeedyDogs(data);
                 needy=data
                 console.log(needyDogs);
@@ -45,7 +46,7 @@ function Dogs(props) {
                 label={dog.name}
                 path={'/dog/' + dog.dogId}
             />
-            {chooseDogs &&
+            {chooseDogs && dog.typeOfWalk === "G" &&
             <div className='cards__item__text' style={{textAlign: 'center', height: '50px', margin: '15px'}}>
                 <span>
                     <span>Odaberi psa za šetnju   </span>
@@ -56,7 +57,7 @@ function Dogs(props) {
         </div>
     )
 
-    dogs.forEach(dog => console.log(needyDogs.includes(dog)))
+
 
     const dogCards = dogs.map(dog =>
         <div>
@@ -67,7 +68,7 @@ function Dogs(props) {
                 label={dog.name}
                 path={'/dog/' + dog.dogId}
             />
-            {chooseDogs &&
+            {chooseDogs && dog.typeOfWalk === "G" &&
             <div className='cards__item__text' style={{textAlign: 'center', height: '50px', margin: '15px'}}>
                 <span>
                     <span>Odaberi psa za šetnju   </span>
@@ -88,8 +89,11 @@ function Dogs(props) {
     }
 
     function rezerviraj() {
-        let dogs1 = dogs.filter(dog => document.getElementById(dog.dogId).checked).map(dog=> 'dog='+dog.dogId).join("&")
-        let dogs2 = needyDogs.filter(dog => document.getElementById(dog.dogId).checked).map(dog=> 'dog='+dog.dogId).join("&")
+        let dogs1 = dogs.filter(dog => dog.typeOfWalk === "G").filter(dog => document.getElementById(dog.dogId).checked).map(dog=> 'dog='+dog.dogId).join("&")
+        let dogs2 = needyDogs.filter(dog => dog.typeOfWalk === "G").filter(dog => document.getElementById(dog.dogId).checked).map(dog=> 'dog='+dog.dogId).join("&")
+        let broj = dogs.filter(dog => dog.typeOfWalk === "G").filter(dog => document.getElementById(dog.dogId).checked).length + needyDogs.filter(dog => dog.typeOfWalk === "G").filter(dog => document.getElementById(dog.dogId).checked).length
+        if (broj <= 0)
+            return
         let dogsToWalk = dogs1 + "&"+ dogs2
         history.push('/multipleDogReservation/'+dogsToWalk)
 

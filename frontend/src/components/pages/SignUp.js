@@ -37,9 +37,10 @@ function SignUp(props) {
     };
 
     if(form.password !== form.repeatPassword){
-      setError("Neuspješna registracija!");
-      setForm({username: '', firstName: '', lastName: '', email:'', password:'', repeatPassword:''});
+      setError("Lozinke se ne podudaraju.");
+      //setForm({username: '', firstName: '', lastName: '', email:'', password:'', repeatPassword:''});
     }
+
     else{
     fetch('/walker/signup', options)
     .then(response => {
@@ -49,8 +50,16 @@ function SignUp(props) {
       return response.json();
       }
       else{
+        if(response.status===409) {
+          setError("Neuspješna registracija - korisničko ime je zauzeto.")
+          return
+        }
+        if(response.status===406) {
+          setError("Neuspješna registracija - postoji korisnik s danom email adresom.")
+          return
+        }
         setError("Neuspješna registracija!");
-        setForm({username: '', firstName: '', lastName: '', email:'', password:'', repeatPassword:''});
+        //setForm({username: '', firstName: '', lastName: '', email:'', password:'', repeatPassword:''});
       }
     }).then(data =>  {
       if(data === undefined){

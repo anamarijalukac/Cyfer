@@ -29,10 +29,10 @@ public class Dog {
 	@NotNull
 	private String name;
 
-	@Column(unique = true)
+	@Column
 	private String description;
 
-	@Column(unique = true)
+	@Column
 	private String image;
 
 	@Column

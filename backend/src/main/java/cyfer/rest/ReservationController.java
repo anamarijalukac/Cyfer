@@ -49,6 +49,7 @@ public class ReservationController {
 		Walk newWalk = walkService.setWalk(walk);
 		//System.out.println(newWalk.toString());
 		Dog dog = dogService.getDog(dogId);
+		if(!reservationService.checkAvailable(walk, dog)) return new ResponseEntity<>(HttpStatus.CONFLICT);
 		Walker walker = walkerService.getByUsername(user.getUsername());
 		Reservation newReservation = reservationService.createReservation(walker, newWalk, dog);
 		return new ResponseEntity<Reservation>(newReservation,HttpStatus.OK);
@@ -62,8 +63,14 @@ public class ReservationController {
 		}
 		Walk newWalk = walkService.setWalk(walk);
 		//System.out.println(newWalk.toString());
+		List<Dog> dogs = new ArrayList<>();
 		for(long dogId : dogIds) {
 			Dog dog = dogService.getDog(dogId);
+			if(!reservationService.checkAvailable(walk, dog)) return new ResponseEntity<>(HttpStatus.CONFLICT);
+			dogs.add(dog);
+		}
+
+		for(Dog dog : dogs) {
 			Walker walker = walkerService.getByUsername(user.getUsername());
 			Reservation newReservation = reservationService.createReservation(walker, newWalk, dog);
 		}

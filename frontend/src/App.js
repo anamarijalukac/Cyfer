@@ -19,6 +19,7 @@ import DogReservation from "./components/pages/DogReservation";
 import EditProfile from "./components/pages/EditProfile"
 import EditDog from "./components/pages/EditDog";
 import Calendar from "./components/pages/Calendar";
+import AddDog from "./components/pages/AddDog";
 import {Link, useHistory} from 'react-router-dom';
 
 function App() {
@@ -93,6 +94,7 @@ function App() {
           <Route path='/DogReservation' component={DogReservation} params={{params}}/>
           <Route path='/multipleDogReservation/:dogs' component={(routerProps) => <DogReservation dogs={routerProps.match.params.dogs}/>}/>
           <Route path='/shelter/:shelterId/dogs' component={(routerProps) => <ShelterDogs shelterId={routerProps.match.params.shelterId}/>}/>
+          <Route path='/shelter/:shelterId/dog/add' component={(routerProps) => <AddDog shelterId={routerProps.match.params.shelterId}/>}/>
           <Profile path='/profile' component={Profile} onLogout={onLogout} shelter={shelter} walker={walker} />
           <Route path='/shelter/info/:shelterId' component={(routerProps) => <ShelterProfile shelterId={routerProps.match.params.shelterId}/>}/>
           <Route EditProfile path='/walker/update/:walkerId' component={(routerProps) => <EditProfile id={routerProps.match.params.walkerId} onLoginUser={onLoginUser}/>}/>
