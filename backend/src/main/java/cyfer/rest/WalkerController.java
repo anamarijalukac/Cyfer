@@ -73,8 +73,6 @@ public class WalkerController {
 	@PostMapping("/update/{id}")
 	@Secured("ROLE_WALKER")
 	public ResponseEntity<Walker> updateWalkerInfo(@RequestBody Walker walker, @PathVariable("id") long id, @AuthenticationPrincipal User user) {
-		if(user.getUsername().equals(walkerService.getWalker(id).getUsername()))
-			return new ResponseEntity<Walker>((Walker) null, HttpStatus.UNAUTHORIZED);
 		if (walkerService.getWalker(id) == null)
 			return new ResponseEntity<Walker>(HttpStatus.BAD_REQUEST);
 		walker.setWalkerId(id);

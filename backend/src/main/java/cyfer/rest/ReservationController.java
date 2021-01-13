@@ -46,6 +46,9 @@ public class ReservationController {
 		if(walk.getDuration() < 0 || walk.getDuration() > 180) {
 			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 		}
+		if(user == null)
+			return new ResponseEntity<Reservation>((Reservation)null,HttpStatus.UNAUTHORIZED);
+
 		Walk newWalk = walkService.setWalk(walk);
 		//System.out.println(newWalk.toString());
 		Dog dog = dogService.getDog(dogId);
