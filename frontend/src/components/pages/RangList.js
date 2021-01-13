@@ -55,7 +55,7 @@ function RangList() {
   const [walkers1, setWalkers1] = React.useState([]);
 
   React.useEffect(() => {
-    fetch("/ranking/1")
+    fetch("/api/ranking/1")
       .then(data => {
         return data.json();
       })
@@ -71,7 +71,7 @@ function RangList() {
   const [walkers2, setWalkers2] = React.useState([]);
 
   React.useEffect(() => {
-    fetch("/ranking/2")
+    fetch("/api/ranking/2")
       .then(data => {
         return data.json();
       })
@@ -87,7 +87,7 @@ function RangList() {
   const [walkers3, setWalkers3] = React.useState([]);
 
   React.useEffect(() => {
-    fetch("/ranking/3")
+    fetch("/api/ranking/3")
       .then(data => {
         return data.json();
       })

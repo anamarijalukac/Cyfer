@@ -13,7 +13,7 @@ function Dog(props) {
 
 
     React.useEffect(() => {
-        fetch('/dog/id/' + props.dogId)
+        fetch('/api/dog/id/' + props.dogId)
             .then(data => data.json())
             .then(dog => {
                 setDog(dog)
@@ -66,7 +66,7 @@ function Dog(props) {
                 'Authorization': auth
             },
         };
-        fetch('/shelter/' + udruga.shelterId + '/' + dog.dogId + '/delete', options)
+        fetch('/api/shelter/' + udruga.shelterId + '/' + dog.dogId + '/delete', options)
             .then(response => {
                 if (response.ok) {
                     history.push('/shelter/' + udruga.shelterId + '/dogs')

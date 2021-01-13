@@ -24,7 +24,7 @@ function Calendar() {
 
 
     React.useEffect(() => {
-        fetch('/reservations/' + korisnik.walkerId, options)
+        fetch('/api/reservations/' + korisnik.walkerId, options)
             .then(data => data.json())
             .then(reservations => {
                 var walks

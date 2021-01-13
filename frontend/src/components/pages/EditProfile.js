@@ -58,7 +58,7 @@ function EditProfile(props) {
             body: JSON.stringify(body)
         };
 
-        let path = '/'+(isShelter?'shelter':'walker')+'/update/'+props.id
+        let path = '/api/'+(isShelter?'shelter':'walker')+'/update/'+props.id
         debugger
 
         fetch(path, options)

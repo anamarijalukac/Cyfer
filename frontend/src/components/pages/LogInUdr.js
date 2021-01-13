@@ -28,7 +28,7 @@ function LogInUdr(props) {
       body: JSON.stringify(data)
     };
 
-      fetch('/shelter/login', options)
+      fetch('/api/shelter/login', options)
       .then(response => {
       if(response.ok){
         localStorage.setItem("password", data.password)

@@ -31,7 +31,7 @@ function ShelterDogs(props) {
     const shelterId = props.shelterId
     debugger
     React.useEffect(() => {
-        fetch('/shelter/' + shelterId + '/dogs', options)
+        fetch('/api/shelter/' + shelterId + '/dogs', options)
             .then(data => data.json())
             .then(dogs => {
                 setDogs(dogs)

@@ -42,7 +42,7 @@ function SignUp(props) {
     }
 
     else{
-    fetch('/walker/signup', options)
+    fetch('/api/walker/signup', options)
     .then(response => {
       if(response.ok){
       history.push('/');

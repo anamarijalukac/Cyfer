@@ -16,7 +16,7 @@ function ShelterProfile(props) {
 
 
     React.useEffect(() => {
-        fetch('/shelter/info/' + props.shelterId)
+        fetch('/api/shelter/info/' + props.shelterId)
             .then(data => data.json())
             .then(shelter => {
                 setShelter(shelter)

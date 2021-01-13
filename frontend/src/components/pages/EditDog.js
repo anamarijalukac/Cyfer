@@ -14,7 +14,7 @@ function EditDog(props) {
 
 
     React.useEffect(() => {
-        fetch('/dog/id/' + props.dogId)
+        fetch('/api/dog/id/' + props.dogId)
             .then(data => data.json())
             .then(dog => {
                 setDog(dog)
@@ -60,7 +60,7 @@ function EditDog(props) {
             body: JSON.stringify(body)
         };
 
-        fetch('/shelter/' + shelter.shelterId + '/dogs/' + props.dogId + '/update', options)
+        fetch('/api/shelter/' + shelter.shelterId + '/dogs/' + props.dogId + '/update', options)
             .then(response => {
                 if (response.ok) {
                     alert("Promjene uspješno pohranjene.")

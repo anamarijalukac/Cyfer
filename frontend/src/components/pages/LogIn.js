@@ -37,7 +37,7 @@ function LogIn(props) {
         };
 
 
-        fetch('/walker/login', options)
+        fetch('/api/walker/login', options)
             .then(response => {
                 if (response.ok) {
                     history.push('/');

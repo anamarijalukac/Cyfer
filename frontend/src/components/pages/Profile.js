@@ -20,14 +20,14 @@ function Profile(props) {
     if (isShelter) {
         data = JSON.parse(localStorage.getItem("udruga"))
         lokacija = JSON.parse(localStorage.getItem("lokacija"));
-        inputDelete = 'shelter/delete/' + data.shelterId
+        inputDelete = '/api/shelter/delete/' + data.shelterId
         inputUpdate = 'shelter/update/' + data.shelterId
     }
     else {
         data = JSON.parse(localStorage.getItem("korisnik"))
-        inputDelete = 'walker/delete/' + data.walkerId
+        inputDelete = '/api/walker/delete/' + data.walkerId
         inputUpdate = 'walker/update/' + data.walkerId
-        inputStatistics = '/walker/' + data.walkerId + '/stats/';
+        inputStatistics = '/api/walker/' + data.walkerId + '/stats/';
     }
 
 

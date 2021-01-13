@@ -10,7 +10,7 @@ function Shelters() {
 
 
     React.useEffect(() => {
-            fetch('/shelter')
+            fetch('/api/shelter')
                 .then(data => data.json())
                 .then(shelters => {
                         console.log(shelters)

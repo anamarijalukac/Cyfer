@@ -24,7 +24,7 @@ function AddDog(props) {
                 'Authorization': auth
             },
         };
-        fetch('/shelter/' + props.shelterId, options)
+        fetch('/api/shelter/' + props.shelterId, options)
             .then(data => data.json())
             .then(shelter => {
                 setShelter(shelter)
@@ -68,7 +68,7 @@ function AddDog(props) {
             body: JSON.stringify(body)
         };
 
-        fetch('/shelter/' + shelter.shelterId + '/dog/add', options)
+        fetch('/api/shelter/' + shelter.shelterId + '/dog/add', options)
             .then(response => {
                 if (response.ok) {
                     alert("Novi pas uspješno dodan.")

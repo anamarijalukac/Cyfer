@@ -19,7 +19,7 @@ function Dogs(props) {
 
 
     React.useEffect(() => {
-        fetch('/dog/statistics/other')
+        fetch('/api/dog/statistics/other')
             .then(data => data.json())
             .then(dogs => {
                 setDogs(dogs)
@@ -27,7 +27,7 @@ function Dogs(props) {
     }, []);
 
     React.useEffect((needy) => {
-        fetch('/dog/statistics')
+        fetch('/api/dog/statistics')
             .then(data => data.json())
             .then(data => {
                 debugger

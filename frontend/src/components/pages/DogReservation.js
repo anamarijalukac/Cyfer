@@ -56,9 +56,9 @@ function DogReservation(props) {
         console.log(data);
         var path
         if(props.dogs) {
-            path = '/reserve/dogs'+'?'+props.dogs
+            path = '/api/reserve/dogs'+'?'+props.dogs
         } else {
-            path =  '/reserve/'+props.location.state.dogId;
+            path =  '/api/reserve/'+props.location.state.dogId;
         }
         console.log(path);
 

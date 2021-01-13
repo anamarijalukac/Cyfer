@@ -47,7 +47,7 @@ function RegUdr(props) {
     };
 
 
-      fetch('/shelter/signup', options)
+      fetch('/api/shelter/signup', options)
       .then(response => {
         if(response.ok){
           localStorage.setItem("password", data.password)
