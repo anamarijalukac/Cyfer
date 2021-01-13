@@ -26,6 +26,8 @@ function EditProfile(props) {
 
     function onClick() {
 
+        debugger
+
         var auth = 'Basic ' + new Buffer(data.username + ':' + localStorage.getItem("password")).toString('base64');
 
         var body
@@ -71,6 +73,7 @@ function EditProfile(props) {
                 }
                 else{
                     history.push('/profile');
+                    return
                 }
             })
             .then(data => {
