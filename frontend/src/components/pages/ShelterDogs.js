@@ -51,7 +51,7 @@ function ShelterDogs(props) {
                 label={dog.name}
                 path={'/dog/' + dog.dogId}
             />
-            {chooseDogs &&
+            {chooseDogs && dog.typeOfWalk === "G" &&
             <div className='cards__item__text' style={{textAlign: 'center', height: '50px', margin: '15px'}}>
                 <span>
                     <span>Odaberi psa za šetnju   </span>
