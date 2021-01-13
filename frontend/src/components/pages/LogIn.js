@@ -77,7 +77,7 @@ function LogIn(props) {
 
                     <div className="custom-control custom-checkbox">
                         <input type="checkbox" name="checkbox" onChange={onChange} value={form.checkbox}/>
-                        <label name="checkbox" htmlFor="customCheck1">   Zapamti  </label>
+                        <span name="checkbox" htmlFor="customCheck1">  Zapamti</span>
                     </div>
                     {(error != "") ? <div className="error">{error}</div> : ""}
                     <button className='loginbtn' type="submit">Log in</button>

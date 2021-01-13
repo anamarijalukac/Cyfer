@@ -31,14 +31,17 @@ function ShelterDogs(props) {
     const shelterId = props.shelterId
     debugger
     React.useEffect(() => {
-        fetch('/shelter/' + shelterId + '/dogs', options)
-            .then(data => data.json())
-            .then(dogs => {
-                setDogs(dogs)
-                console.log(dogs)
-            })
+        history.push('/shelter/'+shelterId+'/dogs')
+        try {
+            fetch('/shelter/' + shelterId + '/dogs', options)
+                .then(data => data.json())
+                .then(dogs => {
+                    setDogs(dogs)
+                    console.log(dogs)
+                })
+        }catch(err){}
 
-    }, []);
+    }, [props.shelterId]);
 
 
     //console.log(dogs)

@@ -176,7 +176,7 @@ public class DataInitializer {
 		dog4.setDescription("American Eskimo Dog");
 		dog4.setImage("https://upload.wikimedia.org/wikipedia/commons/f/fe/American_Eskimo_Dog_1.jpg");
 		dog4.setName("Max");
-		dog4.setTypeOfWalk("I");
+		dog4.setTypeOfWalk("G");
 		dog4.setShelter(shelter1);
 		dog4.setLocation(shelter1.getLocation());
 		
@@ -184,7 +184,7 @@ public class DataInitializer {
 		dog5.setDescription("Golden Retriever");
 		dog5.setImage("https://upload.wikimedia.org/wikipedia/commons/d/dd/Golden_Retriever_Hund_Dog.JPG");
 		dog5.setName("Tara");
-		dog5.setTypeOfWalk("I");
+		dog5.setTypeOfWalk("G");
 		dog5.setShelter(shelter1);
 		dog5.setLocation(shelter1.getLocation());
 
