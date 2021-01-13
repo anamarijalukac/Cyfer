@@ -43,7 +43,7 @@ function Calendar() {
                             novi.start = new Date(oneWalk.walk.dateTime)
                             novi.end = new Date()
                             novi.duration = oneWalk.walk.duration
-                            novi.end.setTime(novi.start.getTime()+novi.duration*3600*1000)
+                            novi.end.setTime(novi.start.getTime()+novi.duration*60*1000)
                             novi.dogs.push(oneWalk.dog.name)
                         }
                         novi.title = novi.dogs.join(" ")
@@ -55,6 +55,7 @@ function Calendar() {
                     var event = []
                     event.title = walk.title
                     event.start = walk.start
+                    event.end=walk.end
                     events.push(event)
                 })
                 debugger
