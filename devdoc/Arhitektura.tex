@@ -352,11 +352,16 @@ React omogućava sastavljanje korisničkog sučelja pomoću elemenata koji se na
 			\eject 
 		
 		\section{Dijagram aktivnosti}
-			
-			\textbf{\textit{dio 2. revizije}}\\
-			
-			 \textit{Potrebno je priložiti dijagram aktivnosti s pripadajućim opisom. Dijagram aktivnosti treba prikazivati značajan dio sustava.}
-			
+			 \textit
+			Korisnik upisuje podatke za prijavu. Poslužitelj dohvaća podatke o registriranim korisnicima iz baze podataka te provjerava postoji li korisnik u bazi. Ako ne postoji, vraća poruku o neuspješnoj prijavi. Ako postoji, preusmjerava korisnika na stranicu za registrirane korisnike. Korisnik s te stranice odabire stranicu profila. Poslužitelj dohvaća podatke o korisniku iz baze te ih prikazuje. Korisnik odabire opciju pregleda kalendara sa šetnjama. Poslužitelj iz baze dohvaća podatke o rezerviranim šetnjama korisnika i prikazuje kalendar sa svim rezerviranim šetnjama.
+			\newpage
+			\begin{figure}[H]
+				\includegraphics[width=1\textwidth]{dijagrami/act.png} %veličina u odnosu na širinu linije
+				\caption{Dijagram aktivnosti: Pregled kalendara šetnje}
+				\label{fig:Act1} %label mora biti drugaciji za svaku sliku
+			\end{figure}
+		
+			\newpage
 			\eject
 		\section{Dijagram komponenti}
 		
