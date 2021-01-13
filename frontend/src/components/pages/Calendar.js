@@ -2,9 +2,7 @@ import React, {Component} from 'react'
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
-import ReactToPdf from "react-to-pdf";
 import '../../components/pages/profile.css';
-import {Button} from 'bootstrap';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 
@@ -79,7 +77,7 @@ function Calendar() {
 
 
     return (
-        <div>
+        <div className>
             <div className="cal" id="cal" ng-show="cal">
                 <FullCalendar
                     defaultView="dayGridMonth"
