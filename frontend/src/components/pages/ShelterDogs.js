@@ -38,7 +38,7 @@ function ShelterDogs(props) {
                 console.log(dogs)
             })
 
-    }, []);
+    }, [props.shelterId]);
 
 
     //console.log(dogs)
