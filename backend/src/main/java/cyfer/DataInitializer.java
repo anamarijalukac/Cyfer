@@ -80,6 +80,13 @@ public class DataInitializer {
 		walker5.setPassword("123456785");
 		walker5.setUsername("franKlaric");
 
+		Walker walker6 = new Walker();
+		walker6.setUsername("korisnik");
+		walker6.setEmail("korisnik1@gmail.com");
+		walker6.setFirstName("Kori");
+		walker6.setLastName("Snik");
+		walker6.setPassword("testiranje1");
+
 		
 
 		Walk walk1 = new Walk();
@@ -133,12 +140,12 @@ public class DataInitializer {
 		shelter2.setImage("https://cdn1.vectorstock.com/i/1000x1000/69/50/paw-dog-animal-cute-logo-vector-27106950.jpg");
 
 		Shelter shelter3=new Shelter();
-		shelter2.setOIB("11111111113");
-		shelter2.setName("Šetanje pasa Zagreb");
-		shelter2.setUsername("setanjezg");
-		shelter2.setPassword("12345");
-		shelter2.setLocation(location3);
-		shelter2.setImage("https://images.vexels.com/media/users/3/199950/isolated/preview/afafccf3b0569e27313c4aa7cbd8a556-great-dane-dog-illustration-by-vexels.png");
+		shelter3.setOIB("11111111113");
+		shelter3.setName("Šetanje pasa Zagreb");
+		shelter3.setUsername("setanjezg");
+		shelter3.setPassword("12345");
+		shelter3.setLocation(location3);
+		shelter3.setImage("https://images.vexels.com/media/users/3/199950/isolated/preview/afafccf3b0569e27313c4aa7cbd8a556-great-dane-dog-illustration-by-vexels.png");
 
 		
 		Dog dog1 = new Dog();
@@ -169,7 +176,7 @@ public class DataInitializer {
 		dog4.setDescription("American Eskimo Dog");
 		dog4.setImage("https://upload.wikimedia.org/wikipedia/commons/f/fe/American_Eskimo_Dog_1.jpg");
 		dog4.setName("Max");
-		dog4.setTypeOfWalk("I");
+		dog4.setTypeOfWalk("G");
 		dog4.setShelter(shelter1);
 		dog4.setLocation(shelter1.getLocation());
 		
@@ -177,7 +184,7 @@ public class DataInitializer {
 		dog5.setDescription("Golden Retriever");
 		dog5.setImage("https://upload.wikimedia.org/wikipedia/commons/d/dd/Golden_Retriever_Hund_Dog.JPG");
 		dog5.setName("Tara");
-		dog5.setTypeOfWalk("I");
+		dog5.setTypeOfWalk("G");
 		dog5.setShelter(shelter1);
 		dog5.setLocation(shelter1.getLocation());
 
@@ -200,12 +207,14 @@ public class DataInitializer {
 
 		shelterService.registerShelter(shelter1);
 		shelterService.registerShelter(shelter2);
+		shelterService.registerShelter(shelter3);
 
 		walkerService.registerWalker(walker1);
 		walkerService.registerWalker(walker2);
 		walkerService.registerWalker(walker3);
 		walkerService.registerWalker(walker4);
 		walkerService.registerWalker(walker5);
+		//walkerService.registerWalker(walker6);
 
 				
 		dogService.setDog(dog1);

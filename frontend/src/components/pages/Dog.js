@@ -80,7 +80,7 @@ function Dog(props) {
 
 
     let rezerviraj =
-        <button className='btndog' type="submit" onClick={rezervacija}>
+        <button className='btndog btndogdouble' type="submit" onClick={rezervacija}>
             Rezerviraj šetnju!
         </button>
 
@@ -96,10 +96,6 @@ function Dog(props) {
             Obriši profil psa
         </button>
 
-    let registracija =
-        <button className='btndog' onClick={brisanje}>
-            Registriraj se
-        </button>
 
 
     return (

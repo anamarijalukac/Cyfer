@@ -94,12 +94,12 @@ public class ShelterController {
 
 	@PostMapping("/delete/{id}")
 	@Secured("ROLE_SHELTER")
-	public ResponseEntity<HttpStatus> deleteShelter(@PathVariable("id") long id) {
+	public ResponseEntity<HttpStatus> deleteShelter(@PathVariable("id") long id, @AuthenticationPrincipal User user) {
+		if(user == null || shelterService.getByUsername(user.getUsername()).getShelterId() != id)
+			return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
 		shelterService.deleteShelter(id);
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
-	
-
 
 
 	@PostMapping("/{shelterId}/{dogId}/delete")
@@ -113,10 +113,10 @@ public class ShelterController {
 	}
 
 	@GetMapping("/{shelterId}/dogs")
-	public List<Dog> getDogsByShelterId(@PathVariable("shelterId") long shelterId) {
+	public ResponseEntity<List<Dog>> getDogsByShelterId(@PathVariable("shelterId") long shelterId) {
 		//Shelter shelter=shelterService.getShelter(shelterId);
 		List<Dog> dogs = dogService.getSheltersDogs(shelterId);
-		return dogs;
+		return new ResponseEntity<>(dogs, HttpStatus.OK);
 	}
 
 	@PostMapping("/{shelterId}/dogs/{dogId}/update")
