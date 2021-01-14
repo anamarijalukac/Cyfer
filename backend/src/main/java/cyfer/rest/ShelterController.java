@@ -157,7 +157,7 @@ public class ShelterController {
 	@Secured("ROLE_SHELTER")
 	public ResponseEntity<Shelter> updateShelterInfo(@RequestBody Shelter shelter, @PathVariable("id") long id,
 													 @AuthenticationPrincipal User user) {
-		if(!user.getUsername().equals(shelterService.getShelter(id).getUsername()))
+		if(user == null || !user.getUsername().equals(shelterService.getShelter(id).getUsername()))
 			return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
 
 		Shelter shelter1 = shelterService.getShelter(id);

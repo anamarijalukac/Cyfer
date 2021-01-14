@@ -6,21 +6,34 @@ import {useHistory} from 'react-router-dom';
 function EditProfile(props) {
 
     let history = useHistory();
+    const [stat, setStat] = React.useState("");
 
-    var input = ""
+
+    React.useEffect(() => {
+        var data;
+        let isShelter = localStorage.getItem("loggedInShelter") === "true"
+        //shelter
+        if (isShelter) {
+            data = JSON.parse(localStorage.getItem("udruga"));
+        }
+        //user
+        else {
+            data = JSON.parse(localStorage.getItem("korisnik"));
+            setStat(data.statVisibility === true ? "javna":"privatna")
+        }
+    }, []);
+
+
     var data;
-    var lokacija
     let isShelter = localStorage.getItem("loggedInShelter") === "true"
     //shelter
     if (isShelter) {
         data = JSON.parse(localStorage.getItem("udruga"));
-        lokacija = JSON.parse(localStorage.getItem("lokacija"));
-        input = 'shelter/update/' + JSON.parse(localStorage.getItem("udruga")).shelterId
     }
     //user
     else {
         data = JSON.parse(localStorage.getItem("korisnik"));
-        input = 'walker/update/' + JSON.parse(localStorage.getItem("korisnik")).walkerId
+
     }
 
 
@@ -46,10 +59,11 @@ function EditProfile(props) {
                 'lastName': document.getElementById("lastName").value,
                 'username': document.getElementById("username").value,
                 'email': document.getElementById("email").value,
-                'password': document.getElementById("password").value
+                'password': document.getElementById("password").value,
+                'statVisibility': stat === "javna"
             }
 
-
+        debugger
         console.log(body)
         const options = {
             method: 'POST',
@@ -128,10 +142,24 @@ function EditProfile(props) {
                                required="required"
                                defaultValue={localStorage.getItem("password")}/>
 
-
-                        <button className="loginbtn fontstyle" onClick={onClick}>
-                            Pohrani promjene
-                        </button>
+                            <div className="grid-container">
+                                <p className="fontstyle">Statistika:
+                                    <span style={{margin: '40px'}}>
+                                <input type="radio" id="stat" name="stat" value="javna"
+                                       checked={stat === "javna" ? "checked" : ""}
+                                       onChange={e => {
+                                           setStat(e.target.value)}}/>
+                                <span htmlFor="stat"> javna </span>{"     "}
+                                    </span>
+                                <input type="radio" id="stat" name="stat" value="privatna"
+                                       checked={stat === "privatna" ? "checked" : ""}
+                                       onChange={e => setStat(e.target.value)}/>
+                                <span htmlFor="individual"> privatna </span>
+                                </p>
+                            </div>
+                            <button className="loginbtn fontstyle" onClick={onClick}>
+                                Pohrani promjene
+                            </button>
                     </div>
                 </div>
             );
