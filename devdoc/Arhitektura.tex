@@ -77,7 +77,8 @@ stilove, skripte i drugi sadržaj. \par
 
 \vspace{15pt} 
 \begin{figure}[H]
-	\includegraphics[scale=0.75]{slike/arhitektura.PNG} %veličina slike u odnosu na originalnu datoteku i pozicija slike
+	\hspace*{-0.21in}
+	\includegraphics[scale=0.7]{slike/novaArh.png} %veličina slike u odnosu na originalnu datoteku i pozicija slike
 	\centering
 	\caption{Spring Boot arhitektura}
 	\label{fig:spring}
@@ -365,7 +366,7 @@ React omogućava sastavljanje korisničkog sučelja pomoću elemenata koji se na
 			\eject
 		\section{Dijagram komponenti}
 		
-			React-view komponenta s aplikacijom komunicira preko dva sučelja. Jednim sučeljem dohvaća potrebne HTML, CSS i JS datoteke s \textit{frontend} dijela aplikacije. Komponenta Router je zadužena za određivanje koja će se datoteka poslužiti na sučelje. JavaScript datoteke gumbe, forme i slične gotove komponente dohvaćaju iz React biblioteke. Podacima sa \textit{backend} dijela aplikacije, tj. REST API-u se pristupa sučeljem za dohvat JSON podataka. Za dohvaćanje podataka iz baze podataka zadužen je JPA Repository.
+			React-view komponenta s aplikacijom komunicira preko dva sučelja. Jednim sučeljem dohvaća potrebne HTML, CSS i JS datoteke s \textit{frontend} dijela aplikacije. Komponenta Router je zadužena za određivanje koja će se datoteka poslužiti na sučelje. JavaScript datoteke gumbe, forme i slične gotove komponente dohvaćaju iz React biblioteke. Podacima sa \textit{backend} dijela aplikacije, tj. REST API-u se pristupa sučeljem za dohvat JSON podataka. Za dohvaćanje podataka iz baze podataka zadužen je JPA Repository, prema kojemu komponenta DAO ima ovisnost.
 			\newpage
 			\begin{figure}[H]
 				\includegraphics[width=1\textwidth]{dijagrami/Component-diagram-2.png} %veličina u odnosu na širinu linije
