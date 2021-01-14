@@ -17,10 +17,22 @@ public interface IReservationService {
 
 	Reservation createReservation(Walker walker, Walk walk, Dog dog);
 
+	void deleteReservation(long reservationId);
+
 	List<Dog> getDogsStatistics();
 
 	List<Timestamp> getCalendar(long walkerId);
 
-	Map<String, Integer> getRanklistByWalkNumber();
+	Map<String, Integer> getRankListByWalkDuration();
+
+	Map<String, Integer> getRankListByWalkNumber();
+
+	Map<String, Integer> getRankListByDogNumber();
+
+    List<Reservation> getByWalker(Walker walker);
+
+	Map<Walk, List<Reservation>> getByWalkerAndWalk(Walker walker);
+
+	boolean checkAvailable(Walk walk, Dog dog);
 
 }

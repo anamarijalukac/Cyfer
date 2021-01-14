@@ -1,15 +1,20 @@
 package cyfer.rest;
 
+import java.awt.desktop.UserSessionEvent;
 import java.sql.Timestamp;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import cyfer.domain.Reservation;
 import cyfer.service.IReservationService;
+import org.apache.catalina.Authenticator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.context.SecurityContext;
@@ -42,7 +47,8 @@ public class WalkerController {
 		Walker newWalker = walkerService.getByUsername(walker.getUsername());
 		boolean passwordTrue = new BCryptPasswordEncoder().matches(walker.getPassword(),newWalker.getPassword());
 		if (passwordTrue) {
-			System.out.println("USPJESAN LOGIN!");
+			//dodan red samo da se na frontendu moze dobiti obicna sifra
+			//newWalker.setPassword(walker.getPassword());
 			return new ResponseEntity<Walker>(newWalker, HttpStatus.OK);
 		} else {
 			return new ResponseEntity<Walker>(HttpStatus.BAD_REQUEST);
@@ -50,18 +56,23 @@ public class WalkerController {
 	}
 
 	@PostMapping("/signup")
-	public ResponseEntity<Walker> registerWalker(@RequestBody Walker walker,
-												 @AuthenticationPrincipal User user) {
+	public ResponseEntity<Walker> registerWalker(@RequestBody Walker walker) {
+		if(walkerService.getByUsername(walker.getUsername()) != null)
+			return new ResponseEntity<>(HttpStatus.CONFLICT);
+		if(walkerService.getByEmail(walker.getEmail()) != null)
+			return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
 		Walker newWalker = walkerService.registerWalker(walker);
-		if (newWalker != null)
+		if (newWalker != null) {
+			//dodan red samo da se na frontendu moze dobiti obicna sifra
+			//newWalker.setPassword(walker.getPassword());
 			return new ResponseEntity<Walker>(newWalker, HttpStatus.OK);
-		else
+		} else
 			return new ResponseEntity<Walker>(HttpStatus.BAD_REQUEST);
 	}
 
 	@PostMapping("/update/{id}")
 	@Secured("ROLE_WALKER")
-	public ResponseEntity<Walker> updateWalkerInfo(@RequestBody Walker walker, @PathVariable("id") long id) {
+	public ResponseEntity<Walker> updateWalkerInfo(@RequestBody Walker walker, @PathVariable("id") long id, @AuthenticationPrincipal User user) {
 		if (walkerService.getWalker(id) == null)
 			return new ResponseEntity<Walker>(HttpStatus.BAD_REQUEST);
 		walker.setWalkerId(id);
@@ -88,9 +99,11 @@ public class WalkerController {
 	@PostMapping("/delete/{id}")
 	@Secured("ROLE_WALKER")
 	public ResponseEntity<HttpStatus> deleteWalker(@PathVariable("id") long id) {
+		List<Reservation> reservations = reservationService.getByWalker(walkerService.getWalker(id));
+		for(Reservation r : reservations)
+			reservationService.deleteReservation(r.getReservationId());
 		walkerService.deleteWalker(id);
 		return new ResponseEntity<>(HttpStatus.OK);
-
 	}
 	
 	@GetMapping("/{id}/calendar")
@@ -102,5 +115,35 @@ public class WalkerController {
 			return null;
 	}
 
+	@PostMapping("/{id}/visibility")
+	@Secured("ROLE_WALKER")
+	public void toggleVisibility(@PathVariable("id") long id, @AuthenticationPrincipal User user) {
+		if(!user.getUsername().equals(walkerService.getWalker(id).getUsername()))
+			return;
+		walkerService.toggleVisibility(id);
+	}
 
+	@GetMapping("/{id}/stats/1")
+	@Secured("ROLE_WALKER")
+	public ResponseEntity<Integer> getStatsByWalkDuration(@PathVariable("id") long id, @AuthenticationPrincipal User user) {
+		if(!user.getUsername().equals(walkerService.getWalker(id).getUsername()))
+			return new ResponseEntity<>(0, HttpStatus.UNAUTHORIZED);
+		return new ResponseEntity<>(walkerService.getWalkDurationStatistics(id), HttpStatus.OK);
+	}
+
+	@GetMapping("/{id}/stats/2")
+	@Secured("ROLE_WALKER")
+	public ResponseEntity<Integer> getStatsByDogCount(@PathVariable("id") long id, @AuthenticationPrincipal User user) {
+		if(!user.getUsername().equals(walkerService.getWalker(id).getUsername()))
+			return new ResponseEntity<>(0, HttpStatus.UNAUTHORIZED);
+		return new ResponseEntity<>(walkerService.getDogCountStatistics(id), HttpStatus.OK);
+	}
+
+	@GetMapping("/{id}/stats/3")
+	@Secured("ROLE_WALKER")
+	public ResponseEntity<Integer> getStatsByWalkCount(@PathVariable("id") long id, @AuthenticationPrincipal User user) {
+		if(!user.getUsername().equals(walkerService.getWalker(id).getUsername()))
+			return new ResponseEntity<>(0, HttpStatus.UNAUTHORIZED);
+		return new ResponseEntity<>(walkerService.getWalkCountStatistics(id), HttpStatus.OK);
+	}
 }

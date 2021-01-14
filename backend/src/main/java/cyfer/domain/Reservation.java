@@ -22,6 +22,8 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
 
@@ -44,6 +46,7 @@ public class Reservation {
 	private int duration;
 
 	@ManyToOne(targetEntity = Walker.class)
+	@OnDelete(action = OnDeleteAction.CASCADE)
 	@JoinColumn(name = "walkerId")
 	private Walker walker;
 	@Column
@@ -86,6 +89,10 @@ public class Reservation {
 	}
 
 	public Reservation() {
+	}
+
+	public int getDuration() {
+		return duration;
 	}
 
 	public Reservation(Walk walk, Walker walker, Dog dog) {

@@ -1,6 +1,7 @@
 package cyfer.domain;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
 
 import javax.persistence.*;
@@ -28,7 +29,7 @@ public class Shelter {
 	@NotNull
 	private String name;
 	
-	@Column
+	@Column(unique = true)
 	@NotNull
 	private String username;
 
@@ -41,9 +42,13 @@ public class Shelter {
 	@JoinColumn(name = "locationId")
     private Location location;
 	@Column
-	private String address;
-	@Column
 	private String city;
+	@Column
+	private String address;
+
+
+	@Column
+	private String image;
 
 	public Long getShelterId() {
 		return shelterId;
@@ -106,5 +111,38 @@ public class Shelter {
 
 	public void setCity(String city) {
 		this.city = city;
+	}
+
+    public void setShelterId(long id) {
+		this.shelterId = id;
+    }
+
+    public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		Shelter shelter = (Shelter) o;
+		return Objects.equals(shelterId, shelter.shelterId) &&
+				Objects.equals(OIB, shelter.OIB) &&
+				Objects.equals(name, shelter.name) &&
+				Objects.equals(username, shelter.username) &&
+				Objects.equals(password, shelter.password) &&
+				Objects.equals(location, shelter.location) &&
+				Objects.equals(city, shelter.city) &&
+				Objects.equals(address, shelter.address) &&
+				Objects.equals(image, shelter.image);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(shelterId, OIB, name, username, password, location, city, address, image);
 	}
 }

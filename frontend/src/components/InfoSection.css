@@ -1,0 +1,50 @@
+.info-container {
+    background: rgb(23, 97, 43);
+    height: 60vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
+    object-fit: contain;
+  }
+
+  h1 {
+    color: #fff;
+    font-size: 60px;
+  }
+
+  p1, p2 {
+      margin-top: auto;
+      margin-bottom: auto;
+      color: #fff;
+      text-align: center;
+      font-size: 25px;
+      margin-left: 100px;
+      margin-right: 100px;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+      'Lucida Sans', Arial, sans-serif;
+  }
+
+  @media screen and (max-width: 960px) {
+    .info-container > h1 {
+      font-size: 2em;
+      margin-top: 10px;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .info-container {
+      height: 100%;
+    }
+    p1 {
+      margin: 10px;
+      font-size: 100%;
+    }
+
+    p2 {
+      margin: 10px;
+      font-size: 100%;
+    }
+  }
+  

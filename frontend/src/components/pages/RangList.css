@@ -1,0 +1,22 @@
+table {
+    table-layout: fixed ;
+    width: 100% ;
+    text-align: center;
+  }
+  td {
+    width: 25% ;
+  }
+
+.text{
+    text-align: center;
+    font-size: 30px;
+}
+
+.marg {
+  margin: 100px;
+}
+@media screen and (max-width: 767px) {
+  .marg {
+    margin: 20px;
+  }
+}

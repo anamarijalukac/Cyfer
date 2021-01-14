@@ -14,6 +14,7 @@ import javax.validation.constraints.NotNull;
 public class Walker {
 
 	public Walker() {
+		statVisibility = true;
 	}
 
 	@Id
@@ -21,7 +22,7 @@ public class Walker {
 	@Column
 	private Long walkerId;
 
-	@Column
+	@Column(unique = true)
 	@NotNull
 	private String username;
 
@@ -39,11 +40,17 @@ public class Walker {
 
 	@Column
 	@NotNull
-	private String firstName;	
+	private String firstName;
+
+	@Column
+	@NotNull
+	private boolean statVisibility;
 	
-	private int walkSum = 0;
-	
-	
+	public void changeStatVisibility() {
+		statVisibility = !statVisibility;
+	}
+
+	public boolean getStatVisibility() { return statVisibility; }
 
 	public Long getWalkerId() {
 		return walkerId;
@@ -93,7 +100,4 @@ public class Walker {
 		this.firstName = firstName;
 	}
 
-    public void setWalkSum(int sum) {
-		this.walkSum += sum;
-	}
 }

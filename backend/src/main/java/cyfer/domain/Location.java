@@ -15,6 +15,8 @@ import javax.persistence.Table;
 @Table(name = "location")
 public class Location {
 
+	public Location() {}
+
 	@Id
 	@GeneratedValue
 	@Column(unique = true)

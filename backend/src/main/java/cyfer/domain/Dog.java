@@ -25,12 +25,15 @@ public class Dog {
 	@Column(unique = true)
 	private Long dogId;
 
-	@Column(unique = true)
+	@Column
 	@NotNull
 	private String name;
 
 	@Column
 	private String description;
+
+	@Column
+	private String image;
 
 	@Column
 	@NotNull
@@ -103,7 +106,6 @@ public class Dog {
 	}
 	
 
-	@Column(unique = true, nullable = false)
-	private String image;
+
 
 }

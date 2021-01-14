@@ -1,7 +1,7 @@
-/* Bordered form */
+/* Bordered form */ /* Bordered form */
 
 body {
-   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/doggies.png') top center/cover no-repeat;
+   background: url('/images/doggies.png') top center/cover no-repeat;
 }
 
 form {
@@ -14,6 +14,7 @@ form {
    align-items: center;
    object-fit: contain;
 }
+
 
 .container {
    color: white;
@@ -61,9 +62,13 @@ button:hover {
 }
 
 /* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-   span.psw {
-      display: block;
-      float: none;
+@media only screen and (max-width: 768px) {
+   h1 {
+      font-size: 30px;
+   }
+
+   form {
+      width: 100%;
+    
    }
 }
