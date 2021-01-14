@@ -8,8 +8,11 @@
   outline: none;
   border: none;
   cursor: pointer;
+  margin-bottom: 15px;
 }
-
+.h2 {
+  text-align: center;
+}
 .btn--primary {
   background-color: var(--primary);
   color: #242424;
@@ -45,4 +48,11 @@
   background: #fff;
   color: #242424;
   transition: 250ms;
+}
+
+@media screen and (max-width: 960px) {
+  .btn--medium {
+    margin: auto;
+    width: 95%;
+  }
 }

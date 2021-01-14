@@ -1,5 +1,7 @@
 package cyfer.domain;
 
+import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -12,6 +14,7 @@ import javax.validation.constraints.NotNull;
 public class Walker {
 
 	public Walker() {
+		statVisibility = true;
 	}
 
 	@Id
@@ -19,7 +22,7 @@ public class Walker {
 	@Column
 	private Long walkerId;
 
-	@Column
+	@Column(unique = true)
 	@NotNull
 	private String username;
 
@@ -37,22 +40,17 @@ public class Walker {
 
 	@Column
 	@NotNull
-	private String firstName;	
-	
-	
-	
-	@OneToMany(mappedBy="walker",cascade=CascadeType.ALL,orphanRemoval=true)
-	List<Reservation> reservations=new ArrayList<>();
-	
-	
+	private String firstName;
 
-	public List<Reservation> getReservations() {
-		return reservations;
+	@Column
+	@NotNull
+	private boolean statVisibility;
+	
+	public void changeStatVisibility() {
+		statVisibility = !statVisibility;
 	}
 
-	public void setReservations(List<Reservation> reservations) {
-		this.reservations = reservations;
-	}
+	public boolean getStatVisibility() { return statVisibility; }
 
 	public Long getWalkerId() {
 		return walkerId;

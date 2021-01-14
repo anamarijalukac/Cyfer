@@ -10,7 +10,7 @@ public interface IWalkService {
 	
 	
 	List<Walk> getAllWalks();
-	void setWalk(Walk walk);
+	Walk setWalk(Walk walk);
 
 	Walk getWalk(long walkId);
 }

@@ -1,15 +1,10 @@
 package cyfer.domain;
 
 import java.util.List;
+import java.util.Objects;
+import java.util.Set;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -20,9 +15,9 @@ public class Shelter {
 	public Shelter() {
 	}
 	
-	@Column
 	@Id
 	@GeneratedValue
+	@Column
 	private Long shelterId;
 
 	@Column(unique = true)
@@ -34,28 +29,38 @@ public class Shelter {
 	@NotNull
 	private String name;
 	
+	@Column(unique = true)
+	@NotNull
+	private String username;
+
 	@Column
 	@NotNull
 	private String password;
 
-	@Column
-	@NotNull
-	private String username;
 
-	
-	@OneToOne(mappedBy = "shelter", optional = false)
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "locationId")
     private Location location;
+	@Column
+	private String city;
+	@Column
+	private String address;
+
+
+	@Column
+	private String image;
 
 	public Long getShelterId() {
 		return shelterId;
 	}
 
-	public void setShelterId(Long shelterId) {
-		this.shelterId = shelterId;
-	}
 
 	public String getOIB() {
 		return OIB;
+	}
+
+	public Location getLocation() {
+		return location;
 	}
 
 	public void setOIB(String oib) {
@@ -86,4 +91,58 @@ public class Shelter {
 		this.username = username;
 	}
 
+	public void setLocation(Location l) {
+		this.location=l;
+		this.address=l.getAddress();
+		this.city=l.getCity();
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+    public void setShelterId(long id) {
+		this.shelterId = id;
+    }
+
+    public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		Shelter shelter = (Shelter) o;
+		return Objects.equals(shelterId, shelter.shelterId) &&
+				Objects.equals(OIB, shelter.OIB) &&
+				Objects.equals(name, shelter.name) &&
+				Objects.equals(username, shelter.username) &&
+				Objects.equals(password, shelter.password) &&
+				Objects.equals(location, shelter.location) &&
+				Objects.equals(city, shelter.city) &&
+				Objects.equals(address, shelter.address) &&
+				Objects.equals(image, shelter.image);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(shelterId, OIB, name, username, password, location, city, address, image);
+	}
 }

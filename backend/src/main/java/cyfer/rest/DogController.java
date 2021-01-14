@@ -31,11 +31,7 @@ public class DogController {
 		return new ResponseEntity<Dog>(dog, HttpStatus.OK);
 	}
 
-	@GetMapping("dog/shelter/{shelterOIB}")
-	public ResponseEntity<Dog> getDogByShelterOIB(@PathVariable("shelterOIB") String shelterOIB) {
-		Dog dog = dogService.getDogByShelterOIB(shelterOIB);
-		return new ResponseEntity<Dog>(dog, HttpStatus.OK);
-	}
+	
 
 	@GetMapping("dog")
 	public ResponseEntity<List<Dog>> getAllDogs() {

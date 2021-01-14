@@ -11,6 +11,7 @@
 // }
 
 import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './Button.css';
 
 const STYLES = ['btn--primary', 'btn--outline', 'btn--test'];

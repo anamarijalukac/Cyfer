@@ -1,9 +1,14 @@
 import React from "react";
+import {useHistory} from 'react-router-dom';
 import '../../components/pages/LogIn.css';
 
 function SignUp(props) {
 
+  let history = useHistory();
+
   const [form, setForm] = React.useState({username: '', firstName: '', lastName: '', email:'', password:'', repeatPassword:''});
+
+  const [error, setError] = React.useState('');
 
   function onChange(event){
     const{name, value} = event.target;
@@ -13,6 +18,7 @@ function SignUp(props) {
   function onSubmit(e){
 
     e.preventDefault();
+    setError("");
 
     const data = {
       username: form.username,
@@ -31,20 +37,39 @@ function SignUp(props) {
     };
 
     if(form.password !== form.repeatPassword){
-      return window.location.reload();
+      setError("Lozinke se ne podudaraju.");
+      //setForm({username: '', firstName: '', lastName: '', email:'', password:'', repeatPassword:''});
     }
 
+    else{
     fetch('/walker/signup', options)
     .then(response => {
       if(response.ok){
-      alert("Uspješna registracija");
-      props.history.push('/');
+      history.push('/');
+      localStorage.setItem("password", data.password)
+      return response.json();
       }
       else{
-        alert("Neuspješna registracija");
-        window.location.reload();
+        if(response.status===409) {
+          setError("Neuspješna registracija - korisničko ime je zauzeto.")
+          return
+        }
+        if(response.status===406) {
+          setError("Neuspješna registracija - postoji korisnik s danom email adresom.")
+          return
+        }
+        setError("Neuspješna registracija!");
+        //setForm({username: '', firstName: '', lastName: '', email:'', password:'', repeatPassword:''});
       }
-    }).catch(error => console.log(error));
+    }).then(data =>  {
+      if(data === undefined){
+        return;
+      }
+      localStorage.setItem("korisnik", JSON.stringify(data))
+      props.onLogin();
+    })
+    .catch(error => console.log(error));
+  }
 
   }
 
@@ -73,8 +98,10 @@ function SignUp(props) {
 
           <label>Ponovi lozinku: </label>
           <input type="password" name='repeatPassword' placeholder="Ponovi lozinku" onChange = {onChange} value = {form.repeatPassword}  required/>
-
+          {(error != "") ? <div className="error">{error}</div> : ""}
           <button class='loginbtn' type="submit">Registriraj se</button>
+
+          <a href='./RegUdr' className='linkToUdruga'>Želite registrirati udrugu?</a>
 
         </div>
       </form>

@@ -25,7 +25,7 @@ public class Dog {
 	@Column(unique = true)
 	private Long dogId;
 
-	@Column(unique = true)
+	@Column
 	@NotNull
 	private String name;
 
@@ -33,13 +33,14 @@ public class Dog {
 	private String description;
 
 	@Column
+	private String image;
+
+	@Column
 	@NotNull
 	@Size(min = 1, max = 1)
 	private String typeOfWalk;
 
-	@OneToMany(mappedBy = "dog", cascade = CascadeType.ALL, orphanRemoval = true)
-	List<Reservation> reservations = new ArrayList<>();
-	
+
 	@ManyToOne(targetEntity = Shelter.class)
 	@JoinColumn(name = "shelterId")
 	private Shelter shelter;
@@ -103,16 +104,8 @@ public class Dog {
 	public void setDogId(Long dogId) {
 		this.dogId = dogId;
 	}
+	
 
-	public List<Reservation> getReservations() {
-		return reservations;
-	}
 
-	public void setReservations(List<Reservation> reservations) {
-		this.reservations = reservations;
-	}
-
-	@Column(unique = true, nullable = false)
-	private String image;
 
 }

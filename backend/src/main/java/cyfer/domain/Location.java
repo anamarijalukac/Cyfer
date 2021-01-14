@@ -15,6 +15,8 @@ import javax.persistence.Table;
 @Table(name = "location")
 public class Location {
 
+	public Location() {}
+
 	@Id
 	@GeneratedValue
 	@Column(unique = true)
@@ -25,10 +27,6 @@ public class Location {
 
 	@Column
 	private String address;
-	
-	@OneToOne(cascade = CascadeType.ALL, optional = false)
-    @JoinColumn(name = "shelterId")
-    private Shelter shelter;
 
 	public String getAddress() {
 		return address;

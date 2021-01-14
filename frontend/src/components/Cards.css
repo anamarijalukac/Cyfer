@@ -21,6 +21,11 @@ h1 {
 
 }
 
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
 .cards__wrapper {
   position: relative;
   margin: 50px 0 45px;
@@ -120,5 +125,12 @@ h1 {
 @media only screen and (max-width: 1024px) {
   .cards__item {
     margin-bottom: 2rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    .grid-container{
+      display: grid;
+      grid-template-columns: auto;
+    }
   }
 }
