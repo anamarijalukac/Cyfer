@@ -1,22 +1,36 @@
 \babel@toc {croatian}{}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Walkzee -- naslovna stranica}}{5}{figure.2.1}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Walkzee -- pregled pasa}}{5}{figure.2.2}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Walkzee -- naslovna stranica}}{6}{figure.2.1}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Walkzee -- pregled pasa}}{6}{figure.2.2}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Dijagram obrasca uporabe: Prikaz funkcionalnosti javnog posjetitelja te registriranog korisnika}}{20}{figure.3.1}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Dijagram obrasca uporabe: Prikaz funkcionalnosti registriranog građanina i udruge}}{21}{figure.3.2}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Sekvencijski dijagram: UC8 - Promjena osobnih podataka korisnika}}{23}{figure.3.3}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Sekvencijski dijagram: UC10 - Dodavanje novog profila psa u listu prijavljene udruge}}{25}{figure.3.4}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Sekvencijski dijagram: UC13 - Rezervacija termina šetnje}}{27}{figure.3.5}%
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Sekvencijski dijagram: UC15 - Označavanje statistike šetnji kao javne}}{28}{figure.3.6}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Dijagram obrasca uporabe: Prikaz funkcionalnosti javnog posjetitelja te registriranog korisnika}}{21}{figure.3.1}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Dijagram obrasca uporabe: Prikaz funkcionalnosti registriranog građanina i udruge}}{22}{figure.3.2}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Sekvencijski dijagram: UC8 - Promjena osobnih podataka korisnika}}{24}{figure.3.3}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Sekvencijski dijagram: UC10 - Dodavanje novog profila psa u listu prijavljene udruge}}{26}{figure.3.4}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Sekvencijski dijagram: UC13 - Rezervacija termina šetnje}}{28}{figure.3.5}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Sekvencijski dijagram: UC15 - Označavanje statistike šetnji kao javne}}{29}{figure.3.6}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Apstraktna arhitektura sustava}}{30}{figure.4.1}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Spring Boot arhitektura}}{32}{figure.4.2}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Relacijski dijagram baze podataka}}{38}{figure.4.3}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Razredi controlleri}}{39}{figure.4.4}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Razredi modeli}}{40}{figure.4.5}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Dijagram aktivnosti: Pregled kalendara šetnje}}{43}{figure.4.6}%
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Dijagram komponenti}}{45}{figure.4.7}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Apstraktna arhitektura sustava}}{31}{figure.4.1}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Spring Boot arhitektura}}{33}{figure.4.2}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Relacijski dijagram baze podataka}}{39}{figure.4.3}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Razredi controlleri}}{40}{figure.4.4}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Razredi modeli}}{41}{figure.4.5}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Dijagram stanja - Šetač}}{42}{figure.4.6}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Dijagram aktivnosti: Pregled kalendara šetnje}}{43}{figure.4.7}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Dijagram komponenti}}{44}{figure.4.8}%
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Ispitni primjer 1 - Početna stranica}}{61}{figure.5.1}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Ispitni primjer 2 - Korisničko ime zauzeto}}{63}{figure.5.2}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Ispitni primjer 2 - registracija šetača s neispravnim podatcima}}{64}{figure.5.3}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces 3. ispitni primjer - Nepodudaranje lozinka}}{65}{figure.5.4}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Ispitni primjer 3 - registracija udruge sa ispravnim podatcima}}{67}{figure.5.5}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Registracija udruge sa zauzetim OIB-om}}{68}{figure.5.6}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Ispitni primjer 4 - registracija udruge s neispravnim podatcima}}{69}{figure.5.7}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Rezultati izvođenja ispitnih primjera - Selenium}}{70}{figure.5.8}%
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Dijagram razmještaja}}{71}{figure.5.9}%
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Generiranje .jar datoteke}}{72}{figure.5.10}%
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Pokretanje naredbi za deploy aplikacije}}{74}{figure.5.11}%
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Deployani frontend i backend}}{75}{figure.5.12}%
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Dijagrami pregleda promjena}}{85}{figure.6.1}%

@@ -3,12 +3,16 @@
 		
 		\section{Korištene tehnologije i alati}
 		
-			\textbf{\textit{dio 2. revizije}}
+			Komunikacija u timu realizirana je korištenjem aplikacije WhatsApp\footnote{https://www.whatsapp.com/}. Za izradu UML dijagrama korišten je alat Astah Professional\footnote{https://astah.net/}, a kao sustav za upravljanje
+			izvornim kodom Git\footnote{https://git-scm.com/}. Udaljeni repozitorij projekta je dostupan na web platformi GitLab\footnote{https://gitlab.com/}.\par
 			
-			 \textit{Detaljno navesti sve tehnologije i alate koji su primijenjeni pri izradi dokumentacije i aplikacije. Ukratko ih opisati, te navesti njihovo značenje i mjesto primjene. Za svaki navedeni alat i tehnologiju je potrebno \textbf{navesti internet poveznicu} gdje se mogu preuzeti ili više saznati o njima}.
-			
-			
-			\eject 
+			Kao razvojno okruženje korišten je Intellij IDEA\footnote{https://www.jetbrains.com/idea/}
+			- integrirano razvojno okruženje (IDE) tvrtke JetBrains\footnote{https://www.jetbrains.com/company/}. Prvenstveno se koristi za razvoj računalnih programa, kao i za web-stranice, web-aplikacije, i mobilne aplikacije. 
+			Aplikacija je napisana koristeći radni okvir SpringBoot\footnote{https://spring.io/projects/spring-boot} i jezik Java\footnote{https://www.java.com/en/} za izradu backenda te React\footnote{https://reactjs.org/}
+			i jezik JavaScript\footnote{https://www.javascript.com/} za izradu frontenda. React, takoder
+			poznat kao React.js ili ReactJS, je biblioteka u JavaScriptu za izgradnju korisničkih sučelja. Održavana je od strane Facebooka\footnote{https://www.facebook.com/}. React se najčešće koristi kao osnova u razvoju web ili mobilnih aplikacija. Složene aplikacije u Reactu obično zahtijevaju korištenje dodatnih biblioteka za interakciju s API-jem. Spring\footnote{https://spring.io/projects/spring-framework} je široki skup biblioteka i alata koji olakšava razvoj aplikacija u Javi. Koristi anotacije, notacije i konvencije, koristeći oblikovne obrasce poput template-a i aspektno-orijentiranog programiranja.
+			Jezgra Springa je tzv. inversion of control container ili aplikacijski kontekst, koji se temelji na oblikovnom obrascu koji se zove dependency injection.
+			Koristili smo H2\footnote{https://www.h2database.com/html/main.html} bazu podataka na početku, a onda smo se prebacili perzistentnu Postgres\footnote{https://www.postgresql.org/} bazu.
 		
 	
 		\section{Ispitivanje programskog rješenja}
@@ -148,8 +152,9 @@
 				U ovom primjeru smo demonstrirali uspješnu registraciju šetača. Upisali smo sve ispravne podatke - jedinstvenu email adresu i korisničko ime te lozinke koje se podudaraju. Od sustava smo očekivali da nas onda preusmjeri na početnu stranicu, što je ispunjeno.
 				
 				\begin{figure}[H]
-					\hspace*{-0.25in}
-					\includegraphics[scale=0.55]{slike/HomePage.PNG}
+					\hspace*{0in}
+					\includegraphics[scale=0.5]{slike/HomePage.PNG}
+					\caption{Ispitni primjer 1 - Početna stranica}
 					%veličina slike u odnosu na originalnu datoteku i pozicija slike
 					\centering
 				\end{figure}
@@ -168,7 +173,9 @@
 		 U ovom primjeru smo demonstrirali neuspješnu registraciju šetača. Upisali smo isto korisničko ime kao i u gornjem primjeru - "user123", a kako smo ispite pokretali slijedno, takav korisnik je već bio u bazi. Od sustava smo očekivali da nam javi kakva je pogreška u pitanju. Sustav je ostao na istoj stranici (nije se dogodilo preusmjeravanje kao pri uspješnoj registraciji) te nam je ispisao poruku "Neuspješna registracija - korisničko ime je zauzeto." U ispitnom primjeru smo provjerili je li doista ispisana ta poruka. Ispod je priložena slika izvođenja u browseru te kod ispitnog primjera. 
 		 
 		 	\begin{figure}[H]
-		 		\includegraphics[scale=0.70]{slike/UsernameError.PNG}
+		 		\centerline{
+		 		\includegraphics[scale=0.65]{slike/UsernameError.PNG}}
+		 		\caption{Ispitni primjer 2 - Korisničko ime zauzeto}
 		 		 %veličina slike u odnosu na originalnu datoteku i pozicija slike
 		 		\centering
 		 	\end{figure}
@@ -176,7 +183,8 @@
 			 \begin{figure}[H]
 			 	\includegraphics[scale=0.75]{slike/Selenium2.1.PNG}
 			 	\hspace*{0.15in}
-			 	\includegraphics[scale=0.75]{slike/Selenium2.2.PNG} %veličina slike u odnosu na originalnu datoteku i pozicija slike
+			 	\includegraphics[scale=0.75]{slike/Selenium2.2.PNG}
+			 	\caption{Ispitni primjer 2 - registracija šetača s neispravnim podatcima} %veličina slike u odnosu na originalnu datoteku i pozicija slike
 			 	\centering
 			 \end{figure}
 		 
@@ -186,8 +194,10 @@
 		 U ovom primjeru smo demonstrirali uspješnu registraciju udruge uz ispravak lozinke. Upisali smo sve ispravne podatke osim lozinke i ponovljene lozinke, koje su bile različite. Od sustava smo očekivali da nam javi kakva je pogreška u pitanju. Sustav je ostao na istoj stranici (nije se dogodilo preusmjeravanje kao pri uspješnoj registraciji) te nam je ispisao poruku "Lozinke se ne poklapaju." Zatim smo ispravili ponovljenu lozinku i ponovno poslali zahtjev za registracijom. Sustav nas je očekivano preusmjerio na početnu stranicu. Ispod je priložena slika izvođenja u browseru (neispravne lozinke) te kod ispitnog primjera. 
 			 
 			  \begin{figure}[H]
-			 	\includegraphics[scale=0.7]{slike/PasswordError.PNG}
+			  	\centerline{
+			 	\includegraphics[scale=0.65]{slike/PasswordError.PNG}}
 			 	%veličina slike u odnosu na originalnu datoteku i pozicija slike
+			 	\caption{3. ispitni primjer - Nepodudaranje lozinka}
 			 	\centering
 			 \end{figure}
 			 \begin{figure}[H]
@@ -198,6 +208,7 @@
 		 
 			 \begin{figure}[H]
 			 	\includegraphics[scale=0.75]{slike/Selenium3.2.PNG} %veličina slike u odnosu na originalnu datoteku i pozicija slike
+			 	\caption{Ispitni primjer 3 - registracija udruge sa ispravnim podatcima}
 			 	\centering
 			 \end{figure}
 			 
@@ -208,21 +219,27 @@
 			 U ovom primjeru smo demonstrirali neuspješnu registraciju udruge. Upisali smo isti OIB kao i u gornjem (trećem) primjeru - "11111111123", a kako smo ispite pokretali slijedno, takva udruga je već bila u bazi. Od sustava smo očekivali da nam javi kakva je pogreška u pitanju. Sustav je ostao na istoj stranici (nije se dogodilo preusmjeravanje kao pri uspješnoj registraciji) te nam je ispisao poruku "Neuspješna registracija - postoji već udruga sa danim OIB-om." U ispitnom primjeru smo provjerili je li doista ispisana ta poruka. Ispod je priložena slika izvođenja u browseru te kod ispitnog primjera. 
 			 
 			 \begin{figure}[H]
-			 	\includegraphics[scale=0.70]{slike/OIBError.PNG}
+			 	\centerline{
+			 	\includegraphics[scale=0.65]{slike/OIBError.PNG}}
 			 	%veličina slike u odnosu na originalnu datoteku i pozicija slike
+			 	\caption{Registracija udruge sa zauzetim OIB-om}
+			 	\label{fig:wrongOIB}
 			 	\centering
 			 \end{figure}
 			 \begin{figure}[H]
-			 	\includegraphics[scale=0.75]{slike/Selenium4.1.PNG}
+			 	\includegraphics[scale=0.7]{slike/Selenium4.1.PNG}
 			 	\hspace*{0.1in}
-			 	\includegraphics[scale=0.75]{slike/Selenium4.2.PNG} %veličina slike u odnosu na originalnu datoteku i pozicija slike
+			 	\includegraphics[scale=0.7]{slike/Selenium4.2.PNG} %veličina slike u odnosu na originalnu datoteku i pozicija slike
+				\caption{Ispitni primjer 4 - registracija udruge s neispravnim podatcima}
 			 	\centering
 			 \end{figure}
 		 
 		 
 		 \subsubsection{Rezultati izvođenja ispitnih primjera}
 		 	\begin{figure}[H]
-		 		\includegraphics[scale=0.75]{slike/SeleniumRezultati.PNG} %veličina slike u odnosu na originalnu datoteku i pozicija slike
+		 		\centerline{
+		 		\includegraphics[scale=0.75]{slike/SeleniumRezultati.PNG}} %veličina slike u odnosu na originalnu datoteku i pozicija slike
+		 		\caption{Rezultati izvođenja ispitnih primjera - Selenium}
 		 		\centering
 		 	\end{figure}
 		 
@@ -237,20 +254,88 @@
 			
 			% \textit{Potrebno je umetnuti \textbf{specifikacijski} dijagram razmještaja i opisati ga. Moguće je umjesto specifikacijskog dijagrama razmještaja umetnuti dijagram razmještaja instanci, pod uvjetom da taj dijagram bolje opisuje neki važniji dio sustava.}
 			
-			\text Topologija našeg projekta sastoji se od dva čvora, od kojih su oba uređaji. Jedan je korisničko računalo, drugi je poslužiteljsko računalo. Na poslužiteljskom računalu nalaze se svi potrebni izvorni kodovi i baza podataka kako bi se ostvario uspješan deploy web aplikacije. Programska potpora sastoji se od kombinacije Spring frameworka i ReactJs-a. Također, korisničko i poslužiteljsko računalo međusobno razmjenjuju informacije putem HTTP protokola.
+			 Topologija našeg projekta sastoji se od dva čvora, od kojih su oba uređaji. Jedan je korisničko računalo, drugi je poslužiteljsko računalo. Na poslužiteljskom računalu nalaze se svi potrebni izvorni kodovi i baza podataka kako bi se ostvario uspješan deploy web aplikacije. Programska potpora sastoji se od kombinacije Spring frameworka i ReactJs-a. Također, korisničko i poslužiteljsko računalo međusobno razmjenjuju informacije putem HTTP protokola.
 			
-			\includegraphics[scale=0.5]{dijagrami/Dijagram razmjestaja.png}
+			~\\
+			\begin{figure}[H]
+				\hspace{-0.4in}
+				\includegraphics[scale=0.65]{dijagrami/Dijagram razmjestaja.png} %veličina slike u odnosu na originalnu datoteku i pozicija slike
+				\caption{Dijagram razmještaja}
+				\centering
+			\end{figure}
+			
 			
 			\eject 
 		
 		\section{Upute za puštanje u pogon}
 		
-			\textbf{\textit{dio 2. revizije}}\\
+		Puštanje aplikacije u pogon (engl. deploy) proces je na kraju kojega aplikacija koju smo prethodno pokretali s našeg lokalnog poslužitelja (engl. localhost) postaje javno dostupna na internetu. Kao cloud platformu za deploy odabrali smo Heroku, na koji smo kao odvojene aplikacije postavili frontend i backend. Na backend aplikaciji smo podesili PostgreSQL bazu koja se isto tako nalazi na Heroku. Na kraju smo povezali frontend i backend aplikacije putem proxyja tako da su na jednom mjestu dostupne sve funkcionalnosti.
+		Frontend i backend smo deployali kao odvojene aplikacije jer imamo monorepozitorij na GitLabu, što bi nam otežalo proces puštanja u pogon da smo se odlučili za opciju deploya preko gita.\par
 		
-			 \textit{U ovom poglavlju potrebno je dati upute za puštanje u pogon (engl. deployment) ostvarene aplikacije. Na primjer, za web aplikacije, opisati postupak kojim se od izvornog kôda dolazi do potpuno postavljene baze podataka i poslužitelja koji odgovara na upite korisnika. Za mobilnu aplikaciju, postupak kojim se aplikacija izgradi, te postavi na neku od trgovina. Za stolnu (engl. desktop) aplikaciju, postupak kojim se aplikacija instalira na računalo. Ukoliko mobilne i stolne aplikacije komuniciraju s poslužiteljem i/ili bazom podataka, opisati i postupak njihovog postavljanja. Pri izradi uputa preporučuje se \textbf{naglasiti korake instalacije uporabom natuknica} te koristiti što je više moguće \textbf{slike ekrana} (engl. screenshots) kako bi upute bile jasne i jednostavne za slijediti.}
+		\subsection{Puštanje u pogon backend aplikacije}
+		Puštanje u pogon backend aplikacije
+		Prvi korak deploya backend bio je postavljanje porta s kojeg se slušaju zahtjevi na vrijednost PORT (varijabla okruženja) ili 8080 ako je slobodan.
+		Drugi korak bio je generiranje izvršnih datoteka našeg Maven projekta koje smo napravili naredbom package. Tada je unutar mape target nastala .jar datoteka našeg projekta (progi.projekt-1.0.jar) koju smo onda deployali na Heroku aplikaciju cyfer-backend koju smo prethodno napravili.\par
+		
+		 \begin{figure}[H]
+		 
+			\includegraphics[scale=0.37]{slike/pustanje1.jpg}
+			\caption{Generiranje .jar datoteke}
+			\label{fig:pustanje1}
+		 %veličina slike u odnosu na originalnu datoteku i pozicija slike
+			\centering
+		\end{figure}
+		
+		
+		Kako bismo pustili u pogon našu backend aplikaciju, pozicionirali smo se u naredbenom retku u mapu backend u našem projektu i izvršili sljedeću naredbu:
+		
+		\centerline{
+		\textbf{\textit{deploy:jar target/progi.projekt-1.0.jar --app cyfer-backend}}}
+	
+		~\\
+		\noindent
+		Backend aplikacija je nakon toga bila dostupna na internetu na URI-ju \textbf{\textit{\href{https://cyfer-backend.herokuapp.com}{https://cyfer-backend.herokuapp.com}}}. Grafičkog sučelja naravno nema, pa na sve zahtjeve koje šaljemo (samo putem URI-ja) dobivamo odgovore u obliku JSON-a.
+		
+		\subsection{Dodavanje baze podataka na Heroku}
+		U fazi razvoja aplikacije koristili smo H2, dok smo na kraju izrade prešli na PostgreSQL bazu na localhostu. Kako bi baza bila dostupna nakon puštanja aplikacije u pogon, dodali smo ju na našu backend aplikaciju na Heroku kao add-on, te smo izmijenili aplication.properties kako bi bio omogućen pristup toj bazi. Da povezivanje bude moguće, morali smo stvoriti varijablu okruženja naredbom:
+		\newline
+		\\*
+		\centerline{\textbf{
+		\textit{heroku run echo \$JDBC\_DATABASE\_URL}}}
+		
+		\subsection{Puštanje u pogon frontend aplikacije}
+		
+		Deploy frontend aplikacije je nešto složeniji jer zahtjeva korištenje dockera i namiještanje proxyja. Naime, dok smo aplikaciju pokretali s localhosta u datoteci package.json imali smo definiran proxy (odnosno posrednik koji s frontenda preusmjerava HTTP zahtjeve na backend i vraća odgovor) koji je slušao na portu 8080 (defaultni port za spring boot backend aplikacije). Pri puštanju pogon morali smo dodati nekoliko novih datoteka koje će konfigurirati usmjeravanje tih zahtjeva, kao i sam prikaz grafičkog sučelja aplikacije definiranog na frontendu.
+		Za virtualizaciju i prikaz smo koristili docker kojega smo konfigurirali u datoteci Dockerfile, a kao poslužitelj ngnix. Usmjeravanje putem proxyja smo konfigurirali novom datotekom default.conf unutar koje je zapisano da svi zahtjevi za backend trebaju imati prefiks /api, te smo taj prefiks dodali u kôd i na frontend i na backend kako bi mapiranje zahtjeva i vraćanje odgovora bilo funkcionalno.
+		U Heroku smo stvorili aplikaciju cyfer-frontend. Pozicionirali smo se u frontend mapu našeg projekta i pokrenuli sljedeće naredbe iz naredbenog retka:\\
+		
+		\noindent
+		\textbf{\textit{npm run build}}(izgradnja React aplikacije)\\
+		\textbf{\textit{docker build -t registry.heroku.com/cyfer-frontend/web .}}(stvaranje slike)\\
+		\textbf{\textit{docker push registry.heroku.com/cyfer-frontend/web}} („pushanje“ aplikacije na Heroku)\\
+		\textbf{\textit{heroku container:release web --app cyfer-frontend }} (puštanje u pogon na dostupnom URL)\\
 			
-			
-			 \textit{Dovršenu aplikaciju potrebno je pokrenuti na javno dostupnom poslužitelju. Studentima se preporuča korištenje neke od sljedećih besplatnih usluga: \href{https://aws.amazon.com/}{Amazon AWS}, \href{https://azure.microsoft.com/en-us/}{Microsoft Azure} ili \href{https://www.heroku.com/}{Heroku}. Mobilne aplikacije trebaju biti objavljene na F-Droid, Google Play ili Amazon App trgovini.}
-			
-			
+		\noindent	
+		Aplikacija je nakon toga puštena u pogon i dostupna na:\\
+		\textbf{\textit{\href{ https://cyfer-frontend.herokuapp.com}{https://cyfer-frontend.herokuapp.com}}}.
+		
+		\begin{figure}[H]
+			\hspace*{-0.4in}
+			\includegraphics[scale=1.1]{slike/pustanje2.jpg}
+			\caption{Pokretanje naredbi za deploy aplikacije}
+			%veličina slike u odnosu na originalnu datoteku i pozicija slike
+			\centering
+		\end{figure}
+	
+		\begin{figure}[H]
+			\hspace*{-0.54in}
+			\includegraphics[scale=0.45]{slike/pustanje3.jpg}
+			\caption{Deployani frontend i backend}
+			%veličina slike u odnosu na originalnu datoteku i pozicija slike
+			\centering
+		\end{figure}
+	
+	
+		
+		
 			\eject 

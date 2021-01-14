@@ -344,10 +344,13 @@ React omogućava sastavljanje korisničkog sučelja pomoću elemenata koji se na
 		
 		\section{Dijagram stanja}
 			
+			Dijagram stanja omogućava uočavanje različitih promjena unutar sustava, odnosno prikazivanje promjena koje se događaju  u njegovim objektima i komponentama uslijed interakcije ili proteka vremena. Odnosno, prikazuje sva moguća stanja koja objekt klase može imati i događaje koje prouzrokuje kada se stanje mijenja. Dijagram na slici broj slike prikazuje stanja koja pripadaju registriranom korisniku. Korisniku se, nakon prijave ili registracije, prikazuje početna stranica i popis registriranih udruga. Za odabranu udrugu prikazuje se njen profil i lista pasa koji pripadaju toj udruzi. Odabirom željenog psa, prikazuje se njegov profil i mogućnost rezervacije tog psa za šetnju. Nakon rezervacije, korisniku se u prikazuje rezervacija o šetnji u njegovom kalendaru kojem može pristupiti klikom na "Profil". Na profilu korisnika prikazuju se njegovi podatci, kalendar i opcije za uređivanje ili brisanja profila. Korisnik također može pristupiti rang listi šetača u kojoj se vide statistike šetnji u posljednjih mjesec dana. Iz svih stanja uvijek se može doći do u stanje "Početna stranica", "Lista pasa", "Lista udruga", "Rang lista šetača", "Profil" i "Odjava" pritiskom na gumb u zaglavlju stranice.
 			
-			\textbf{\textit{dio 2. revizije}}\\
-			
-			\textit{Potrebno je priložiti dijagram stanja i opisati ga. Dovoljan je jedan dijagram stanja koji prikazuje \textbf{značajan dio funkcionalnosti} sustava. Na primjer, stanja korisničkog sučelja i tijek korištenja neke ključne funkcionalnosti jesu značajan dio sustava, a registracija i prijava nisu. }
+			\begin{figure}[H]
+				\includegraphics[width=0.9\textwidth]{dijagrami/Dijagram stanja - setac.png} %veličina u odnosu na širinu linije
+				\caption{Dijagram stanja - Šetač}
+				\label{fig:St1} %label mora biti drugaciji za svaku sliku
+			\end{figure}
 			
 			
 			\eject 
@@ -355,7 +358,7 @@ React omogućava sastavljanje korisničkog sučelja pomoću elemenata koji se na
 		\section{Dijagram aktivnosti}
 			 \textit
 			Korisnik upisuje podatke za prijavu. Poslužitelj dohvaća podatke o registriranim korisnicima iz baze podataka te provjerava postoji li korisnik u bazi. Ako ne postoji, vraća poruku o neuspješnoj prijavi. Ako postoji, preusmjerava korisnika na stranicu za registrirane korisnike. Korisnik s te stranice odabire stranicu profila. Poslužitelj dohvaća podatke o korisniku iz baze te ih prikazuje. Korisnik odabire opciju pregleda kalendara sa šetnjama. Poslužitelj iz baze dohvaća podatke o rezerviranim šetnjama korisnika i prikazuje kalendar sa svim rezerviranim šetnjama.
-			\newpage
+		
 			\begin{figure}[H]
 				\includegraphics[width=1\textwidth]{dijagrami/act.png} %veličina u odnosu na širinu linije
 				\caption{Dijagram aktivnosti: Pregled kalendara šetnje}
@@ -367,7 +370,7 @@ React omogućava sastavljanje korisničkog sučelja pomoću elemenata koji se na
 		\section{Dijagram komponenti}
 		
 			React-view komponenta s aplikacijom komunicira preko dva sučelja. Jednim sučeljem dohvaća potrebne HTML, CSS i JS datoteke s \textit{frontend} dijela aplikacije. Komponenta Router je zadužena za određivanje koja će se datoteka poslužiti na sučelje. JavaScript datoteke gumbe, forme i slične gotove komponente dohvaćaju iz React biblioteke. Podacima sa \textit{backend} dijela aplikacije, tj. REST API-u se pristupa sučeljem za dohvat JSON podataka. Za dohvaćanje podataka iz baze podataka zadužen je JPA Repository, prema kojemu komponenta DAO ima ovisnost.
-			\newpage
+			~\\
 			\begin{figure}[H]
 				\includegraphics[width=1\textwidth]{dijagrami/Component-diagram-2.png} %veličina u odnosu na širinu linije
 				\caption{Dijagram komponenti}

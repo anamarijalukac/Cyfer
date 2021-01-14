@@ -23,7 +23,10 @@
 \BOOKMARK [2][-]{subsection.5.2.2}{Ispitivanje sustava}{section.5.2}% 23
 \BOOKMARK [1][-]{section.5.3}{Dijagram razmje\235taja}{chapter.5}% 24
 \BOOKMARK [1][-]{section.5.4}{Upute za pu\235tanje u pogon}{chapter.5}% 25
-\BOOKMARK [0][-]{chapter.6}{Zakljucak i buduci rad}{}% 26
-\BOOKMARK [0][-]{chapter*.27}{Popis literature}{}% 27
-\BOOKMARK [0][-]{chapter*.28}{Indeks slika i dijagrama}{}% 28
-\BOOKMARK [0][-]{chapter*.29}{Dodatak: Prikaz aktivnosti grupe}{}% 29
+\BOOKMARK [2][-]{subsection.5.4.1}{Pu\235tanje u pogon backend aplikacije}{section.5.4}% 26
+\BOOKMARK [2][-]{subsection.5.4.2}{Dodavanje baze podataka na Heroku}{section.5.4}% 27
+\BOOKMARK [2][-]{subsection.5.4.3}{Pu\235tanje u pogon frontend aplikacije}{section.5.4}% 28
+\BOOKMARK [0][-]{chapter.6}{Zakljucak i buduci rad}{}% 29
+\BOOKMARK [0][-]{chapter*.27}{Popis literature}{}% 30
+\BOOKMARK [0][-]{chapter*.28}{Indeks slika i dijagrama}{}% 31
+\BOOKMARK [0][-]{chapter*.29}{Dodatak: Prikaz aktivnosti grupe}{}% 32
