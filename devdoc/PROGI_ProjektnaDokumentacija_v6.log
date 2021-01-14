@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.27)  14 JAN 2021 19:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.27)  14 JAN 2021 19:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1090,47 +1090,47 @@ l.53 ...hapter}{Popis literature}{75}{chapter*.27}
 (./Dnevnik_promjena_dokumentacije.tex
 Poglavlje 1.
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 43--43
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 45--45
 []\OT1/jkp/m/n/12 22.10.2020.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 43--43
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 45--45
 []\OT1/jkp/m/n/12 27.10.2020.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 43--43
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 45--45
 []\OT1/jkp/m/n/12 10.11.2020.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 43--43
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 45--45
 []\OT1/jkp/m/n/12 10.11.2020.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 43--43
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 45--45
 []\OT1/jkp/m/n/12 10.11.2020.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 43--43
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 45--45
 []\OT1/jkp/m/n/12 11.11.2020.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 43--43
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 45--45
 []\OT1/jkp/m/n/12 11.11.2020.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 43--43
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 45--45
 []\OT1/jkp/m/n/12 12.11.2020.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 43--43
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 45--45
 []\OT1/jkp/m/n/12 13.11.2020.|  
  []
 
@@ -1202,35 +1202,35 @@ Poglavlje 3.
 
 
 ] [9]
-Overfull \hbox (2.58124pt too wide) in paragraph at lines 122--123
+Overfull \hbox (2.58124pt too wide) in paragraph at lines 121--122
 []\OT1/jkp/m/n/12 pohranjuje sve po-datke o []setnjama (obav-lje-nim i re-zer-v
 i-ra-nim) te o psima
  []
 
 [10] [11] [12] [13] [14] [15] [16] [17] [18]
-<dijagrami/usecase1.PNG, id=429, 870.25125pt x 975.645pt>
+<dijagrami/usecase1.PNG, id=428, 870.25125pt x 975.645pt>
 File: dijagrami/usecase1.PNG Graphic file (type png)
 <use dijagrami/usecase1.PNG>
-Package pdftex.def Info: dijagrami/usecase1.PNG  used on input line 623.
+Package pdftex.def Info: dijagrami/usecase1.PNG  used on input line 622.
 (pdftex.def)             Requested size: 478.63966pt x 536.60641pt.
 
-Overfull \hbox (43.02887pt too wide) in paragraph at lines 623--624
+Overfull \hbox (43.02887pt too wide) in paragraph at lines 622--623
 [][]
  []
 
 [19]
-<dijagrami/usecase2.PNG, id=438, 829.59938pt x 953.06062pt>
+<dijagrami/usecase2.PNG, id=437, 829.59938pt x 953.06062pt>
 File: dijagrami/usecase2.PNG Graphic file (type png)
 <use dijagrami/usecase2.PNG>
-Package pdftex.def Info: dijagrami/usecase2.PNG  used on input line 629.
+Package pdftex.def Info: dijagrami/usecase2.PNG  used on input line 628.
 (pdftex.def)             Requested size: 456.28108pt x 524.18497pt.
 
-Overfull \hbox (20.67029pt too wide) in paragraph at lines 629--630
+Overfull \hbox (20.67029pt too wide) in paragraph at lines 628--629
 [][]
  []
 
 
-Underfull \hbox (badness 1817) in paragraph at lines 630--630
+Underfull \hbox (badness 1817) in paragraph at lines 629--629
 []\OT1/jkp/m/n/12 Slika 3.2: []Dijagram obrasca upo-rabe: Pri-kaz funk-ci-onal-
 nosti re-gis-tri-ra-nog
  []
@@ -1239,21 +1239,21 @@ nosti re-gis-tri-ra-nog
 }) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.633 		\eject
+l.632 		\eject
               	 <./dijagrami/usecase1.png>] [21pdfTeX warning (ext4): destinati
 on with the same identifier (name{figure.3.2}) has been already used, duplicate
  ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.633 		\eject
+l.632 		\eject
               	 <./dijagrami/usecase2.png>]
-<dijagrami/UC8.png, id=454, 943.27406pt x 1038.88126pt>
+<dijagrami/UC8.png, id=453, 943.27406pt x 1038.88126pt>
 File: dijagrami/UC8.png Graphic file (type png)
 <use dijagrami/UC8.png>
-Package pdftex.def Info: dijagrami/UC8.png  used on input line 645.
+Package pdftex.def Info: dijagrami/UC8.png  used on input line 644.
 (pdftex.def)             Requested size: 471.63588pt x 519.43936pt.
 
-Overfull \hbox (36.02509pt too wide) in paragraph at lines 645--646
+Overfull \hbox (36.02509pt too wide) in paragraph at lines 644--645
 [][]
  []
 
@@ -1261,15 +1261,15 @@ Overfull \hbox (36.02509pt too wide) in paragraph at lines 645--646
 e.3.3}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.650 			\newpage
+l.649 			\newpage
                   <./dijagrami/UC8.png>]
-<dijagrami/UC10.png, id=468, 805.50937pt x 897.3525pt>
+<dijagrami/UC10.png, id=467, 805.50937pt x 897.3525pt>
 File: dijagrami/UC10.png Graphic file (type png)
 <use dijagrami/UC10.png>
-Package pdftex.def Info: dijagrami/UC10.png  used on input line 658.
+Package pdftex.def Info: dijagrami/UC10.png  used on input line 657.
 (pdftex.def)             Requested size: 483.30936pt x 538.41565pt.
 
-Overfull \hbox (47.69856pt too wide) in paragraph at lines 658--659
+Overfull \hbox (47.69856pt too wide) in paragraph at lines 657--658
 [][]
  []
 
@@ -1277,15 +1277,15 @@ Overfull \hbox (47.69856pt too wide) in paragraph at lines 658--659
 e.3.4}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.663 			\newpage
+l.662 			\newpage
                   <./dijagrami/UC10.png>]
-<dijagrami/UC13.png, id=483, 659.46375pt x 876.27374pt>
+<dijagrami/UC13.png, id=482, 659.46375pt x 876.27374pt>
 File: dijagrami/UC13.png Graphic file (type png)
 <use dijagrami/UC13.png>
-Package pdftex.def Info: dijagrami/UC13.png  used on input line 688.
+Package pdftex.def Info: dijagrami/UC13.png  used on input line 687.
 (pdftex.def)             Requested size: 448.42941pt x 595.85826pt.
 
-Overfull \hbox (12.81862pt too wide) in paragraph at lines 688--689
+Overfull \hbox (12.81862pt too wide) in paragraph at lines 687--688
 [][]
  []
 
@@ -1293,15 +1293,15 @@ Overfull \hbox (12.81862pt too wide) in paragraph at lines 688--689
 e.3.5}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.696 	
+l.695 	
         <./dijagrami/UC13.png>]
-<dijagrami/UC15.png, id=497, 684.30656pt x 516.42938pt>
+<dijagrami/UC15.png, id=496, 684.30656pt x 516.42938pt>
 File: dijagrami/UC15.png Graphic file (type png)
 <use dijagrami/UC15.png>
-Package pdftex.def Info: dijagrami/UC15.png  used on input line 698.
+Package pdftex.def Info: dijagrami/UC15.png  used on input line 697.
 (pdftex.def)             Requested size: 458.48302pt x 346.00589pt.
 
-Overfull \hbox (22.87222pt too wide) in paragraph at lines 698--699
+Overfull \hbox (22.87222pt too wide) in paragraph at lines 697--698
 [][]
  []
 
@@ -1309,9 +1309,9 @@ Overfull \hbox (22.87222pt too wide) in paragraph at lines 698--699
 }) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.703 		\newpage
+l.702 		\newpage
                  <./dijagrami/UC15.png>]
-Overfull \hbox (23.0035pt too wide) in paragraph at lines 719--720
+Overfull \hbox (23.0035pt too wide) in paragraph at lines 718--719
 []\OT1/jkp/m/n/12 Sustav treba biti im-ple-men-ti-ran kao web apli-ka-cija ko-r
 iste[]ci objektno-orijentirane
  []
@@ -1321,7 +1321,7 @@ iste[]ci objektno-orijentirane
 
  (./Arhitektura.tex
 Poglavlje 4.
-<slike/apstraktna-arh.PNG, id=512, 318.18875pt x 252.945pt>
+<slike/apstraktna-arh.PNG, id=510, 318.18875pt x 252.945pt>
 File: slike/apstraktna-arh.PNG Graphic file (type png)
 <use slike/apstraktna-arh.PNG>
 Package pdftex.def Info: slike/apstraktna-arh.PNG  used on input line 22.
@@ -1384,7 +1384,7 @@ Overfull \hbox (5.37553pt too wide) in paragraph at lines 75--76
 zu,(u
  []
 
-<slike/novaArh.png, id=526, 733.74126pt x 211.79124pt>
+<slike/novaArh.png, id=525, 733.74126pt x 211.79124pt>
 File: slike/novaArh.png Graphic file (type png)
 <use slike/novaArh.png>
 Package pdftex.def Info: slike/novaArh.png  used on input line 81.
@@ -1412,7 +1412,7 @@ elja. One se po-kre[]cu u browseru
                                                   
 l.96 
       <./slike/novaArh.png>] [33] [34] [35] [36]
-<dijagrami/relacijski.jpeg, id=563, 511.15968pt x 382.42876pt>
+<dijagrami/relacijski.jpeg, id=562, 511.15968pt x 382.42876pt>
 File: dijagrami/relacijski.jpeg Graphic file (type jpg)
 <use dijagrami/relacijski.jpeg>
 Package pdftex.def Info: dijagrami/relacijski.jpeg  used on input line 287.
@@ -1428,7 +1428,7 @@ e.4.3}) has been already used, duplicate ignored
                                                   
 l.294 			\eject
                 <./dijagrami/relacijski.jpeg>]
-<dijagrami/controlleri.jpeg, id=579, 1270.7475pt x 707.64375pt>
+<dijagrami/controlleri.jpeg, id=578, 1270.7475pt x 707.64375pt>
 File: dijagrami/controlleri.jpeg Graphic file (type jpg)
 <use dijagrami/controlleri.jpeg>
 Package pdftex.def Info: dijagrami/controlleri.jpeg  used on input line 313.
@@ -1438,7 +1438,7 @@ Overfull \hbox (47.27827pt too wide) in paragraph at lines 313--315
  [][] 
  []
 
-<dijagrami/modeli.jpeg, id=581, 1186.4325pt x 797.98125pt>
+<dijagrami/modeli.jpeg, id=580, 1186.4325pt x 797.98125pt>
 File: dijagrami/modeli.jpeg Graphic file (type jpg)
 <use dijagrami/modeli.jpeg>
 Package pdftex.def Info: dijagrami/modeli.jpeg  used on input line 325.
@@ -1465,7 +1465,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 348--349
  []
 
 [41] [42]
-<dijagrami/act.png, id=607, 653.14012pt x 588.09712pt>
+<dijagrami/act.png, id=606, 653.14012pt x 588.09712pt>
 File: dijagrami/act.png Graphic file (type png)
 <use dijagrami/act.png>
 Package pdftex.def Info: dijagrami/act.png  used on input line 360.
@@ -1482,7 +1482,7 @@ a su[]celja. Jed-nim su[]celjem
  []
 
 [44]
-<dijagrami/Component-diagram-2.png, id=620, 1025.8325pt x 613.29124pt>
+<dijagrami/Component-diagram-2.png, id=619, 1025.8325pt x 613.29124pt>
 File: dijagrami/Component-diagram-2.png Graphic file (type png)
 <use dijagrami/Component-diagram-2.png>
 Package pdftex.def Info: dijagrami/Component-diagram-2.png  used on input line 
@@ -1525,12 +1525,12 @@ Overfull \hbox (0.44489pt too wide) in paragraph at lines 22--23
 li druga[]cijim ko-risni[]ckim
  []
 
-<slike/shelter1.1.PNG, id=633, 651.18282pt x 603.75563pt>
+<slike/shelter1.1.PNG, id=632, 651.18282pt x 603.75563pt>
 File: slike/shelter1.1.PNG Graphic file (type png)
 <use slike/shelter1.1.PNG>
 Package pdftex.def Info: slike/shelter1.1.PNG  used on input line 27.
 (pdftex.def)             Requested size: 475.35951pt x 440.73795pt.
-<slike/shelter1.2.PNG, id=634, 649.67719pt x 286.06876pt>
+<slike/shelter1.2.PNG, id=633, 649.67719pt x 286.06876pt>
 File: slike/shelter1.2.PNG Graphic file (type png)
 <use slike/shelter1.2.PNG>
 Package pdftex.def Info: slike/shelter1.2.PNG  used on input line 29.
@@ -1541,12 +1541,12 @@ Overfull \hbox (25.80043pt too wide) in paragraph at lines 28--32
  []
 
 [47] [48 <./slike/shelter1.1.png> <./slike/shelter1.2.png>]
-<slike/shelter2.1.PNG, id=650, 633.86812pt x 573.64313pt>
+<slike/shelter2.1.PNG, id=649, 633.86812pt x 573.64313pt>
 File: slike/shelter2.1.PNG Graphic file (type png)
 <use slike/shelter2.1.PNG>
 Package pdftex.def Info: slike/shelter2.1.PNG  used on input line 42.
 (pdftex.def)             Requested size: 475.39993pt x 430.2313pt.
-<slike/shelter2.2.PNG, id=651, 629.35126pt x 263.48438pt>
+<slike/shelter2.2.PNG, id=650, 629.35126pt x 263.48438pt>
 File: slike/shelter2.2.PNG Graphic file (type png)
 <use slike/shelter2.2.PNG>
 Package pdftex.def Info: slike/shelter2.2.PNG  used on input line 44.
@@ -1557,12 +1557,12 @@ Overfull \hbox (22.83002pt too wide) in paragraph at lines 43--46
  []
 
 [49] [50 <./slike/shelter2.1.png> <./slike/shelter2.2.png>]
-<slike/shelter3.1.PNG, id=665, 633.86812pt x 584.93532pt>
+<slike/shelter3.1.PNG, id=664, 633.86812pt x 584.93532pt>
 File: slike/shelter3.1.PNG Graphic file (type png)
 <use slike/shelter3.1.PNG>
 Package pdftex.def Info: slike/shelter3.1.PNG  used on input line 56.
 (pdftex.def)             Requested size: 462.71988pt x 426.99922pt.
-<slike/shelter3.2.PNG, id=666, 784.43062pt x 377.91188pt>
+<slike/shelter3.2.PNG, id=665, 784.43062pt x 377.91188pt>
 File: slike/shelter3.2.PNG Graphic file (type png)
 <use slike/shelter3.2.PNG>
 Package pdftex.def Info: slike/shelter3.2.PNG  used on input line 58.
@@ -1577,12 +1577,12 @@ Overfull \vbox (32.50238pt too high) has occurred while \output is active []
 
 
 [52 <./slike/shelter3.1.png> <./slike/shelter3.2.png>]
-<slike/shelter4.1.PNG, id=680, 649.67719pt x 602.25pt>
+<slike/shelter4.1.PNG, id=679, 649.67719pt x 602.25pt>
 File: slike/shelter4.1.PNG Graphic file (type png)
 <use slike/shelter4.1.PNG>
 Package pdftex.def Info: slike/shelter4.1.PNG  used on input line 69.
 (pdftex.def)             Requested size: 461.27403pt x 427.60048pt.
-<slike/shelter4.2.PNG, id=681, 807.7678pt x 252.945pt>
+<slike/shelter4.2.PNG, id=680, 807.7678pt x 252.945pt>
 File: slike/shelter4.2.PNG Graphic file (type png)
 <use slike/shelter4.2.PNG>
 Package pdftex.def Info: slike/shelter4.2.PNG  used on input line 71.
@@ -1593,24 +1593,24 @@ Overfull \hbox (96.87393pt too wide) in paragraph at lines 68--73
  []
 
 [53] [54 <./slike/shelter4.1.png> <./slike/shelter4.2.png>]
-<slike/walker1.PNG, id=696, 590.205pt x 615.80063pt>
+<slike/walker1.PNG, id=695, 590.205pt x 615.80063pt>
 File: slike/walker1.PNG Graphic file (type png)
 <use slike/walker1.PNG>
 Package pdftex.def Info: slike/walker1.PNG  used on input line 84.
 (pdftex.def)             Requested size: 442.65266pt x 461.84933pt.
  [55 <./slike/walker1.png>]
-<slike/walker2.PNG, id=704, 561.59813pt x 610.53094pt>
+<slike/walker2.PNG, id=703, 561.59813pt x 610.53094pt>
 File: slike/walker2.PNG Graphic file (type png)
 <use slike/walker2.PNG>
 Package pdftex.def Info: slike/walker2.PNG  used on input line 98.
 (pdftex.def)             Requested size: 421.19756pt x 457.89708pt.
  [56 <./slike/walker2.png>]
-<slike/walker3.1.PNG, id=712, 630.85687pt x 610.53094pt>
+<slike/walker3.1.PNG, id=711, 630.85687pt x 610.53094pt>
 File: slike/walker3.1.PNG Graphic file (type png)
 <use slike/walker3.1.PNG>
 Package pdftex.def Info: slike/walker3.1.PNG  used on input line 111.
 (pdftex.def)             Requested size: 460.52168pt x 445.68388pt.
-<slike/walker3.2.PNG, id=713, 732.48656pt x 274.77657pt>
+<slike/walker3.2.PNG, id=712, 732.48656pt x 274.77657pt>
 File: slike/walker3.2.PNG Graphic file (type png)
 <use slike/walker3.2.PNG>
 Package pdftex.def Info: slike/walker3.2.PNG  used on input line 113.
@@ -1621,25 +1621,25 @@ Overfull \hbox (71.797pt too wide) in paragraph at lines 110--115
  []
 
 [57] [58 <./slike/walker3.1.png> <./slike/walker3.2.png>]
-<slike/walker4.1.PNG, id=727, 591.71063pt x 579.66562pt>
+<slike/walker4.1.PNG, id=726, 591.71063pt x 579.66562pt>
 File: slike/walker4.1.PNG Graphic file (type png)
 <use slike/walker4.1.PNG>
 Package pdftex.def Info: slike/walker4.1.PNG  used on input line 125.
 (pdftex.def)             Requested size: 443.78188pt x 434.74814pt.
-<slike/walker4.2.PNG, id=728, 563.85657pt x 306.39468pt>
+<slike/walker4.2.PNG, id=727, 563.85657pt x 306.39468pt>
 File: slike/walker4.2.PNG Graphic file (type png)
 <use slike/walker4.2.PNG>
 Package pdftex.def Info: slike/walker4.2.PNG  used on input line 127.
 (pdftex.def)             Requested size: 422.89139pt x 229.79544pt.
  [59]
-<slike/UnitRezultati.PNG, id=735, 335.00156pt x 215.30438pt>
+<slike/UnitRezultati.PNG, id=734, 335.00156pt x 215.30438pt>
 File: slike/UnitRezultati.PNG Graphic file (type png)
 <use slike/UnitRezultati.PNG>
 Package pdftex.def Info: slike/UnitRezultati.PNG  used on input line 135.
 (pdftex.def)             Requested size: 251.25055pt x 161.47787pt.
  [60 <./slike/walker4.1.png> <./slike/walker4.2.png>] [61 <./slike/UnitRezultat
 i.png>]
-<slike/HomePage.PNG, id=751, 890.5772pt x 695.59875pt>
+<slike/HomePage.PNG, id=750, 890.5772pt x 695.59875pt>
 File: slike/HomePage.PNG Graphic file (type png)
 <use slike/HomePage.PNG>
 Package pdftex.def Info: slike/HomePage.PNG  used on input line 152.
@@ -1649,12 +1649,12 @@ Overfull \hbox (38.46869pt too wide) in paragraph at lines 151--155
  []|  [] 
  []
 
-<slike/Selenium1.1.PNG, id=752, 568.37344pt x 618.05907pt>
+<slike/Selenium1.1.PNG, id=751, 568.37344pt x 618.05907pt>
 File: slike/Selenium1.1.PNG Graphic file (type png)
 <use slike/Selenium1.1.PNG>
 Package pdftex.def Info: slike/Selenium1.1.PNG  used on input line 158.
 (pdftex.def)             Requested size: 426.27904pt x 463.54317pt.
-<slike/Selenium1.2.PNG, id=753, 480.29437pt x 286.06876pt>
+<slike/Selenium1.2.PNG, id=752, 480.29437pt x 286.06876pt>
 File: slike/Selenium1.2.PNG Graphic file (type png)
 <use slike/Selenium1.2.PNG>
 Package pdftex.def Info: slike/Selenium1.2.PNG  used on input line 160.
@@ -1663,29 +1663,29 @@ Package pdftex.def Info: slike/Selenium1.2.PNG  used on input line 160.
 Overfull \vbox (7.724pt too high) has occurred while \output is active []
 
  [63 <./slike/Selenium1.1.png> <./slike/Selenium1.2.png>]
-<slike/UsernameError.PNG, id=768, 532.99126pt x 650.43pt>
+<slike/UsernameError.PNG, id=767, 532.99126pt x 650.43pt>
 File: slike/UsernameError.PNG Graphic file (type png)
 <use slike/UsernameError.PNG>
 Package pdftex.def Info: slike/UsernameError.PNG  used on input line 171.
 (pdftex.def)             Requested size: 373.09134pt x 455.2979pt.
-<slike/Selenium2.1.PNG, id=769, 562.35094pt x 579.66562pt>
+<slike/Selenium2.1.PNG, id=768, 562.35094pt x 579.66562pt>
 File: slike/Selenium2.1.PNG Graphic file (type png)
 <use slike/Selenium2.1.PNG>
 Package pdftex.def Info: slike/Selenium2.1.PNG  used on input line 177.
 (pdftex.def)             Requested size: 421.76216pt x 434.74814pt.
-<slike/Selenium2.2.PNG, id=770, 561.59813pt x 275.52937pt>
+<slike/Selenium2.2.PNG, id=769, 561.59813pt x 275.52937pt>
 File: slike/Selenium2.2.PNG Graphic file (type png)
 <use slike/Selenium2.2.PNG>
 Package pdftex.def Info: slike/Selenium2.2.PNG  used on input line 179.
 (pdftex.def)             Requested size: 421.19756pt x 206.64651pt.
  [64 <./slike/UsernameError.png>] [65 <./slike/Selenium2.1.png> <./slike/Seleni
 um2.2.png>]
-<slike/PasswordError.PNG, id=785, 536.75531pt x 649.67719pt>
+<slike/PasswordError.PNG, id=784, 536.75531pt x 649.67719pt>
 File: slike/PasswordError.PNG Graphic file (type png)
 <use slike/PasswordError.PNG>
 Package pdftex.def Info: slike/PasswordError.PNG  used on input line 189.
 (pdftex.def)             Requested size: 375.72614pt x 454.77094pt.
-<slike/Selenium3.1.PNG, id=786, 653.44125pt x 632.3625pt>
+<slike/Selenium3.1.PNG, id=785, 653.44125pt x 632.3625pt>
 File: slike/Selenium3.1.PNG Graphic file (type png)
 <use slike/Selenium3.1.PNG>
 Package pdftex.def Info: slike/Selenium3.1.PNG  used on input line 194.
@@ -1696,7 +1696,7 @@ Overfull \hbox (54.46893pt too wide) in paragraph at lines 194--197
  []
 
 [66 <./slike/PasswordError.png>]
-<slike/Selenium3.2.PNG, id=795, 661.72218pt x 610.53094pt>
+<slike/Selenium3.2.PNG, id=794, 661.72218pt x 610.53094pt>
 File: slike/Selenium3.2.PNG Graphic file (type png)
 <use slike/Selenium3.2.PNG>
 Package pdftex.def Info: slike/Selenium3.2.PNG  used on input line 200.
@@ -1707,17 +1707,17 @@ Overfull \hbox (60.67963pt too wide) in paragraph at lines 200--202
  []
 
 [67 <./slike/Selenium3.1.png>] [68 <./slike/Selenium3.2.png>]
-<slike/OIBError.PNG, id=809, 551.81157pt x 652.68843pt>
+<slike/OIBError.PNG, id=808, 551.81157pt x 652.68843pt>
 File: slike/OIBError.PNG Graphic file (type png)
 <use slike/OIBError.PNG>
 Package pdftex.def Info: slike/OIBError.PNG  used on input line 211.
 (pdftex.def)             Requested size: 386.26547pt x 456.87878pt.
-<slike/Selenium4.1.PNG, id=810, 563.10374pt x 636.87938pt>
+<slike/Selenium4.1.PNG, id=809, 563.10374pt x 636.87938pt>
 File: slike/Selenium4.1.PNG Graphic file (type png)
 <use slike/Selenium4.1.PNG>
 Package pdftex.def Info: slike/Selenium4.1.PNG  used on input line 216.
 (pdftex.def)             Requested size: 422.32677pt x 477.65836pt.
-<slike/Selenium4.2.PNG, id=811, 636.12656pt x 264.23718pt>
+<slike/Selenium4.2.PNG, id=810, 636.12656pt x 264.23718pt>
 File: slike/Selenium4.2.PNG Graphic file (type png)
 <use slike/Selenium4.2.PNG>
 Package pdftex.def Info: slike/Selenium4.2.PNG  used on input line 218.
@@ -1732,13 +1732,13 @@ Overfull \vbox (5.46553pt too high) has occurred while \output is active []
 
 
 [70 <./slike/Selenium4.1.png> <./slike/Selenium4.2.png>]
-<slike/SeleniumRezultati.PNG, id=826, 345.54094pt x 168.63pt>
+<slike/SeleniumRezultati.PNG, id=825, 345.54094pt x 168.63pt>
 File: slike/SeleniumRezultati.PNG Graphic file (type png)
 <use slike/SeleniumRezultati.PNG>
 Package pdftex.def Info: slike/SeleniumRezultati.PNG  used on input line 225.
 (pdftex.def)             Requested size: 259.15506pt x 126.47218pt.
  [71 <./slike/SeleniumRezultati.png>]
-<dijagrami/Dijagram razmjestaja.png, id=834, 775.39688pt x 512.66531pt>
+<dijagrami/Dijagram razmjestaja.png, id=833, 775.39688pt x 512.66531pt>
 File: dijagrami/Dijagram razmjestaja.png Graphic file (type png)
 <use dijagrami/Dijagram razmjestaja.png>
 Package pdftex.def Info: dijagrami/Dijagram razmjestaja.png  used on input line
@@ -1851,8 +1851,8 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 12497 strings out of 479918
- 179575 string characters out of 5886688
+ 12496 strings out of 479918
+ 179567 string characters out of 5886688
  561344 words of memory out of 5000000
  28347 multiletter control sequences out of 15000+600000
  568810 words of font info for 99 fonts, out of 8000000 for 9000
@@ -1865,11 +1865,11 @@ ic/kpfonts/jkpmi.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/kpfonts/jkp
 mit8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/kpfonts/jkpmitc.pfb><c
 :/texlive/2020/texmf-dist/fonts/type1/public/kpfonts/jkpmn8a.pfb><c:/texlive/20
 20/texmf-dist/fonts/type1/public/kpfonts/jkpttmn8a.pfb>
-Output written on PROGI_ProjektnaDokumentacija_v6.pdf (81 pages, 8109709 bytes)
+Output written on PROGI_ProjektnaDokumentacija_v6.pdf (81 pages, 8109725 bytes)
 .
 PDF statistics:
- 1029 PDF objects out of 1200 (max. 8388607)
- 845 compressed objects within 9 object streams
- 337 named destinations out of 1000 (max. 500000)
+ 1027 PDF objects out of 1200 (max. 8388607)
+ 843 compressed objects within 9 object streams
+ 336 named destinations out of 1000 (max. 500000)
  453 words of extra memory for PDF output out of 10000 (max. 10000000)
 
