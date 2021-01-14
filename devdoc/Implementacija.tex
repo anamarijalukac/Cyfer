@@ -174,8 +174,13 @@
 		 
 		   \subsubsection{3. ispitni primjer - registracija udruge sa ispravnim podatcima}
 		 
-		 U ovom primjeru smo demonstrirali uspješnu registraciju udruge uz ispravak lozinke. Upisali smo sve ispravne podatke osim lozinke i ponovljene lozinke, koje su bile različite. Od sustava smo očekivali da nam javi kakva je pogreška u pitanju. Sustav je ostao na istoj stranici (nije se dogodilo preusmjeravanje kao pri uspješnoj registraciji) te nam je ispisao poruku "Neuspješna registracija - postoji već udruga sa danim OIB-om." U ispitnom primjeru smo provjerili je li doista ispisana ta poruka. Ispod je priložena slika izvođenja u browseru te kod ispitnog primjera. 
+		 U ovom primjeru smo demonstrirali uspješnu registraciju udruge uz ispravak lozinke. Upisali smo sve ispravne podatke osim lozinke i ponovljene lozinke, koje su bile različite. Od sustava smo očekivali da nam javi kakva je pogreška u pitanju. Sustav je ostao na istoj stranici (nije se dogodilo preusmjeravanje kao pri uspješnoj registraciji) te nam je ispisao poruku "Lozinke se ne poklapaju." Zatim smo ispravili ponovljenu lozinku i ponovno poslali zahtjev za registracijom. Sustav nas je očekivano preusmjerio na početnu stranicu. Ispod je priložena slika izvođenja u browseru (neispravne lozinke) te kod ispitnog primjera. 
 			 
+			  \begin{figure}[H]
+			 	\includegraphics[scale=0.75]{slike/PasswordError.PNG}
+			 	%veličina slike u odnosu na originalnu datoteku i pozicija slike
+			 	\centering
+			 \end{figure}
 			 \begin{figure}[H]
 			 	\includegraphics[scale=0.75]{slike/Selenium3.1.PNG}
 			 	%veličina slike u odnosu na originalnu datoteku i pozicija slike

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.27)  14 JAN 2021 14:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.27)  14 JAN 2021 15:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1076,7 +1076,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.50 ...hapter}{Popis literature}{72}{chapter*.24}
+l.51 ...hapter}{Popis literature}{73}{chapter*.25}
                                                   % [1
 
 ])
@@ -1668,72 +1668,78 @@ File: slike/Selenium2.2.PNG Graphic file (type png)
 <use slike/Selenium2.2.PNG>
 Package pdftex.def Info: slike/Selenium2.2.PNG  used on input line 170.
 (pdftex.def)             Requested size: 421.19756pt x 206.64651pt.
- [63 <./slike/UsernameError.png>]
-<slike/Selenium3.1.PNG, id=771, 653.44125pt x 632.3625pt>
+ [63 <./slike/UsernameError.png>] [64 <./slike/Selenium2.1.png> <./slike/Seleni
+um2.2.png>]
+<slike/PasswordError.PNG, id=778, 536.75531pt x 649.67719pt>
+File: slike/PasswordError.PNG Graphic file (type png)
+<use slike/PasswordError.PNG>
+Package pdftex.def Info: slike/PasswordError.PNG  used on input line 180.
+(pdftex.def)             Requested size: 402.56548pt x 487.2567pt.
+<slike/Selenium3.1.PNG, id=779, 653.44125pt x 632.3625pt>
 File: slike/Selenium3.1.PNG Graphic file (type png)
 <use slike/Selenium3.1.PNG>
-Package pdftex.def Info: slike/Selenium3.1.PNG  used on input line 175.
+Package pdftex.def Info: slike/Selenium3.1.PNG  used on input line 185.
 (pdftex.def)             Requested size: 490.07973pt x 474.27072pt.
 
-Overfull \hbox (54.46893pt too wide) in paragraph at lines 175--178
+Overfull \hbox (54.46893pt too wide) in paragraph at lines 185--188
  [][] 
  []
 
-<slike/Selenium3.2.PNG, id=772, 661.72218pt x 610.53094pt>
+[65]
+<slike/Selenium3.2.PNG, id=786, 661.72218pt x 610.53094pt>
 File: slike/Selenium3.2.PNG Graphic file (type png)
 <use slike/Selenium3.2.PNG>
-Package pdftex.def Info: slike/Selenium3.2.PNG  used on input line 180.
+Package pdftex.def Info: slike/Selenium3.2.PNG  used on input line 190.
 (pdftex.def)             Requested size: 496.29042pt x 457.89708pt.
 
-Overfull \hbox (60.67963pt too wide) in paragraph at lines 180--182
+Overfull \hbox (60.67963pt too wide) in paragraph at lines 190--192
  [][] 
  []
 
-[64 <./slike/Selenium2.1.png> <./slike/Selenium2.2.png>] [65 <./slike/Selenium3
-.1.png>]
-<slike/OIBError.PNG, id=786, 551.81157pt x 652.68843pt>
+[66 <./slike/PasswordError.png>] [67 <./slike/Selenium3.1.png>]
+<slike/OIBError.PNG, id=800, 551.81157pt x 652.68843pt>
 File: slike/OIBError.PNG Graphic file (type png)
 <use slike/OIBError.PNG>
-Package pdftex.def Info: slike/OIBError.PNG  used on input line 191.
+Package pdftex.def Info: slike/OIBError.PNG  used on input line 201.
 (pdftex.def)             Requested size: 386.26547pt x 456.87878pt.
-<slike/Selenium4.1.PNG, id=787, 563.10374pt x 636.87938pt>
+<slike/Selenium4.1.PNG, id=801, 563.10374pt x 636.87938pt>
 File: slike/Selenium4.1.PNG Graphic file (type png)
 <use slike/Selenium4.1.PNG>
-Package pdftex.def Info: slike/Selenium4.1.PNG  used on input line 196.
+Package pdftex.def Info: slike/Selenium4.1.PNG  used on input line 206.
 (pdftex.def)             Requested size: 422.32677pt x 477.65836pt.
-<slike/Selenium4.2.PNG, id=788, 636.12656pt x 264.23718pt>
+<slike/Selenium4.2.PNG, id=802, 636.12656pt x 264.23718pt>
 File: slike/Selenium4.2.PNG Graphic file (type png)
 <use slike/Selenium4.2.PNG>
-Package pdftex.def Info: slike/Selenium4.2.PNG  used on input line 198.
+Package pdftex.def Info: slike/Selenium4.2.PNG  used on input line 208.
 (pdftex.def)             Requested size: 477.09375pt x 198.17738pt.
 
-Overfull \hbox (51.03839pt too wide) in paragraph at lines 196--200
+Overfull \hbox (51.03839pt too wide) in paragraph at lines 206--210
  |  [] 
  []
 
-[66 <./slike/Selenium3.2.png>] [67 <./slike/OIBError.png>]
+[68 <./slike/Selenium3.2.png>] [69 <./slike/OIBError.png>]
 Overfull \vbox (5.46553pt too high) has occurred while \output is active []
 
 
-[68 <./slike/Selenium4.1.png> <./slike/Selenium4.2.png>]
-<slike/SeleniumRezultati.PNG, id=811, 345.54094pt x 168.63pt>
+[70 <./slike/Selenium4.1.png> <./slike/Selenium4.2.png>]
+<slike/SeleniumRezultati.PNG, id=824, 345.54094pt x 168.63pt>
 File: slike/SeleniumRezultati.PNG Graphic file (type png)
 <use slike/SeleniumRezultati.PNG>
-Package pdftex.def Info: slike/SeleniumRezultati.PNG  used on input line 204.
+Package pdftex.def Info: slike/SeleniumRezultati.PNG  used on input line 214.
 (pdftex.def)             Requested size: 259.15506pt x 126.47218pt.
- [69 <./slike/SeleniumRezultati.png>]
-<dijagrami/Dijagram razmjestaja.png, id=818, 775.39688pt x 512.66531pt>
+ [71 <./slike/SeleniumRezultati.png>]
+<dijagrami/Dijagram razmjestaja.png, id=831, 775.39688pt x 512.66531pt>
 File: dijagrami/Dijagram razmjestaja.png Graphic file (type png)
 <use dijagrami/Dijagram razmjestaja.png>
 Package pdftex.def Info: dijagrami/Dijagram razmjestaja.png  used on input line
- 221.
+ 231.
 (pdftex.def)             Requested size: 387.6975pt x 256.33202pt.
- [70 <./dijagrami/Dijagram razmjestaja.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 227--228
+ [72 <./dijagrami/Dijagram razmjestaja.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 237--238
 
  []
 
-[71])
+[73])
 \openout2 = `Zakljucak.aux'.
 
  (./Zakljucak.tex
@@ -1748,7 +1754,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--4
 
  []
 
-[72
+[74
 
 
 
@@ -1786,7 +1792,7 @@ Overfull \hbox (2.80296pt too wide) in paragraph at lines 24--25
 ]teams-[]backend / -[] / blob /
  []
 
-) [73
+) [75
 
 
 
@@ -1801,26 +1807,26 @@ ti re-gis-tri-ra-nog gra[]danina
 \tf@lof=\write6
 \openout6 = `PROGI_ProjektnaDokumentacija_v6.lof'.
 
- [74
+ [76
 
 
 
 ]
 \openout2 = `Dodatak.aux'.
 
- (./Dodatak.tex [75
+ (./Dodatak.tex [77
 
 
-] [76]
+] [78]
 Overfull \vbox (2.0755pt too high) has occurred while \output is active []
 
 
-[77]
+[79]
 Underfull \hbox (badness 10000) in paragraph at lines 122--123
 
  []
 
-) [78] 
+) [80] 
 AED: lastpage setting LastPage
 (./PROGI_ProjektnaDokumentacija_v6.aux (./Dnevnik_promjena_dokumentacije.aux)
 (./Opis_projektnog_zadatka.aux) (./Specifikacija_programske_potpore.aux)
@@ -1834,21 +1840,21 @@ changed.
 
 Package rerunfilecheck Info: Checksums for `PROGI_ProjektnaDokumentacija_v6.out
 ':
-(rerunfilecheck)             Before: 3C99E546D7E135E9580FA7269900F73B;1962
-(rerunfilecheck)             After:  F4EBB012D5A536F74DF17114602260BC;1962.
+(rerunfilecheck)             Before: 6735632DDBC96D0AD9B38279F9F0038A;1991
+(rerunfilecheck)             After:  3A1AE836A8EA5465BCC3088C4AC3D4BF;1962.
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 12482 strings out of 479918
- 179290 string characters out of 5886688
+ 12491 strings out of 479918
+ 179472 string characters out of 5886688
  561344 words of memory out of 5000000
- 28337 multiletter control sequences out of 15000+600000
+ 28342 multiletter control sequences out of 15000+600000
  568810 words of font info for 99 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  93i,13n,98p,1012b,614s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{chapter*.24} has been referenced but does not exi
+pdfTeX warning (dest): name{chapter*.25} has been referenced but does not exi
 st, replaced by a fixed one
 
 {c:/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2020/texmf-
@@ -1858,11 +1864,11 @@ type1/public/kpfonts/jkpbn8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public
 t8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/kpfonts/jkpmitc.pfb><c:/
 texlive/2020/texmf-dist/fonts/type1/public/kpfonts/jkpmn8a.pfb><c:/texlive/2020
 /texmf-dist/fonts/type1/public/kpfonts/jkpttmn8a.pfb>
-Output written on PROGI_ProjektnaDokumentacija_v6.pdf (79 pages, 6436265 bytes)
+Output written on PROGI_ProjektnaDokumentacija_v6.pdf (81 pages, 6536540 bytes)
 .
 PDF statistics:
- 1013 PDF objects out of 1200 (max. 8388607)
- 835 compressed objects within 9 object streams
- 334 named destinations out of 1000 (max. 500000)
- 443 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1027 PDF objects out of 1200 (max. 8388607)
+ 845 compressed objects within 9 object streams
+ 337 named destinations out of 1000 (max. 500000)
+ 448 words of extra memory for PDF output out of 10000 (max. 10000000)
 
