@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.27)  14 JAN 2021 19:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.27)  14 JAN 2021 19:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1076,7 +1076,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.53 ...hapter}{Popis literature}{74}{chapter*.27}
+l.53 ...hapter}{Popis literature}{75}{chapter*.27}
                                                   % [1
 
 ])
@@ -1865,7 +1865,7 @@ ic/kpfonts/jkpmi.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/kpfonts/jkp
 mit8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/kpfonts/jkpmitc.pfb><c
 :/texlive/2020/texmf-dist/fonts/type1/public/kpfonts/jkpmn8a.pfb><c:/texlive/20
 20/texmf-dist/fonts/type1/public/kpfonts/jkpttmn8a.pfb>
-Output written on PROGI_ProjektnaDokumentacija_v6.pdf (81 pages, 8109721 bytes)
+Output written on PROGI_ProjektnaDokumentacija_v6.pdf (81 pages, 8109709 bytes)
 .
 PDF statistics:
  1029 PDF objects out of 1200 (max. 8388607)
