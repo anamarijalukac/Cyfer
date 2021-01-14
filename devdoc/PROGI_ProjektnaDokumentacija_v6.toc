@@ -30,12 +30,24 @@
 \contentsline {section}{\numberline {4.5}Dijagram komponenti}{44}{section.4.5}%
 \contentsline {chapter}{\numberline {5}Implementacija i korisničko sučelje}{46}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Korištene tehnologije i alati}{46}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Ispitivanje programskog rješenja}{48}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Ispitivanje komponenti}{56}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Ispitivanje sustava}{56}{subsection.5.2.2}%
-\contentsline {section}{\numberline {5.3}Dijagram razmještaja}{57}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Upute za puštanje u pogon}{58}{section.5.4}%
-\contentsline {chapter}{\numberline {6}Zaključak i budući rad}{59}{chapter.6}%
-\contentsline {chapter}{Popis literature}{60}{chapter*.13}%
-\contentsline {chapter}{Indeks slika i dijagrama}{61}{chapter*.14}%
-\contentsline {chapter}{Dodatak: Prikaz aktivnosti grupe}{62}{chapter*.15}%
+\contentsline {section}{\numberline {5.2}Ispitivanje programskog rješenja}{47}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Ispitivanje komponenti}{47}{subsection.5.2.1}%
+\contentsline {subsubsection}{1. ispitni primjer - registracija udruge sa zauzetim OIB-om}{47}{subsubsection*.13}%
+\contentsline {subsubsection}{2. ispitni primjer - registracija udruge sa zauzetim korisničkim imenom}{49}{subsubsection*.14}%
+\contentsline {subsubsection}{3. ispitni primjer - mijenjanje podataka udruge sa i bez autorizacije }{51}{subsubsection*.15}%
+\contentsline {subsubsection}{4. ispitni primjer - brisanje udruge sa i bez autorizacije }{53}{subsubsection*.16}%
+\contentsline {subsubsection}{5. ispitni primjer - registracija šetača sa zauzetom email adresom}{55}{subsubsection*.17}%
+\contentsline {subsubsection}{6. ispitni primjer - registracija šetača sa zauzetim korisničkim imenom}{56}{subsubsection*.18}%
+\contentsline {subsubsection}{7. ispitni primjer - mijenjanje podataka šetača sa i bez autorizacije }{57}{subsubsection*.19}%
+\contentsline {subsubsection}{8. ispitni primjer - mijenjanje podataka šetača sa i bez autorizacije }{59}{subsubsection*.20}%
+\contentsline {subsubsection}{Rezultati ispitnih primjera }{61}{subsubsection*.21}%
+\contentsline {subsection}{\numberline {5.2.2}Ispitivanje sustava}{61}{subsection.5.2.2}%
+\contentsline {subsubsection}{1. ispitni primjer - registracija šetača s ispravnim podatcima}{61}{subsubsection*.22}%
+\contentsline {subsubsection}{2. ispitni primjer - registracija šetača s neispravnim podatcima}{63}{subsubsection*.23}%
+\contentsline {subsubsection}{4. ispitni primjer - registracija udruge s neispravnim podatcima}{66}{subsubsection*.24}%
+\contentsline {section}{\numberline {5.3}Dijagram razmještaja}{70}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Upute za puštanje u pogon}{71}{section.5.4}%
+\contentsline {chapter}{\numberline {6}Zaključak i budući rad}{72}{chapter.6}%
+\contentsline {chapter}{Popis literature}{73}{chapter*.25}%
+\contentsline {chapter}{Indeks slika i dijagrama}{74}{chapter*.26}%
+\contentsline {chapter}{Dodatak: Prikaz aktivnosti grupe}{75}{chapter*.27}%

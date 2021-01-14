@@ -13,106 +13,204 @@
 	
 		\section{Ispitivanje programskog rješenja}
 			
-		
-			\begin{figure}[H]
-				\centerline{
-			 	\includegraphics[scale=0.73]{slike/shelter1.1.PNG}}
-		 		\hspace*{-0.21in}
-		 		\includegraphics[scale=0.73]{slike/shelter1.2.PNG}
-		 		 %veličina slike u odnosu na originalnu datoteku i pozicija slike
-			 	\centering
-			 \end{figure}
-			
-		 
-		 
-		 
-		 	\begin{figure}[H]
-		 		\centerline{
-		 			\includegraphics[scale=0.75]{slike/shelter2.1.PNG}}
-	 				\hspace*{-0.22in}
-	 				\includegraphics[scale=0.75]{slike/shelter2.2.PNG} %veličina slike u odnosu na originalnu datoteku i pozicija slike
-		 		\centering
-		 	\end{figure}
-		 
-	
-	 	
-	 	
-	 	
-	 		\begin{figure}[H]
-	 				\hspace*{-0.5in}
-	 				\includegraphics[scale=0.73]{slike/shelter3.1.PNG}
-	 				\hspace*{-0.45in}	
-	 				\includegraphics[scale=0.73]{slike/shelter3.2.PNG} %veličina slike u odnosu na originalnu datoteku i pozicija slike
-	 			\centering
-	 		\end{figure}
-	 		
- 		
- 		
- 		
- 			\begin{figure}[H]
- 					\hspace*{-0.93in}
- 					\includegraphics[scale=0.71]{slike/shelter4.1.PNG}
- 					\hspace*{-0.6in}
- 					\includegraphics[scale=0.71]{slike/shelter4.2.PNG} %veličina slike u odnosu na originalnu datoteku i pozicija slike
- 				\centering
- 			\end{figure}
- 	
- 		
- 		
- 			\begin{figure}[H]
- 				\centerline{
- 					\includegraphics[scale=0.75]{slike/walker1.PNG}}
- 				 %veličina slike u odnosu na originalnu datoteku i pozicija slike
- 				\centering
- 			\end{figure}
- 		
- 		
- 		
- 			\begin{figure}[H]
- 				\centerline{
- 				\includegraphics[scale=0.75]{slike/walker2.PNG}} %veličina slike u odnosu na originalnu datoteku i pozicija slike
- 				\centering
- 			\end{figure}
- 		
- 		
- 			
- 		
- 		
- 			\begin{figure}[H]
- 				\hspace*{-0.58in}
- 					\includegraphics[scale=0.73]{slike/walker3.1.PNG}
- 					\hspace*{-0.41in}
- 					\includegraphics[scale=0.73]{slike/walker3.2.PNG} %veličina slike u odnosu na originalnu datoteku i pozicija slike
- 				\centering
- 			\end{figure}
- 		
- 			
- 			
- 			\begin{figure}[H]
- 				\hspace*{-0.18in}
- 				\includegraphics[scale=0.75]{slike/walker4.1.PNG}
- 				\hspace*{-0.4in}
- 				\includegraphics[scale=0.75]{slike/walker4.2.PNG} %veličina slike u odnosu na originalnu datoteku i pozicija slike
- 				\centering
- 			\end{figure}
- 			
-	
 			
 			\subsection{Ispitivanje komponenti}
-			\textit{Potrebno je provesti ispitivanje jedinica (engl. unit testing) nad razredima koji implementiraju temeljne funkcionalnosti. Razraditi \textbf{minimalno 6 ispitnih slučajeva} u kojima će se ispitati redovni slučajevi, rubni uvjeti te izazivanje pogreške (engl. exception throwing). Poželjno je stvoriti i ispitni slučaj koji koristi funkcionalnosti koje nisu implementirane. Potrebno je priložiti izvorni kôd svih ispitnih slučajeva te prikaz rezultata izvođenja ispita u razvojnom okruženju (prolaz/pad ispita). }
+			Testirali smo 8 ispitnih slučajeva unoseći ispravne i neispravne podatke te provjeravajući vraća li sustav odgovore kakve očekujemo. Od osam ispitnih primjera, četiri se odnose na šetače te četiri na udruge. Rezultati i opisi pojedinih testova su priloženi ispod. Kao što ćemo vidjeti u rezultatima, svi su ispiti prolazni jer smo pri upisu neispravnih podataka i očekivali odgovore različite od 200 OK.
+			
+			\subsubsection{1. ispitni primjer - registracija udruge sa zauzetim OIB-om}
+			
+			U ispitnom primjeru prvo smo stvorili i registrirali prvu udrugu sa zadanim OIB-om 22000000000. Dobili smo očekivani odgovor sa statusom 200 OK. Zatim smo pokušali registrirati drugu udrugu sa istim tim OIB-om (ali drugačijim korisničkim imenom, koji također mora biti jedinstven). Dobili smo očekivani odgovor sa statusom 406 NOT ACCEPTABLE. Nakon toga smo promijenili OIB u 22000000001 te ponovno poslali zahtjev za registracijom. Dobili smo očekivani odgovor 200 OK.
+			\begin{figure}[H]
+				\centerline{
+					\includegraphics[scale=0.73]{slike/shelter1.1.PNG}}
+				\hspace*{-0.21in}
+				\includegraphics[scale=0.73]{slike/shelter1.2.PNG}
+				%veličina slike u odnosu na originalnu datoteku i pozicija slike
+				\centering
+			\end{figure}
+			
+			
+			
+			\subsubsection{2. ispitni primjer - registracija udruge sa zauzetim korisničkim imenom}
+			
+			U ispitnom primjeru prvo smo stvorili i registrirali prvu udrugu sa zadanim korisničkim imenom "ella". Dobili smo očekivani odgovor sa statusom 200 OK. Zatim smo pokušali registrirati drugu udrugu sa istim tim korisničkim imenom (ali drugačijim OIB-om, koji također mora biti jedinstven). Dobili smo očekivani odgovor sa statusom 409 CONFLICT. Možemo primjetiti da je to drugačiji odgovor od onog u gornjem testu kada šaljemo OIB koji nije jedinstven (409 NOT ACCEPTED). To je zato što smo pomoću tih odgovora razlikovali kakav odgovor tj. feedback treba dati korisniku pri registraciji. Nakon toga smo promijenili korisničko ime u "lily" te ponovno poslali zahtjev za registracijom. Dobili smo očekivani odgovor 200 OK.
+			
+			\begin{figure}[H]
+				\centerline{
+					\includegraphics[scale=0.75]{slike/shelter2.1.PNG}}
+				\hspace*{-0.22in}
+				\includegraphics[scale=0.75]{slike/shelter2.2.PNG} %veličina slike u odnosu na originalnu datoteku i pozicija slike
+				\centering
+			\end{figure}
+			
+			
+			
+			\subsubsection{3. ispitni primjer - mijenjanje podataka udruge sa i bez autorizacije }
+			
+			U ispitnom primjeru prvo smo stvorili i registrirali  udrugu. Dobili smo očekivani odgovor sa statusom 200 OK. Također, u tijelu odgovora nam je vraćena ta udruga koju smo upravo registrirali uz dodatak ID-a udruge koji je stvoren na backendu. Taj vraćeni objekt smo spremili u našu varijablu udruge jer ćemo koristiti vraćeni ID u putanji za mijenjanje podataka. Zatim smo promijenili ime udruge u "NovoIme" te poslali zahtjev za promjenom. Dobili smo očekivani odgovor sa statusom 401 UNAUTHORIZED jer nismo dodali autorizaciju na zahtjev. Nakon toga smo pokušali ponovno sa dodanom autorizacijom te dobili očekivani odgovor 200 OK te udrugu sa promijenjenim imenom u tijelu odgovora. Na kraju smo provjerili da je u vraćenoj udruzi stvarno promijenjeno ime.
+			
+			\begin{figure}[H]
+				\hspace*{-0.5in}
+				\includegraphics[scale=0.73]{slike/shelter3.1.PNG}
+				\hspace*{-0.45in}	
+				\includegraphics[scale=0.73]{slike/shelter3.2.PNG} %veličina slike u odnosu na originalnu datoteku i pozicija slike
+				\centering
+			\end{figure}
+			
+			
+			\subsubsection{4. ispitni primjer - brisanje udruge sa i bez autorizacije }
+			
+			U ispitnom primjeru prvo smo stvorili i registrirali  udrugu. Dobili smo očekivani odgovor sa statusom 200 OK. Također, u tijelu odgovora nam je vraćena ta udruga koju smo upravo registrirali uz dodatak ID-a udruge koji je stvoren na backendu. Taj vraćeni objekt smo spremili u našu varijablu udruge jer ćemo koristiti vraćeni ID u putanji za brisanje udruge. Zatim smo poslali zahtjev za brisanjem bez autorizacije. Dobili smo očekivani odgovor sa statusom 401 UNAUTHORIZED jer nismo dodali autorizaciju na zahtjev. Nakon toga smo pokušali ponovno sa dodanom autorizacijom te dobili očekivani odgovor 200 OK.
+			
+			\begin{figure}[H]
+				\hspace*{-0.93in}
+				\includegraphics[scale=0.71]{slike/shelter4.1.PNG}
+				\hspace*{-0.6in}
+				\includegraphics[scale=0.71]{slike/shelter4.2.PNG} %veličina slike u odnosu na originalnu datoteku i pozicija slike
+				\centering
+			\end{figure}
+			
+			
+			
+			\subsubsection{5. ispitni primjer - registracija šetača sa zauzetom email adresom}
+			
+			U ispitnom primjeru prvo smo stvorili dva šetača sa jednakim email adresama (ali različitim korisničkim imenima, koja također moraju biti jedinstvena). Registrirali smo prvog i dobili očekivani odgovor sa statusom 200 OK. Zatim smo pokušali registrirati drugog šetača te smo dobili  očekivani odgovor sa statusom 406 NOT ACCEPTABLE jer email adresa šetača mora biti jedinstvena.
+			
+			
+			\begin{figure}[H]
+				\centerline{
+					\includegraphics[scale=0.75]{slike/walker1.PNG}}
+				%veličina slike u odnosu na originalnu datoteku i pozicija slike
+				\centering
+			\end{figure}
+			
+			\newpage
+				
+			\subsubsection{6. ispitni primjer - registracija šetača sa zauzetim korisničkim imenom}
+			
+			U ispitnom primjeru prvo smo stvorili dva šetača sa jednakim korisničkim imenom (ali različitim email adresama, koje također moraju biti jedinstvene). Registrirali smo prvog i dobili očekivani odgovor sa statusom 200 OK. Zatim smo pokušali registrirati drugog šetača te smo dobili  očekivani odgovor sa statusom 409 CONFLICT jer e korisničko ime šetača mora biti jedinstveno. Kao i u primjeru s udrugama, šaljemo različite statuse ovisno je li došlo do pogreške zbog korisničkog imena ili lozinke jer tako znamo kakvu poruku poslati korisniku.
+			
+			
+			\begin{figure}[H]
+				\centerline{
+					\includegraphics[scale=0.75]{slike/walker2.PNG}} %veličina slike u odnosu na originalnu datoteku i pozicija slike
+				\centering
+			\end{figure}
+			
+			
+			\subsubsection{7. ispitni primjer - mijenjanje podataka šetača sa i bez autorizacije }
+			
+			U ispitnom primjeru prvo smo stvorili i registrirali  šetača. Dobili smo očekivani odgovor sa statusom 200 OK. Također, u tijelu odgovora nam je vraćen taj šetač kojeg smo upravo registrirali uz dodatak ID-a šetača koji je stvoren na backendu. Taj vraćeni objekt smo spremili u našu varijablu šetača jer ćemo koristiti vraćeni ID u putanji za mijenjanje podataka. Zatim smo promijenili korisničko ime šetača u "noviKorisnik" te poslali zahtjev za promjenom. Dobili smo očekivani odgovor sa statusom 401 UNAUTHORIZED jer nismo dodali autorizaciju na zahtjev. Nakon toga smo pokušali ponovno sa dodanom autorizacijom te dobili očekivani odgovor 200 OK te šetača sa promijenjenim korisničkim imenom u tijelu odgovora. Na kraju smo provjerili da je vraćenom šetaču stvarno promijenjeno ime.
+			
+			
+			
+			\begin{figure}[H]
+				\hspace*{-0.58in}
+				\includegraphics[scale=0.73]{slike/walker3.1.PNG}
+				\hspace*{-0.41in}
+				\includegraphics[scale=0.73]{slike/walker3.2.PNG} %veličina slike u odnosu na originalnu datoteku i pozicija slike
+				\centering
+			\end{figure}
+			
+			
+			\subsubsection{8. ispitni primjer - mijenjanje podataka šetača sa i bez autorizacije }
+			
+			U ispitnom primjeru prvo smo stvorili i registrirali  šetača. Dobili smo očekivani odgovor sa statusom 200 OK.  Zatim smo stvorili novu šetnju te poslali zahtjev za rezervacijom šetnje (odabrali smo psa sa ID-jem 13 i stavili 13 u stazu "/reserve/13"). Dobili smo očekivani odgovor sa statusom 401 UNAUTHORIZED jer nismo dodali autorizaciju na zahtjev. Nakon toga smo pokušali ponovno sa dodanom autorizacijom te dobili očekivani odgovor 200 OK. 
+			
+			
+			\begin{figure}[H]
+				\hspace*{-0.18in}
+				\includegraphics[scale=0.75]{slike/walker4.1.PNG}
+				\hspace*{-0.4in}
+				\includegraphics[scale=0.75]{slike/walker4.2.PNG} %veličina slike u odnosu na originalnu datoteku i pozicija slike
+				\centering
+			\end{figure}
+		
+		
+			\subsubsection{Rezultati ispitnih primjera }
+			
+			\begin{figure}[H]
+				\includegraphics[scale=0.75]{slike/UnitRezultati.PNG}
+				\centering
+			\end{figure}
+			
 			
 			
 			
 			\subsection{Ispitivanje sustava}
 			
-			 \textit{Potrebno je provesti i opisati ispitivanje sustava koristeći radni okvir Selenium\footnote{\url{https://www.seleniumhq.org/}}. Razraditi \textbf{minimalno 4 ispitna slučaja} u kojima će se ispitati redovni slučajevi, rubni uvjeti te poziv funkcionalnosti koja nije implementirana/izaziva pogrešku kako bi se vidjelo na koji način sustav reagira kada nešto nije u potpunosti ostvareno. Ispitni slučaj se treba sastojati od ulaza (npr. korisničko ime i lozinka), očekivanog izlaza ili rezultata, koraka ispitivanja i dobivenog izlaza ili rezultata.\\ }
+				Za ispitivanje sustava koristili smo radni okvir Selenium. Uz podršku Selenium WebDrivera, napisali smo četiri ispita u programskom jeziku Java. Kao i u gornjim primjerima, svi ispiti su uspješno prošli jer smo pri slanju krivih podataka očekivali da su korisniku prikazane informacije o tome što je krivo. Svi ispiti su vezani uz varijacije registracija šetača i udruge. Očekivali smo da sustav zna reći koji podaci su neispravni kako bi ih mogao ispraviti.
+			
+			\subsubsection{1. ispitni primjer - registracija šetača sa ispravnim podatcima}
+			
+				U ovom primjeru smo demonstrirali uspješnu registraciju šetača. Od sustava smo očekivali da nas onda preusmjeri na početnu stranicu, što je ispunjeno.
+				
+			 	\begin{figure}[H]
+			 	\includegraphics[scale=0.75]{slike/Selenium1.1.PNG}
+			 	\hspace*{-0.85in}
+			 	\includegraphics[scale=0.75]{slike/Selenium1.2.PNG} %veličina slike u odnosu na originalnu datoteku i pozicija slike
+			 	\centering
+			 \end{figure}
+		 
+		 
+		 
+		 \subsubsection{2. ispitni primjer - registracija šetača s neispravnim podatcima}
+		 
+		 U ovom primjeru smo demonstrirali neuspješnu registraciju šetača. Upisali smo isto korisničko ime kao i u gornjem primjeru - "user123", a kako smo ispite pokretali slijedno, takav korisnik je već bio u bazi. Od sustava smo očekivali da nam javi kakva je pogreška u pitanju. Sustav je ostao na istoj stranici (nije se dogodilo preusmjeravanje kao pri uspješnoj registraciji) te nam je ispisao poruku "Neuspješna registracija - korisničko ime je zauzeto." U ispitnom primjeru smo provjerili je li doista ispisana ta poruka. Ispod je priložena slika izvođenja u browseru te kod ispitnog primjera. 
+		 
+		 	\begin{figure}[H]
+		 		\includegraphics[scale=0.70]{slike/UsernameError.PNG}
+		 		 %veličina slike u odnosu na originalnu datoteku i pozicija slike
+		 		\centering
+		 	\end{figure}
 			 
-			 \textit{Izradu ispitnih slučajeva pomoću radnog okvira Selenium moguće je provesti pomoću jednog od sljedeća dva alata:}
-			 \begin{itemize}
-			 	\item \textit{dodatak za preglednik \textbf{Selenium IDE} - snimanje korisnikovih akcija radi automatskog ponavljanja ispita	}
-			 	\item \textit{\textbf{Selenium WebDriver} - podrška za pisanje ispita u jezicima Java, C\#, PHP koristeći posebno programsko sučelje.}
-			 \end{itemize}
-		 	\textit{Detalji o korištenju alata Selenium bit će prikazani na posebnom predavanju tijekom semestra.}
+			 \begin{figure}[H]
+			 	\includegraphics[scale=0.75]{slike/Selenium2.1.PNG}
+			 	\hspace*{0.15in}
+			 	\includegraphics[scale=0.75]{slike/Selenium2.2.PNG} %veličina slike u odnosu na originalnu datoteku i pozicija slike
+			 	\centering
+			 \end{figure}
+		 
+		 
+		   \subsubsection{3. ispitni primjer - registracija udruge sa ispravnim podatcima}
+		 
+		 U ovom primjeru smo demonstrirali uspješnu registraciju udruge uz ispravak lozinke. Upisali smo sve ispravne podatke osim lozinke i ponovljene lozinke, koje su bile različite. Od sustava smo očekivali da nam javi kakva je pogreška u pitanju. Sustav je ostao na istoj stranici (nije se dogodilo preusmjeravanje kao pri uspješnoj registraciji) te nam je ispisao poruku "Neuspješna registracija - postoji već udruga sa danim OIB-om." U ispitnom primjeru smo provjerili je li doista ispisana ta poruka. Ispod je priložena slika izvođenja u browseru te kod ispitnog primjera. 
+			 
+			 \begin{figure}[H]
+			 	\includegraphics[scale=0.75]{slike/Selenium3.1.PNG}
+			 	%veličina slike u odnosu na originalnu datoteku i pozicija slike
+			 	\centering
+			 \end{figure}
+			 \begin{figure}[H]
+			 	\includegraphics[scale=0.75]{slike/Selenium3.2.PNG} %veličina slike u odnosu na originalnu datoteku i pozicija slike
+			 	\centering
+			 \end{figure}
+			 
+			 
+			 
+			  \subsubsection{4. ispitni primjer - registracija udruge s neispravnim podatcima}
+			 
+			 U ovom primjeru smo demonstrirali neuspješnu registraciju udruge. Upisali smo isti OIB kao i u gornjem (trećem) primjeru - "11111111123", a kako smo ispite pokretali slijedno, takva udruga je već bila u bazi. Od sustava smo očekivali da nam javi kakva je pogreška u pitanju. Sustav je ostao na istoj stranici (nije se dogodilo preusmjeravanje kao pri uspješnoj registraciji) te nam je ispisao poruku "Neuspješna registracija - postoji već udruga sa danim OIB-om." U ispitnom primjeru smo provjerili je li doista ispisana ta poruka. Ispod je priložena slika izvođenja u browseru te kod ispitnog primjera. 
+			 
+			 \begin{figure}[H]
+			 	\includegraphics[scale=0.70]{slike/OIBError.PNG}
+			 	%veličina slike u odnosu na originalnu datoteku i pozicija slike
+			 	\centering
+			 \end{figure}
+			 \begin{figure}[H]
+			 	\includegraphics[scale=0.75]{slike/Selenium4.1.PNG}
+			 	\hspace*{0.1in}
+			 	\includegraphics[scale=0.75]{slike/Selenium4.2.PNG} %veličina slike u odnosu na originalnu datoteku i pozicija slike
+			 	\centering
+			 \end{figure}
+		 
+		 
+		 	\begin{figure}[H]
+		 		\includegraphics[scale=0.75]{slike/SeleniumRezultati.PNG} %veličina slike u odnosu na originalnu datoteku i pozicija slike
+		 		\centering
+		 	\end{figure}
+		 
+		 
 			
 			\eject 
 		
