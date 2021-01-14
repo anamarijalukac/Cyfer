@@ -40,15 +40,16 @@
 \contentsline {subsubsection}{6. ispitni primjer - registracija šetača sa zauzetim korisničkim imenom}{56}{subsubsection*.18}%
 \contentsline {subsubsection}{7. ispitni primjer - mijenjanje podataka šetača sa i bez autorizacije }{57}{subsubsection*.19}%
 \contentsline {subsubsection}{8. ispitni primjer - mijenjanje podataka šetača sa i bez autorizacije }{59}{subsubsection*.20}%
-\contentsline {subsubsection}{Rezultati ispitnih primjera }{61}{subsubsection*.21}%
-\contentsline {subsection}{\numberline {5.2.2}Ispitivanje sustava}{61}{subsection.5.2.2}%
-\contentsline {subsubsection}{1. ispitni primjer - registracija šetača sa ispravnim podatcima}{61}{subsubsection*.22}%
-\contentsline {subsubsection}{2. ispitni primjer - registracija šetača s neispravnim podatcima}{63}{subsubsection*.23}%
-\contentsline {subsubsection}{3. ispitni primjer - registracija udruge sa ispravnim podatcima}{65}{subsubsection*.24}%
-\contentsline {subsubsection}{4. ispitni primjer - registracija udruge s neispravnim podatcima}{68}{subsubsection*.25}%
+\contentsline {subsubsection}{Rezultati izvođenja ispitnih primjera }{61}{subsubsection*.21}%
+\contentsline {subsection}{\numberline {5.2.2}Ispitivanje sustava}{62}{subsection.5.2.2}%
+\contentsline {subsubsection}{1. ispitni primjer - registracija šetača sa ispravnim podatcima}{62}{subsubsection*.22}%
+\contentsline {subsubsection}{2. ispitni primjer - registracija šetača s neispravnim podatcima}{64}{subsubsection*.23}%
+\contentsline {subsubsection}{3. ispitni primjer - registracija udruge sa ispravnim podatcima}{66}{subsubsection*.24}%
+\contentsline {subsubsection}{4. ispitni primjer - registracija udruge s neispravnim podatcima}{69}{subsubsection*.25}%
+\contentsline {subsubsection}{Rezultati izvođenja ispitnih primjera}{71}{subsubsection*.26}%
 \contentsline {section}{\numberline {5.3}Dijagram razmještaja}{72}{section.5.3}%
 \contentsline {section}{\numberline {5.4}Upute za puštanje u pogon}{73}{section.5.4}%
 \contentsline {chapter}{\numberline {6}Zaključak i budući rad}{74}{chapter.6}%
-\contentsline {chapter}{Popis literature}{75}{chapter*.26}%
-\contentsline {chapter}{Indeks slika i dijagrama}{76}{chapter*.27}%
-\contentsline {chapter}{Dodatak: Prikaz aktivnosti grupe}{77}{chapter*.28}%
+\contentsline {chapter}{Popis literature}{75}{chapter*.27}%
+\contentsline {chapter}{Indeks slika i dijagrama}{76}{chapter*.28}%
+\contentsline {chapter}{Dodatak: Prikaz aktivnosti grupe}{77}{chapter*.29}%

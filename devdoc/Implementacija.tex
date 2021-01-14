@@ -20,6 +20,8 @@
 			\subsubsection{1. ispitni primjer - registracija udruge sa zauzetim OIB-om}
 			
 			U ispitnom primjeru prvo smo stvorili i registrirali prvu udrugu sa zadanim OIB-om 22000000000. Dobili smo očekivani odgovor sa statusom 200 OK. Zatim smo pokušali registrirati drugu udrugu sa istim tim OIB-om (ali drugačijim korisničkim imenom, koji također mora biti jedinstven). Dobili smo očekivani odgovor sa statusom 406 NOT ACCEPTABLE. Nakon toga smo promijenili OIB u 22000000001 te ponovno poslali zahtjev za registracijom. Dobili smo očekivani odgovor 200 OK.
+			
+			
 			\begin{figure}[H]
 				\centerline{
 					\includegraphics[scale=0.73]{slike/shelter1.1.PNG}}
@@ -127,14 +129,14 @@
 			\end{figure}
 		
 		
-			\subsubsection{Rezultati ispitnih primjera }
+			\subsubsection{Rezultati izvođenja ispitnih primjera }
 			
 			\begin{figure}[H]
 				\includegraphics[scale=0.75]{slike/UnitRezultati.PNG}
 				\centering
 			\end{figure}
 			
-			
+			\newpage	
 			
 			
 			\subsection{Ispitivanje sustava}
@@ -143,7 +145,14 @@
 			
 			\subsubsection{1. ispitni primjer - registracija šetača sa ispravnim podatcima}
 			
-				U ovom primjeru smo demonstrirali uspješnu registraciju šetača. Od sustava smo očekivali da nas onda preusmjeri na početnu stranicu, što je ispunjeno.
+				U ovom primjeru smo demonstrirali uspješnu registraciju šetača. Upisali smo sve ispravne podatke - jedinstvenu email adresu i korisničko ime te lozinke koje se podudaraju. Od sustava smo očekivali da nas onda preusmjeri na početnu stranicu, što je ispunjeno.
+				
+				\begin{figure}[H]
+				
+					\includegraphics[scale=0.55]{slike/HomePage.PNG}
+					%veličina slike u odnosu na originalnu datoteku i pozicija slike
+					\centering
+				\end{figure}
 				
 			 	\begin{figure}[H]
 			 	\includegraphics[scale=0.75]{slike/Selenium1.1.PNG}
@@ -177,7 +186,7 @@
 		 U ovom primjeru smo demonstrirali uspješnu registraciju udruge uz ispravak lozinke. Upisali smo sve ispravne podatke osim lozinke i ponovljene lozinke, koje su bile različite. Od sustava smo očekivali da nam javi kakva je pogreška u pitanju. Sustav je ostao na istoj stranici (nije se dogodilo preusmjeravanje kao pri uspješnoj registraciji) te nam je ispisao poruku "Lozinke se ne poklapaju." Zatim smo ispravili ponovljenu lozinku i ponovno poslali zahtjev za registracijom. Sustav nas je očekivano preusmjerio na početnu stranicu. Ispod je priložena slika izvođenja u browseru (neispravne lozinke) te kod ispitnog primjera. 
 			 
 			  \begin{figure}[H]
-			 	\includegraphics[scale=0.75]{slike/PasswordError.PNG}
+			 	\includegraphics[scale=0.7]{slike/PasswordError.PNG}
 			 	%veličina slike u odnosu na originalnu datoteku i pozicija slike
 			 	\centering
 			 \end{figure}
@@ -186,12 +195,13 @@
 			 	%veličina slike u odnosu na originalnu datoteku i pozicija slike
 			 	\centering
 			 \end{figure}
+		 
 			 \begin{figure}[H]
 			 	\includegraphics[scale=0.75]{slike/Selenium3.2.PNG} %veličina slike u odnosu na originalnu datoteku i pozicija slike
 			 	\centering
 			 \end{figure}
 			 
-			 
+			 \newpage
 			 
 			  \subsubsection{4. ispitni primjer - registracija udruge s neispravnim podatcima}
 			 
@@ -210,6 +220,7 @@
 			 \end{figure}
 		 
 		 
+		 \subsubsection{Rezultati izvođenja ispitnih primjera}
 		 	\begin{figure}[H]
 		 		\includegraphics[scale=0.75]{slike/SeleniumRezultati.PNG} %veličina slike u odnosu na originalnu datoteku i pozicija slike
 		 		\centering
