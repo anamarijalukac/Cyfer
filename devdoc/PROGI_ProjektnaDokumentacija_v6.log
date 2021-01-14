@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.27)  14 JAN 2021 15:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.27)  14 JAN 2021 17:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1384,24 +1384,24 @@ Overfull \hbox (5.37553pt too wide) in paragraph at lines 75--76
 zu,(u
  []
 
-<slike/arhitektura.PNG, id=526, 623.32875pt x 261.97874pt>
-File: slike/arhitektura.PNG Graphic file (type png)
-<use slike/arhitektura.PNG>
-Package pdftex.def Info: slike/arhitektura.PNG  used on input line 80.
-(pdftex.def)             Requested size: 467.4954pt x 196.48357pt.
+<slike/novaArh.png, id=526, 733.74126pt x 211.79124pt>
+File: slike/novaArh.png Graphic file (type png)
+<use slike/novaArh.png>
+Package pdftex.def Info: slike/novaArh.png  used on input line 81.
+(pdftex.def)             Requested size: 513.61539pt x 148.25285pt.
 
-Overfull \hbox (31.88461pt too wide) in paragraph at lines 80--82
- [][] 
+Overfull \hbox (65.15541pt too wide) in paragraph at lines 80--83
+ []|  [] 
  []
 
 
-Overfull \hbox (0.54248pt too wide) in paragraph at lines 86--89
+Overfull \hbox (0.54248pt too wide) in paragraph at lines 87--90
 [][]\OT1/jkp/m/n/12 Zelimo li, radi lak[]seg ra-zu-mi-je-va-nja, na[]su ar-hi-t
 ek-turu us-po-re-diti sa sti-lom MVC
  []
 
 
-Overfull \hbox (13.00471pt too wide) in paragraph at lines 92--95
+Overfull \hbox (13.00471pt too wide) in paragraph at lines 93--96
 \OT1/jkp/m/n/12 aplikacija koje u[]citavaju ci-jele nove stra-nice s poslu[]zit
 elja. One se po-kre[]cu u browseru
  []
@@ -1410,15 +1410,15 @@ elja. One se po-kre[]cu u browseru
 }) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.95 
-      <./slike/arhitektura.png>] [33] [34] [35] [36]
+l.96 
+      <./slike/novaArh.png>] [33] [34] [35] [36]
 <dijagrami/relacijski.jpeg, id=563, 511.15968pt x 382.42876pt>
 File: dijagrami/relacijski.jpeg Graphic file (type jpg)
 <use dijagrami/relacijski.jpeg>
-Package pdftex.def Info: dijagrami/relacijski.jpeg  used on input line 286.
+Package pdftex.def Info: dijagrami/relacijski.jpeg  used on input line 287.
 (pdftex.def)             Requested size: 460.03944pt x 344.1827pt.
 
-Overfull \hbox (24.42865pt too wide) in paragraph at lines 286--288
+Overfull \hbox (24.42865pt too wide) in paragraph at lines 287--289
  [][] 
  []
 
@@ -1426,25 +1426,25 @@ Overfull \hbox (24.42865pt too wide) in paragraph at lines 286--288
 e.4.3}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.293 			\eject
+l.294 			\eject
                 <./dijagrami/relacijski.jpeg>]
 <dijagrami/controlleri.jpeg, id=579, 1270.7475pt x 707.64375pt>
 File: dijagrami/controlleri.jpeg Graphic file (type jpg)
 <use dijagrami/controlleri.jpeg>
-Package pdftex.def Info: dijagrami/controlleri.jpeg  used on input line 312.
+Package pdftex.def Info: dijagrami/controlleri.jpeg  used on input line 313.
 (pdftex.def)             Requested size: 482.88907pt x 268.90742pt.
 
-Overfull \hbox (47.27827pt too wide) in paragraph at lines 312--314
+Overfull \hbox (47.27827pt too wide) in paragraph at lines 313--315
  [][] 
  []
 
 <dijagrami/modeli.jpeg, id=581, 1186.4325pt x 797.98125pt>
 File: dijagrami/modeli.jpeg Graphic file (type jpg)
 <use dijagrami/modeli.jpeg>
-Package pdftex.def Info: dijagrami/modeli.jpeg  used on input line 324.
+Package pdftex.def Info: dijagrami/modeli.jpeg  used on input line 325.
 (pdftex.def)             Requested size: 474.56459pt x 319.18684pt.
 
-Overfull \hbox (38.9538pt too wide) in paragraph at lines 324--326
+Overfull \hbox (38.9538pt too wide) in paragraph at lines 325--327
  [][] 
  []
 
@@ -1452,15 +1452,15 @@ Overfull \hbox (38.9538pt too wide) in paragraph at lines 324--326
 }) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.329 			
+l.330 			
           <./dijagrami/controlleri.jpeg>] [40pdfTeX warning (ext4): destination
  with the same identifier (name{figure.4.5}) has been already used, duplicate i
 gnored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.342 			\eject
+l.343 			\eject
                 <./dijagrami/modeli.jpeg>]
-Underfull \hbox (badness 10000) in paragraph at lines 347--348
+Underfull \hbox (badness 10000) in paragraph at lines 348--349
 
  []
 
@@ -1468,26 +1468,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 347--348
 <dijagrami/act.png, id=607, 653.14012pt x 588.09712pt>
 File: dijagrami/act.png Graphic file (type png)
 <use dijagrami/act.png>
-Package pdftex.def Info: dijagrami/act.png  used on input line 359.
+Package pdftex.def Info: dijagrami/act.png  used on input line 360.
 (pdftex.def)             Requested size: 435.6108pt x 392.23727pt.
  [43pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
 6}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.364 			\newpage
+l.365 			\newpage
                   <./dijagrami/act.png>]
-Overfull \hbox (14.03673pt too wide) in paragraph at lines 368--369
+Overfull \hbox (14.03673pt too wide) in paragraph at lines 369--370
 \OT1/jkp/m/n/12 React-view kom-po-nenta s apli-ka-ci-jom ko-mu-ni-cira preko dv
 a su[]celja. Jed-nim su[]celjem
  []
 
 [44]
-<dijagrami/Component-diagram-2.png, id=620, 1026.83624pt x 613.29124pt>
+<dijagrami/Component-diagram-2.png, id=620, 1025.8325pt x 613.29124pt>
 File: dijagrami/Component-diagram-2.png Graphic file (type png)
 <use dijagrami/Component-diagram-2.png>
 Package pdftex.def Info: dijagrami/Component-diagram-2.png  used on input line 
-371.
-(pdftex.def)             Requested size: 435.6108pt x 260.17274pt.
+372.
+(pdftex.def)             Requested size: 435.6108pt x 260.42542pt.
 ) [45pdfTeX warning (ext4): destination with the same identifier (name{figure.4
 .7}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -1645,8 +1645,8 @@ File: slike/HomePage.PNG Graphic file (type png)
 Package pdftex.def Info: slike/HomePage.PNG  used on input line 152.
 (pdftex.def)             Requested size: 489.81897pt x 382.5805pt.
 
-Overfull \hbox (54.20818pt too wide) in paragraph at lines 152--155
- [][] 
+Overfull \hbox (38.46869pt too wide) in paragraph at lines 151--155
+ []|  [] 
  []
 
 <slike/Selenium1.1.PNG, id=752, 568.37344pt x 618.05907pt>
@@ -1852,7 +1852,7 @@ LaTeX Warning: There were multiply-defined labels.
  ) 
 Here is how much of TeX's memory you used:
  12497 strings out of 479918
- 179599 string characters out of 5886688
+ 179575 string characters out of 5886688
  561344 words of memory out of 5000000
  28347 multiletter control sequences out of 15000+600000
  568810 words of font info for 99 fonts, out of 8000000 for 9000
@@ -1865,7 +1865,7 @@ ic/kpfonts/jkpmi.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/kpfonts/jkp
 mit8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/kpfonts/jkpmitc.pfb><c
 :/texlive/2020/texmf-dist/fonts/type1/public/kpfonts/jkpmn8a.pfb><c:/texlive/20
 20/texmf-dist/fonts/type1/public/kpfonts/jkpttmn8a.pfb>
-Output written on PROGI_ProjektnaDokumentacija_v6.pdf (81 pages, 8109385 bytes)
+Output written on PROGI_ProjektnaDokumentacija_v6.pdf (81 pages, 8109709 bytes)
 .
 PDF statistics:
  1029 PDF objects out of 1200 (max. 8388607)
