@@ -44,7 +44,7 @@ function EditDog(props) {
             'name': document.getElementById("name").value,
             'description': document.getElementById("description").value,
             'typeOfWalk': individual,
-            'image': dog.image
+            'image': document.getElementById("image").value
         }
 
         debugger
